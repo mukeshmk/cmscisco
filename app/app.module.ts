@@ -12,6 +12,7 @@ import { RealignmentComponent } from './realignment/realignment.component';
 import { NavigationbarComponent } from './navigationbar/navigationbar.component';
 import { OrdercountComponent } from './ordercount/ordercount.component';
 import {Routing} from './app.routing';
+import { ViewOrganizationComponent } from './view-organization/view-organization.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {Routing} from './app.routing';
     SearchComponent,
     RealignmentComponent,
     NavigationbarComponent,
-    OrdercountComponent
+    OrdercountComponent,
+    ViewOrganizationComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { OrdersComponent } from './orders/orders.component';
 import { RealignmentComponent } from './realignment/realignment.component';
+import { ViewOrganizationComponent } from './view-organization/view-organization.component';
 
 
 
@@ -40,6 +41,10 @@ const appRoutes=[
     name: 'CMTAlignment',
     component : RealignmentComponent
   },
+  {
+    path : 'vieworganization',
+    component : ViewOrganizationComponent
+  }
 ];
 
 export const Routing : ModuleWithProviders = RouterModule.forRoot(appRoutes);
