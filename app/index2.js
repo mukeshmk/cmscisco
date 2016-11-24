@@ -1,3 +1,8 @@
-/**
- * Created by chan24 on 23/11/16.
- */
+module.exports = function() {
+  var data = { users: [] }
+  // Create 1000 users
+  for (var i = 0; i < 100; i++) {
+    data.users.push({ id: i, name: 'user' + i })
+  }
+  return data
+}
