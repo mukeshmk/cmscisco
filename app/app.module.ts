@@ -13,7 +13,8 @@ import { NavigationbarComponent } from './navigationbar/navigationbar.component'
 import { OrdercountComponent } from './ordercount/ordercount.component';
 import { Routing} from './app.routing';
 import { ViewOrganizationComponent } from './view-organization/view-organization.component';
-import {PickListModule} from "primeng/components/picklist/picklist";
+import { Ng2PaginationModule} from 'ng2-pagination';
+
 
 @NgModule({
   declarations: [
@@ -27,13 +28,15 @@ import {PickListModule} from "primeng/components/picklist/picklist";
     NavigationbarComponent,
     OrdercountComponent,
     ViewOrganizationComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     Routing,
-    PickListModule
+      Ng2PaginationModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,7 +9,6 @@ import { RealignmentComponent } from './realignment/realignment.component';
 import { ViewOrganizationComponent } from './view-organization/view-organization.component';
 
 
-
 const appRoutes=[
   {
     path : '',
