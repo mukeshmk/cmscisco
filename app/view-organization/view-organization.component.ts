@@ -20,10 +20,8 @@ export class ViewOrganizationComponent implements OnInit {
     return Object.keys(obj).map( (key) => {return obj[key]});
   }
 
-  clickAll(ifChecked){
-      if(ifChecked == true){
-
-      }
+  clickCheckbox(ifChecked){
+    this.ifChecked = ifChecked;
   }
 
   constructor(http: Http) {
