@@ -14,6 +14,8 @@ import { OrdercountComponent } from './ordercount/ordercount.component';
 import { Routing} from './app.routing';
 import { ViewOrganizationComponent } from './view-organization/view-organization.component';
 import { NgSemanticModule } from "ng-semantic";
+import { Ng2PaginationModule} from 'ng2-pagination';
+
 
 @NgModule({
   declarations: [
@@ -27,13 +29,15 @@ import { NgSemanticModule } from "ng-semantic";
     NavigationbarComponent,
     OrdercountComponent,
     ViewOrganizationComponent,
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     Routing,
-    NgSemanticModule
+    NgSemanticModule,
+    Ng2PaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
