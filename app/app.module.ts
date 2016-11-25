@@ -11,8 +11,9 @@ import { SearchComponent } from './search/search.component';
 import { RealignmentComponent } from './realignment/realignment.component';
 import { NavigationbarComponent } from './navigationbar/navigationbar.component';
 import { OrdercountComponent } from './ordercount/ordercount.component';
-import {Routing} from './app.routing';
+import { Routing} from './app.routing';
 import { ViewOrganizationComponent } from './view-organization/view-organization.component';
+import { NgSemanticModule } from "ng-semantic";
 
 @NgModule({
   declarations: [
@@ -25,13 +26,14 @@ import { ViewOrganizationComponent } from './view-organization/view-organization
     RealignmentComponent,
     NavigationbarComponent,
     OrdercountComponent,
-    ViewOrganizationComponent
+    ViewOrganizationComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    Routing
+    Routing,
+    NgSemanticModule
   ],
   providers: [],
   bootstrap: [AppComponent]

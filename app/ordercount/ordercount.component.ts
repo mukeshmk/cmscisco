@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
-//import 'rxjs/Rx';
-
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-ordercount',
@@ -10,15 +9,22 @@ import {Http} from '@angular/http';
 })
 export class OrdercountComponent implements OnInit {
 
-  countJson: any;
+  public countJson: any[];
+  public resultCount: any[];
+
+  generateArray(obj){
+    this.resultCount.push(Object.keys(obj).map( (key) => {return obj[key]}));
+  }
 
   constructor(http: Http) {
-    http.get('http://localhost:3004/db')
+    console.log("json-server called");
+    http.get('http://localhost:3006/users')
       .map(response => response.json())
       .subscribe(result => this.countJson =result);
   }
 
   ngOnInit() {
+    //this.generateArray();
   }
 
 }

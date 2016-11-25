@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RealignmentComponent implements OnInit {
 
+  left : string[];
+  right : string[];
   constructor() { }
 
   ngOnInit() {
+      this.left = ['Aakash','Chandrasekaran','Varsha','GomathiSankar','Madhu','Akshaya','Kamatchi'];
+      this.right = [];
   }
 
 }

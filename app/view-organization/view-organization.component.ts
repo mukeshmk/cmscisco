@@ -8,19 +8,29 @@ import 'rxjs/Rx';
   templateUrl: './view-organization.component.html',
   styleUrls: ['./view-organization.component.css'],
 })
+
 export class ViewOrganizationComponent implements OnInit {
 
 
-  resultJson: any;
+  ifChecked : boolean;
+  public resultSet : any[];
 
 
+  generateArray(obj){
+    console.log("json-server decoded");
+    return Object.keys(obj).map( (key) => {return obj[key]});
+  }
+
+  clickCheckbox(ifChecked){
+    this.ifChecked = ifChecked;
+  }
 
   constructor(http: Http) {
     console.log("json-server called");
 
-    http.get('http://localhost:3005/db')
+    http.get('http://localhost:3000/users')
         .map(response => response.json())
-        .subscribe(result => this.resultJson =result);
+        .subscribe(result => this.resultSet = result);
   }
 
   ngOnInit() {
