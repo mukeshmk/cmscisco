@@ -18,13 +18,12 @@ export class OrdercountComponent implements OnInit {
 
   constructor(http: Http) {
     console.log("json-server called");
-    http.get('http://localhost:3006/users')
+    http.get('http://localhost:3000/users')
       .map(response => response.json())
       .subscribe(result => this.countJson =result);
   }
 
   ngOnInit() {
-    //this.generateArray();
   }
 
 }

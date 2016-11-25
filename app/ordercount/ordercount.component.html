@@ -1,6 +1,6 @@
 
 <div *ngFor="let item of countJson">
-  <!--<div>[app-ordercount]={{this.generateArray(item)}}</div>-->
+  <div *ngIf="item" (onCreate)="generateArray(item)"></div>
 </div>
 
 <p>Orders Count</p>
@@ -8,7 +8,7 @@
   <div class="fields">
     <div class="field">
       <label>Total Status New Orders </label>
-      <div>{{resultCount[0]}}</div>
+      <div>{{resultCount[1]}}</div>
     </div>
     <div class="field">
       <label>Total Status Pending Correction Orders</label>
