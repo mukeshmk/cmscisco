@@ -8,13 +8,13 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { OrdersComponent } from './orders/orders.component';
 import { SearchComponent } from './search/search.component';
-import { RealignmentComponent } from './realignment/realignment.component';
 import { NavigationbarComponent } from './navigationbar/navigationbar.component';
 import { OrdercountComponent } from './ordercount/ordercount.component';
 import { Routing} from './app.routing';
 import { ViewOrganizationComponent } from './view-organization/view-organization.component';
 import { NgSemanticModule } from "ng-semantic";
 import { Ng2PaginationModule} from 'ng2-pagination';
+import { CreateOrgFormComponent } from './organization/create-org-form/create-org-form.component';
 
 
 @NgModule({
@@ -25,10 +25,10 @@ import { Ng2PaginationModule} from 'ng2-pagination';
     OrganizationComponent,
     OrdersComponent,
     SearchComponent,
-    RealignmentComponent,
     NavigationbarComponent,
     OrdercountComponent,
     ViewOrganizationComponent,
+    CreateOrgFormComponent,
 
   ],
   imports: [
