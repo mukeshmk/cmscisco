@@ -13,7 +13,7 @@ export class OrdercountComponent implements OnInit {
   public resultCount: any[];
 
   generateArray(obj){
-    this.resultCount.push(Object.keys(obj).map( (key) => {return obj[key]}));
+    return Object.keys(obj).map( (key) => {return obj[key]});
   }
 
   constructor(http: Http) {

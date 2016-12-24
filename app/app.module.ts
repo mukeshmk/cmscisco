@@ -15,6 +15,7 @@ import { Routing} from './app.routing';
 import { ViewOrganizationComponent } from './view-organization/view-organization.component';
 import { NgSemanticModule } from "ng-semantic";
 import { Ng2PaginationModule} from 'ng2-pagination';
+import { CreateOrgFormComponent } from './organization/create-org-form/create-org-form.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { Ng2PaginationModule} from 'ng2-pagination';
     NavigationbarComponent,
     OrdercountComponent,
     ViewOrganizationComponent,
+    CreateOrgFormComponent,
 
   ],
   imports: [
