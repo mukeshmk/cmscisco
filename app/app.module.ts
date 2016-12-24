@@ -8,7 +8,6 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { OrdersComponent } from './orders/orders.component';
 import { SearchComponent } from './search/search.component';
-import { RealignmentComponent } from './realignment/realignment.component';
 import { NavigationbarComponent } from './navigationbar/navigationbar.component';
 import { OrdercountComponent } from './ordercount/ordercount.component';
 import { Routing} from './app.routing';
@@ -26,7 +25,6 @@ import { CreateOrgFormComponent } from './organization/create-org-form/create-or
     OrganizationComponent,
     OrdersComponent,
     SearchComponent,
-    RealignmentComponent,
     NavigationbarComponent,
     OrdercountComponent,
     ViewOrganizationComponent,
