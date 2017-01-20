@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { RealignmentComponent } from './realignment.component';
+import { OrgDataRowComponent } from './org-data-row.component';
 
-describe('RealignmentComponent', () => {
-  let component: RealignmentComponent;
-  let fixture: ComponentFixture<RealignmentComponent>;
+describe('OrgDataRowComponent', () => {
+  let component: OrgDataRowComponent;
+  let fixture: ComponentFixture<OrgDataRowComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RealignmentComponent ]
+      declarations: [ OrgDataRowComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RealignmentComponent);
+    fixture = TestBed.createComponent(OrgDataRowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

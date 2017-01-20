@@ -11,6 +11,6 @@ export class OnCreate {
   }
 
   ngOnInit() {
-    this.onCreate.emit('dummy');
+    this.onCreate.emit('');
   }
 }
