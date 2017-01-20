@@ -1,6 +1,6 @@
 <p>Orders Count</p>
 <div class="ui form">
-  <div class="fields">
+  <div class="three fields">
     <div class="field">
       <label>Total Status New Orders </label>
       <div>1301</div>
@@ -16,7 +16,7 @@
   </div>
 </div>
 <div class="ui form">
-  <div class="fields">
+  <div class="three fields">
     <div class="field">
       <label>Total Status Accepted Orders </label>
       <div>2503</div>
@@ -32,18 +32,32 @@
   </div>
 </div>
 
+<a [routerLink]="['/vieworganization']">
+  <div class = "ui icon button" data-tooltip="View organization"><i class="user icon"></i>
+  </div>
+</a>
 
-<a [routerLink]="['']"><i class="square outline icon"></i></a>
 
-<a [routerLink]="['/vieworganization']"><i class="square outline icon"></i></a>
+<a [routerLink]="['/organization']">
+  <div class = "ui icon button" data-tooltip="Organization"><i class="child icon"></i>
+  </div>
+</a>
 
-<a [routerLink]="['/organization']"><i class="square outline icon"></i></a>
+<a [routerLink]="['/orders']">
+  <div class = "ui icon button" data-tooltip="Orders"><i class="users icon"></i>
+  </div>
+</a>
 
-<a [routerLink]="['/orders']"><i class="square outline icon"></i></a>
+<a [routerLink]="['/dashboard']">
+  <div class = "ui icon button" data-tooltip="Dashboard"><i class="dashboard icon"></i>
+  </div>
+</a>
 
-<a [routerLink]="['/dashboard']"><i class="square outline icon"></i></a>
+<a [routerLink]="['/CMTAlignment']">
+  <div class = "ui icon button" data-tooltip="CMT Alignment"><i class="travel icon"></i>
+  </div>
+</a>
 
-<a [routerLink]="['/CMTAlignment']"><i class="square outline icon"></i></a>
 
 
 
