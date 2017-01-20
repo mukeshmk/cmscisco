@@ -15,6 +15,7 @@ import { ViewOrganizationComponent } from './view-organization/view-organization
 import { NgSemanticModule } from "ng-semantic";
 import { Ng2PaginationModule} from 'ng2-pagination';
 import { CreateOrgFormComponent } from './organization/create-org-form/create-org-form.component';
+import { CmtalignmentComponent } from './cmtalignment/cmtalignment.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { CreateOrgFormComponent } from './organization/create-org-form/create-or
     OrdercountComponent,
     ViewOrganizationComponent,
     CreateOrgFormComponent,
+    CmtalignmentComponent,
 
   ],
   imports: [

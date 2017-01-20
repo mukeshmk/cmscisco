@@ -6,6 +6,7 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ViewOrganizationComponent } from './view-organization/view-organization.component';
+import {CmtalignmentComponent} from "./cmtalignment/cmtalignment.component";
 
 
 const appRoutes=[
@@ -37,6 +38,10 @@ const appRoutes=[
   {
     path : 'vieworganization',
     component : ViewOrganizationComponent
+  },
+  {
+    path : 'cmtalignment',
+    component : CmtalignmentComponent
   }
 ];
 
