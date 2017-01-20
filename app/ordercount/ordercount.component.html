@@ -1,0 +1,62 @@
+
+<div *ngFor="let item of countJson">
+  <div *ngIf="item" (onCreate)="generateArray(item)"></div>
+</div>
+
+<p>Orders Count</p>
+<div class="ui form">
+  <div class="fields">
+    <div class="field">
+      <label>Total Status New Orders </label>
+      <div>{{resultCount[1]}}</div>
+    </div>
+    <div class="field">
+      <label>Total Status Pending Correction Orders</label>
+      <input type="text">
+    </div>
+    <div class="field">
+      <label>Total Outstanding</label>
+      <input type="text">
+    </div>
+  </div>
+</div>
+<div class="ui form">
+  <div class="fields">
+    <div class="field">
+      <label>Total Status Accepted Orders </label>
+      <input type="text">
+    </div>
+    <div class="field">
+      <label>Total Status Pending Effective Orders</label>
+      <input type="text">
+    </div>
+    <div class="field">
+      <label>Total Proccessed</label>
+      <input type="text">
+    </div>
+  </div>
+</div>
+
+
+
+<a [routerLink]="['']"><i class="square outline icon"></i></a>
+
+<a [routerLink]="['']"><i class="square outline icon"></i></a>
+
+<a [routerLink]="['/organization']"><i class="square outline icon"></i></a>
+
+<a [routerLink]="['/orders']"><i class="square outline icon"></i></a>
+
+<a [routerLink]="['/dashboard']"><i class="square outline icon"></i></a>
+
+<a [routerLink]="['/CMTAlignment']"><i class="square outline icon"></i></a>
+
+
+
+
+
+
+
+
+
+

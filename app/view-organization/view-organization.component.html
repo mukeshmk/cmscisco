@@ -1,0 +1,34 @@
+<div class = "container" style="{
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+}">
+
+  <table class = "container table-bordered table-hover">
+
+    <thead class = "active">
+    <th> <input #check1 type = "checkbox" name = "selectall" (click) = "clickCheckbox(check1.checked)"> </th>
+    <th>Org ID</th>
+    <th>Org Name</th>
+    <th>Parent Org</th>
+    <th>UPO</th>
+    <th>Company URL</th>
+    <th>Last Modified</th>
+    <th>Status</th>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let item of resultSet | paginate: { itemsPerPage: 7, currentPage: p }">
+      <td><input #{{item.id}} type = "checkbox" [checked] = "ifChecked"> </td>
+      <td *ngFor = "let v of generateArray(item)"> {{v}} </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <pagination-controls (pageChange)="p = $event"
+                        maxSize="5" #api>
+  </pagination-controls>
+</div>
+
+
