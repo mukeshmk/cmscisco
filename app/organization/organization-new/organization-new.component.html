@@ -1,0 +1,197 @@
+<form [formGroup]="orgNewForm" (ngSubmit)="addOrg($event)">
+  <div class="ui form">
+    <div class="column">
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Organization Info</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="org-id">OrgID</label>
+            <input formControlName="orgID" type="text" id="org-id">
+          </div>
+          <div class="field">
+            <label for="org-name">Organization Name</label>
+            <input formControlName="orgName" type="text" id="org-name" >
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <label for="parent-org">Parent Organization</label>
+            <input formControlName="parentOrg" type="text" id="parent-org">
+          </div>
+          <div class="field">
+            <label for="upo">UPO</label>
+            <input formControlName="orgUpo" type="text" id="upo">
+          </div>
+          <div class="field">
+            <label for="company-url">CompanyURL</label>
+            <input formControlName="companyUrl" type="text" id="company-url">
+          </div>
+        </div>
+        <div class = "two fields">
+          <div class = "field">
+            <label for = "last-modified">Last Modified</label>
+            <input formControlName="lastModified" type = "text" id = "last-modified">
+          </div>
+
+          <div class = "field">
+            <label for = "status">Status</label>
+            <input formControlName="orgStatus" type = "text" id = "status">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="column">
+      <div class="ui raised segment">
+        <a class="ui blue ribbon label">Address</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="street1">Street 1</label>
+            <input formControlName="addressStreet1" type="text" id="street1">
+          </div>
+          <div class="field">
+            <label for="street2">Street 2</label>
+            <input formControlName="addressStreet2" type="text" id="street2">
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <label for="city">City</label>
+            <input formControlName="addressCity" type="text" id="city">
+          </div>
+          <div class="field">
+            <label for="state">State/Province</label>
+            <input formControlName="addressState" type="text" id="state">
+          </div>
+          <div class="field">
+            <label for="zip">Postal code/Zip</label>
+            <input formControlName="addressZip" type="text" id="zip">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="county">County</label>
+            <input formControlName="addressCounty" type="text" id="county">
+          </div>
+          <div class="field">
+            <label>Country</label>
+            <select formControlName="addressCountry" class="ui search dropdown">
+              <option value="">Select Country</option>
+              <option value="AF">Afghanistan</option>
+              <option value="AX">Åland Islands</option>
+              <option value="AL">Albania</option>
+              <option value="DZ">Algeria</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="column">
+      <div class="ui segment">
+        <a class="ui teal ribbon label">Account Details</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input formControlName="email" type="text" id="email">
+          </div>
+          <div class="field">
+            <label for="login-name">Login Name</label>
+            <input formControlName="loginName" type="text" id="login-name">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="password">Password</label>
+            <input formControlName="password" type="password" id="password">
+          </div>
+          <div class="field">
+            <label for="confirm-password">Confirm Password</label>
+            <input formControlName="confirmPassword" type="password" id="confirm-password">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="column">
+      <div class="ui segment">
+        <a class="ui orange ribbon label">Work Profile</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="title">Title</label>
+            <input formControlName="title" type="text" id="title">
+          </div>
+          <div class="field">
+            <label for="department">Department</label>
+            <input formControlName="department" type="text" id="department">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label>Group</label>
+            <select formControlName="group" class="ui search dropdown">
+              <option value="">Select group</option>
+              <option value="Sales">Sales</option>
+              <option value="finance">Finance</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="team">Team</label>
+            <input formControlName="team" type="text" id="team">
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <label>Category</label>
+            <select formControlName="category" class="ui search dropdown">
+              <option value="">Select Category</option>
+              <option value="medical-health">Medical-Health</option>
+              <option value="category1">Category1</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="role">Role</label>
+            <input formControlName="role" type="text" id="role">
+          </div>
+          <div class="field">
+            <label>Reports To</label>
+            <select formControlName="reportsTo" class="ui search dropdown">
+              <option value="">Select</option>
+              <option value="self">Self</option>
+              <option value="reportsTo1">ReportsTo1</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Is a Contractor</label>
+          <div class="two fields">
+            <div class="field"> <input type="radio" value="Yes" name="isAContractor" checked="checked">Yes</div>
+            <div class="field"> <input type="radio" value="No" name="isAContractor" checked="checked">No</div>
+            <div class="field">
+              <label for="expDate">Exp. Date</label>
+              <input formControlName="expDate" type="date" id="expDate">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div align="center">
+    <div class="ui buttons">
+      <button class="ui button">Cancel</button>
+      <div class="or"></div>
+      <button class="ui positive button" type="submit" value="Save">Save</button>
+    </div>
+  </div>
+  <br><br>
+</form>

@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/Rx';
@@ -9,21 +10,22 @@ import 'rxjs/Rx';
 })
 export class OrdercountComponent implements OnInit {
 
-  public countJson: any[];
-  public resultCount: any[];
+ // public countJson: any[];
+ // public resultCount: any[];
 
-  generateArray(obj){
-    return Object.keys(obj).map( (key) => {return obj[key]});
-  }
+  //generateArray(obj){
+  //  return Object.keys(obj).map( (key) => {return obj[key]});
+ // }
 
-  constructor(http: Http) {
-    console.log("json-server called");
-    http.get('http://localhost:3000/users')
-      .map(response => response.json())
-      .subscribe(result => this.countJson =result);
+  constructor() {
+  //  console.log("json-server called");
+  //  http.get('http://localhost:3004/users')
+  //    .map(response => response.json())
+  //    .subscribe(result => this.countJson =result);
   }
 
   ngOnInit() {
   }
 
 }
+

@@ -1,56 +1,64 @@
-<div style="font-family:'Montserrat',font-size: 160%;">
- <div *ngFor="let item of countJson">
-   <div *ngFor = "let v of generateArray(item)">Total order: {{v}}</div>
- </div>
-</div>
-
 <p>Orders Count</p>
 <div class="ui form">
-  <div class="fields">
+  <div class="three fields">
     <div class="field">
       <label>Total Status New Orders </label>
-      <div></div>
+      <div>1301</div>
     </div>
     <div class="field">
       <label>Total Status Pending Correction Orders</label>
-      <input type="text">
+      <div>3110</div>
     </div>
     <div class="field">
       <label>Total Outstanding</label>
-      <input type="text">
+      <div>3101</div>
     </div>
   </div>
 </div>
 <div class="ui form">
-  <div class="fields">
+  <div class="three fields">
     <div class="field">
       <label>Total Status Accepted Orders </label>
-      <input type="text">
+      <div>2503</div>
     </div>
     <div class="field">
       <label>Total Status Pending Effective Orders</label>
-      <input type="text">
+      <div>1303</div>
     </div>
     <div class="field">
       <label>Total Proccessed</label>
-      <input type="text">
+      <div>2010</div>
     </div>
   </div>
 </div>
+<div align="center">
+<a [routerLink]="['/vieworganization']">
+  <div class = "ui icon button" data-tooltip="View organization"><i class="user icon"></i>
+  </div>
+</a>
 
 
+<a [routerLink]="['/organization']">
+  <div class = "ui icon button" data-tooltip="Organization"><i class="child icon"></i>
+  </div>
+</a>
 
-<a [routerLink]="['']"><i class="square outline icon"></i></a>
+<a [routerLink]="['/orders']">
+  <div class = "ui icon button" data-tooltip="Orders"><i class="users icon"></i>
+  </div>
+</a>
 
-<a [routerLink]="['/vieworganization']"><i class="square outline icon"></i></a>
+<a [routerLink]="['/dashboard']">
+  <div class = "ui icon button" data-tooltip="Dashboard"><i class="dashboard icon"></i>
+  </div>
+</a>
 
-<a [routerLink]="['/organization']"><i class="square outline icon"></i></a>
+<a [routerLink]="['/CMTAlignment']">
+  <div class = "ui icon button" data-tooltip="CMT Alignment"><i class="travel icon"></i>
+  </div>
+</a>
+</div>
 
-<a [routerLink]="['/orders']"><i class="square outline icon"></i></a>
-
-<a [routerLink]="['/dashboard']"><i class="square outline icon"></i></a>
-
-<a [routerLink]="['/cmtalignment']"><i class="square outline icon"></i></a>
 
 
 
