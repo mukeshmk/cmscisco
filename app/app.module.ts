@@ -34,7 +34,6 @@ import { OrganizationHeaderComponent } from './organization/organization-header/
     OrganizationNewComponent,
     OrganizationEditComponent,
     OrganizationHeaderComponent
-
   ],
   imports: [
     BrowserModule,
