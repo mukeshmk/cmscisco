@@ -10,7 +10,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { SearchComponent } from './search/search.component';
 import { NavigationbarComponent } from './navigationbar/navigationbar.component';
 import { OrdercountComponent } from './ordercount/ordercount.component';
-import { Routing} from './app.routing';
+import { Routing } from './app.routing';
 import { ViewOrganizationComponent } from './organization/view-organization/view-organization.component';
 import { NgSemanticModule } from "ng-semantic";
 import { Ng2PaginationModule} from 'ng2-pagination';

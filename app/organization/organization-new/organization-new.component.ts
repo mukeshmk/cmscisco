@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, Validators, FormGroup, FormControl} from "@angular/forms";
 import {organizationService} from "../organization.service";
 import {organization} from "../oragnization.interface";
+import {orgData} from "../orgData.array";
 
 @Component({
   selector: 'app-organization-new',
@@ -23,13 +24,13 @@ export class OrganizationNewComponent implements OnInit {
       orgID:["", Validators.required],
       orgName:["", Validators.required],
       parentOrg:["", Validators.required],
-      department:["", Validators.required],
+      orgDepartment:["", Validators.required],
       orgUpo:["", Validators.required],
       companyUrl:["", Validators.required],
       lastModified:["", Validators.required],
-      email:["", Validators.required],
+      orgEmail:["", Validators.required],
       loginName:["", Validators.required],
-      password:["", Validators.required],
+      orgPassword:["", Validators.required],
       confirmPassword:["", Validators.required],
       addressStreet1:["", Validators.required],
       addressStreet2:["", Validators.required],
@@ -39,13 +40,14 @@ export class OrganizationNewComponent implements OnInit {
       addressCounty:["", Validators.required],
       addressCountry:["", Validators.required],
       group:["", Validators.required],
-      team:["", Validators.required],
+      orgTeam:["", Validators.required],
       category:["", Validators.required],
-      role:["", Validators.required],
+      orgRole:["", Validators.required],
       reportsTo:["", Validators.required],
       isAContractor:["", Validators.required],
-      expDate:["", Validators.required],
-      status : ["",Validators.required]
+      orgExpDate:["", Validators.required],
+      orgStatus : ["",Validators.required],
+      orgTitle : ["",Validators.required]
     });
   }
   addOrg(data){

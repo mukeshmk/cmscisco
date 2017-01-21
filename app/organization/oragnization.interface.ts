@@ -25,4 +25,5 @@ export interface organization{
     expDate:String;
     created : String;
     email: string;
+    title : string;
 }

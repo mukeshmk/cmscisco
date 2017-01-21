@@ -27,7 +27,8 @@ export let orgData:Array<organization> = [
         role: 'sales',
         email: 'susa.sushma@gmail.com',
         team: 'Juan Tobias cpf',
-        created: '04/08/05'
+        created: '04/08/05',
+        title : 'ChanChanMan'
     },
 
     {
@@ -56,7 +57,8 @@ export let orgData:Array<organization> = [
         role: 'sales',
         email: 'susa.sushma@gmail.com',
         team: 'Juan Tobias cpf',
-        created: '04/08/05'
+        created: '04/08/05',
+        title : 'ChanChanMan'
     },
 
     {
@@ -85,7 +87,8 @@ export let orgData:Array<organization> = [
         role: 'sales',
         email: 'susa.sushma@gmail.com',
         team: 'Juan Tobias cpf',
-        created: '04/08/05'
+        created: '04/08/05',
+        title : 'ChanChanMan'
     },
     {
         orgID : 'mac27',
@@ -113,6 +116,7 @@ export let orgData:Array<organization> = [
         role: 'sales',
         email: 'susa.sushma@gmail.com',
         team: 'Juan Tobias cpf',
-        created: '04/08/05'
+        created: '04/08/05',
+        title : 'ChanChanMan'
     }
 ];

@@ -16,7 +16,7 @@ export let OrganizationRoutes = [
         component : OrganizationNewComponent
     },
     {
-        path : 'edit',
+        path : 'edit/:orgID',
         component : OrganizationEditComponent
     }
 ];
