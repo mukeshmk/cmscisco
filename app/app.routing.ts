@@ -1,7 +1,6 @@
 import {ModuleWithProviders} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {OrdercountComponent} from  './ordercount/ordercount.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { OrdersComponent } from './orders/orders.component';
@@ -16,7 +15,7 @@ const appRoutes=[
   },
   {
     path : 'dashboard',
-    component : DashboardComponent
+    component : OrdercountComponent
   },
   {
     path : 'accounts',

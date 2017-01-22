@@ -2,6 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/Rx';
+import {ordercount} from "./ordercount.interface";
+import {ordercountData} from "./ordercountData.array";
 
 @Component({
   selector: 'app-ordercount',
@@ -16,6 +18,7 @@ export class OrdercountComponent implements OnInit {
   //generateArray(obj){
   //  return Object.keys(obj).map( (key) => {return obj[key]});
  // }
+  data : ordercount;
 
   constructor() {
   //  console.log("json-server called");
@@ -25,7 +28,11 @@ export class OrdercountComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.data = ordercountData[0];
   }
+
+
+
 
 }
 

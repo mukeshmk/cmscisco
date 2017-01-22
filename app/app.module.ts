@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { OrdersComponent } from './orders/orders.component';
@@ -19,10 +18,10 @@ import { OrganizationNewComponent } from './organization/organization-new/organi
 import { OrganizationEditComponent } from './organization/organization-edit/organization-edit.component';
 import { OrganizationHeaderComponent } from './organization/organization-header/organization-header.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     AccountsComponent,
     OrganizationComponent,
     OrdersComponent,

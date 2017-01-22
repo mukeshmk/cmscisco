@@ -8,10 +8,6 @@
     <button class="ui secondary button" [routerLink]="['/organization/edit', selectedRow.orgID]" [disabled]="selectedRow.orgID == undefined">Edit</button>
     <div class="or"></div>
     <button class="ui primary button" [routerLink]="['/organization/new']">New</button>
-    <div class="or"></div>
-    <button class="ui negative button" [disabled]="selectedRow.orgID == undefined">Inactivate</button>
-    <div class="or"></div>
-    <button class="ui positive button" [disabled]="selectedRow.orgID == undefined">Reactivate</button>
   </div>
 
 </div>
