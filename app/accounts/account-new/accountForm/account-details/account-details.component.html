@@ -1,0 +1,65 @@
+<div class="ui form">
+<div class = "ui raised segment">
+  <a class = "ui red ribbon label">Account Details</a>
+  <div class = "two fields">
+    <div class = "field">
+      <label for = "org-name">Organization Name</label>
+      <input formControlName="orgName" type = "text" id = "org-name">
+    </div>
+    <div class = "field">
+      <label for = "acc-name">Accounts Name</label>
+      <input formControlName="accName" type = "text" id = "acc-name">
+    </div>
+  </div>
+
+  <div class = "two fields">
+    <div class = "field">
+      <label>Billing Method</label>
+      <select formControlName="billingMethod" class="ui search dropdown">
+        <option value="">Select Country</option>
+        <option value="AF">Afghanistan</option>
+        <option value="AX">Åland Islands</option>
+        <option value="AL">Albania</option>
+        <option value="DZ">Algeria</option>
+      </select>
+    </div>
+    <div class = "field">
+      <label for = "billing-frequency">Billing Frequency</label>
+      <input formControlName="billingFrequency" type = "text" id = "billing-frequency">
+    </div>
+  </div>
+
+
+  <div class = "two fields">
+    <div class = "field">
+      <label for = "payment-method">Payment Method</label>
+      <input formControlName="paymentMethod" type = "text" id = "payment-method">
+    </div>
+    <div class = "field">
+      <label for = "payment-term">Payment Term</label>
+      <input formControlName="paymentTerm" type = "text" id = "payment-term">
+    </div>
+  </div>
+
+  <div class = "field">
+    <label for = "currency-id">Currency</label>
+    <input formControlName="currency" type = "text" id = "currency-id">
+  </div>
+
+
+  <div class = "field">
+    <label for = "account-type">Account Type</label>
+    <input formControlName="accountType" type = "text" id = "account-type">
+  </div>
+
+
+  <div class = "field">
+    <label>Link this account to CCA Reassignable Ports Account?</label>
+    <div class="field"> <input type="radio" value="Yes" name="link-id" checked="checked">Yes</div>
+    <div class="field"> <input type="radio" value="No" name="link-id" checked="checked">No</div>
+  </div>
+
+
+</div>
+  </div>
+

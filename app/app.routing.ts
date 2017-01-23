@@ -1,12 +1,12 @@
 import {ModuleWithProviders} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {OrdercountComponent} from  './ordercount/ordercount.component';
-import { AccountsComponent } from './accounts/accounts.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ViewOrganizationComponent } from './organization/view-organization/view-organization.component';
 import { OrganizationRoutes} from "./organization/organization.routing";
-
+import {AccountRoutes} from "./accounts/account.routing";
+import {AccountsComponent} from "./accounts/accounts.component";
 
 const appRoutes=[
   {
@@ -18,8 +18,9 @@ const appRoutes=[
     component : OrdercountComponent
   },
   {
-    path : 'accounts',
-    component : AccountsComponent
+    path : 'accounts/:id',
+    component : AccountsComponent,
+    children : AccountRoutes
   },
   {
     path : 'organization',

@@ -1,3 +1,12 @@
-<p>
-  accounts works!
-</p>
+<p>Accounts</p>
+<div id="user-head" class="ui grid">
+    <div class="three wide column">Organization ID</div>
+    <div class="four wide column">Organization Name</div>
+    <div class="three wide column">UPO Name</div>
+    <div class="three wide column">Current Owner</div>
+    <div class="three wide column">Status</div>
+</div>
+<br>
+
+<app-viewaccount-data-row *ngFor="let acc of accountsData" [data]="acc" (click)="clickRow(acc)" [ngClass]="{'selected' : acc.orgID == selectedRow.orgID}"></app-viewaccount-data-row>
+

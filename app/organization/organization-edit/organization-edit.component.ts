@@ -25,7 +25,6 @@ export class OrganizationEditComponent implements OnInit {
       if (this.data == undefined) {
         alert("This organization does not exist in our database!");
         this.router.navigate(['/organization']);
-
       }
 
     });
