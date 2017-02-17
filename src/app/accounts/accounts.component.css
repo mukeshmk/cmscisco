@@ -1,0 +1,13 @@
+app-viewaccount-data-row{
+    min-height: 30px;
+}
+
+.selected{
+    color: dodgerblue;
+}
+
+#user-head .column{
+    display: inline-block;
+    background: deepskyblue;
+    text-align: center;
+}
