@@ -1,5 +1,354 @@
+<p>Organization ID : {{organizationID}}</p>
+
+<form [formGroup]="accountsnewForm" (ngSubmit)="addAccounts($event)">
+
+<!--
 <app-account-details></app-account-details>
 <app-account-address></app-account-address>
 <app-account-contacts></app-account-contacts>
 <app-account-contacts-business></app-account-contacts-business>
 <app-account-agents></app-account-agents>
+-->
+
+    <!-- Start of Account Details -->
+    <div formGroupName="accDetails">
+    <div class="ui form">
+        <div class = "ui raised segment">
+            <a class = "ui red ribbon label">Account Details</a>
+            <div class = "two fields">
+                <div class = "field">
+                    <label for = "org-name">Organization Name</label>
+                    <input formControlName="orgName" type = "text" id = "org-name">
+                </div>
+                <div class = "field">
+                    <label for = "acc-name">Accounts Name</label>
+                    <input formControlName="accName" type = "text" id = "acc-name">
+                </div>
+            </div>
+
+            <div class = "two fields">
+                <div class = "field">
+                    <label>Billing Method</label>
+                    <select formControlName="billingMethod" class="ui search dropdown">
+                        <option value="">Select Country</option>
+                        <option value="AF">Afghanistan</option>
+                        <option value="AX">Åland Islands</option>
+                        <option value="AL">Albania</option>
+                        <option value="DZ">Algeria</option>
+                    </select>
+                </div>
+                <div class = "field">
+                    <label for = "billing-frequency">Billing Frequency</label>
+                    <input formControlName="billingFrequency" type = "text" id = "billing-frequency">
+                </div>
+            </div>
+
+
+            <div class = "two fields">
+                <div class = "field">
+                    <label for = "payment-method">Payment Method</label>
+                    <input formControlName="paymentMethod" type = "text" id = "payment-method">
+                </div>
+                <div class = "field">
+                    <label for = "payment-term">Payment Term</label>
+                    <input formControlName="paymentTerm" type = "text" id = "payment-term">
+                </div>
+            </div>
+
+            <div class = "field">
+                <label for = "currency-id">Currency</label>
+                <input formControlName="currency" type = "text" id = "currency-id">
+            </div>
+
+
+            <div class = "field">
+                <label for = "account-type">Account Type</label>
+                <input formControlName="accountType" type = "text" id = "account-type">
+            </div>
+
+
+            <div class = "field">
+                <label>Link this account to CCA Reassignable Ports Account?</label>
+                <div class="field"> <input type="radio" value="Yes" name="link-id" checked="checked">Yes</div>
+                <div class="field"> <input type="radio" value="No" name="link-id" checked="checked">No</div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+
+    <!-- End of Account Details -->
+
+    <!-- Start of account address -->
+    <div formGroupName="accAddress">
+    <div class="ui form">
+        <div class="ui raised segment">
+            <a class = "ui red ribbon label">Address Billing</a>
+            <div class = "two fields">
+                <div class = "field">
+                    <label for = "acc-street1">Street1</label>
+                    <input formControlName="street1" type = "text" id = "acc-street1">
+                </div>
+                <div class = "field">
+                    <label for = "acc-street2">Street2</label>
+                    <input formControlName="street2" type = "text" id = "acc-street2">
+                </div>
+            </div>
+            <div class = "two fields">
+                <div class = "field">
+                    <label for = "acc-city">City</label>
+                    <input formControlName="city" type = "text" id = "acc-city">
+                </div>
+                <div class = "field">
+                    <label>State</label>
+                    <select formControlName="state" class="ui search dropdown">
+                        <option value="">Select State</option>
+                        <option value="AF">TamilNadu</option>
+                        <option value="AX">Karnataka</option>
+                        <option value="AL">Gujurat</option>
+                        <option value="DZ">Nagaland</option>
+                    </select>
+                </div>
+            </div>
+            <div class = "two fields">
+                <div class = "field">
+                    <label>Country</label>
+                    <select formControlName="country" class="ui search dropdown">
+                        <option value="">Select Country</option>
+                        <option value="AF">Afghanistan</option>
+                        <option value="AX">Åland Islands</option>
+                        <option value="AL">Albania</option>
+                        <option value="DZ">Algeria</option>
+                    </select>
+                </div>
+                <div class = "field">
+                    <label for = "acc-zip">Zip Postal Code</label>
+                    <input formControlName="zip" type = "text" id = "acc-zip">
+                </div>
+            </div>
+            <div class = "two fields">
+                <div class = "field">
+                    <label for = "acc-phone">Phone</label>
+                    <input formControlName="phone" type = "text" id = "acc-phone">
+                </div>
+                <div class = "field">
+                    <label for = "acc-fax">Street2</label>
+                    <input formControlName="fax" type = "text" id = "acc-fax">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <!-- End of Account Address -->
+
+    <!-- Start of Account Contacts -->
+
+    <div formGroupName="accContacts">
+    <div class="ui form">
+        <div class="ui raised segment">
+            <a class = "ui red ribbon label">Contact Billing/Payment</a>
+
+            <div class = "two fields">
+                <div class = "field">
+                    <label for = "first-name">First Name</label>
+                    <input formControlName="firstName" type = "text" id = "first-name">
+                </div>
+                <div class = "field">
+                    <label for = "last-name">Last Name</label>
+                    <input formControlName="lastName" type = "text" id = "last-name">
+                </div>
+            </div>
+
+            <div class="field">
+                <label for = "acc-title">Title</label>
+                <input formControlName="title" type = "text" id = "acc-title">
+            </div>
+
+            <div class="two fields">
+                <div class="field">
+                    <label>Job Function</label>
+                    <select formControlName="jobFunction" class="ui search dropdown">
+                        <option value=""></option>
+                        <option value="AF">sfhkjs</option>
+                        <option value="AX">iud</option>
+                        <option value="AL">iouhj</option>
+                        <option value="DZ">wety</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Department</label>
+                    <select formControlName="department" class="ui search dropdown">
+                        <option value=""></option>
+                        <option value="AF">ui</option>
+                        <option value="AX">hufhkj</option>
+                        <option value="AL">uhyjfynk</option>
+                        <option value="DZ">tybtd</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class = "two fields">
+                <div class = "field">
+                    <label for = "work-phone">Work Phone</label>
+                    <input formControlName="workPhone" type = "text" id = "work-phone">
+                </div>
+                <div class = "field">
+                    <label for = "email">Email</label>
+                    <input formControlName="accEmail" type = "text" id = "email">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <!-- End of Account Contacts -->
+
+    <!-- Start of Account Contacts Business
+
+    <div class="ui form">
+        <div class="ui raised segment">
+            <a class = "ui red ribbon label">Contact Business</a>
+
+            <div class = "two fields">
+                <div class = "field">
+                    <label for = "first-name">First Name</label>
+                    <input formControlName="firstName" type = "text" id = "first-name">
+                </div>
+                <div class = "field">
+                    <label for = "last-name">Last Name</label>
+                    <input formControlName="lastName" type = "text" id = "last-name">
+                </div>
+            </div>
+
+            <div class="field">
+                <label for = "acc-title">Title</label>
+                <input formControlName="title" type = "text" id = "acc-title">
+            </div>
+
+            <div class="two fields">
+                <div class="field">
+                    <label>Job Function</label>
+                    <select formControlName="jobFunction" class="ui search dropdown">
+                        <option value=""></option>
+                        <option value="AF">sfhkjs</option>
+                        <option value="AX">iud</option>
+                        <option value="AL">iouhj</option>
+                        <option value="DZ">wety</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Department</label>
+                    <select formControlName="department" class="ui search dropdown">
+                        <option value=""></option>
+                        <option value="AF">ui</option>
+                        <option value="AX">hufhkj</option>
+                        <option value="AL">uhyjfynk</option>
+                        <option value="DZ">tybtd</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class = "two fields">
+                <div class = "field">
+                    <label for = "work-phone">Work Phone</label>
+                    <input formControlName="workPhone" type = "text" id = "work-phone">
+                </div>
+                <div class = "field">
+                    <label for = "email">Email</label>
+                    <input formControlName="accEmail" type = "text" id = "email">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- End of Account business -->
+
+    <!-- Start of Account Agents -->
+
+    <div formGroupName="accAgents">
+    <div class="ui form">
+        <div class="ui raised segment">
+            <a class="ui red ribbon label">Agents</a>
+            <div class="field">
+                <label>Initial Sales Rep</label>
+                <select formControlName="initialSalesRep" class="ui search dropdown">
+                    <option value=""></option>
+                    <option value="AF">Tracy</option>
+                    <option value="AX">Åland </option>
+                    <option value="AL">Varsha</option>
+                    <option value="DZ">Trudy</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Current Owner</label>
+                <select formControlName="currentOwner" class="ui search dropdown">
+                    <option value=""></option>
+                    <option value="AF">Chan</option>
+                    <option value="AX">MAdhu</option>
+                    <option value="AL">Alko</option>
+                    <option value="DZ">Algae</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>CSM</label>
+                <select formControlName="csm" class="ui search dropdown">
+                    <option value=""></option>
+                    <option value="AF">vgh</option>
+                    <option value="AX">huewik</option>
+                    <option value="AL">iopej</option>
+                    <option value="DZ">dfejwyd</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Sales Engineer</label>
+                <select formControlName="salesEngineer" class="ui search dropdown">
+                    <option value=""></option>
+                    <option value="AF">sfhkjs</option>
+                    <option value="AX">iud</option>
+                    <option value="AL">iouhj</option>
+                    <option value="DZ">wety</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Sales Access</label>
+                <select formControlName="salesAccess" class="ui search dropdown">
+                    <option value=""></option>
+                    <option value="AF">ui</option>
+                    <option value="AX">hufhkj</option>
+                    <option value="AL">uhyjfynk</option>
+                    <option value="DZ">tybtd</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Collector</label>
+                <select formControlName="collector" class="ui search dropdown">
+                    <option value=""></option>
+                    <option value="AF">kjwdkjm</option>
+                    <option value="AX">fvdns</option>
+                    <option value="AL">ioju</option>
+                    <option value="DZ">wetfwd</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- End of accounts agents -->
+
+    <br>
+<br>
+
+<div align="center">
+    <div class="ui buttons">
+        <button class="ui button">Cancel</button>
+        <div class="or"></div>
+        <button class="ui positive button" type="submit" value="Save">Save</button>
+    </div>
+</div>
+
+</form>
