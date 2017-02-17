@@ -5,7 +5,7 @@ import { OrganizationComponent } from './organization/organization.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ViewOrganizationComponent } from './organization/view-organization/view-organization.component';
 import { OrganizationRoutes} from "./organization/organization.routing";
-import {AccountRoutes} from "./accounts/account.routing";
+import { AccountRoutes } from "./accounts/account.routing";
 import {AccountsComponent} from "./accounts/accounts.component";
 
 const appRoutes=[
@@ -18,7 +18,7 @@ const appRoutes=[
     component : OrdercountComponent
   },
   {
-    path : 'accounts/:id',
+    path : 'accounts',
     component : AccountsComponent,
     children : AccountRoutes
   },
