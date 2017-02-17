@@ -1,8 +1,12 @@
+import {ViewAccountsComponent} from "./view-accounts/view-accounts.component";
 import {AccountNewComponent} from "./account-new/account-new.component";
-import {AccountsComponent} from "./accounts.component";
 export let AccountRoutes = [
     {
-        path: 'new',
-        component: AccountNewComponent
+      path : '',
+        component : ViewAccountsComponent
+    },
+    {
+        path : 'new/:orgID',
+        component : AccountNewComponent
     }
-]
+];
