@@ -1,1 +1,290 @@
-<app-account-view-activity-notes></app-account-view-activity-notes>
+
+<!---------------------------------------Address Modal-------------------------------------------->
+<div class = "ui modal">
+<form [formGroup] = "accountEditAddressFormGroup" (ngSubmit)="saveAccountAddress($event)">
+  <div class="ui form">
+    <div class="ui raised segment">
+      <a class = "ui red ribbon label">Edit Address</a>
+      <div class = "two fields">
+        <div class = "field">
+          <label for = "acc-street1">Street1</label>
+          <input formControlName="street1" type = "text" id = "acc-street1">
+        </div>
+        <div class = "field">
+          <label for = "acc-street2">Street2</label>
+          <input formControlName="street2" type = "text" id = "acc-street2">
+        </div>
+      </div>
+      <div class = "two fields">
+        <div class = "field">
+          <label for = "acc-city">City</label>
+          <input formControlName="city" type = "text" id = "acc-city">
+        </div>
+        <div class = "field">
+          <label>State</label>
+          <select class="ui search dropdown">
+            <option value="">Select State</option>
+            <option value="AF">TamilNadu</option>
+            <option value="AX">Karnataka</option>
+            <option value="AL">Gujurat</option>
+            <option value="DZ">Nagaland</option>
+          </select>
+        </div>
+      </div>
+      <div class = "two fields">
+        <div class = "field">
+          <label>Country</label>
+          <select class="ui search dropdown">
+            <option value="">Select Country</option>
+            <option value="AF">Afghanistan</option>
+            <option value="AX">Åland Islands</option>
+            <option value="AL">Albania</option>
+            <option value="DZ">Algeria</option>
+          </select>
+        </div>
+        <div class = "field">
+          <label for = "acc-zip">Zip Postal Code</label>
+          <input formControlName="zip" type = "text" id = "acc-zip">
+        </div>
+      </div>
+      <div class = "two fields">
+        <div class = "field">
+          <label for = "acc-phone">Phone</label>
+          <input formControlName="phone" type = "text" id = "acc-phone">
+        </div>
+        <div class = "field">
+          <label for = "acc-fax">Fax</label>
+          <input formControlName="fax" type = "text" id = "acc-fax">
+        </div>
+      </div>
+    </div>
+
+
+    <div align = "center">
+      <button type = "submit" class = "ui positive button">Save Updates</button>
+    </div>
+
+  </div>
+</form>
+</div>
+<!--------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------Split Criteria---------------------------------------------
+
+<div class = "ui modal">
+<form>
+  <div class="field">
+    <label for="split-group">Split Criteria Group</label>
+    <input formControlName="splitGroup" type="text" id="split-group">
+  </div>
+  <div align="right">
+    <button type="button" class="ui button">Save</button>
+  </div>
+</form>
+
+<div align="left">
+  <button type="button" class="ui button">Delete</button>
+</div>
+<div align="right">
+  <button type="button" (click)="setNewSplitCriteria()" class="ui button">New</button>
+</div>
+
+<div id="user-head" class="ui grid">
+  <div class="three wide column">Split Criteria</div>
+  <div class="four wide column" >Description</div>
+  <div class="three wide column">Split Bill No.</div>
+  <div class="three wide column">ID Name</div>
+</div>
+
+<div class = "ui grid" *ngFor="let sdata of data.manageSplitCriteria">
+  <div class="three wide column">{{sdata.splitCriteria}}</div>
+  <div class="four wide column" >{{sdata.description}}</div>
+  <div class="three wide column">{{sdata.splitBillfromAccount}}</div>
+  <div class="three wide column">{{sdata.accDetails.orgName}}</div>
+</div>
+
+
+<div *ngIf="displayNewSplitCriteria">
+  <div class = "ui form">
+    <form>
+  <div class="field">
+    <label for="split-criteria">PO Numbers</label>
+    <input formControlName="splitCriteria" type="text" id="split-criteria">
+  </div>
+  <div class="field">
+    <label for="split-bill">Description</label>
+    <input formControlName="splitBill" type="text" id="split-bill">
+    <i class="search icon"></i>
+    <button type="button" class="ui button">Clear</button>
+  </div>
+  <div class="field">
+    <label for="description">Description</label>
+    <input formControlName="accDescription" type="text" id="description">
+  </div>
+  <div align="right">
+    <div class="ui buttons">
+      <button type="button" class="ui button">Cancel</button>
+      <button class="ui positive button" type="submit" value="Save">Save</button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+</div>
+-->
+
+
+<!------------------------------------------Account Details------------------------------------------->
+<form [formGroup]= "accountDetailsFormGroup" (ngSubmit)="saveAccountDetails($event)">
+<div class="ui form">
+  <div class="ui  raised segment">
+    <a class = "ui red ribbon label">Account Details</a>
+    <div class="two fields">
+      <div class="field">
+        <label for="acc-name">Account Name</label>
+        <input formControlName="accName" type="text" id="acc-name">
+      </div>
+      <div class="field">
+        <label >Organization Name</label>
+        <p>tre234</p>
+      </div>
+    </div>
+    <div class="two fields">
+      <div class="field">
+        <label>Billing Address</label>
+        <a (click)="viewAddressModal()">
+          {{data.accAddress[0].street1}} <br> {{data.accAddress[0].street2}} <br> {{data.accAddress[0].city}} <br> {{data.accAddress[0].zip}}</a>
+      </div>
+      <div class="field">
+        <label>Billing Method</label>
+        <select formControlName="billingMethod" class="ui search dropdown">
+          <option value=""></option>
+          <option value="AF">Invoice</option>
+          <option value="AX">ABC</option>
+          <option value="AL">iouhj</option>
+          <option value="DZ">wety</option>
+        </select>
+      </div>
+    </div>
+    <div class="two fields">
+      <div class="field">
+        <label>Account Status</label>
+        <p>hdsjfjifu</p>
+      </div>
+      <div class="field">
+        <label>Account Type</label>
+        <p>WebEx Direct</p>
+      </div>
+    </div>
+    <div class="three fields">
+      <div class="field">
+        <label for="bill-day">Bill Day</label>
+        <input formControlName="billDay" type="text" id="bill-day">
+      </div>
+      <div class="field">
+        <label>Currency</label>
+        <p>rukjuh</p>
+      </div>
+      <div class="field">
+        <label>MRR</label>
+        <p>gjysh</p>
+      </div>
+    </div>
+    <div class="three fields">
+      <div class="field">
+        <label>Billing Frequency</label>
+        <select formControlName="billingFrequency" class="ui search dropdown">
+          <option value=""></option>
+          <option value="AF">Invoice</option>
+          <option value="AX">ABC</option>
+          <option value="AL">iouhj</option>
+          <option value="DZ">wety</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="payment-method">Payment Method</label>
+        <input formControlName="paymentMethod" type="text" id="payment-method">
+      </div>
+      <div class="field">
+        <label>Payment Term</label>
+        <select formControlName="paymentTerm" class="ui search dropdown">
+          <option value=""></option>
+          <option value="AF">Monthy</option>
+          <option value="AX">Yearly</option>
+          <option value="AL">iouhj</option>
+          <option value="DZ">wety</option>
+        </select>
+      </div>
+    </div>
+    <div class="two fields">
+      <div class="field">
+        <label for="associated-account">Associated Account</label>
+        <input type="text" id="associated-account">
+      </div>
+      <div class="field">
+        <label for="active-on">Active On</label>
+        <input formControlName="activeOn" type="text" id="active-on">
+      </div>
+    </div>
+    <div class="two fields">
+      <div class="field">
+        <label for="customer-interaction">Customer Interaction</label>
+        <input type="text" id="customer-interaction">
+      </div>
+      <div class = "field">
+        <label>Link this account to CCA Reassignable Ports Account?</label>
+        <div class="two fields">
+          <div class="field"> <input type="radio" value="Yes" name="link-id" value = "true" >Yes</div>
+          <div class="field"> <input type="radio" value="No" name="link-id" value = "false">No</div>
+        </div>
+      </div>
+    </div>
+    <div align="right">
+      <button class="ui positive button" type="submit" value="Save">Save</button>
+    </div>
+  </div>
+</div>
+</form>
+
+<!-- Account Tools ---------------------------------------------------------------------->
+
+<div class="ui form">
+  <div class="ui raised segment">
+    <a class = "ui red ribbon label">Account Tools</a>
+    <div class="three fields">
+      <div class="field">
+        <p>Activity Notes</p>
+        <button type="button" class="mini ui button">View</button>
+      </div>
+      <div class="field">
+        <p>PO Numbers</p>
+        <button type="button" class="mini ui  button">View</button>
+      </div>
+      <div class="field">
+        <p>Split Criteria</p>
+        <button type="button" class="mini ui  button">View</button>
+      </div>
+    </div>
+    <div class="three fields">
+      <div class="field">
+        <p>Invoice Definition</p>
+        <button type="button" class="mini ui  button">View</button>
+      </div>
+      <div class="field">
+        <p>Financials</p>
+        <button type="button" class="mini ui  button">View</button>
+      </div>
+      <div class="field">
+        <p>Tax ID</p>
+        <button type="button" class="mini ui  button">View</button>
+      </div>
+    </div>
+    <div class="field">
+      <p>Cancelled Services</p>
+      <button type="button" class="mini ui  button">View</button>
+    </div>
+  </div>
+</div>
+
+
+
