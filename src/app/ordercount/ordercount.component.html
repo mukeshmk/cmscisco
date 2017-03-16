@@ -1,56 +1,38 @@
-<p>Orders Count</p>
-<div class="ui statistics">
-    <div class="statistic  ">
-      <div class="number1">
-        {{data.newOrders}}
-      </div>
-      <div class="font1">
-        Total Status<br> New Orders
-      </div>
-      </div>
-    <div class="statistic">
-      <div class="number1">
-        {{data.pendingCorrections}}
-        </div>
-      <div class="font1">
-        Total Status Pending<br> Correction Orders
-        </div>
-      </div>
-    <div class="statistic ">
-      <div class="number1">
-        {{data.outStanding}}
-      </div>
-      <div class="font1">
-        Total Outstanding
-      </div>
+<div class="ui grid">
+  <div class="four wide column">
+    <div class="ui vertical fluid tabular menu">
+      <a class="item" (click)="newOrdersClicked()">
+        New order
+      </a>
+      <a class="item" (click)="totalStatusClicked()">
+        Total Status
+      </a>
+      <a class="item" (click) = "totalProcessClicked()">
+        Total Processed
+      </a>
+      <a class = "item" (click) = "totalAcceptedClicked()">
+        Accepted Orders
+      </a>
     </div>
   </div>
-
-
-
-<div class="ui statistics">
-  <div class="statistic">
-    <div class="number1">
-      {{data.accepted}}
-    </div>
-    <div class="font1">
-      Total Status<br>Accepted Orders
+  <div *ngIf="newOrdersChecked" class="twelve wide stretched column">
+    <div class="ui segment">
+      {{data.newOrders}}
     </div>
   </div>
-  <div class="statistic">
-    <div class="number1">
-      {{data.effective}}
-    </div>
-    <div class="font1">
-      Total Status <br>Pending Effective Orders
-    </div>
-  </div>
-  <div class="statistic">
-    <div class="number1">
+  <div *ngIf="totalProcessedOrdersChecked" class="twelve wide stretched column">
+    <div class="ui segment">
       {{data.processed}}
     </div>
-    <div class="font1">
-      Total Proccessed
+  </div>
+  <div *ngIf="acceptedOrdersChecked" class="twelve wide stretched column">
+    <div class="ui segment">
+      {{data.accepted}}
+    </div>
+  </div>
+  <div *ngIf="totalEffectiveOrdersChecked" class="twelve wide stretched column">
+    <div class="ui segment">
+      {{data.effective}}
     </div>
   </div>
 </div>

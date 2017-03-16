@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
@@ -24,6 +24,8 @@ import { AccountAddressEditComponent } from './accounts/account-edit/account-add
 import { AccountPaymentDetailComponent } from './accounts/account-edit/account-payment-detail/account-payment-detail.component';
 import { AccountViewActivityNotesComponent } from './accounts/account-edit/account-view-activity-notes/account-view-activity-notes.component';
 import { ViewAccountsComponent } from './accounts/view-accounts/view-accounts.component';
+import "materialize-css";
+import { MaterializeDirective } from 'angular2-materialize';
 
 
 @NgModule({
@@ -46,7 +48,8 @@ import { ViewAccountsComponent } from './accounts/view-accounts/view-accounts.co
     AccountAddressEditComponent,
     AccountPaymentDetailComponent,
     AccountViewActivityNotesComponent,
-    ViewAccountsComponent
+    ViewAccountsComponent,
+    MaterializeDirective
   ],
   imports: [
     BrowserModule,
@@ -58,6 +61,6 @@ import { ViewAccountsComponent } from './accounts/view-accounts/view-accounts.co
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -3,7 +3,6 @@ import {ActivatedRoute} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {account} from "../accounts.interface";
 import {AccountsService} from "../accounts.service";
-import {accountData} from "../accounts.array";
 @Component({
   selector: 'app-account-new',
   templateUrl: './account-new.component.html',
@@ -27,6 +26,7 @@ export class AccountNewComponent implements OnInit {
   ngOnInit() {
 
     this.accountsnewForm = this._fb.group({
+      orgID : [this.organizationID,Validators.required],
       accDetails : this._fb.group({
         orgName : ['',Validators.required],
         accName : ['',Validators.required],
@@ -73,7 +73,8 @@ export class AccountNewComponent implements OnInit {
   }
 
   addAccounts(data){
-    this.data = data;
-    this.__accountservice.addAccounts(this.accountsnewForm.value);
+    this.data = this.accountsnewForm.value;
+    data.orgID = this.organizationID;
+    this.__accountservice.addAccounts(data);
   }
 }

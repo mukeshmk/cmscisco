@@ -2,9 +2,15 @@ export interface account{
     orgID : number;
     accDetails : accountDetails;
     accAddress : Array<accountAddress>;
-    accContacts : accountContacts;
-    accAgents : accountAgents;
+    accContacts : Array<accountContacts>;
+    accAgents : Array<accountAgents>;
+    paymentDetails : accountPaymentDetail;
+    activityNotes   : Array<accountActivityNotes>;
+    managePoNumbers : Array<accountManagePoNumbers>;
+    manageInvoiceDefinition : accountManageInvoiceDefinition;
+    manageSplitCriteria : Array<accountManageSplitCriteria>;
 }
+
 export interface accountDetails{
         orgName: string;
         accName: string;
@@ -50,3 +56,33 @@ export interface accountAgents{
     collector : string;
 }
 
+export interface accountPaymentDetail{
+    paymentMethod : string;
+    creditCard : string;
+    creditCardNumber : string;
+    expirationDate : string;
+    nameInCard : string;
+    cardSecurityCode : string;
+}
+
+export interface accountActivityNotes{
+    noteType : string;
+    activity : string;
+    subject : string;
+    comments : string;
+    distributionList : string;
+}
+export interface accountManagePoNumbers{
+    poNumber : string;
+    description : string;
+}
+
+export interface accountManageSplitCriteria{
+    splitCriteria : string;
+    splitBillfromAccount : string;
+    description : string;
+}
+
+export interface accountManageInvoiceDefinition {
+    name : string;
+}

@@ -12,21 +12,46 @@ import {ordercountData} from "./ordercountData.array";
 })
 export class OrdercountComponent implements OnInit {
 
- // public countJson: any[];
- // public resultCount: any[];
-
-  //generateArray(obj){
-  //  return Object.keys(obj).map( (key) => {return obj[key]});
- // }
   data : ordercount;
+  totalProcessedOrdersChecked : boolean;
+  newOrdersChecked : boolean;
+  totalEffectiveOrdersChecked : boolean;
+  acceptedOrdersChecked : boolean;
 
   constructor() {
-  //  console.log("json-server called");
-  //  http.get('http://localhost:3004/users')
-  //    .map(response => response.json())
-  //    .subscribe(result => this.countJson =result);
   }
 
+  newOrdersClicked(){
+
+    this.totalProcessedOrdersChecked = false;
+    this.newOrdersChecked = true;
+    this.totalEffectiveOrdersChecked = false;
+    this.acceptedOrdersChecked = false;
+
+  }
+
+  totalStatusClicked(){
+
+    this.totalProcessedOrdersChecked = false;
+    this.newOrdersChecked = false;
+    this.totalEffectiveOrdersChecked = true;
+    this.acceptedOrdersChecked = false;
+  }
+
+  totalProcessClicked(){
+
+    this.totalProcessedOrdersChecked = true;
+    this.newOrdersChecked = false;
+    this.totalEffectiveOrdersChecked = false;
+    this.acceptedOrdersChecked = false;
+  }
+  totalAcceptedClicked(){
+
+    this.totalProcessedOrdersChecked = false;
+    this.newOrdersChecked = false;
+    this.totalEffectiveOrdersChecked = false;
+    this.acceptedOrdersChecked = true;
+  }
   ngOnInit() {
     this.data = ordercountData[0];
   }

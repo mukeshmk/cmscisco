@@ -20,3 +20,7 @@
 .selectedIcon{
   background-color: red;
 }
+
+.bgn-orange:focus{
+  background-color : darkorange;
+}
