@@ -22,7 +22,6 @@ export class OrdercountComponent implements OnInit {
   }
 
   newOrdersClicked(){
-
     this.totalProcessedOrdersChecked = false;
     this.newOrdersChecked = true;
     this.totalEffectiveOrdersChecked = false;
