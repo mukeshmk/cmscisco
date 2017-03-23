@@ -1,0 +1,16 @@
+<table class="ui celled table">
+  <app-organization-header (fieldSelected)="sortData($event)" ></app-organization-header>
+  <app-org-data-row *ngFor="let org of orgData" [data]="org" (click)="clickRow(org)" [ngClass]="{'selected' : org.orgID == selectedRow.orgID}"></app-org-data-row>
+</table>
+
+
+<br><br>
+
+<div align="center">
+  <div class="ui large buttons">
+    <button class="ui secondary button" [routerLink]="['/organization/edit', selectedRow.orgID]" [disabled]="selectedRow.orgID == undefined">Edit</button>
+    <div class="or"></div>
+    <button class="ui primary button" [routerLink]="['/organization/new']">New</button>
+  </div>
+
+</div>

@@ -1,0 +1,40 @@
+<div class="ui modal">
+  <div class="header">Payment Detail</div>
+  <div class="content">
+    <label>Payment Method</label>
+    <select formControlName="paymentMethod" class="ui search dropdown">
+      <option value="">Select payment method</option>
+      <option value="c">Cash</option>
+      <option value="cc">Credit Card</option>
+      <option value="dc">Debit Card</option>
+    </select>
+    <br>
+    <div>
+      <h1>Credit Card Details</h1>
+      <div class="field">
+        <label>Credit Card</label>
+        <select formControlName="creditCard" class="ui search dropdown">
+          <option value="">Select payment method</option>
+          <option value="v">VISA</option>
+          <option value="m">Master</option>
+        </select>
+      </div>
+      <div class = "field">
+        <label for = "card-number">Credit Card Number</label>
+        <input formControlName="CardNumber" type = "number" id = "card-number">
+      </div>
+      <div class = "field">
+        <label for = "card-name">Name on the Credit Card </label>
+        <input formControlName="CardName" type = "text" id = "card-name">
+      </div>
+      <div class = "field">
+        <label for = "card-cvv">Card Security Code</label>
+        <input formControlName="cardCvv" type = "number" id = "card-cvv">
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui cancel button">Cancel</div>
+    <div class="ui button">Save</div>
+  </div>
+</div>

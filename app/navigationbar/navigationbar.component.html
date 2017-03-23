@@ -1,0 +1,64 @@
+<div>
+  <div class="ui top attached demo menu">
+    <a class="item" style="background-color: orangered" (click)="invertedSidebar.show({transition: 'overlay'})">
+      <i class="sidebar icon"></i>
+      CMS
+    </a>
+    <div class="right menu">
+      <div class="item">
+        <div class="ui icon input">
+          <input placeholder="Search..." type="text">
+          <i class="search link icon"></i>
+        </div>
+      </div>
+      <a class="ui item">
+        {{'User Name '}}
+        <i class="spy icon"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="ui bottom attached segment pushable">
+    <sm-sidebar class="ui inverted labeled icon left inline vertical sidebar menu" style="" #invertedSidebar>
+      <a class="item" style="background-color: orangered">
+        CMS
+      </a>
+      <a class="item" routerLink="/dashboard">
+        <i class="dashboard icon"></i>
+        Home
+      </a>
+      <a class="item" routerLink="/vieworganization">
+        <i class="user icon"></i>
+        View Organization
+      </a>
+      <a class="item" routerLink="/organization">
+        <i class="child icon"></i>
+        Organization
+      </a>
+      <a class="item" routerLink="/accounts">
+        <i class="archive icon"></i>
+        Accounts
+      </a>
+      <a class="item" routerLink="/orders">
+        <i class="users icon"></i>
+        Orders
+      </a>
+      <a class="item" routerLink="/CMTAlignment">
+        <i class="travel icon"></i>
+        CMTAlignment
+      </a>
+      <a class="item">
+        <i class="help icon"></i>
+        Help
+      </a>
+      <a class="item">
+        <i class="warning sign icon"></i>
+        Report
+      </a>
+      <a class = "item" routerLink = "/dashboard">
+        <i class = "warning sign icon"></i>
+        Extra!
+      </a>
+    </sm-sidebar>
+  </div>
+</div>
