@@ -1,7 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {Profile} from "./profile.interface";
 import {ProfileService} from "./profile.service";
-import {FormBuilder, Validators} from "@angular/forms";
+import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
