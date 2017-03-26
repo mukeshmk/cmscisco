@@ -1,6 +1,6 @@
 import {
   orders, orderContractTerm, orderContact, orderProvision, orderAccountProfile,
-  orderNewOrder, orderAgent, orderPaymentDetail
+  orderNewOrder, orderAgent, orderPaymentDetail, orderContractImage, orderPoNumber, orderCatalog, orderParameter
 } from "./orders.interface";
 
 export let orderContractTerms : Array<orderContractTerm> = [
@@ -24,6 +24,123 @@ export let orderContractTerms : Array<orderContractTerm> = [
     expectedStartDate : '1-1-07,',
     purpose : 'To find and destroy the horcrux',
     renewalContract : '2-11-10'
+  }
+];
+
+export let orderCatalogData : Array<orderCatalog> = [
+  {
+    currentSelectedOffer : 'MP Ports + Overage'
+  },
+  {
+    currentSelectedOffer : 'MPC'
+  },
+  {
+    currentSelectedOffer : 'MPC'
+  }
+];
+
+export let orderParameterData : Array<orderParameter> = [
+  {
+    offerCheckBox  : true,
+    offerInitialTermQty : 45,
+    offerRenewalTermQty : 7687,
+    offerPrepayTermQty : '1(Monthly)',
+    numberOfFreeMonthsQty : 67,
+    offerName : 'MP +Ports',
+    serviceSetupCheckBox : true,
+    brandingCheckBox : true,
+    brandingFeeCheckBox : false,
+    brandingFeeEstPrice : 199,
+    primaryLanguageCheckBox : true,
+    primaryLanguage : 'English',
+    meetingAssistCheckBox : true,
+    meetingAssistUnitPrice : '$1.00',
+    additionalHoursCheckBox : true,
+    additionalHoursUnitPrice : '$2.24',
+    recordingCheckBox : true,
+    recordingUnitPrice : '$6.90',
+    moCommittedType : 'None',
+    moCommitmentQty : '$5.90',
+    moCommitmentUnitPrice : '$6.90',
+    opChangeUSDCheckBox : true,
+    psoUSDCheckBox : true,
+    additionalStorageCheckBox : false,
+    nbrStorageCheckBox : false,
+    includedFreeStorageQty : '$7.9',
+    committedMonthlyStorageQty : '$9.0',
+    committedMonthlyStorageUnitPrice : '$6.90',
+    overageCheckBox : true,
+    overageUnitPrice : '$5.0',
+    reportingUSDCheckBox : true,
+    optionUSDCheckBox : true
+  },
+  {
+    offerCheckBox  : true,
+    offerInitialTermQty : 45,
+    offerRenewalTermQty : 7687,
+    offerPrepayTermQty : '2(Yearly)',
+    numberOfFreeMonthsQty : 67,
+    offerName : 'MP +Ports',
+    serviceSetupCheckBox : true,
+    brandingCheckBox : true,
+    brandingFeeCheckBox : false,
+    brandingFeeEstPrice : 199,
+    primaryLanguageCheckBox : true,
+    primaryLanguage : 'English',
+    meetingAssistCheckBox : true,
+    meetingAssistUnitPrice : '$1.00',
+    additionalHoursCheckBox : true,
+    additionalHoursUnitPrice : '$2.24',
+    recordingCheckBox : true,
+    recordingUnitPrice : '$6.90',
+    moCommittedType : 'None',
+    moCommitmentQty : '$5.90',
+    moCommitmentUnitPrice : '$6.90',
+    opChangeUSDCheckBox : true,
+    psoUSDCheckBox : true,
+    additionalStorageCheckBox : false,
+    nbrStorageCheckBox : false,
+    includedFreeStorageQty : '$7.9',
+    committedMonthlyStorageQty : '$9.0',
+    committedMonthlyStorageUnitPrice : '$6.90',
+    overageCheckBox : true,
+    overageUnitPrice : '$6.0',
+    reportingUSDCheckBox : true,
+    optionUSDCheckBox : true
+  },
+  {
+    offerCheckBox  : true,
+    offerInitialTermQty : 45,
+    offerRenewalTermQty : 7687,
+    offerPrepayTermQty : '1(Monthly)',
+    numberOfFreeMonthsQty : 67,
+    offerName : 'MP +Ports',
+    serviceSetupCheckBox : true,
+    brandingCheckBox : true,
+    brandingFeeCheckBox : false,
+    brandingFeeEstPrice : 199,
+    primaryLanguageCheckBox : true,
+    primaryLanguage : 'English',
+    meetingAssistCheckBox : true,
+    meetingAssistUnitPrice : '$1.00',
+    additionalHoursCheckBox : true,
+    additionalHoursUnitPrice : '$2.24',
+    recordingCheckBox : true,
+    recordingUnitPrice : '$6.90',
+    moCommittedType : 'None',
+    moCommitmentQty : '$5.90',
+    moCommitmentUnitPrice : '$6.90',
+    opChangeUSDCheckBox : true,
+    psoUSDCheckBox : true,
+    additionalStorageCheckBox : false,
+    nbrStorageCheckBox : false,
+    includedFreeStorageQty : '$7.9',
+    committedMonthlyStorageQty : '$9.0',
+    committedMonthlyStorageUnitPrice : '$6.90',
+    overageCheckBox : true,
+    overageUnitPrice : '$2.0',
+    reportingUSDCheckBox : true,
+    optionUSDCheckBox : true
   }
 ];
 
@@ -708,40 +825,118 @@ export let orderPaymentDetailData : Array<orderPaymentDetail> = [
   }
 ];
 
+export let orderContractImageData : Array<orderContractImage> = [
+  {
+    serviceConfiguration : 'Business',
+    files : ['abc.jpg','bcd.jpg'],
+    imageName : 'ABC',
+    imageDescription : 'Business Profile'
+  },
+  {
+    serviceConfiguration : 'Business',
+    files : ['abc.jpg','bcd.jpg'],
+    imageName : 'DEF',
+    imageDescription : 'Business Profile'
+  },
+  {
+    serviceConfiguration : 'Business',
+    files : ['abc.jpg','bcd.jpg'],
+    imageName : 'GHI',
+    imageDescription : 'Business Profile'
+  }
+];
+
+export let orderPoNumberData : Array<Array<orderPoNumber>> = [
+  [
+    {
+      poNumber : 1,
+      description :'hogwarts'
+    },
+    {
+      poNumber : 2,
+      description : 'is'
+    },
+    {
+      poNumber : 3,
+      description : 'hidden'
+    }
+  ],
+  [
+    {
+      poNumber : 4,
+      description :'from'
+    },
+    {
+      poNumber : 5,
+      description : 'muggle'
+    },
+    {
+      poNumber : 6,
+      description : 'sight'
+    }
+  ],
+  [
+    {
+      poNumber : 7,
+      description :'shh..'
+    },
+    {
+      poNumber : 9,
+      description : 'its'
+    },
+    {
+      poNumber : 8,
+      description : 'secret'
+    }
+  ]
+];
+
 
 
 export let ordersData : Array<orders> = [
   {
-    ordNumber : 1760,
+    ordID : 1760,
     orgID : 1303,
     ordContractTerm : orderContractTerms[0],
+    ordCatalog : orderCatalogData[0],
+    ordParameter :orderParameterData[0],
     ordContact : orderContactData[0],
     ordAgent : orderAgentData[0],
     ordProvision : orderProvisionData[0],
     ordAccountProfile : orderAccountProfileData[0],
     ordNewOrder : orderNewOrderData[0],
-    ordPaymentDetail : orderPaymentDetailData[0]
+    ordPaymentDetail : orderPaymentDetailData[0],
+    ordContractImage : orderContractImageData[0],
+    ordPoNumber : orderPoNumberData[0]
   },
   {
-    ordNumber : 1761,
+    ordID : 1761,
     orgID : 1301,
     ordContractTerm : orderContractTerms[1],
+    ordParameter : orderParameterData[1],
+    ordCatalog : orderCatalogData[1],
     ordContact : orderContactData[1],
     ordAgent : orderAgentData[1],
     ordProvision : orderProvisionData[1],
     ordAccountProfile : orderAccountProfileData[1],
     ordNewOrder : orderNewOrderData[1],
-    ordPaymentDetail : orderPaymentDetailData[1]
+    ordPaymentDetail : orderPaymentDetailData[1],
+    ordContractImage : orderContractImageData[1],
+    ordPoNumber : orderPoNumberData[1]
   },
   {
-    ordNumber : 1762,
+    ordID : 1762,
     orgID : 1304,
     ordContractTerm : orderContractTerms[2],
+    ordParameter : orderParameterData[2],
+    ordCatalog : orderCatalogData[2],
     ordContact : orderContactData[2],
     ordAgent : orderAgentData[2],
     ordProvision : orderProvisionData[2],
     ordAccountProfile : orderAccountProfileData[2],
     ordNewOrder : orderNewOrderData[2],
-    ordPaymentDetail : orderPaymentDetailData[2]
+    ordPaymentDetail : orderPaymentDetailData[2],
+    ordContractImage : orderContractImageData[2],
+    ordPoNumber : orderPoNumberData[2]
   }
 ];

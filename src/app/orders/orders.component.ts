@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {
   orders, orderContractTerm, orderContact, orderProvision, orderAccountProfile,
-  orderNewOrder, orderAgent, orderPaymentDetail
+  orderNewOrder, orderAgent, orderPaymentDetail, orderContractImage, orderParameter
 } from "./orders.interface";
 import {OrdersService} from "./orders.service";
 import {ActivatedRoute} from "@angular/router";
@@ -17,10 +17,11 @@ declare var jQuery : any;
 })
 export class OrdersComponent implements OnInit {
 
-  organizationID : number;
+  orderID : number;
   data : orders;
   //contactID :   number;
   //x : number;
+  ordParameterData : orderParameter;
   ordProvisionData : orderProvision;
   ordContractData : orderContractTerm;
   ordAccountProfileData : orderAccountProfile;
@@ -28,36 +29,51 @@ export class OrdersComponent implements OnInit {
   ordAgentData : orderAgent;
   ordPaymentDetailData : orderPaymentDetail;
   ordNewOrderData : orderNewOrder;
+  ordContractImageData : orderContractImage;
+  ordImageFiles : Array<string>;
   orderNewContractFormGroup : FormGroup;
+  orderNewOrderCatalogFormGroup : FormGroup;
   orderNewContactFormGroup : FormGroup;
   orderNewAgentFormGroup : FormGroup;
+  orderNewParameterFormGroup : FormGroup;
   orderNewProvisionFormGroup : FormGroup;
   orderNewAccountProfileFormGroup : FormGroup;
   orderEditAccountProfileFormGroup :FormGroup;
   orderNewOrderFormGroup : FormGroup;
   orderSummaryFormGroup : FormGroup;
   orderPaymentDetailFormGroup : FormGroup;
+  orderContractImageFormGroup : FormGroup;
+  orderPoNumberFormGroup : FormGroup;
   orderNewContractFormVariable : boolean;
+  orderNewCatalogFormVariable : boolean;
+  orderSkuList : boolean;
   orderNewProvisionFormVariable : boolean;
+  orderNewParameterFormVariable : boolean;
   orderNewAccountProfileFormVariable : boolean;
   orderNewOrderFormVariable : boolean;
-  orderSummaryFormVariable : boolean
+  orderSummaryFormVariable : boolean;
+  orderManagePoFormVariable : boolean;
+
 
   constructor(private route : ActivatedRoute,public _fb : FormBuilder, public _ordersService : OrdersService) {
     this.route.params.subscribe((params) => {
-      this.organizationID = params['orgID'];
+      this.orderID = params['ordID'];
     });
-    console.log("organization",this.organizationID);
+    console.log("organization",this.orderID);
   }
 
   ngOnInit() {
-    this.data=this._ordersService.getOrdersDataByOrgName(this.organizationID);
+    this.data=this._ordersService.getOrdersDataByOrgName(this.orderID);
     console.log(this.data);
     this.orderNewContractFormVariable = true;
+    this.orderNewCatalogFormVariable = false;
+    this.orderSkuList = false;
+    this.orderNewParameterFormVariable = false;
     this.orderNewProvisionFormVariable = false;
     this.orderNewAccountProfileFormVariable = false;
     this.orderNewOrderFormVariable = false;
     this.orderSummaryFormVariable = false;
+    this.orderManagePoFormVariable = false;
 
 
     this.orderNewContractFormGroup = this._fb.group(
@@ -67,6 +83,49 @@ export class OrdersComponent implements OnInit {
         expectedStartDate : ['',Validators.required],
         purpose : ['',Validators.required],
         renewalContract : ['',Validators.required]
+      }
+    );
+
+    this.orderNewOrderCatalogFormGroup = this._fb.group(
+      {
+        currentSelectedOffer :  ['',Validators.required]
+      }
+    );
+
+    this.orderNewParameterFormGroup = this._fb.group(
+      {
+        offerCheckBox  : ['',Validators.required],
+        offerInitialTermQty : ['',Validators.required],
+        offerRenewalTermQty : ['',Validators.required],
+        offerPrepayTermQty : ['',Validators.required],
+        numberOfFreeMonthsQty : ['',Validators.required],
+        offerName : ['',Validators.required],
+        serviceSetupCheckBox : ['',Validators.required],
+        brandingCheckBox : ['',Validators.required],
+        brandingFeeEstPrice : ['',Validators.required],
+        brandingFeeCheckBox : ['',Validators.required],
+        primaryLanguageCheckBox : ['',Validators.required],
+        primaryLanguage : ['',Validators.required],
+        meetingAssistCheckBox : ['',Validators.required],
+        meetingAssistUnitPrice : ['',Validators.required],
+        additionalHoursCheckBox : ['',Validators.required],
+        additionalHoursUnitPrice : ['',Validators.required],
+        recordingCheckBox : ['',Validators.required],
+        recordingUnitPrice : ['',Validators.required],
+        moCommittedType : ['',Validators.required],
+        moCommitmentQty : ['',Validators.required],
+        moCommitmentUnitPrice : ['',Validators.required],
+        opChangeUSDCheckBox : ['',Validators.required],
+        psoUSDCheckBox : ['',Validators.required],
+        additionalStorageCheckBox : ['',Validators.required],
+        nbrStorageCheckBox : ['',Validators.required],
+        includedFreeStorageQty : ['',Validators.required],
+        committedMonthlyStorageQty : ['',Validators.required],
+        committedMonthlyStorageUnitPrice : ['',Validators.required],
+        overageCheckBox : ['',Validators.required],
+        overageUnitPrice : ['',Validators.required],
+        reportingUSDCheckBox : ['',Validators.required],
+        optionUSDCheckBox : ['',Validators.required]
       }
     );
 
@@ -117,7 +176,7 @@ export class OrdersComponent implements OnInit {
         nameInCard : ['',Validators.required],
         cardSecurityCode : ['',Validators.required],
       }
-    )
+    );
 
     this.orderNewAgentFormGroup = this._fb.group(
       {
@@ -365,20 +424,54 @@ export class OrdersComponent implements OnInit {
       }
     );
 
+    this.orderContractImageFormGroup = this._fb.group(
+      {
+        serviceConfiguration : ['',Validators.required],
+        files : ['',Validators.required],
+        imageName : ['',Validators.required],
+        imageDescription : ['',Validators.required]
+      }
+    );
+
+    this.orderPoNumberFormGroup = this._fb.group(
+      {
+        poNumber : ['',Validators.required],
+        description : ['',Validators.required]
+      }
+    );
+
   }
 
   saveOrderNewContractForm(data){
     this.ordContractData = this.orderNewContractFormGroup.value;
-    this._ordersService.addContractNewTerms(this.ordContractData,this.organizationID);
+    this._ordersService.addContractNewTerms(this.ordContractData,this.orderID);
     console.log(this.ordContractData);
     this.orderNewContractFormVariable = false;
+    this.orderNewCatalogFormVariable = true;
+  }
+
+  saveOrderNewCatalogForm(data){
+    this.orderNewCatalogFormVariable = false;
+    this.orderNewParameterFormVariable = true;
+  }
+
+  viewSkuList(){
+    this.orderSkuList = true;
+    console.log(this.orderSkuList);
+  }
+
+  saveOrderNewParameterForm(data){
+    this.ordParameterData = this.orderNewParameterFormGroup.value;
+    this._ordersService.addNewParameter(this.ordParameterData,this.orderID);
+    console.log(this.ordParameterData);
+    this.orderNewParameterFormVariable = false;
     this.orderNewProvisionFormVariable = true;
   }
 
   saveOrderNewProvisionForm(data){
     this.ordProvisionData = this.orderNewProvisionFormGroup.value;
     console.log(this.ordProvisionData);
-    this._ordersService.addNewProvision(this.ordProvisionData,this.organizationID);
+    this._ordersService.addNewProvision(this.ordProvisionData,this.orderID);
     this.orderNewProvisionFormVariable = false;
     this.orderNewAccountProfileFormVariable = true;
   }
@@ -386,14 +479,14 @@ export class OrdersComponent implements OnInit {
   saveOrderContact(data){
     this.ordContactData = this.orderNewContactFormGroup.value;
     console.log(this.ordContactData);
-    this._ordersService.addNewContact(this.ordContactData,this.organizationID);
+    this._ordersService.addNewContact(this.ordContactData,this.orderID);
     jQuery('#newContactModal').modal('hide');
   }
 
   saveOrderAgent(data){
     this.ordAgentData = this.orderNewAgentFormGroup.value;
     console.log(this.ordAgentData);
-    this._ordersService.addNewAgent(this.ordAgentData,this.organizationID);
+    this._ordersService.addNewAgent(this.ordAgentData,this.orderID);
     jQuery('#newAgentModal').modal('hide');
   }
 
@@ -430,7 +523,7 @@ export class OrdersComponent implements OnInit {
   saveOrderAccountProfile(data){
     this.ordAccountProfileData= this.orderNewAccountProfileFormGroup.value;
     console.log(this.ordAccountProfileData);
-    this._ordersService.addNewAccountProfile(this.ordAccountProfileData,this.organizationID);
+    this._ordersService.addNewAccountProfile(this.ordAccountProfileData,this.orderID);
     this.orderNewAccountProfileFormVariable = false;
     this.orderNewOrderFormVariable = true;
   }
@@ -438,23 +531,73 @@ export class OrdersComponent implements OnInit {
   saveOrderEditAccountProfile(data) {
     this.ordAccountProfileData = this.orderEditAccountProfileFormGroup.value;
     console.log(this.ordAccountProfileData);
-    this._ordersService.addNewAccountProfile(this.ordAccountProfileData, this.organizationID);
+    this._ordersService.addNewAccountProfile(this.ordAccountProfileData, this.orderID);
     jQuery('#editAccountProfile').modal('hide');
   }
 
   saveOrderEditPaymentDetail(data){
     this.ordPaymentDetailData = this.orderPaymentDetailFormGroup.value;
     console.log(this.ordPaymentDetailData);
-    this._ordersService.editPaymentDetail(this.ordPaymentDetailData, this.organizationID);
+    this._ordersService.editPaymentDetail(this.ordPaymentDetailData, this.orderID);
     jQuery('#editPaymentMethod').modal('hide');
   }
 
   saveNewOrder(data){
     this.ordNewOrderData = this.orderNewOrderFormGroup.value;
     console.log(this.ordNewOrderData);
-    this._ordersService.addNewOrder(this.ordNewOrderData,this.organizationID);
+    this._ordersService.addNewOrder(this.ordNewOrderData,this.orderID);
     this.orderNewOrderFormVariable = false;
     this.orderSummaryFormVariable = true;
   }
 
+  saveOrderSummary(data){
+    this.orderSummaryFormVariable = false;
+  }
+
+  viewImageContractModal(){
+    jQuery('#contractImageModal').modal('show');
+  }
+
+  saveContractImage(data){
+    this.ordContractImageData = this.orderContractImageFormGroup.value;
+    console.log(this.ordContractImageData);
+    this._ordersService.addContractImage(this.ordContractImageData,this.orderID);
+    jQuery('#contractImageModal').modal('hide');
+  }
+
+  saveImageFile(data){
+    this.ordImageFiles = data;
+    this._ordersService.addNewImageFile(this.ordImageFiles,this.orderID);
+    console.log(this.ordImageFiles);
+  }
+
+  viewManagePoNumber(){
+    jQuery('#managePoNumberModal').modal({
+      observeChanges : true
+    }).modal('show');
+  }
+
+  setNewPoNumber(){
+    this.orderManagePoFormVariable = true;
+  }
+
+  hideManagePoNumberModal(){
+    jQuery('#managePoNumberModal').modal('hide');
+    this.orderManagePoFormVariable =false;
+  }
+
+
+ /* viewOfferAccordion(){
+    jQuery('#offerAccordion').accordion({
+      closeNested : true}).accordion('toggle');
+
+    jQuery('#businessAccordion').accordion('toggle');
+
+  }*/
+
+
+
 }
+
+
+

@@ -1,4 +1,4 @@
-<!---------------------------------------Order New Contract Form------------------------------------------------------------->
+<!---------------------------------------Order New Contract Form------------------------------------------------------->
 <div *ngIf="orderNewContractFormVariable">
   <form [formGroup]="orderNewContractFormGroup" (ngSubmit)="saveOrderNewContractForm($event)">
     <div class="ui form">
@@ -36,23 +36,549 @@
 </div>
 
 <!---------------------------------------------New Order Catalog-------------------------------------------------------->
-<div *ngIf="">
+<div *ngIf="orderNewCatalogFormVariable">
+  <form [formGroup]="orderNewOrderCatalogFormGroup" (ngSubmit)="saveOrderNewCatalogForm($event)">
+    <div class="ui form">
 
-</div>
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">New Order Catalog</a>
+        <div class="field">
+          <label for="current-selected-offer">Current Selected Offer</label>
+          <input formControlName="currentSelectedOffer"  type="text" id="current-selected-offer">
+        </div>
 
-<!-------------------------------------------Order Offer---------------------------------------------------------------->
-<div *ngIf="">
+        <!--<div id="offerAccordion">
+          <div class="ui styled accordion">
+            <div class=" active title" (click)="viewOfferAccordion()">
+              <i class="shopping bag icon"></i>
+              Order Offers
+            </div>
+            <div class="active content">
+                <div class="accordion" id="businessAccordion">
+                  <div class="active title">
+                    <i class="dropdown icon"></i>
+                    Business Models
+                  </div>
+                  <div class="active content">vghnm</div>
+                </div>
+            </div>
+          </div>
+        </div>-->
+       <!-- <div class="ui styles accordion">
+          <sm-accordion>
+            <div class="active title">
+              <i class="dropdown icon"></i>
+              Order Offers
+            </div>
+            <div class="active content">
+                <sm-accordion-item>
+                  <div class="accordion">
+                  <div class="active title">
+                    <i class="dropdown icon"></i>
+                    Order Offers
+                  </div>
+                  <div class="active content">hfhg
+                  </div>
+                  </div>
+                </sm-accordion-item>
 
+            </div>
+          </sm-accordion>
+        </div>-->
+
+
+      </div>
+
+    </div>
+
+      <div align="right">
+        <button class="ui right labeled icon button" type="submit">
+          <i class="right arrow icon"></i>
+          Continue
+        </button>
+      </div>
+
+  </form>
 </div>
 
 <!-------------------------------------------New Order Parameter------------------------------------------------------->
-<div *ngIf="">
+<div *ngIf="orderNewParameterFormVariable">
+  <form [formGroup]="orderNewParameterFormGroup" (ngSubmit)="saveOrderNewParameterForm($event)">
+    <div class="ui form">
 
-</div>
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">New Order Parameter</a>
+        <div class="ui grid">
+          <div class="three wide column">
+            <a>Expand all configured</a>
+          </div>
+          <div class="two wide column">
+            <a>Collapse All</a>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="two wide column">
+            <p>Qty</p>
+          </div>
+          <div class="one wide column">
+            <p>UOM</p>
+          </div>
+          <div class="two wide column">
+            <p>Unit Price</p>
+          </div>
+          <div class="two wide column">
+            <p>Ext. Price</p>
+          </div>
+          <div class="one wide column">
+            <p>Promo</p>
+          </div>
+        </div>
+          <input formControlName="offerCheckBox" [(ngModel)]="data.ordParameter.offerCheckBox"type="checkbox" id="offer">
+          <label for="offer">MC Ports +Overage USD</label>
 
-<!------------------------------------------New Order Parameter ------------------------------------------------------->
-<div *ngIf="">
 
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Initial Term</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+           <div class="field">
+             <label for="initial-term-qty"></label>
+             <input formControlName="offerInitialTermQty" [(ngModel)]="data.ordParameter.offerInitialTermQty"  type="text"  id="initial-term-qty">
+           </div>
+          </div>
+          <div class="one wide column">
+           <p>MO</p>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>RenewalTerm</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <label for="renewal-term-qty"></label>
+              <input formControlName="offerRenewalTermQty" [(ngModel)]="data.ordParameter.offerRenewalTermQty" type="text" id="renewal-term-qty">
+            </div>
+          </div>
+          <div class="one wide column">
+            <p>MO</p>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Prepay Term</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <select formControlName="offerPrepayTermQty" [(ngModel)]="data.ordParameter.offerPrepayTermQty">
+                <option value="">1(Monthly)</option>
+                <option value="1">2(Yearly)</option>
+              </select>
+            </div>
+          </div>
+          <div class="one wide column">
+            <p>MO</p>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Number of free months</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <select formControlName="numberOfFreeMonthsQty" [(ngModel)]="data.ordParameter.numberOfFreeMonthsQty">
+                <option value="">1(Monthly)</option>
+                <option value="1">2(Yearly)</option>
+              </select>
+            </div>
+          </div>
+          <div class="one wide column">
+            <p>MO</p>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Offer Name</p>
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <select formControlName="offerName" [(ngModel)]="data.ordParameter.offerName">
+                <option value="">MC Ports + overage</option>
+                <option value="jhj">jhhn</option>
+              </select>
+            </div>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+            <p>MO</p>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <input formControlName="serviceSetupCheckBox" [(ngModel)]="data.ordParameter.serviceSetupCheckBox" type="checkbox" id="service-setup">
+        <label for="service-setup">Service Setup</label>
+        <br>
+        <input formControlName="brandingCheckBox" [(ngModel)]="data.ordParameter.brandingCheckBox" type="checkbox" id="ord-branding">
+        <label for="ord-branding">Branding(Generic Site if unselected(USD)</label>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Branding Fee</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+            <p>MO</p>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+            <div class="field">
+              <label for="branding-est-price"></label>
+              <input formControlName="brandingFeeEstPrice" [(ngModel)]="data.ordParameter.brandingFeeEstPrice" type="text" id="branding-est-price">
+            </div>
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="three wide column">
+          <input formControlName="brandingFeeCheckBox" [(ngModel)]="data.ordParameter.brandingFeeCheckBox" type="checkbox" id="branding-fee">
+          <label for="branding-fee">Branding fee may be valued if the customer orders 25 or more names hosts. This applies to Multi-service Namesd Hosts also(sum of Multi-Service Named Hosts must be 255 or more). For Ports,Minute Branding consult the GOA Pages</label>
+        </div>
+
+        <br>
+        <input formControlName="primaryLanguageCheckBox" [(ngModel)]="data.ordParameter.primaryLanguageCheckBox" type="checkbox" id="primary-language">
+        <label for="primary-language">Primary Language</label>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Primary Language</p>
+          </div>
+          <div class="three wide column">
+            <label for="primary-language-dropdown"></label>
+            <select formControlName="primaryLanguage" [(ngModel)]="data.ordParameter.primaryLanguage" class="ui search dropdown" id="primary-language-dropdown">
+              <option value="">fghbh</option>
+              <option value="ftg">hfb</option>
+            </select>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <input formControlName="meetingAssistCheckBox" [(ngModel)]="data.ordParameter.meetingAssistCheckBox" type="checkbox" id="meeting-assist-checkbox">
+            <label for="meeting-assist-checkbox">Meeting/Training Assist-Premium </label>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+            <p>Each</p>
+          </div>
+          <div class="two wide column">
+            <div class="field">
+              <label for="meeting-assist"></label>
+              <input formControlName="meetingAssistUnitPrice" [(ngModel)]="data.ordParameter.meetingAssistUnitPrice" type="text" id="meeting-assist">
+            </div>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <input formControlName="additionalHoursCheckBox" [(ngModel)]="data.ordParameter.additionalHoursCheckBox" type="checkbox" id="additional-hours">
+            <label for="additional-hours">Addition Hours</label>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+            <p>Hour</p>
+          </div>
+          <div class="two wide column">
+            <div class="field">
+              <label for="additional-hours-unit-price"></label>
+              <input formControlName="additionalHoursUnitPrice" [(ngModel)]="data.ordParameter.additionalHoursUnitPrice" type="text" id="additional-hours-unit-price">
+            </div>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <input formControlName="recordingCheckBox" [(ngModel)]="data.ordParameter.recordingCheckBox" type="checkbox" id="recording-check-box">
+            <label for="recording-check-box">Recording of Event on Compact Disk(Obsolete)</label>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+            <p>Each</p>
+          </div>
+          <div class="two wide column">
+            <div class="field">
+              <label for="recording-unit-price"></label>
+              <input formControlName="recordingUnitPrice" [(ngModel)]="data.ordParameter.recordingUnitPrice" type="text" id="recording-unit-price">
+            </div>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Mo Committed Type(Obsolete)</p>
+          </div>
+          <div class="three wide column">
+            <label for="mo-committed-type"></label>
+            <select formControlName="moCommittedType" [(ngModel)]="data.ordParameter.moCommittedType" class="ui search dropdown" id="mo-committed-type">
+              <option value="">fghbh</option>
+              <option value="ftg">hfb</option>
+            </select>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+           <p>Mo Commitment(Obsolete)</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <label for="mo-commitment-qty"></label>
+              <input formControlName="moCommitmentQty" [(ngModel)]="data.ordParameter.moCommitmentQty" type="text" id="mo-commitment-qty">
+            </div>
+          </div>
+          <div class="one wide column">
+            <p>Assist</p>
+          </div>
+          <div class="two wide column">
+            <div class="field">
+              <label for="mo-commitment-unit-price"></label>
+              <input formControlName="moCommitmentUnitPrice" [(ngModel)]="data.ordParameter.moCommitmentUnitPrice" type="text" id="mo-commitment-unit-price">
+            </div>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <input formControlName="opChangeUSDCheckBox" [(ngModel)]="data.ordParameter.opChangeUSDCheckBox" type="checkbox" id="op-change-usd-check-box">
+        <label for="op-change-usd-check-box">OpChange USD</label>
+        <br>
+        <input formControlName="psoUSDCheckBox"[(ngModel)]="data.ordParameter.psoUSDCheckBox" type="checkbox" id="pso-usd-check-box">
+        <label for="pso-usd-check-box">PSO USD</label>
+        <br>
+        <input formControlName="additionalStorageCheckBox" [(ngModel)]="data.ordParameter.additionalStorageCheckBox" type="checkbox" id="additional-storage-chheck-box">
+        <label for="additional-storage-chheck-box">MyFolder Additional Storage</label>
+        <br>
+        <input formControlName="nbrStorageCheckBox" [(ngModel)]="data.ordParameter.nbrStorageCheckBox" type="checkbox" id="nbr-storage-check-box">
+        <label for="nbr-storage-check-box">NBR Storage</label>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Included Free Storage</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <label for="included-free-storage-qty"></label>
+              <input formControlName="includedFreeStorageQty" [(ngModel)]="data.ordParameter.includedFreeStorageQty" type="text" id="included-free-storage-qty">
+            </div>
+          </div>
+          <div class="one wide column">
+            <p>GB</p>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Committed Monthly Storage</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <label for="committed-monthly-storage-qty"></label>
+              <input formControlName="committedMonthlyStorageQty" [(ngModel)]="data.ordParameter.committedMonthlyStorageQty" type="text" id="committed-monthly-storage-qty">
+            </div>
+          </div>
+          <div class="one wide column">
+            <p>GB</p>
+          </div>
+          <div class="two wide column">
+            <div class="field">
+              <label for="committed-monthly-storage-unit-price"></label>
+              <input formControlName="committedMonthlyStorageUnitPrice" [(ngModel)]="data.ordParameter.committedMonthlyStorageUnitPrice" type="text" id="committed-monthly-storage-unit-price">
+            </div>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <input formControlName="overageCheckBox" [(ngModel)]="data.ordParameter.overageCheckBox" type="checkbox" id="overage-check-box">
+            <label for="overage-check-box">Enable Overage</label>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+            <p>GB</p>
+          </div>
+          <div class="two wide column">
+            <div class="field">
+              <label for="overage-unit-price"></label>
+              <input formControlName="overageUnitPrice" [(ngModel)]="data.ordParameter.overageUnitPrice" type="text" id="overage-unit-price">
+            </div>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <input formControlName="reportingUSDCheckBox" [(ngModel)]="data.ordParameter.reportingUSDCheckBox" type="checkbox" id="reporting-usd-check-box">
+        <label for="reporting-usd-check-box">Reporting USD</label>
+        <br>
+        <input formControlName="optionUSDCheckBox" [(ngModel)]="data.ordParameter.optionUSDCheckBox" type="checkbox" id="option-usd-check-box">
+        <label for="option-usd-check-box">Obsolete Options USD</label>
+
+        <div align="right">
+          <button class="ui button" (click)="viewSkuList()" type="button">Apply</button>
+        </div>
+      </div>
+
+      <div *ngIf="orderSkuList" class="ui raised segment">
+        <a class="ui red ribbon label">SKU List</a>
+        <table class="ui celled table">
+          <tr>
+            <th>SKU</th>
+            <th>Name</th>
+            <th>SKU Type</th>
+            <th>UOM</th>
+            <th>Qty</th>
+            <th>Act. Unit Price</th>
+            <th>List Unit Price</th>
+            <th>Rating Type</th>
+            <th>Extended</th>
+            <th>Dsc%</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div align="right">
+        <button class="ui right labeled icon button" type="submit">
+          <i class="right arrow icon"></i>
+          Continue
+        </button>
+      </div>
+
+    </div>
+  </form>
 </div>
 
 <!------------------------------------------New Order Provision--------------------------------------------------------->
@@ -484,7 +1010,7 @@
   </form>
 </div>-->
 
-<!-------------------------------------------Add New Agent------------------------------------------------------------->
+<!-------------------------------------------Add New Agent-------------------------------------------------------------->
 <div id="newAgentModal" class="ui scrolling modal">
   <div class="header">Add Agent</div>
   <form [formGroup]="orderNewAgentFormGroup" (ngSubmit)="saveOrderAgent($event)">
@@ -1128,7 +1654,7 @@
   </form>
 </div>
 
-<!-----------------------------------------Edit Account Profile-------------------------------------------------------->
+<!-----------------------------------------Edit Account Profile--------------------------------------------------------->
 <div id="editAccountProfile" class="ui scrolling modal">
   <form [formGroup]="orderEditAccountProfileFormGroup" (ngSubmit)="saveOrderEditAccountProfile($event)">
     <div class="ui form">
@@ -1684,7 +2210,7 @@
 
       <div align="center">
         <div class="ui buttons">
-          <button class="ui button" type="button">Print</button>
+          <button class="ui button">Print</button>
           <button class="ui button" type="submit">Save</button>
         </div>
       </div>
@@ -1693,7 +2219,7 @@
   </form>
 </div>
 
-<!----------------------------------------Edit Payment Detail--------------------------------------------------------->
+<!----------------------------------------Edit Payment Detail----------------------------------------------------------->
 <div id="editPaymentMethod" class="ui scrolling modal">
   <div class="header">Add Payment Detail</div>
 
@@ -2085,8 +2611,8 @@
             <td></td>
             <td><a>Manage</a></td>
             <td></td>
-            <td></td>
-            <td><a>Add/Edit</a></td>
+            <td><a (click)="viewImageContractModal()">View</a></td>
+            <td><a (click)="viewManagePoNumber()">Add/Edit</a></td>
             <td>N/A</td>
             <td>N/A</td>
             <td><a>Add/Edit</a></td>
@@ -2109,7 +2635,7 @@
             <td>{{data.ordProvision.webExURL}}</td>
             <td>{{data.ordProvision.language}}</td>
             <td>{{data.ordProvision.brandingSiteReference}}</td>
-            <td><{{data.ordProvision.services}}/td>
+            <td>{{data.ordProvision.services}}</td>
             <td>{{data.ordProvision.timeZone}}</td>
           </tr>
         </table>
@@ -2158,7 +2684,7 @@
           </div>
           <div class="two wide column">
             <p>Name</p>
-          </div>s
+          </div>
           <div class="two wide column">
             <p>Team</p>
           </div>
@@ -2318,3 +2844,137 @@
     </div>
   </form>
 </div>
+
+<!------------------------------------------Contract Image Upload------------------------------------------------------>
+<div id="contractImageModal"  class="ui scrolling modal">
+  <div class="header">Contract Image Upload</div>
+  <form [formGroup]="orderContractImageFormGroup" (ngSubmit)="saveContractImage($event)">
+    <div class="ui form">
+
+      <div class="ui raised segment">
+        <div class="field">
+          <label for="service-configuration">Please select the service configuartion</label>
+          <select formControlName="serviceConfiguration" [(ngModel)]="data.ordContractImage.serviceConfiguration" class="ui search dropdown" id="service-configuration">
+            <option value="">Business</option>
+            <option value="tdy">Personal</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="view-add">Please select a file to View or click Add</label>
+          <input formControlName="files" type="text" [(ngModel)]="data.ordContractImage.files" id="view-add">
+        </div>
+        <div  align="center">
+          <div class="ui buttons">
+            <button class="ui button" (click)="saveImageFile(data.ordContractImage.files)" type="button">Add</button>
+            <button class="ui button" type="button">View</button>
+            <button class="ui button" type="button">Remove</button>
+          </div>
+        </div>
+
+        <br>
+        <div class="field">
+          <label for="ord-name">Enter name(if no name is entered,it will be the same as file name)</label>
+          <input formControlName="imageName" [(ngModel)]="data.ordContractImage.imageName" type="text" id="ord-name">
+        </div>
+        <div class="field">
+          <label for="ord-description">Description</label>
+          <input formControlName="imageDescription" [(ngModel)]="data.ordContractImage.imageDescription" type="text" id="ord-description">
+        </div>
+
+        <div align="right">
+          <button class="ui button" type="submit">Submit</button>
+        </div>
+      </div>
+
+
+     </div>
+  </form>
+</div>
+
+<!------------------------------------------Charge Activation List------------------------------------------------------>
+<div id="chargeActivationModal" class="ui scrolling modal">
+  <div class="header">Charge Activation List</div>
+  <div class="ui form">
+    <div class="ui raised segment">
+      <a class="ui red ribbon label">Charge Activation List</a>
+
+      <div align="left">
+        <button type="button" (click)="viewManagePoNumber()" class="ui button">Manage PO Numbers</button>
+      </div>
+
+      <table class="ui celled table">
+        <tr>
+          <th>Offer Code</th>
+          <th>Charge Activation ID</th>
+          <th>Charge Activation Code</th>
+          <th>Taxable</th>
+          <th>PO Numbers</th>
+        </tr>
+      </table>
+
+    </div>
+
+    <div align="right">
+      <button class="ui positive button" type="submit" value="Save">Save</button>
+    </div>
+
+  </div>
+</div>
+
+<!-------------------------------------------Manage PO Numbers-------------------------------------------------------->
+<div id="managePoNumberModal" class="ui scrolling modal">
+  <div class="header">Manage PO Numbers</div>
+  <div class="ui form">
+    <div class="ui raised segment">
+      <a class="ui red ribbon label">PO Numbers</a>
+      <div align="center">
+        <button type="button" class="ui button">Delete</button>
+        <button type="button" class="ui button" (click)="setNewPoNumber()">New</button>
+      </div>
+
+      <br>
+      <br>
+
+      <table class="ui celled table">
+        <tr>
+          <th><input type="checkbox" value="all"></th>
+          <th>PO Numbers</th>
+          <th>Description</th>
+        </tr>
+        <tr *ngFor="let pdata of data.ordPoNumber">
+          <td><input type="checkbox" value="{{pdata.poNumber}}"></td>
+          <td>{{pdata.poNumber}}</td>
+          <td>{{pdata.description}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <br>
+    <br>
+
+    <div *ngIf="orderManagePoFormVariable">
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">New PO Number</a>
+        <br>
+        <form [formGroup]="orderPoNumberFormGroup" (ngSubmit)="savePoNumber($event)">
+          <div class="field">
+            <label for="po-Number">PO Numbers</label>
+            <input formControlName="poNumber" type="text" id="po-Number">
+          </div>
+          <div class="field">
+            <label for="acc-descriptions">Description</label>
+            <input formControlName="description" type="text" id="acc-descriptions">
+          </div>
+          <div align="right">
+            <div class="ui buttons">
+              <button type="button" class="ui button" (click)="hideManagePoNumberModal()">Cancel</button>
+              <button class="ui positive button" type="submit" value="Save">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+

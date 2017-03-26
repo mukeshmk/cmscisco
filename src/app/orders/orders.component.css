@@ -7,3 +7,8 @@ th, td {
   padding: 5px;
   text-align: left;
 }
+
+.inlineField{
+  display: inline-block;
+  vertical-align: middle;
+}

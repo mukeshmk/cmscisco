@@ -28,7 +28,7 @@ const appRoutes=[
     children : OrganizationRoutes
   },
   {
-    path : 'orders/:orgID',
+    path : 'orders/:ordID',
     component : OrdersComponent
   },
   {

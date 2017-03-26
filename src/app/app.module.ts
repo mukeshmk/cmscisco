@@ -20,9 +20,6 @@ import { OrganizationHeaderComponent } from './organization/organization-header/
 import { ViewaccountDataRowComponent } from './accounts/view-accounts/viewaccount-data-row/viewaccount-data-row.component';
 import { AccountNewComponent } from './accounts/account-new/account-new.component';
 import { AccountEditComponent } from './accounts/account-edit/account-edit.component';
-import { AccountAddressEditComponent } from './accounts/account-edit/account-address-edit/account-address-edit.component';
-import { AccountPaymentDetailComponent } from './accounts/account-edit/account-payment-detail/account-payment-detail.component';
-import { AccountViewActivityNotesComponent } from './accounts/account-edit/account-view-activity-notes/account-view-activity-notes.component';
 import { ViewAccountsComponent } from './accounts/view-accounts/view-accounts.component';
 
 
@@ -43,9 +40,6 @@ import { ViewAccountsComponent } from './accounts/view-accounts/view-accounts.co
     ViewaccountDataRowComponent,
     AccountNewComponent,
     AccountEditComponent,
-    AccountAddressEditComponent,
-    AccountPaymentDetailComponent,
-    AccountViewActivityNotesComponent,
     ViewAccountsComponent
   ],
   imports: [

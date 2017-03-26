@@ -1,13 +1,17 @@
 export interface orders{
+  ordID : number;
   orgID : number;
-  ordNumber : number;
   ordContractTerm : orderContractTerm;
+  ordCatalog : orderCatalog;
+  ordParameter : orderParameter;
   ordContact : Array<orderContact>;
   ordAgent : Array<orderAgent>;
   ordProvision : orderProvision;
   ordAccountProfile : orderAccountProfile;
   ordNewOrder : orderNewOrder;
   ordPaymentDetail : orderPaymentDetail;
+  ordContractImage : orderContractImage;
+  ordPoNumber : Array<orderPoNumber>;
 }
 
 export interface orderContractTerm{
@@ -16,6 +20,45 @@ export interface orderContractTerm{
   expectedStartDate : string;
   purpose : string;
   renewalContract : string;
+}
+
+export interface orderCatalog{
+  currentSelectedOffer : string;
+}
+
+export interface orderParameter{
+  offerCheckBox  : boolean;
+  offerInitialTermQty : number;
+  offerRenewalTermQty : number;
+  offerPrepayTermQty : string;
+  numberOfFreeMonthsQty : number;
+  offerName : string;
+  serviceSetupCheckBox : boolean;
+  brandingCheckBox : boolean;
+  brandingFeeEstPrice : number;
+  brandingFeeCheckBox : boolean;
+  primaryLanguageCheckBox : boolean;
+  primaryLanguage : string;
+  meetingAssistCheckBox : boolean;
+  meetingAssistUnitPrice : string;
+  additionalHoursCheckBox : boolean;
+  additionalHoursUnitPrice : string;
+  recordingCheckBox : boolean;
+  recordingUnitPrice : string;
+  moCommittedType : string;
+  moCommitmentQty : string;
+  moCommitmentUnitPrice : string;
+  opChangeUSDCheckBox : boolean;
+  psoUSDCheckBox : boolean;
+  additionalStorageCheckBox : boolean;
+  nbrStorageCheckBox : boolean;
+  includedFreeStorageQty : string;
+  committedMonthlyStorageQty : string;
+  committedMonthlyStorageUnitPrice : string;
+  overageCheckBox : boolean;
+  overageUnitPrice : string;
+  reportingUSDCheckBox : boolean;
+  optionUSDCheckBox : boolean;
 }
 
 export interface orderProvision{
@@ -175,4 +218,16 @@ export interface orderPaymentDetail{
   expirationDateYear : number;
   nameInCard : string;
   cardSecurityCode : string;
+}
+
+export interface orderContractImage{
+  serviceConfiguration : string;
+  files : Array<string>;
+  imageName : string;
+  imageDescription : string;
+}
+
+export interface orderPoNumber{
+  poNumber : number;
+  description : string;
 }
