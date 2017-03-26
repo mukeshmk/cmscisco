@@ -11,11 +11,13 @@ import {LoginService, User} from "./login.service";
 export class LoginComponent implements OnInit {
   public user = new User('','');
   public errorMsg = '';
+  public portal  = 'blis';
 
   constructor(private _service: LoginService) {
   }
   login() {
-    if (!this._service.login(this.user)) {
+    console.log(this.portal);
+    if (!this._service.login(this.user,this.portal)) {
       this.errorMsg = 'Failed to login';
     }
   }

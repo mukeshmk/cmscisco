@@ -2,15 +2,30 @@
   <div class="column six wide form-holder">
     <h2 class="center aligned header form-head">Sign in</h2>
     <div class="ui form">
-      <div class="field">
-        <input type="text" [(ngModel)]="user.username" id="username" placeholder="username">
-      </div>
-      <div class="field">
-        <input type="password" [(ngModel)]="user.password" id="password" placeholder="password">
-      </div>
-      <div class="field">
-        <input type="submit" (click)="login()" value="sign in" class="ui button large fluid green">
-      </div>
+
+        <div class="two fields">
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input name = "portal" value="cms" [(ngModel)] = "portal" type="radio">
+              <label>CMS</label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="ui radio checkbox">
+              <input name = "portal" value ="blis" [(ngModel)] = "portal" type="radio">
+              <label>BLis</label>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <input type="text" [(ngModel)]="user.username" id="username" placeholder="username">
+        </div>
+        <div class="field">
+          <input type="password" [(ngModel)]="user.password" id="password" placeholder="password">
+        </div>
+        <div class="field">
+          <input type="submit" (click)="login()" value="sign in" class="ui button large fluid green">
+        </div>
     </div>
   </div>
 </div>
