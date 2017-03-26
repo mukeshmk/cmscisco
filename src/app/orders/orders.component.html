@@ -133,10 +133,12 @@
             <p>Promo</p>
           </div>
         </div>
-          <input formControlName="offerCheckBox" [(ngModel)]="data.ordParameter.offerCheckBox"type="checkbox" id="offer">
-          <label for="offer">MC Ports +Overage USD</label>
-
-
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="offerCheckBox" [(ngModel)]="data.ordParameter.offerCheckBox"type="checkbox" id="offer">
+            <label for="offer">MC Ports +Overage USD</label>
+          </div>
+        </div>
 
         <div class="ui grid">
           <div class="four wide column">
@@ -145,10 +147,10 @@
           <div class="three wide column">
           </div>
           <div class="three wide column">
-           <div class="field">
-             <label for="initial-term-qty"></label>
-             <input formControlName="offerInitialTermQty" [(ngModel)]="data.ordParameter.offerInitialTermQty"  type="text"  id="initial-term-qty">
-           </div>
+            <div class="field">
+              <label for="initial-term-qty"></label>
+              <input formControlName="offerInitialTermQty" [(ngModel)]="data.ordParameter.offerInitialTermQty"  type="text" id="initial-term-qty">
+            </div>
           </div>
           <div class="one wide column">
            <p>MO</p>
@@ -259,11 +261,21 @@
           </div>
         </div>
 
-        <input formControlName="serviceSetupCheckBox" [(ngModel)]="data.ordParameter.serviceSetupCheckBox" type="checkbox" id="service-setup">
-        <label for="service-setup">Service Setup</label>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="serviceSetupCheckBox" [(ngModel)]="data.ordParameter.serviceSetupCheckBox" type="checkbox" id="service-setup">
+            <label for="service-setup">Service Setup</label>
+          </div>
+        </div>
         <br>
-        <input formControlName="brandingCheckBox" [(ngModel)]="data.ordParameter.brandingCheckBox" type="checkbox" id="ord-branding">
-        <label for="ord-branding">Branding(Generic Site if unselected(USD)</label>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="brandingCheckBox" [(ngModel)]="data.ordParameter.brandingCheckBox" type="checkbox" id="ord-branding">
+            <label for="ord-branding">Branding(Generic Site if unselected(USD)</label>
+          </div>
+        </div>
+
+
 
         <div class="ui grid">
           <div class="four wide column">
@@ -289,13 +301,21 @@
         </div>
 
         <div class="three wide column">
-          <input formControlName="brandingFeeCheckBox" [(ngModel)]="data.ordParameter.brandingFeeCheckBox" type="checkbox" id="branding-fee">
-          <label for="branding-fee">Branding fee may be valued if the customer orders 25 or more names hosts. This applies to Multi-service Namesd Hosts also(sum of Multi-Service Named Hosts must be 255 or more). For Ports,Minute Branding consult the GOA Pages</label>
+          <div class="field">
+            <div class="ui checkbox">
+              <input formControlName="brandingFeeCheckBox" [(ngModel)]="data.ordParameter.brandingFeeCheckBox" type="checkbox" id="branding-fee">
+              <label for="branding-fee">Branding fee may be valued if the customer orders 25 or more names hosts. This applies to Multi-service Namesd Hosts also(sum of Multi-Service Named Hosts must be 255 or more). For Ports,Minute Branding consul t the GOA Pages</label>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="primaryLanguageCheckBox" [(ngModel)]="data.ordParameter.primaryLanguageCheckBox" type="checkbox" id="primary-language">
+            <label for="primary-language">Primary Language</label>
+          </div>
         </div>
 
-        <br>
-        <input formControlName="primaryLanguageCheckBox" [(ngModel)]="data.ordParameter.primaryLanguageCheckBox" type="checkbox" id="primary-language">
-        <label for="primary-language">Primary Language</label>
 
         <div class="ui grid">
           <div class="four wide column">
@@ -322,8 +342,12 @@
 
         <div class="ui grid">
           <div class="four wide column">
-            <input formControlName="meetingAssistCheckBox" [(ngModel)]="data.ordParameter.meetingAssistCheckBox" type="checkbox" id="meeting-assist-checkbox">
-            <label for="meeting-assist-checkbox">Meeting/Training Assist-Premium </label>
+            <div class="field">
+              <div class="ui checkbox">
+                <input formControlName="meetingAssistCheckBox" [(ngModel)]="data.ordParameter.meetingAssistCheckBox" type="checkbox" id="meeting-assist-checkbox">
+                <label for="meeting-assist-checkbox">Meeting/Training Assist-Premium </label>
+              </div>
+            </div>
           </div>
           <div class="three wide column">
           </div>
@@ -346,8 +370,12 @@
 
         <div class="ui grid">
           <div class="four wide column">
-            <input formControlName="additionalHoursCheckBox" [(ngModel)]="data.ordParameter.additionalHoursCheckBox" type="checkbox" id="additional-hours">
-            <label for="additional-hours">Addition Hours</label>
+            <div class="field">
+              <div class="ui checkbox">
+                <input formControlName="additionalHoursCheckBox" [(ngModel)]="data.ordParameter.additionalHoursCheckBox" type="checkbox" id="additional-hours">
+                <label for="additional-hours">Addition Hours</label>
+              </div>
+            </div>
           </div>
           <div class="three wide column">
           </div>
@@ -370,8 +398,12 @@
 
         <div class="ui grid">
           <div class="four wide column">
-            <input formControlName="recordingCheckBox" [(ngModel)]="data.ordParameter.recordingCheckBox" type="checkbox" id="recording-check-box">
-            <label for="recording-check-box">Recording of Event on Compact Disk(Obsolete)</label>
+            <div class="field">
+              <div class="ui checkbox">
+                <input formControlName="recordingCheckBox" [(ngModel)]="data.ordParameter.recordingCheckBox" type="checkbox" id="recording-check-box">
+                <label for="recording-check-box">Recording of Event on Compact Disk(Obsolete)</label>
+              </div>
+            </div>
           </div>
           <div class="three wide column">
           </div>
@@ -382,9 +414,11 @@
           </div>
           <div class="two wide column">
             <div class="field">
-              <label for="recording-unit-price"></label>
-              <input formControlName="recordingUnitPrice" [(ngModel)]="data.ordParameter.recordingUnitPrice" type="text" id="recording-unit-price">
-            </div>
+              <div class="ui checkbox">
+                <label for="recording-unit-price"></label>
+                <input formControlName="recordingUnitPrice" [(ngModel)]="data.ordParameter.recordingUnitPrice" type="text" id="recording-unit-price">
+              </div>
+              </div>
           </div>
           <div class="two wide column">
           </div>
@@ -442,17 +476,33 @@
           </div>
         </div>
 
-        <input formControlName="opChangeUSDCheckBox" [(ngModel)]="data.ordParameter.opChangeUSDCheckBox" type="checkbox" id="op-change-usd-check-box">
-        <label for="op-change-usd-check-box">OpChange USD</label>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="opChangeUSDCheckBox" [(ngModel)]="data.ordParameter.opChangeUSDCheckBox" type="checkbox" id="op-change-usd-check-box">
+            <label for="op-change-usd-check-box">OpChange USD</label>
+          </div>
+        </div>
         <br>
-        <input formControlName="psoUSDCheckBox"[(ngModel)]="data.ordParameter.psoUSDCheckBox" type="checkbox" id="pso-usd-check-box">
-        <label for="pso-usd-check-box">PSO USD</label>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="psoUSDCheckBox"[(ngModel)]="data.ordParameter.psoUSDCheckBox" type="checkbox" id="pso-usd-check-box">
+            <label for="pso-usd-check-box">PSO USD</label>
+          </div>
+        </div>
         <br>
-        <input formControlName="additionalStorageCheckBox" [(ngModel)]="data.ordParameter.additionalStorageCheckBox" type="checkbox" id="additional-storage-chheck-box">
-        <label for="additional-storage-chheck-box">MyFolder Additional Storage</label>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="additionalStorageCheckBox" [(ngModel)]="data.ordParameter.additionalStorageCheckBox" type="checkbox" id="additional-storage-chheck-box">
+            <label for="additional-storage-chheck-box">MyFolder Additional Storage</label>
+          </div>
+        </div>
         <br>
-        <input formControlName="nbrStorageCheckBox" [(ngModel)]="data.ordParameter.nbrStorageCheckBox" type="checkbox" id="nbr-storage-check-box">
-        <label for="nbr-storage-check-box">NBR Storage</label>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="nbrStorageCheckBox" [(ngModel)]="data.ordParameter.nbrStorageCheckBox" type="checkbox" id="nbr-storage-check-box">
+            <label for="nbr-storage-check-box">NBR Storage</label>
+          </div>
+        </div>
 
         <div class="ui grid">
           <div class="four wide column">
@@ -506,8 +556,12 @@
 
         <div class="ui grid">
           <div class="four wide column">
-            <input formControlName="overageCheckBox" [(ngModel)]="data.ordParameter.overageCheckBox" type="checkbox" id="overage-check-box">
-            <label for="overage-check-box">Enable Overage</label>
+            <div class="field">
+              <div class="ui checkbox">
+                <input formControlName="overageCheckBox" [(ngModel)]="data.ordParameter.overageCheckBox" type="checkbox" id="overage-check-box">
+                <label for="overage-check-box">Enable Overage</label>
+              </div>
+            </div>
           </div>
           <div class="three wide column">
           </div>
@@ -528,11 +582,20 @@
           </div>
         </div>
 
-        <input formControlName="reportingUSDCheckBox" [(ngModel)]="data.ordParameter.reportingUSDCheckBox" type="checkbox" id="reporting-usd-check-box">
-        <label for="reporting-usd-check-box">Reporting USD</label>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="reportingUSDCheckBox" [(ngModel)]="data.ordParameter.reportingUSDCheckBox" type="checkbox" id="reporting-usd-check-box">
+            <label for="reporting-usd-check-box">Reporting USD</label>
+          </div>
+        </div>
         <br>
-        <input formControlName="optionUSDCheckBox" [(ngModel)]="data.ordParameter.optionUSDCheckBox" type="checkbox" id="option-usd-check-box">
-        <label for="option-usd-check-box">Obsolete Options USD</label>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="optionUSDCheckBox" [(ngModel)]="data.ordParameter.optionUSDCheckBox" type="checkbox" id="option-usd-check-box">
+            <label for="option-usd-check-box">Obsolete Options USD</label>
+          </div>
+        </div>
+
 
         <div align="right">
           <button class="ui button" (click)="viewSkuList()" type="button">Apply</button>
