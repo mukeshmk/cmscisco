@@ -1,0 +1,12 @@
+<app-teams-heading (fieldSelected)="sortData($event)" ></app-teams-heading>
+<app-teams-data-row *ngFor="let team of teamsData" [data]="team" (click)="clickRow(team)" [ngClass]="{'selected' : team.id == lastSelectedRow.id}"></app-teams-data-row>
+
+<br><br>
+
+<div align="center">
+  <div class="ui large buttons">
+    <button class="ui secondary button" [routerLink]="['/teams/edit', lastSelectedRow.id]" [disabled]="lastSelectedRow.id == undefined">Edit Team</button>
+    <div class="or"></div>
+    <button class="ui negative button" [disabled]="lastSelectedRow.id == undefined" (click)="inActivate()">In-Activate</button>
+  </div>
+</div>

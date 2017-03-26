@@ -1,0 +1,22 @@
+.box,.leftbox,.rightbox{
+  width:300px;height:100px;
+  border:1px solid #000;
+}
+.leftbox{
+  float:left;
+}
+.rightbox{
+  float:right;
+}
+.font1{
+  font-size: 24px;
+  font-family: "SansSerif";
+}
+.number1{
+  font-size: 30px;
+  text-align: center;
+}
+
+.selectedIcon{
+  background-color: red;
+}

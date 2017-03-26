@@ -1,0 +1,130 @@
+<form [formGroup]="teamEditForm" (ngSubmit)="saveTeam($event)">
+  <div class="ui form">
+
+    <div class="column">
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Team Details</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="team-name">Team Name</label>
+            <input formControlName="teamName" type="text" [(ngModel)]="data.name" id="team-name">
+          </div>
+          <div class="field">
+            <label>Group Name</label>
+            <select [(ngModel)]="data.group" formControlName="groupName" class="ui search dropdown">
+              <option value="Sales">Sales</option>
+              <option value="Finance">Finance</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <label>Team Lead</label>
+            <select [(ngModel)]="data.lead" formControlName="teamLead" class="ui search dropdown">
+              <option value="">Select One</option>
+              <option value="Tom Jerry">Tom Jerry</option>
+              <option value="Jon Madsen">Jon Madsen</option>
+            </select>
+          </div>
+
+          <br>
+
+          <div class="field">
+            <label>Team Type</label>
+            <select [(ngModel)]="data.type" formControlName="teamType" class="ui search dropdown">
+              <option value="Business Unit">Business Unit</option>
+              <option value="Organising Unit">Organising Unit</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Parent Team</label>
+            <select [(ngModel)]="data.parentTeam" formControlName="parentTeam" class="ui search dropdown">
+              <option value="Sales">Sales</option>
+              <option value="Finance">Finance</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <label>Channel</label>
+            <select [(ngModel)]="data.channel" formControlName="channel" class="ui search dropdown">
+              <option value="">Select Channel</option>
+              <option value="Option 1">Option1</option>
+              <option value="Option 2">Option2</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Team Roles</label>
+            <select [(ngModel)]="data.roles" formControlName="teamRoles" class="ui search dropdown">
+              <option value="">Select Role</option>
+              <option value="Option 1">Option1</option>
+              <option value="Option 2">Option2</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>CSM Mapping</label>
+            <select [(ngModel)]="data.csmMapping" formControlName="csmMapping" class="ui search dropdown">
+              <option value="">Select CSM Mapping</option>
+              <option value="Option 1">Option1</option>
+              <option value="Option 2">Option2</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="column">
+      <div class="ui raised segment">
+        <a class="ui blue ribbon label">Location Details</a>
+        <div class="four fields">
+          <div class="field">
+            <label>Area</label>
+            <select [(ngModel)]="data.area" formControlName="addressArea" class="ui search dropdown">
+              <option value="">Select Area</option>
+              <option value="Option 1">Option1</option>
+              <option value="Option 2">Option2</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Region</label>
+            <select [(ngModel)]="data.region" formControlName="addressRegion" class="ui search dropdown">
+              <option value="">Select Region</option>
+              <option value="Option 1">Option1</option>
+              <option value="Option 2">Option2</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Country</label>
+            <select [(ngModel)]="data.country" formControlName="addressCountry" class="ui search dropdown">
+              <option value="">Select Country</option>
+              <option value="AF">Afghanistan</option>
+              <option value="India">India</option>
+              <option value="AL">Albania</option>
+              <option value="DZ">Algeria</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Territory</label>
+            <select [(ngModel)]="data.territory" formControlName="addressTerritory" class="ui search dropdown">
+              <option value="">Select Territory</option>
+              <option value="Option 1">Option1</option>
+              <option value="Option 2">Option2</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br><br>
+  <div align="center">
+    <div class="ui buttons">
+      <button class="ui button">Cancel</button>
+      <div class="or"></div>
+      <button class="ui positive button" type="submit" value="Save">Save</button>
+    </div>
+  </div>
+  <br><br>
+</form>

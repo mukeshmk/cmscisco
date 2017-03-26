@@ -1,0 +1,14 @@
+<app-roles-heading (fieldSelected)="sortData($event)" ></app-roles-heading>
+<app-roles-data-row *ngFor="let role of rolesData" [data]="role" (click)="clickRow(role)" [ngClass]="{'selected' : role.id == lastSelectedRow.id}"></app-roles-data-row>
+
+<br><br>
+
+<div align="center">
+  <div class="ui large buttons">
+    <button class="ui secondary button" [routerLink]="['/roles/edit', lastSelectedRow.id]" [disabled]="lastSelectedRow.id == undefined">Edit</button>
+    <div class="or"></div>
+    <button class="ui primary button" [routerLink]="['/roles/new']">New</button>
+    <div class="or"></div>
+    <button class="ui negative button" [disabled]="lastSelectedRow.id == undefined" (click)="inActivate()">Delete</button>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+#sidemenu{
+  margin-top: 20px;
+}
+#item1,#item2,#item3,#item4{
+  padding-top: 10px;
+  margin-top: 5px;
+  font-size: large;
+}
+#menubox{
+  margin-left: 70px;
+}
+#menudesc{
+  margin-left: 170px;
+  border: 1px solid gray;
+  height: 300px;
+  padding: 1em;
+  overflow-y: scroll;
+}
+
+

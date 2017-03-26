@@ -1,0 +1,25 @@
+
+.ui.modal.content{
+  position: absolute;
+  display: block;
+  overflow: auto;
+  top: 5em;
+  bottom: 5em;
+  width: 100%;
+}
+
+.scrolling {
+  position: fixed;
+  top: 1em;
+  bottom: 1em;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;
+}

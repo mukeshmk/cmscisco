@@ -1,0 +1,23 @@
+export interface Profile {
+  firstName: string,
+  lastName: string,
+  gender: string,
+  work: number,
+  cell: number,
+  home: number,
+  email: string,
+  street1: string,
+  street2: string,
+  city: string,
+  state: string,
+  zip: string,
+  country: string,
+  county: string,
+  group: string,
+  team: string,
+  role: string,
+  reportsTo: string,
+  login: string,
+  pass: string,
+  confirmPass: string
+}

@@ -1,0 +1,89 @@
+<form [formGroup]="roleEditForm" (ngSubmit)="saveRole($event)">
+  <div class="ui form">
+
+    <div class="column">
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Role Details</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="role-id">Role ID</label>
+            <input formControlName="roleId" [(ngModel)]=" data.id" id="role-id">
+          </div>
+          <div class="field">
+            <label for="role-name">Role Name</label>
+            <input type="text" formControlName="roleName" [(ngModel)]=" data.name " id="role-name">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="soap-node">Soap Node</label>
+            <select formControlName="soapNode" [(ngModel)]=" data.soap_node " id="soap-node">
+              <option value="BLiS UI AC Service">BLiS UI AC Service</option>
+              <option value="CMS UI AC Service">CMS UI AC Service</option>
+              <option value="UX Service">UX Service</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="role-group">Group ID</label>
+            <select class="ui search dropdown" formControlName="groupId" [(ngModel)]=" data.group" id="role-group">
+              <option value="Sales">Sales</option>
+              <option value="Finance">Finance</option>
+              <option value="Marketing">Marketing</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="column">
+      <div class="ui raiser segment">
+        <a class="ui teal ribbon label">Meta Data</a>
+        <div class="two fields">
+          <div class="disabled field">
+            <label for="create-date">Create Date</label>
+            <input formControlName="createDate" [(ngModel)]=" data.date" id="create-date">
+          </div>
+          <div class="disabled field">
+            <label for="create-user">Create User</label>
+            <input formControlName="createUser" [(ngModel)]=" data.user " id="create-user">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="disabled field">
+            <label for="last-modified">Last Modified</label>
+            <input formControlName="lastModified" [(ngModel)]=" data.last_modified " id="last-modified">
+          </div>
+          <div class="disabled field">
+            <label for="last-modified-user">Last Modified User</label>
+            <input formControlName="lastModifiedUser" [(ngModel)]=" data.last_modified_user " id="last-modified-user">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="column">
+      <div class="ui raised segment">
+        <a class="ui blue ribbon label">Definition</a>
+        <div class="field">
+          <label for="acl-def-tree">ACL Definition Tree</label>
+          <textarea formControlName="aclDefTree" rows="4" cols="6"[(ngModel)]=" data.acl_def_tree " id="acl-def-tree"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div align="center">
+    <div class="ui buttons">
+      <<button class="ui button">Cancel</button>
+      <div class="or"></div>
+      <button class="ui positive button" type="submit" value="Save">Save</button>
+    </div>
+  </div>
+  <br><br>
+</form>

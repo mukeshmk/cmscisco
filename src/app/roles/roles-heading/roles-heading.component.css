@@ -1,0 +1,5 @@
+#role-head .column{
+  display: inline-block;
+  background: yellow;
+  text-align: center;
+}

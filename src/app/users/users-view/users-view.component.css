@@ -1,0 +1,7 @@
+app-users-data-row{
+  min-height: 30px;
+}
+
+.selected{
+  background: grey;
+}

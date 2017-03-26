@@ -1,0 +1,190 @@
+<form [formGroup]="userEditForm" (ngSubmit)="saveUser($event)">
+  <div class="ui form">
+
+
+    <div class="column">
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Personal</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="first-name">First Name</label>
+            <input formControlName="firstName" [(ngModel)]="data.firstName" type="text" id="first-name">
+          </div>
+          <div class="field">
+            <label for="last-name">Last Name</label>
+            <input formControlName="lastName" [(ngModel)]="data.lastName" type="text" id="last-name">
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <label for="work-phone">Work Phone</label>
+            <input formControlName="workPhone" [(ngModel)]="data.workPhone" type="text" id="work-phone">
+          </div>
+          <div class="field">
+            <label for="home-phone">Home Phone</label>
+            <input formControlName="homePhone" [(ngModel)]="data.homePhone" type="text" id="home-phone">
+          </div>
+          <div class="field">
+            <label for="cell-phone">Cell Phone</label>
+            <input formControlName="cellPhone" [(ngModel)]="data.cellPhone" type="text" id="cell-phone">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="column">
+      <div class="ui raised segment">
+        <a class="ui blue ribbon label">Address</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="street1">Street 1</label>
+            <input formControlName="addressStreet1" [(ngModel)]="data.street1" type="text" id="street1">
+          </div>
+          <div class="field">
+            <label for="street2">Street 2</label>
+            <input formControlName="addressStreet2" [(ngModel)]="data.street2" type="text" id="street2">
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <label for="city">City</label>
+            <input formControlName="addressCity" [(ngModel)]="data.city" type="text" id="city">
+          </div>
+          <div class="field">
+            <label for="state">State/Province</label>
+            <input formControlName="addressState" [(ngModel)]="data.state" type="text" id="state">
+          </div>
+          <div class="field">
+            <label for="zip">Postal code/Zip</label>
+            <input formControlName="addressZip" [(ngModel)]="data.zip" type="text" id="zip">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="county">County</label>
+            <input formControlName="addressCounty" [(ngModel)]="data.county" type="text" id="county">
+          </div>
+          <div class="field">
+            <label>Country</label>
+            <select formControlName="addressCountry" [(ngModel)]="data.country" class="ui search dropdown">
+              <option value="">Select Country</option>
+              <option value="Afghanistan">Afghanistan</option>
+              <option value="Åland Islands">Åland Islands</option>
+              <option value="Albania">Albania</option>
+              <option value="Algeria">Algeria</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="column">
+      <div class="ui segment">
+        <a class="ui teal ribbon label">Account Details</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input formControlName="email" [(ngModel)]="data.email" type="text" id="email">
+          </div>
+          <div class="field">
+            <label for="login-name">Login Name</label>
+            <input formControlName="loginName" [(ngModel)]="data.loginName" type="text" id="login-name">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="password">Password</label>
+            <input formControlName="password" [(ngModel)]="data.password" type="password" id="password">
+          </div>
+          <div class="field">
+            <label for="confirm-password">Confirm Password</label>
+            <input formControlName="confirmPassword" [(ngModel)]="data.confirmPassword" type="password" id="confirm-password">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="column">
+      <div class="ui segment">
+        <a class="ui orange ribbon label">Work Profile</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="title">Title</label>
+            <input formControlName="title" [(ngModel)]="data.onlineName" type="text" id="title">
+          </div>
+          <div class="field">
+            <label for="department">Department</label>
+            <input formControlName="department" [(ngModel)]="data.onlineName" type="text" id="department">
+          </div>
+        </div>
+
+        <br>
+
+        <div class="two fields">
+          <div class="field">
+            <label>Group</label>
+            <select formControlName="group" [(ngModel)]="data.group" class="ui search dropdown">
+              <option value="">Select Group</option>
+              <option value="Sales">Sales</option>
+              <option value="finance">Finance</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="team">Team</label>
+            <input formControlName="team" [(ngModel)]="data.team" type="text" id="team">
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <label>Category</label>
+            <select formControlName="category" [(ngModel)]="data.category" class="ui search dropdown">
+              <option value="">Select Category</option>
+              <option value="Medical-Health">Medical-Health</option>
+              <option value="Category1">Category1</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="role">Role</label>
+            <input formControlName="role" [(ngModel)]="data.role" type="text" id="role">
+          </div>
+          <div class="field">
+            <label>Reports To</label>
+            <select formControlName="reportsTo" [(ngModel)]="data.reportsTo" class="ui search dropdown">
+              <option value="">Select</option>
+              <option value="Self">Self</option>
+              <option value="ReportsTo1">ReportsTo1</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Is a Contractor</label>
+          <div class="two fields">
+            <div class="field"> <input type="radio" value="Yes" formControlName="isAContractor" name="isAContractor" [(ngModel)]="data.isAContractor" checked="checked">Yes</div>
+            <div class="field"> <input type="radio" value="No" formControlName="isAContractor" name="isAContractor" [(ngModel)]="data.isAContractor" checked="checked">No</div>
+            <div class="field">
+              <label for="expDate">Exp. Date</label>
+              <input formControlName="expDate" [(ngModel)]="data.expDate" type="date" id="expDate">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div align="center">
+    <div class="ui buttons">
+      <button class="ui button">Cancel</button>
+      <div class="or"></div>
+      <button class="ui positive button" type="submit" value="Save">Save</button>
+    </div>
+  </div>
+  <br><br>
+</form>

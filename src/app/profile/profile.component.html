@@ -1,0 +1,160 @@
+<h2>Profile</h2>
+<div>
+  <div id="profile" style="float:left;">
+    <div id="propic">
+      <img src="https://thetab.com/blogs.dir/48/files/2014/02/fb-profile.gif" alt="Profile Picture" style="width:215px;height:190px;">
+    </div>
+    <div id="sidemenu">
+      <sm-menu class="ui secondary vertical pointing menu">
+            <a sm-item id="item1" (click)="i1.show()">Basic Details</a>
+
+            <a sm-item id="item2" (click)="i2.show()">Contact</a>
+
+            <a sm-item id="item3" (click)="i3.show()">Work</a>
+
+            <a sm-item id="item4" (click)="i4.show()">Setting</a>
+      </sm-menu>
+    </div>
+  </div>
+
+<form [formGroup]="profileEditForm" (ngSubmit)="saveProfile($event)">
+  <div id = "menubox">
+    <div id="menudesc" >
+      <div class="ui form">
+        <div class='col-sm-12' #i1>
+          <div class="column">
+            <div class="ui raised segment">
+              <a class="ui red ribbon label">Basic Details</a>
+                <div class="field">
+                  <label for="profile-firstName">First Name</label>
+                  <input formControlName="firstName" [(ngModel)]=" data.firstName" id="profile-firstName">
+                </div>
+                <div class="field">
+                  <label for="profile-lastName">Last Name</label>
+                  <input type="text" formControlName="lastName" [(ngModel)]=" data.lastName " id="profile-lastName">
+                </div>
+                <div class="field">
+                  <label>Gender</label>
+                  <div class="field"> <input type="radio" value="Male" formControlName="gender" name="isAContractor" [(ngModel)]="data.gender" checked="checked">Male</div>
+                  <div class="field"> <input type="radio" value="Female" formControlName="gender" name="isAContractor" [(ngModel)]="data.gender" checked="checked">Female</div>
+                  <div class="field"> <input type="radio" value="Others" formControlName="gender" name="isAContractor" [(ngModel)]="data.gender" checked="checked">Others</div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class='col-sm-12' #i2>
+          <div class="column">
+            <div class="ui raiser segment">
+              <a class="ui teal ribbon label">Phone Number</a>
+              <div class="three fields">
+                <div class="field">
+                  <label for="work">Work</label>
+                  <input formControlName="work" [(ngModel)]=" data.work" id="work">
+                </div>
+                <div class="field">
+                  <label for="cell">Cell</label>
+                  <input formControlName="cell" [(ngModel)]=" data.cell " id="cell">
+                </div>
+                <div class="field">
+                  <label for="home">Home</label>
+                  <input formControlName="home" [(ngModel)]=" data.home " id="home">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui raiser segment">
+              <a class="ui red ribbon label">E-Mail</a>
+              <div class="field">
+                <label for="email">E-Mail</label>
+                <input formControlName="email" [(ngModel)]=" data.email" id="email">
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui raised segment">
+              <a class="ui teal ribbon label">Address</a>
+              <div class="field">
+                <label for="street1">Street 1</label>
+                <input formControlName="street1" [(ngModel)]=" data.street1" id="street1">
+              </div>
+              <div class="field">
+                <label for="street2">Street 2</label>
+                <input type="text" formControlName="street2" [(ngModel)]=" data.street2 " id="street2">
+              </div>
+              <div class="field">
+                <label for="city">City</label>
+                <input type="text" formControlName="city" [(ngModel)]=" data.city " id="city">
+              </div>
+              <div class="field">
+                <label for="state">State/Province</label>
+                <input type="text" formControlName="state" [(ngModel)]=" data.state " id="state">
+              </div>
+              <div class="field">
+                <label for="zip">Postal/Zip</label>
+                <input type="text" formControlName="zip" [(ngModel)]=" data.zip " id="zip">
+              </div>
+              <div class="field">
+                <label for="country">Country</label>
+                <input type="text" formControlName="country" [(ngModel)]=" data.country " id="country">
+              </div>
+              <div class="field">
+                <label for="county">County</label>
+                <input type="text" formControlName="county" [(ngModel)]=" data.county " id="county">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='col-sm-12' #i3>
+          <div class="column">
+            <div class="ui raised segment">
+              <a class="ui teal ribbon label">Work</a>
+              <div class="field">
+                <label for="group">Group</label>
+                <input formControlName="group" [(ngModel)]=" data.group" id="group">
+              </div>
+              <div class="field">
+                <label for="team">Team(s)</label>
+                <input type="text" formControlName="team" [(ngModel)]=" data.team " id="team">
+              </div>
+              <div class="field">
+                <label for="role">Role(s)</label>
+                <input type="text" formControlName="role" [(ngModel)]=" data.role " id="role">
+              </div>
+              <div class="field">
+                <label for="reportsTo">Reports to</label>
+                <input type="text" formControlName="reportsTo" [(ngModel)]=" data.reportsTo " id="reportsTo">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class='col-sm-12' #i4>
+          <div class="column">
+            <div class="ui raiser segment">
+              <a class="ui red ribbon label">Settings</a>
+              <div class="field">
+                <label for="login">Login Name</label>
+                <input formControlName="login" [(ngModel)]=" data.login" id="login">
+              </div>
+              <div class="field">
+                <label for="pass">Password</label>
+                <input formControlName="pass" [(ngModel)]=" data.pass" id="pass">
+              </div>
+              <div class="field">
+                <label for="confirmPass">Confirm Password</label>
+                <input formControlName="confirmPass" [(ngModel)]=" data.confirmPass" id="confirmPass">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:30px;" align="right">
+  <div class="ui buttons">
+    <button class="ui positive button"type="submit" value="Save">Update</button>
+  </div>
+  </div>
+</form>
+</div>
+

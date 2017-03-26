@@ -1,0 +1,62 @@
+<form [formGroup]="roleNewForm" (ngSubmit)="saveRole($event)">
+  <div class="ui form">
+
+
+    <div class="column">
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Role Details</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="role-id">Role ID</label>
+            <input formControlName="id" type="text" id="role-id">
+          </div>
+          <div class="field">
+            <label for="role-name">Role Name</label>
+            <input formControlName="lastName" type="text" id="role-name" >
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="soap-node">Soap Node</label>
+            <select formControlName="soap_node" id="soap-node">
+              <option value="BLiS UI AC Service">BLiS UI AC Service</option>
+              <option value="CMS UI AC Service">CMS UI AC Service</option>
+              <option value="UX Service">UX Service</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="role-group">Group ID</label>
+            <select class="ui search dropdown" formControlName="group" id="role-group">
+              <option value="Sales">Sales</option>
+              <option value="Finance">Finance</option>
+              <option value="Marketing">Marketing</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="column">
+      <div class="ui raised segment">
+        <a class="ui blue ribbon label">Definition</a>
+        <div class="field">
+          <label for="acl-def-tree">ACL Definition Tree</label>
+          <textarea formControlName="acl_def_tree" rows="4" cols="6" id="acl-def-tree"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div align="center">
+    <div class="ui buttons">
+      <button class="ui button">Cancel</button>
+      <div class="or"></div>
+      <button class="ui positive button" type="submit" value="Save">Save</button>
+    </div>
+  </div>
+  <br><br>
+</form>

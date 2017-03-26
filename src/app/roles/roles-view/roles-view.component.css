@@ -1,0 +1,7 @@
+app-roles-data-row{
+  min-height: 30px;
+}
+
+.selected{
+  background: red;
+}

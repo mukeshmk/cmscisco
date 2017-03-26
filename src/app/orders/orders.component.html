@@ -1,0 +1,3043 @@
+<!---------------------------------------Order New Contract Form------------------------------------------------------->
+<div *ngIf="orderNewContractFormVariable">
+  <form [formGroup]="orderNewContractFormGroup" (ngSubmit)="saveOrderNewContractForm($event)">
+    <div class="ui form">
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">New Order Contract Terms</a>
+        <div class = "field">
+          <label for = "subscription-name">Subscription Name</label>
+          <input formControlName="subscriptionName" type = "text" id = "subscription-name">
+        </div>
+        <div class = "field">
+          <label for = "contarct-sign-date">Contract Sign Date</label>
+          <input formControlName="contractSignDate" type = "text" id = "contarct-sign-date">
+        </div>
+        <div class = "field">
+          <label for = "expected-start-date">Expected Service Start Date</label>
+          <input formControlName="expectedStartDate" type = "text" id = "expected-start-date">
+        </div>
+        <div class = "field">
+          <label for = "ord-purpose">Purpose</label>
+          <input formControlName="purpose" type = "text" id = "ord-purpose">
+        </div>
+        <div class = "field">
+          <label for = "renewal-contract">Renewal from Contract ID</label>
+          <input formControlName="renewalContract" type = "text" id = "renewal-contract">
+        </div>
+        <div align="right">
+          <button class="ui right labeled icon button" type="submit">
+            <i class="right arrow icon"></i>
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!---------------------------------------------New Order Catalog-------------------------------------------------------->
+<div *ngIf="orderNewCatalogFormVariable">
+  <form [formGroup]="orderNewOrderCatalogFormGroup" (ngSubmit)="saveOrderNewCatalogForm($event)">
+    <div class="ui form">
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">New Order Catalog</a>
+        <div class="field">
+          <label for="current-selected-offer">Current Selected Offer</label>
+          <input formControlName="currentSelectedOffer"  type="text" id="current-selected-offer">
+        </div>
+
+        <!--<div id="offerAccordion">
+          <div class="ui styled accordion">
+            <div class=" active title" (click)="viewOfferAccordion()">
+              <i class="shopping bag icon"></i>
+              Order Offers
+            </div>
+            <div class="active content">
+                <div class="accordion" id="businessAccordion">
+                  <div class="active title">
+                    <i class="dropdown icon"></i>
+                    Business Models
+                  </div>
+                  <div class="active content">vghnm</div>
+                </div>
+            </div>
+          </div>
+        </div>-->
+       <!-- <div class="ui styles accordion">
+          <sm-accordion>
+            <div class="active title">
+              <i class="dropdown icon"></i>
+              Order Offers
+            </div>
+            <div class="active content">
+                <sm-accordion-item>
+                  <div class="accordion">
+                  <div class="active title">
+                    <i class="dropdown icon"></i>
+                    Order Offers
+                  </div>
+                  <div class="active content">hfhg
+                  </div>
+                  </div>
+                </sm-accordion-item>
+
+            </div>
+          </sm-accordion>
+        </div>-->
+
+
+      </div>
+
+    </div>
+
+      <div align="right">
+        <button class="ui right labeled icon button" type="submit">
+          <i class="right arrow icon"></i>
+          Continue
+        </button>
+      </div>
+
+  </form>
+</div>
+
+<!-------------------------------------------New Order Parameter------------------------------------------------------->
+<div *ngIf="orderNewParameterFormVariable">
+  <form [formGroup]="orderNewParameterFormGroup" (ngSubmit)="saveOrderNewParameterForm($event)">
+    <div class="ui form">
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">New Order Parameter</a>
+        <div class="ui grid">
+          <div class="three wide column">
+            <a>Expand all configured</a>
+          </div>
+          <div class="two wide column">
+            <a>Collapse All</a>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="two wide column">
+            <p>Qty</p>
+          </div>
+          <div class="one wide column">
+            <p>UOM</p>
+          </div>
+          <div class="two wide column">
+            <p>Unit Price</p>
+          </div>
+          <div class="two wide column">
+            <p>Ext. Price</p>
+          </div>
+          <div class="one wide column">
+            <p>Promo</p>
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="offerCheckBox" [(ngModel)]="data.ordParameter.offerCheckBox"type="checkbox" id="offer">
+            <label for="offer">MC Ports +Overage USD</label>
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Initial Term</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <label for="initial-term-qty"></label>
+              <input formControlName="offerInitialTermQty" [(ngModel)]="data.ordParameter.offerInitialTermQty"  type="text" id="initial-term-qty">
+            </div>
+          </div>
+          <div class="one wide column">
+           <p>MO</p>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>RenewalTerm</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <label for="renewal-term-qty"></label>
+              <input formControlName="offerRenewalTermQty" [(ngModel)]="data.ordParameter.offerRenewalTermQty" type="text" id="renewal-term-qty">
+            </div>
+          </div>
+          <div class="one wide column">
+            <p>MO</p>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Prepay Term</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <select formControlName="offerPrepayTermQty" [(ngModel)]="data.ordParameter.offerPrepayTermQty">
+                <option value="">1(Monthly)</option>
+                <option value="1">2(Yearly)</option>
+              </select>
+            </div>
+          </div>
+          <div class="one wide column">
+            <p>MO</p>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Number of free months</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <select formControlName="numberOfFreeMonthsQty" [(ngModel)]="data.ordParameter.numberOfFreeMonthsQty">
+                <option value="">1(Monthly)</option>
+                <option value="1">2(Yearly)</option>
+              </select>
+            </div>
+          </div>
+          <div class="one wide column">
+            <p>MO</p>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Offer Name</p>
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <select formControlName="offerName" [(ngModel)]="data.ordParameter.offerName">
+                <option value="">MC Ports + overage</option>
+                <option value="jhj">jhhn</option>
+              </select>
+            </div>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+            <p>MO</p>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="serviceSetupCheckBox" [(ngModel)]="data.ordParameter.serviceSetupCheckBox" type="checkbox" id="service-setup">
+            <label for="service-setup">Service Setup</label>
+          </div>
+        </div>
+        <br>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="brandingCheckBox" [(ngModel)]="data.ordParameter.brandingCheckBox" type="checkbox" id="ord-branding">
+            <label for="ord-branding">Branding(Generic Site if unselected(USD)</label>
+          </div>
+        </div>
+
+
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Branding Fee</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+            <p>MO</p>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+            <div class="field">
+              <label for="branding-est-price"></label>
+              <input formControlName="brandingFeeEstPrice" [(ngModel)]="data.ordParameter.brandingFeeEstPrice" type="text" id="branding-est-price">
+            </div>
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="three wide column">
+          <div class="field">
+            <div class="ui checkbox">
+              <input formControlName="brandingFeeCheckBox" [(ngModel)]="data.ordParameter.brandingFeeCheckBox" type="checkbox" id="branding-fee">
+              <label for="branding-fee">Branding fee may be valued if the customer orders 25 or more names hosts. This applies to Multi-service Namesd Hosts also(sum of Multi-Service Named Hosts must be 255 or more). For Ports,Minute Branding consul t the GOA Pages</label>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="primaryLanguageCheckBox" [(ngModel)]="data.ordParameter.primaryLanguageCheckBox" type="checkbox" id="primary-language">
+            <label for="primary-language">Primary Language</label>
+          </div>
+        </div>
+
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Primary Language</p>
+          </div>
+          <div class="three wide column">
+            <label for="primary-language-dropdown"></label>
+            <select formControlName="primaryLanguage" [(ngModel)]="data.ordParameter.primaryLanguage" class="ui search dropdown" id="primary-language-dropdown">
+              <option value="">fghbh</option>
+              <option value="ftg">hfb</option>
+            </select>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <div class="field">
+              <div class="ui checkbox">
+                <input formControlName="meetingAssistCheckBox" [(ngModel)]="data.ordParameter.meetingAssistCheckBox" type="checkbox" id="meeting-assist-checkbox">
+                <label for="meeting-assist-checkbox">Meeting/Training Assist-Premium </label>
+              </div>
+            </div>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+            <p>Each</p>
+          </div>
+          <div class="two wide column">
+            <div class="field">
+              <label for="meeting-assist"></label>
+              <input formControlName="meetingAssistUnitPrice" [(ngModel)]="data.ordParameter.meetingAssistUnitPrice" type="text" id="meeting-assist">
+            </div>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <div class="field">
+              <div class="ui checkbox">
+                <input formControlName="additionalHoursCheckBox" [(ngModel)]="data.ordParameter.additionalHoursCheckBox" type="checkbox" id="additional-hours">
+                <label for="additional-hours">Addition Hours</label>
+              </div>
+            </div>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+            <p>Hour</p>
+          </div>
+          <div class="two wide column">
+            <div class="field">
+              <label for="additional-hours-unit-price"></label>
+              <input formControlName="additionalHoursUnitPrice" [(ngModel)]="data.ordParameter.additionalHoursUnitPrice" type="text" id="additional-hours-unit-price">
+            </div>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <div class="field">
+              <div class="ui checkbox">
+                <input formControlName="recordingCheckBox" [(ngModel)]="data.ordParameter.recordingCheckBox" type="checkbox" id="recording-check-box">
+                <label for="recording-check-box">Recording of Event on Compact Disk(Obsolete)</label>
+              </div>
+            </div>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+            <p>Each</p>
+          </div>
+          <div class="two wide column">
+            <div class="field">
+              <div class="ui checkbox">
+                <label for="recording-unit-price"></label>
+                <input formControlName="recordingUnitPrice" [(ngModel)]="data.ordParameter.recordingUnitPrice" type="text" id="recording-unit-price">
+              </div>
+              </div>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Mo Committed Type(Obsolete)</p>
+          </div>
+          <div class="three wide column">
+            <label for="mo-committed-type"></label>
+            <select formControlName="moCommittedType" [(ngModel)]="data.ordParameter.moCommittedType" class="ui search dropdown" id="mo-committed-type">
+              <option value="">fghbh</option>
+              <option value="ftg">hfb</option>
+            </select>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+           <p>Mo Commitment(Obsolete)</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <label for="mo-commitment-qty"></label>
+              <input formControlName="moCommitmentQty" [(ngModel)]="data.ordParameter.moCommitmentQty" type="text" id="mo-commitment-qty">
+            </div>
+          </div>
+          <div class="one wide column">
+            <p>Assist</p>
+          </div>
+          <div class="two wide column">
+            <div class="field">
+              <label for="mo-commitment-unit-price"></label>
+              <input formControlName="moCommitmentUnitPrice" [(ngModel)]="data.ordParameter.moCommitmentUnitPrice" type="text" id="mo-commitment-unit-price">
+            </div>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="opChangeUSDCheckBox" [(ngModel)]="data.ordParameter.opChangeUSDCheckBox" type="checkbox" id="op-change-usd-check-box">
+            <label for="op-change-usd-check-box">OpChange USD</label>
+          </div>
+        </div>
+        <br>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="psoUSDCheckBox"[(ngModel)]="data.ordParameter.psoUSDCheckBox" type="checkbox" id="pso-usd-check-box">
+            <label for="pso-usd-check-box">PSO USD</label>
+          </div>
+        </div>
+        <br>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="additionalStorageCheckBox" [(ngModel)]="data.ordParameter.additionalStorageCheckBox" type="checkbox" id="additional-storage-chheck-box">
+            <label for="additional-storage-chheck-box">MyFolder Additional Storage</label>
+          </div>
+        </div>
+        <br>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="nbrStorageCheckBox" [(ngModel)]="data.ordParameter.nbrStorageCheckBox" type="checkbox" id="nbr-storage-check-box">
+            <label for="nbr-storage-check-box">NBR Storage</label>
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Included Free Storage</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <label for="included-free-storage-qty"></label>
+              <input formControlName="includedFreeStorageQty" [(ngModel)]="data.ordParameter.includedFreeStorageQty" type="text" id="included-free-storage-qty">
+            </div>
+          </div>
+          <div class="one wide column">
+            <p>GB</p>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <p>Committed Monthly Storage</p>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+            <div class="field">
+              <label for="committed-monthly-storage-qty"></label>
+              <input formControlName="committedMonthlyStorageQty" [(ngModel)]="data.ordParameter.committedMonthlyStorageQty" type="text" id="committed-monthly-storage-qty">
+            </div>
+          </div>
+          <div class="one wide column">
+            <p>GB</p>
+          </div>
+          <div class="two wide column">
+            <div class="field">
+              <label for="committed-monthly-storage-unit-price"></label>
+              <input formControlName="committedMonthlyStorageUnitPrice" [(ngModel)]="data.ordParameter.committedMonthlyStorageUnitPrice" type="text" id="committed-monthly-storage-unit-price">
+            </div>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="ui grid">
+          <div class="four wide column">
+            <div class="field">
+              <div class="ui checkbox">
+                <input formControlName="overageCheckBox" [(ngModel)]="data.ordParameter.overageCheckBox" type="checkbox" id="overage-check-box">
+                <label for="overage-check-box">Enable Overage</label>
+              </div>
+            </div>
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="three wide column">
+          </div>
+          <div class="one wide column">
+            <p>GB</p>
+          </div>
+          <div class="two wide column">
+            <div class="field">
+              <label for="overage-unit-price"></label>
+              <input formControlName="overageUnitPrice" [(ngModel)]="data.ordParameter.overageUnitPrice" type="text" id="overage-unit-price">
+            </div>
+          </div>
+          <div class="two wide column">
+          </div>
+          <div class="one wide column">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="reportingUSDCheckBox" [(ngModel)]="data.ordParameter.reportingUSDCheckBox" type="checkbox" id="reporting-usd-check-box">
+            <label for="reporting-usd-check-box">Reporting USD</label>
+          </div>
+        </div>
+        <br>
+        <div class="field">
+          <div class="ui checkbox">
+            <input formControlName="optionUSDCheckBox" [(ngModel)]="data.ordParameter.optionUSDCheckBox" type="checkbox" id="option-usd-check-box">
+            <label for="option-usd-check-box">Obsolete Options USD</label>
+          </div>
+        </div>
+
+
+        <div align="right">
+          <button class="ui button" (click)="viewSkuList()" type="button">Apply</button>
+        </div>
+      </div>
+
+      <div *ngIf="orderSkuList" class="ui raised segment">
+        <a class="ui red ribbon label">SKU List</a>
+        <table class="ui celled table">
+          <tr>
+            <th>SKU</th>
+            <th>Name</th>
+            <th>SKU Type</th>
+            <th>UOM</th>
+            <th>Qty</th>
+            <th>Act. Unit Price</th>
+            <th>List Unit Price</th>
+            <th>Rating Type</th>
+            <th>Extended</th>
+            <th>Dsc%</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+
+
+      <div align="right">
+        <button class="ui right labeled icon button" type="submit">
+          <i class="right arrow icon"></i>
+          Continue
+        </button>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+<!------------------------------------------New Order Provision--------------------------------------------------------->
+<div *ngIf="orderNewProvisionFormVariable">
+  <form [formGroup]="orderNewProvisionFormGroup" (ngSubmit)="saveOrderNewProvisionForm($event)">
+    <div class="ui form">
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">New Order Provision</a>
+        <div class="field">
+          <label for="ord-service">Services</label>
+          <input formControlName="services" type="text" id="ord-service">
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-language">Languages</label>
+            <input formControlName="language" type="text" id="ord-language">
+          </div>
+          <div class="field">
+            <label for="webex-url">WebEx URL</label>
+            <input formControlName="webExURL" type="text" id="webex-url">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label >Time Zone</label>
+            <select formControlName="timeZone" class="ui search dropdown">
+              <option value="">Canada</option>
+              <option value="india">India</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="branding-site-reference">Branding Site Reference</label>
+            <input formControlName="brandingSiteReference" type="text" id="branding-site-reference">
+          </div>
+        </div>
+      </div>
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Contacts</a>
+        <div align="right">
+          <button type="button" class="ui button" (click)="viewNewContactModal()">Add New Contact</button>
+        </div>
+
+        <table class="ui celled table">
+          <thead>
+          <tr>
+            <th>Contact Type</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Work Phone</th>
+            <th>Title</th>
+            <th>Dept</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let cdata of data.ordContact">
+            <td>{{cdata.contactType}}</td>
+            <td>{{cdata.individualName}}</td>
+            <td>{{cdata.email}}</td>
+            <td>{{cdata.workPhone}}</td>
+            <td>{{cdata.title}}</td>
+            <td>{{cdata.department}}</td>
+            <td><a>Edit</a></td>
+          </tr>
+          </tbody>
+
+        </table>
+      </div>
+
+        <div class="ui raised segment">
+          <a class="ui red ribbon label">Agents</a>
+          <div align="right">
+            <button type="button" class="ui button" (click)="viewNewAgentModal()">Add New Agent</button>
+          </div>
+
+          <table class="ui celled table">
+            <tr>
+              <th>Function</th>
+              <th>Name</th>
+              <th>Team</th>
+              <th>Manager</th>
+              <th>Action</th>
+            </tr>
+            <!--<tr *ngFor="let cdata of data.ordAgent">
+              <td>{{cdata.function}}</td>
+              <td>{{cdata.name}}</td>
+              <td>{{cdata.team}}</td>
+              <td>{{cdata.manager}}</td>
+              <td><a>Edit</a></td>
+            </tr>-->
+          </table>
+        </div>
+
+        <div align="right">
+          <button class="ui right labeled icon button" type="submit">
+            <i class="right arrow icon"></i>
+            Continue
+          </button>
+        </div>
+
+    </div>
+  </form>
+
+</div>
+
+<!-----------------------------------------Add New Contact-------------------------------------------------------------->
+<div id="newContactModal" class="ui scrolling modal">
+  <div class="header">Add Contact</div>
+  <form [formGroup]="orderNewContactFormGroup" (ngSubmit)="saveOrderContact($event)">
+    <div class="ui form">
+      <div class="field">
+        <label>Contact Type</label>
+        <select formControlName="contactType" class="ui search dropdown">
+          <option value=""></option>
+          <option value="AF">Business</option>
+          <option value="AX">Personal</option>
+          <option value="AL">Office</option>
+          <option value="DZ">Clerk</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Individual Name</label>
+        <select formControlName="individualName" class="ui search dropdown">
+          <option value=""></option>
+          <option value="AF">Varsha</option>
+          <option value="AX">Aakash</option>
+          <option value="AL">Mahesh</option>
+          <option value="DZ">Clerk</option>
+        </select>
+      </div>
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Contact Details</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="first-name">First Name</label>
+            <input formControlName="firstName" type="text" id="first-name">
+          </div>
+          <div class="field">
+            <label for="last-name">Last Name</label>
+            <input formControlName="lastName" type="text" id="last-name">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-title">Title</label>
+            <input formControlName="title" type="text" id="ord-title">
+          </div>
+          <div class="field">
+            <label>Job Function</label>
+            <select formControlName="jobFunction" class="ui search dropdown">
+              <option value=""></option>
+              <option value="AF">Administrative Assistant</option>
+              <option value="AX">Assitant Manager</option>
+              <option value="AL">Manager</option>
+              <option value="DZ">Clerk</option>
+            </select>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label>Department</label>
+            <select formControlName="department" class="ui search dropdown">
+              <option value=""></option>
+              <option value="AF">Business Administration</option>
+              <option value="AX">Business</option>
+              <option value="AL">Communication</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="ord-email">Email</label>
+            <input formControlName="email" type="text" id="ord-email">
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <label for="work-phone">Work Phone</label>
+            <input formControlName="workPhone" type="text" id=work-phone>
+          </div>
+          <div class="field">
+            <label for="home-phone">Home Phone</label>
+            <input formControlName="homePhone" type="text" id="home-phone">
+          </div>
+          <div class="field">
+            <label for="cell-phone">Cell Phone</label>
+            <input formControlName="cellPhone" type="text" id="cell-phone">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-fax">Fax</label>
+            <input formControlName="fax" type="text" id="ord-fax">
+          </div>
+          <div class="field">
+            <label for="reports-to">Reports To</label>
+            <input formControlName="reportsTo" type="text" id="reports-to">
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <label for="marketing-project">Marketing Project</label>
+            <input formControlName="marketingProject" type="text" id="marketing-project">
+          </div>
+          <div class="field">
+            <label for="referred-by">Referred By</label>
+            <input formControlName="referredBy" type="text" id="referred-by">
+          </div>
+          <div class="field">
+            <label>Email Permission</label>
+            <div class="field"><input type="radio" value="Yes" name="emailPermission">Yes</div>
+            <div class="field"><input type="radio" value="No" name="emailPermission">No</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Address</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-address1">Address Line 1</label>
+            <input formControlName="address1" type="text" id="ord-address1">
+          </div>
+          <div class="field">
+            <label for="ord-address2">Address Line 2</label>
+            <input formControlName="address2" type="text" id="ord-address2">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-city">City</label>
+            <input formControlName="city" type="text" id="ord-city">
+          </div>
+          <div class="field">
+            <label for="ord-state">State</label>
+            <input formControlName="state" type="text" id="ord-state">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-country">Country</label>
+            <input formControlName="country" type="text" id="ord-country">
+          </div>
+          <div class="field">
+            <label for="ord-zip">Zip</label>
+            <input formControlName="zip" type="text" id="ord-zip">
+          </div>
+        </div>
+      </div>
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Contact Notes</a>
+        <div class="field">
+          <label for="ord-notes">Notes(less than 256 characters)</label>
+          <input formControlName="notes" type="text" id="ord-notes">
+        </div>
+      </div>
+
+      <div align="right">
+        <div class="ui buttons">
+          <button class="ui negative button" type="button">Delete</button>
+          <button class="ui positive button" type="submit">Submit</button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+<!-----------------------------------------Edit Contact--------------------------------------------------------------
+<div id="editContactModal" class="ui scrolling modal">
+  <div class="header">Add Contact</div>
+  <form [formGroup]="orderNewContactFormGroup" (ngSubmit)="editOrderContact($event)">
+    <div class="ui form">
+      <div class="field">
+        <label>Contact Type</label>
+        <select formControlName="contactType" class="ui search dropdown">
+          <option value=""></option>
+          <option value="AF">Business</option>
+          <option value="AX">Personal</option>
+          <option value="AL">Office</option>
+          <option value="DZ">Clerk</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Individual Name</label>
+        <select formControlName="individualName" class="ui search dropdown">
+          <option value=""></option>
+          <option value="AF">Varsha</option>
+          <option value="AX">Aakash</option>
+          <option value="AL">Mahesh</option>
+          <option value="DZ">Clerk</option>
+        </select>
+      </div>
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Contact Details</a>
+        <div class="two fields">
+          <div class="field">
+            <label>First Name</label>
+            <input formControlName="firstName"  type="text">
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input formControlName="lastName" type="text">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label>Title</label>
+            <input formControlName="title" type="text">
+          </div>
+          <div class="field">
+            <label>Job Function</label>
+            <select formControlName="jobFunction" class="ui search dropdown">
+              <option value=""></option>
+              <option value="AF">Administrative Assistant</option>
+              <option value="AX">Assitant Manager</option>
+              <option value="AL">Manager</option>
+              <option value="DZ">Clerk</option>
+            </select>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label>Department</label>
+            <select formControlName="department" class="ui search dropdown">
+              <option value=""></option>
+              <option value="AF">Business Administration</option>
+              <option value="AX">Business</option>
+              <option value="AL">Communication</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input formControlName="email" type="text">
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <label >Work Phone</label>
+            <input formControlName="workPhone" type="text" >
+          </div>
+          <div class="field">
+            <label for="home-phone">Home Phone</label>
+            <input formControlName="homePhone" type="text">
+          </div>
+          <div class="field">
+            <label>Cell Phone</label>
+            <input formControlName="cellPhone" type="text">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label>Fax</label>
+            <input formControlName="fax" type="text">
+          </div>
+          <div class="field">
+            <label>Reports To</label>
+            <input formControlName="reportsTo" type="text">
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <label>Marketing Project</label>
+            <input formControlName="marketingProject" type="text">
+          </div>
+          <div class="field">
+            <label>Referred By</label>
+            <input formControlName="referredBy" type="text" >
+          </div>
+          <div class="field">
+            <label>Email Permission</label>
+            <div class="field"><input type="radio" value="Yes" name="emailPermission">Yes</div>
+            <div class="field"><input type="radio" value="No" name="emailPermission">No</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Address</a>
+        <div class="two fields">
+          <div class="field">
+            <label >Address Line 1</label>
+            <input formControlName="address1" type="text">
+          </div>
+          <div class="field">
+            <label>Address Line 2</label>
+            <input formControlName="address2" type="text">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label>City</label>
+            <input formControlName="city" type="text">
+          </div>
+          <div class="field">
+            <label >State</label>
+            <input formControlName="state" type="text">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label>Country</label>
+            <input formControlName="country" type="text">
+          </div>
+          <div class="field">
+            <label>Zip</label>
+            <input formControlName="zip" type="text">
+          </div>
+        </div>
+      </div>
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Contact Notes</a>
+        <div class="field">
+          <label>Notes(less than 256 characters)</label>
+          <input formControlName="notes" type="text">
+        </div>
+      </div>
+
+      <div align="right">
+        <div class="ui buttons">
+          <button class="ui negative button" type="button">Delete</button>
+          <button class="ui positive button" type="submit">Submit</button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>-->
+
+<!-------------------------------------------Add New Agent-------------------------------------------------------------->
+<div id="newAgentModal" class="ui scrolling modal">
+  <div class="header">Add Agent</div>
+  <form [formGroup]="orderNewAgentFormGroup" (ngSubmit)="saveOrderAgent($event)">
+    <div class="ui form">
+      <div class="ui raised segment">
+        <div class="field">
+          <label>Initial Sales Rep</label>
+          <select formControlName="initialSalesRep" class="ui search dropdown">
+            <option value=""></option>
+            <option value="AF">Tracy</option>
+            <option value="AX">Åland </option>
+            <option value="AL">Varsha</option>
+            <option value="DZ">Trudy</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Current Owner</label>
+          <select formControlName="currentOwner" class="ui search dropdown">
+            <option value=""></option>
+            <option value="AF">Chan</option>
+            <option value="AX">MAdhu</option>
+            <option value="AL">Alko</option>
+            <option value="DZ">Algae</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>CSM</label>
+          <select formControlName="csm" class="ui search dropdown">
+            <option value=""></option>
+            <option value="AF">vgh</option>
+            <option value="AX">huewik</option>
+            <option value="AL">iopej</option>
+            <option value="DZ">dfejwyd</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Sales Engineer</label>
+          <select formControlName="salesEngineer" class="ui search dropdown">
+            <option value=""></option>
+            <option value="AF">sfhkjs</option>
+            <option value="AX">iud</option>
+            <option value="AL">iouhj</option>
+            <option value="DZ">wety</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Sales Access</label>
+          <select formControlName="salesAccess" class="ui search dropdown">
+            <option value=""></option>
+            <option value="AF">ui</option>
+            <option value="AX">hufhkj</option>
+            <option value="AL">uhyjfynk</option>
+            <option value="DZ">tybtd</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Collector</label>
+          <select formControlName="collector" class="ui search dropdown">
+            <option value=""></option>
+            <option value="AF">kjwdkjm</option>
+            <option value="AX">fvdns</option>
+            <option value="AL">ioju</option>
+            <option value="DZ">wetfwd</option>
+          </select>
+        </div>
+
+        <div align="right">
+          <div class="ui buttons">
+            <button class="ui negative button" type="button">Delete</button>
+            <button class="ui positive button" type="submit">Submit</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</div>
+
+<!------------------------------------------Account Profile------------------------------------------------------------->
+<div *ngIf="orderNewAccountProfileFormVariable">
+  <form [formGroup]="orderNewAccountProfileFormGroup" (ngSubmit)="saveOrderAccountProfile($event)">
+    <div class="ui form">
+      <div class="ui raised segment">
+        <a class="ui red label ribbon">Account Details</a>
+        <div class="three fields">
+          <div class="field">
+            <label for="primary-sales-rep">Primary Sales Rep</label>
+            <input formControlName="primarySalesRep" type="text" id="primary-sales-rep">
+          </div>
+          <div class="field">
+            <label for="team-name">Team Name</label>
+            <input formControlName="teamName" type="text" id="team-name">
+          </div>
+          <div class="field">
+            <label for="ord-industry">Industry</label>
+            <input formControlName="industry" type="text" id="ord-industry">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="total-number-of-employees">Total Number of Employees</label>
+            <input formControlName="totalEmployees" type="text" id="total-number-of-employees">
+          </div>
+          <div class="field">
+            <label for="est-annual-sales">Est. Annual Sales</label>
+            <input formControlName="estAnnualSales" type="text" id="est-annual-sales">
+          </div>
+        </div>
+        <div class="field">
+          <label for="company-description">Brief description of what this company does</label>
+          <input formControlName="companyDescription" type="text" id="company-description">
+        </div>
+      </div>
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Technology Information</a>
+        <div class="three fields">
+          <div class="field">
+            <p>DESCRIPTION</p>
+          </div>
+          <div class="field">
+            <p>CURRENT</p>
+          </div>
+          <div class="field">
+            <p>FUTURE</p>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Desktop Operating System</p>
+          </div>
+          <div class="field">
+            <select formControlName="desktopOperatingSystemCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="desktopOperatingSystemFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Server Operating System</p>
+          </div>
+          <div class="field">
+            <select formControlName="serverOperatingSystemCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="serverOperatingSystemFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Routing and Switching</p>
+          </div>
+          <div class="field">
+            <select formControlName="routingCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="routingFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Email</p>
+          </div>
+          <div class="field">
+            <select formControlName="emailCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="emailFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure- GeneralWeb Collaboration Application</p>
+          </div>
+          <div class="field">
+            <select formControlName="webCollaborationApplicationCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="webCollaborationApplicationFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Business IM</p>
+          </div>
+          <div class="field">
+            <select formControlName="businessIMCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="businessIMFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Telephony-Internal</p>
+          </div>
+          <div class="field">
+            <select formControlName="telephonyInternalCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="telephonyInternalFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Telephony-External</p>
+          </div>
+          <div class="field">
+            <select formControlName="telephonyExternalCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="telephonyExternalFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Cisco IP Phones</p>
+          </div>
+          <div class="field">
+            <label></label>
+            <div class="two fields">
+              <div class="field"><input type="radio" value="yes">Yes</div>
+              <div class="field"><input type="radio" value="no">No</div>
+            </div>
+          </div>
+          <div class="field">
+            <label></label>
+            <div class="two fields">
+              <div class="field"><input type="radio" value="yes">Yes</div>
+              <div class="field"><input type="radio" value="no">No</div>
+            </div>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>IT Dept. Applications-Systems Management</p>
+          </div>
+          <div class="field">
+            <select formControlName="systemsManagementCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="systemsManagementFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>IT Dept. Applications-Help Desk</p>
+          </div>
+          <div class="field">
+            <select formControlName="helpDeskCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="helpDeskFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>IT Dept. Applications-Business Continuance</p>
+          </div>
+          <div class="field">
+            <select formControlName="businessContinuanceCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="businessContinuanceFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Training Dept. Applications-LMS</p>
+          </div>
+          <div class="field">
+            <select formControlName="lmsCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="lmsFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Training Dept. Applications-LCMS</p>
+          </div>
+          <div class="field">
+            <select formControlName="lcmsCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="lcmsFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Training Dept. Applications-Content Authoring</p>
+          </div>
+          <div class="field">
+            <select formControlName="contentAuthoringCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="contentAuthoringFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Training Dept. Applications-Marketing Automation</p>
+          </div>
+          <div class="field">
+            <select formControlName="marketingAutomationCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="marketingAutomationFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Training Dept. Applications-Broadcasting</p>
+          </div>
+          <div class="field">
+            <select formControlName="broadcastingCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="broadcastingFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Sales Dept. Applications</p>
+          </div>
+          <div class="field">
+            <select formControlName="salesDeptApplicationCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="salesDeptApplicationFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Project Management Applications</p>
+          </div>
+          <div class="field">
+            <select formControlName="projectManagementApplicationCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="projectManagementApplicationFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Deployment/Usuage Information</a>
+        <div class="field">
+          <label for="initial-webex-users">Estimated number of initial WebEx users</label>
+          <input formControlName="initialWebExUsers" type="text" id="initial-webex-users">
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="corporate-internal-meeting">Corporate Internal Meeting</label>
+            <input formControlName="corporateInternalMeeting" type="checkbox" id="corporate-internal-meeting">
+          </div>
+          <div class="field">
+            <label for="external-technical-support">External Technical Support</label>
+            <input formControlName="externalTechnicalSupport" type="checkbox" id="external-technical-support">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="external-training">External Training</label>
+            <input formControlName="externalTraining" type="checkbox" id="external-training">
+          </div>
+          <div class="field">
+            <label for="internal-technical-support">Internal Technical Support</label>
+            <input formControlName="internalTechnicalSupport" type="checkbox" id="internal-technical-support">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="internal-training">Internal Training</label>
+            <input formControlName="internalTraining" type="checkbox" id="internal-training">
+          </div>
+          <div class="field">
+            <label for="large-meeting">Large Meeting(>100)</label>
+            <input formControlName="largeMeeting" type="checkbox" id="large-meeting">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ipress-analyst-briefing">Press/Analyst Briefings</label>
+            <input formControlName="pressAnalystBriefing" type="checkbox" id="ipress-analyst-briefing">
+          </div>
+          <div class="field">
+            <label for="project-management">Project Management</label>
+            <input formControlName="projectManagement" type="checkbox" id="project-management">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="sales-demos">Sales Demos</label>
+            <input formControlName="salesDemos" type="checkbox" id="sales-demos">
+          </div>
+          <div class="field">
+            <label for="ord-webminar">Webminars</label>
+            <input formControlName="webminar" type="checkbox" id="ord-webminar">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-other">Other</label>
+            <input formControlName="other" type="checkbox" id="ord-other">
+          </div>
+          <div class="field">
+            <label for="information-not-available">Information Not Available</label>
+            <input formControlName="informationNotAvailable" type="checkbox" id="information-not-available">
+          </div>
+        </div>
+        <div class="field">
+          <label>Select the deaprtment involved in SELECTING WebEx</label>
+          <select formControlName="departmentSelectingWebEx" class="ui search dropdown">
+            <option value="">hsdijk</option>
+            <option value="bh">kkjxn</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Select the primary deaprtment that will INITIALLY use WebEx</label>
+          <select formControlName="primaryDepartment" class="ui search dropdown">
+            <option value="">hsdijk</option>
+            <option value="bh">kkjxn</option>
+          </select>
+        </div>
+        <br>
+        <p>Select the primary deaprtment that will INITIALLY use WebEx</p>
+        <div class="two fields">
+          <div class="field">
+            <label for="customer-service-external">Customer Service -External</label>
+            <input formControlName="customerServiceExternal" type="checkbox" id="customer-service-external">
+          </div>
+          <div class="field">
+            <label for="support-internal">Support-Internal</label>
+            <input formControlName="supportInternal" type="checkbox" id="support-internal">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="engineering-rd">Engineering/R&D</label>
+            <input formControlName="engineeringRD" type="checkbox" id="engineering-rd">
+          </div>
+          <div class="field">
+            <label for="accounting-finance">Accounting/Finance</label>
+            <input formControlName="accountingFinance" type="checkbox" id="accounting-finance">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="human-resources">Human Resources</label>
+            <input formControlName="humanResources" type="checkbox" id="human-resources">
+          </div>
+          <div class="field">
+            <label for="it-mis">IT/MIS</label>
+            <input formControlName="itMis" type="checkbox" id="it-mis">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-legal">Legal</label>
+            <input formControlName="legal" type="checkbox" id="ord-legal">
+          </div>
+          <div class="field">
+            <label for="ord-marketing">Marketing</label>
+            <input formControlName="marketing" type="checkbox" id="ord-marketing">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-sales">Sales</label>
+            <input formControlName="sales" type="checkbox" id="ord-sales">
+          </div>
+          <div class="field">
+            <label for="training-external">Training-External</label>
+            <input formControlName="trainingExternal" type="checkbox" id="training-external">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="training-internal">Training-Internal</label>
+            <input formControlName="trainingInternal" type="checkbox" id="training-internal">
+          </div>
+          <div class="field">
+            <label for="company-wide">Company Wide</label>
+            <input formControlName="companyWide" type="checkbox" id="company-wide">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="pr-investor-relation">PR/Investor Relations</label>
+            <input formControlName="prInvestorsRelation" type="checkbox" id="pr-investor-relation">
+          </div>
+          <div class="field">
+            <label for="ord-manufacturing">Manufacturing</label>
+            <input formControlName="manufacturing" type="checkbox" id="ord-manufacturing">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-operation">Operations</label>
+            <input formControlName="operation" type="checkbox" id="ord-operation">
+          </div>
+          <div class="field">
+            <label for="executive-management">Executive Management</label>
+            <input formControlName="executiveManagement" type="checkbox" id="executive-management">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="business-development">Business Development/Channel</label>
+            <input formControlName="businessDevelopment" type="checkbox" id="business-development">
+          </div>
+          <div class="field">
+            <label for="ord-other-1">Other</label>
+            <input formControlName="other1" type="checkbox" id="ord-other-1">
+          </div>
+        </div>
+        <div class="field">
+          <label for="information-not-available-1">Information Not Available</label>
+          <input formControlName="informationNotAvailable1" type="checkbox" id="information-not-available-1">
+        </div>
+      </div>
+
+      <div align="center">
+        <div class="ui buttons">
+          <button class="ui button" type="button">Print</button>
+          <button class="ui button" type="submit">Save</button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+<!-----------------------------------------Edit Account Profile--------------------------------------------------------->
+<div id="editAccountProfile" class="ui scrolling modal">
+  <form [formGroup]="orderEditAccountProfileFormGroup" (ngSubmit)="saveOrderEditAccountProfile($event)">
+    <div class="ui form">
+      <div class="ui raised segment">
+        <a class="ui red label ribbon">Account Details</a>
+        <div class="three fields">
+          <div class="field">
+            <label for="primary-sales-rep">Primary Sales Rep</label>
+            <input formControlName="primarySalesRep" [(ngModel)]="data.ordAccountProfile.primarySalesRep" type="text" id="primary-sales-rep">
+          </div>
+          <div class="field">
+            <label for="team-name">Team Name</label>
+            <input formControlName="teamName" [(ngModel)]="data.ordAccountProfile.teamName" type="text" id="team-name">
+          </div>
+          <div class="field">
+            <label for="ord-industry">Industry</label>
+            <input formControlName="industry" [(ngModel)]="data.ordAccountProfile.industry" type="text" id="ord-industry">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="total-number-of-employees">Total Number of Employees</label>
+            <input formControlName="totalEmployees" [(ngModel)]="data.ordAccountProfile.totalEmployees" type="text" id="total-number-of-employees">
+          </div>
+          <div class="field">
+            <label for="est-annual-sales">Est. Annual Sales</label>
+            <input formControlName="estAnnualSales" [(ngModel)]="data.ordAccountProfile.estAnnualSales" type="text" id="est-annual-sales">
+          </div>
+        </div>
+        <div class="field">
+          <label for="company-description">Brief description of what this company does</label>
+          <input formControlName="companyDescription" [(ngModel)]="data.ordAccountProfile.companyDescription"type="text" id="company-description">
+        </div>
+      </div>
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Technology Information</a>
+        <div class="three fields">
+          <div class="field">
+            <p>DESCRIPTION</p>
+          </div>
+          <div class="field">
+            <p>CURRENT</p>
+          </div>
+          <div class="field">
+            <p>FUTURE</p>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Desktop Operating System</p>
+          </div>
+          <div class="field">
+            <select formControlName="desktopOperatingSystemCur" [(ngModel)]="data.ordAccountProfile.desktopOperatingSystemCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="desktopOperatingSystemFut" [(ngModel)]="data.ordAccountProfile.desktopOperatingSystemFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Server Operating System</p>
+          </div>
+          <div class="field">
+            <select formControlName="serverOperatingSystemCur" [(ngModel)]="data.ordAccountProfile.serverOperatingSystemCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="serverOperatingSystemFut" [(ngModel)]="data.ordAccountProfile.serverOperatingSystemFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Routing and Switching</p>
+          </div>
+          <div class="field">
+            <select formControlName="routingCur" [(ngModel)]="data.ordAccountProfile.routingCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="routingFut" [(ngModel)]="data.ordAccountProfile.routingFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Email</p>
+          </div>
+          <div class="field">
+            <select formControlName="emailCur" [(ngModel)]="data.ordAccountProfile.emailCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="emailFut" [(ngModel)]="data.ordAccountProfile.emailFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure- GeneralWeb Collaboration Application</p>
+          </div>
+          <div class="field">
+            <select formControlName="webCollaborationApplicationCur" [(ngModel)]="data.ordAccountProfile.webCollaborationApplicationCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="webCollaborationApplicationFut" [(ngModel)]="data.ordAccountProfile.webCollaborationApplicationFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Business IM</p>
+          </div>
+          <div class="field">
+            <select formControlName="businessIMCur" [(ngModel)]="data.ordAccountProfile.businessIMCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="businessIMFut" [(ngModel)]="data.ordAccountProfile.businessIMFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Telephony-Internal</p>
+          </div>
+          <div class="field">
+            <select formControlName="telephonyInternalCur" [(ngModel)]="data.ordAccountProfile.telephonyInternalCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="telephonyInternalFut" [(ngModel)]="data.ordAccountProfile.telephonyInternalFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Telephony-External</p>
+          </div>
+          <div class="field">
+            <select formControlName="telephonyExternalCur" [(ngModel)]="data.ordAccountProfile.telephonyExternalCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="telephonyExternalFut" [(ngModel)]="data.ordAccountProfile.telephonyExternalFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Infrastructure-Cisco IP Phones</p>
+          </div>
+          <div class="field">
+            <label></label>
+            <div class="two fields">
+              <div class="field"><input type="radio" value="yes">Yes</div>
+              <div class="field"><input type="radio" value="no">No</div>
+            </div>
+          </div>
+          <div class="field">
+            <label></label>
+            <div class="two fields">
+              <div class="field"><input type="radio" value="yes">Yes</div>
+              <div class="field"><input type="radio" value="no">No</div>
+            </div>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>IT Dept. Applications-Systems Management</p>
+          </div>
+          <div class="field">
+            <select formControlName="systemsManagementCur" [(ngModel)]="data.ordAccountProfile.systemsManagementCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="systemsManagementFut" [(ngModel)]="data.ordAccountProfile.systemsManagementFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>IT Dept. Applications-Help Desk</p>
+          </div>
+          <div class="field">
+            <select formControlName="helpDeskCur" [(ngModel)]="data.ordAccountProfile.helpDeskCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="helpDeskFut" [(ngModel)]="data.ordAccountProfile.helpDeskFut"class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>IT Dept. Applications-Business Continuance</p>
+          </div>
+          <div class="field">
+            <select formControlName="businessContinuanceCur" [(ngModel)]="data.ordAccountProfile.businessContinuanceCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="businessContinuanceFut" [(ngModel)]="data.ordAccountProfile.businessContinuanceFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Training Dept. Applications-LMS</p>
+          </div>
+          <div class="field">
+            <select formControlName="lmsCur" [(ngModel)]="data.ordAccountProfile.lmsCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="lmsFut" [(ngModel)]="data.ordAccountProfile.lmsFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Training Dept. Applications-LCMS</p>
+          </div>
+          <div class="field">
+            <select formControlName="lcmsCur" [(ngModel)]="data.ordAccountProfile.lcmsCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="lcmsFut" [(ngModel)]="data.ordAccountProfile.lcmsFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Training Dept. Applications-Content Authoring</p>
+          </div>
+          <div class="field">
+            <select formControlName="contentAuthoringCur" [(ngModel)]="data.ordAccountProfile.contentAuthoringCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="contentAuthoringFut" [(ngModel)]="data.ordAccountProfile.contentAuthoringFut"class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Training Dept. Applications-Marketing Automation</p>
+          </div>
+          <div class="field">
+            <select formControlName="marketingAutomationCur" [(ngModel)]="data.ordAccountProfile.marketingAutomationCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="marketingAutomationFut" [(ngModel)]="data.ordAccountProfile.marketingAutomationFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Training Dept. Applications-Broadcasting</p>
+          </div>
+          <div class="field">
+            <select formControlName="broadcastingCur" [(ngModel)]="data.ordAccountProfile.broadcastingCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="broadcastingFut" [(ngModel)]="data.ordAccountProfile.broadcastingFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Sales Dept. Applications</p>
+          </div>
+          <div class="field">
+            <select formControlName="salesDeptApplicationCur" [(ngModel)]="data.ordAccountProfile.salesDeptApplicationCur" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="salesDeptApplicationFut" [(ngModel)]="data.ordAccountProfile.salesDeptApplicationFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <p>Project Management Applications</p>
+          </div>
+          <div class="field">
+            <select formControlName="projectManagementApplicationCur"[(ngModel)]="data.ordAccountProfile.projectManagementApplicationCurje" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+          <div class="field">
+            <select formControlName="projectManagementApplicationFut" [(ngModel)]="data.ordAccountProfile.projectManagementApplicationFut" class="ui search dropdown">
+              <option value="">vdbaskjj</option>
+              <option value="fysuh">dibszxjk</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Deployment/Usuage Information</a>
+        <div class="field">
+          <label for="initial-webex-users">Estimated number of initial WebEx users</label>
+          <input formControlName="initialWebExUsers" [(ngModel)]="data.ordAccountProfile.initialWebExUsers" type="text" id="initial-webex-users">
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="corporate-internal-meeting">Corporate Internal Meeting</label>
+            <input formControlName="corporateInternalMeeting" [(ngModel)]="data.ordAccountProfile.corporateInternalMeeting" type="checkbox" id="corporate-internal-meeting">
+          </div>
+          <div class="field">
+            <label for="external-technical-support">External Technical Support</label>
+            <input formControlName="externalTechnicalSupport" [(ngModel)]="data.ordAccountProfile.externalTechnicalSupport" type="checkbox" id="external-technical-support">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="external-training">External Training</label>
+            <input formControlName="externalTraining" [(ngModel)]="data.ordAccountProfile.externalTraining" type="checkbox" id="external-training">
+          </div>
+          <div class="field">
+            <label for="internal-technical-support">Internal Technical Support</label>
+            <input formControlName="internalTechnicalSupport" [(ngModel)]="data.ordAccountProfile.internalTechnicalSupport" type="checkbox" id="internal-technical-support">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="internal-training">Internal Training</label>
+            <input formControlName="internalTraining" [(ngModel)]="data.ordAccountProfile.internalTraining" type="checkbox" id="internal-training">
+          </div>
+          <div class="field">
+            <label for="large-meeting">Large Meeting(>100)</label>
+            <input formControlName="largeMeeting" [(ngModel)]="data.ordAccountProfile.largeMeeting" type="checkbox" id="large-meeting">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ipress-analyst-briefing">Press/Analyst Briefings</label>
+            <input formControlName="pressAnalystBriefing" [(ngModel)]="data.ordAccountProfile.pressAnalystBriefing" type="checkbox" id="ipress-analyst-briefing">
+          </div>
+          <div class="field">
+            <label for="project-management">Project Management</label>
+            <input formControlName="projectManagement" [(ngModel)]="data.ordAccountProfile.projectManagement"type="checkbox" id="project-management">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="sales-demos">Sales Demos</label>
+            <input formControlName="salesDemos" [(ngModel)]="data.ordAccountProfile.salesDemos" type="checkbox" id="sales-demos">
+          </div>
+          <div class="field">
+            <label for="ord-webminar">Webminars</label>
+            <input formControlName="webminar" [(ngModel)]="data.ordAccountProfile.webminar" type="checkbox" id="ord-webminar">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-other">Other</label>
+            <input formControlName="other" [(ngModel)]="data.ordAccountProfile.other" type="checkbox" id="ord-other">
+          </div>
+          <div class="field">
+            <label for="information-not-available">Information Not Available</label>
+            <input formControlName="informationNotAvailable" [(ngModel)]="data.ordAccountProfile.informationNotAvailable" type="checkbox" id="information-not-available">
+          </div>
+        </div>
+        <div class="field">
+          <label>Select the deaprtment involved in SELECTING WebEx</label>
+          <select formControlName="departmentSelectingWebEx" [(ngModel)]="data.ordAccountProfile.departmentSelectingWebEx" class="ui search dropdown">
+            <option value="">hsdijk</option>
+            <option value="bh">kkjxn</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Select the primary deaprtment that will INITIALLY use WebEx</label>
+          <select formControlName="primaryDepartment" [(ngModel)]="data.ordAccountProfile.primaryDepartment" class="ui search dropdown">
+            <option value="">hsdijk</option>
+            <option value="bh">kkjxn</option>
+          </select>
+        </div>
+        <br>
+        <p>Select the primary deaprtment that will INITIALLY use WebEx</p>
+        <div class="two fields">
+          <div class="field">
+            <label for="customer-service-external">Customer Service -External</label>
+            <input formControlName="customerServiceExternal" [(ngModel)]="data.ordAccountProfile.customerServiceExternal" type="checkbox" id="customer-service-external">
+          </div>
+          <div class="field">
+            <label for="support-internal">Support-Internal</label>
+            <input formControlName="supportInternal" [(ngModel)]="data.ordAccountProfile.supportInternal" type="checkbox" id="support-internal">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="engineering-rd">Engineering/R&D</label>
+            <input formControlName="engineeringRD" [(ngModel)]="data.ordAccountProfile.engineeringRD" type="checkbox" id="engineering-rd">
+          </div>
+          <div class="field">
+            <label for="accounting-finance">Accounting/Finance</label>
+            <input formControlName="accountingFinance" [(ngModel)]="data.ordAccountProfile.accountingFinance" type="checkbox" id="accounting-finance">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="human-resources">Human Resources</label>
+            <input formControlName="humanResources" [(ngModel)]="data.ordAccountProfile.humanResources" type="checkbox" id="human-resources">
+          </div>
+          <div class="field">
+            <label for="it-mis">IT/MIS</label>
+            <input formControlName="itMis" [(ngModel)]="data.ordAccountProfile.itMis" type="checkbox" id="it-mis">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-legal">Legal</label>
+            <input formControlName="legal" [(ngModel)]="data.ordAccountProfile.legal" type="checkbox" id="ord-legal">
+          </div>
+          <div class="field">
+            <label for="ord-marketing">Marketing</label>
+            <input formControlName="marketing" [(ngModel)]="data.ordAccountProfile.marketing" type="checkbox" id="ord-marketing">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-sales">Sales</label>
+            <input formControlName="sales" [(ngModel)]="data.ordAccountProfile.sales" type="checkbox" id="ord-sales">
+          </div>
+          <div class="field">
+            <label for="training-external">Training-External</label>
+            <input formControlName="trainingExternal"[(ngModel)]="data.ordAccountProfile.trainingExternal" type="checkbox" id="training-external">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="training-internal">Training-Internal</label>
+            <input formControlName="trainingInternal" [(ngModel)]="data.ordAccountProfile.trainingInternal" type="checkbox" id="training-internal">
+          </div>
+          <div class="field">
+            <label for="company-wide">Company Wide</label>
+            <input formControlName="companyWide" [(ngModel)]="data.ordAccountProfile.companyWide" type="checkbox" id="company-wide">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="pr-investor-relation">PR/Investor Relations</label>
+            <input formControlName="prInvestorsRelation" [(ngModel)]="data.ordAccountProfile.prInvestorsRelation" type="checkbox" id="pr-investor-relation">
+          </div>
+          <div class="field">
+            <label for="ord-manufacturing">Manufacturing</label>
+            <input formControlName="manufacturing" [(ngModel)]="data.ordAccountProfile.manufacturing" type="checkbox" id="ord-manufacturing">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-operation">Operations</label>
+            <input formControlName="operation" [(ngModel)]="data.ordAccountProfile.operation" type="checkbox" id="ord-operation">
+          </div>
+          <div class="field">
+            <label for="executive-management">Executive Management</label>
+            <input formControlName="executiveManagement" [(ngModel)]="data.ordAccountProfile.executiveManagement" type="checkbox" id="executive-management">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="business-development">Business Development/Channel</label>
+            <input formControlName="businessDevelopment"  [(ngModel)]="data.ordAccountProfile.businessDevelopment"type="checkbox" id="business-development">
+          </div>
+          <div class="field">
+            <label for="ord-other-1">Other</label>
+            <input formControlName="other1" [(ngModel)]="data.ordAccountProfile.other1" type="checkbox" id="ord-other-1">
+          </div>
+        </div>
+        <div class="field">
+          <label for="information-not-available-1">Information Not Available</label>
+          <input formControlName="informationNotAvailable1" [(ngModel)]="data.ordAccountProfile.informationNotAvailable1" type="checkbox" id="information-not-available-1">
+        </div>
+      </div>
+
+      <div align="center">
+        <div class="ui buttons">
+          <button class="ui button">Print</button>
+          <button class="ui button" type="submit">Save</button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+<!----------------------------------------Edit Payment Detail----------------------------------------------------------->
+<div id="editPaymentMethod" class="ui scrolling modal">
+  <div class="header">Add Payment Detail</div>
+
+  <form [formGroup]="orderPaymentDetailFormGroup" (ngSubmit)="saveOrderEditPaymentDetail($event)">
+    <div class="ui form">
+
+      <div class="ui raised segment">
+        <a class="ui red label ribbon">Payment Method Details</a>
+        <div class="field">
+          <select formControlName="paymentMethod" class="ui search dropdown">
+            <option value="Credit">Credit Card</option>
+            <option value="debit">Debit Card</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="ui raised segment">
+        <a class="ui red label ribbon">Payment Method Details</a>
+        <div class="three fields">
+          <div class="field">
+            <select formControlName="creditCard" [(ngModel)]="data.ordPaymentDetail.creditCard" class="ui search dropdown">
+              <option value="">VISA</option>
+              <option value="Master">MAster</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="credit-card-number">Credit Card Number</label>
+            <input formControlName="creditCardNumber" [(ngModel)]="data.ordPaymentDetail.creditCardNumber" type="text" id="credit-card-number">
+          </div>
+          <div class="fields">
+            <div class="field">
+              <select formControlName="expirationDateMonth"  [(ngModel)]="data.ordPaymentDetail.expirationDateMonth"class="ui search dropdown">
+                <option value="">1</option>
+                <option value="2">2</option>
+              </select>
+            </div>
+            <div class="field">
+              <select formControlName="expirationDateYear" [(ngModel)]="data.ordPaymentDetail.expirationDateYear" class="ui search dropdown">
+                <option value="">2017</option>
+                <option value="2016">2016</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="name-in-card">Name on the Card</label>
+            <input formControlName="nameInCard"  [(ngModel)]="data.ordPaymentDetail.nameInCard" type="text" id="name-in-card">
+          </div>
+          <div class="field">
+            <label for="card-security-code">Card Security Code(CVV)</label>
+            <input formControlName="cardSecurityCode" [(ngModel)]="data.ordPaymentDetail.cardSecurityCode" type="text" id="card-security-code">
+          </div>
+        </div>
+      </div>
+
+      <div align="right">
+        <div class="ui buttons">
+          <button class="ui negative button" type="button">Delete</button>
+          <button class="ui positive button" type="submit">Submit</button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+
+</div>
+
+<!-----------------------------------------New Order-------------------------------------------------------------------->
+<div *ngIf="orderNewOrderFormVariable">
+  <form [formGroup]="orderNewOrderFormGroup" (ngSubmit)="saveNewOrder($event)">
+    <div class="ui form">
+
+      <div class="ui raised segment">
+        <a class="ui red label ribbon">Summary</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="account-name">Account Name</label>
+            <input formControlName="accountName" type="text" id="account-name">
+          </div>
+          <div class="field">
+            <label for="org-name">Org. Name</label>
+            <input formControlName="orgName" type="text" id="org-name">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="exchange-rate">Exchange Rate</label>
+            <input formControlName="exchangeRate" type="text" id="exchange-rate">
+          </div>
+          <div class="field">
+            <label for="exchange-rate-date">Exchange Rate Date</label>
+            <input formControlName="exchangeRateDate" type="text" id="exchange-rate-date">
+          </div>
+        </div>
+        <div class="field">
+          <label for="ord-comments">Comments</label>
+          <input formControlName="comments" type="text" id="ord-comments">
+        </div>
+        <br>
+        <div class="ui grid">
+          <div class="two wide column">
+            <p>Primary SR </p>
+          </div>
+          <div class="two wide column">
+            <select formControlName="primarySR1" class="ui search dropdown" >
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="primarySR2" class="ui search dropdown" >
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="primarySR3" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="primarySR4" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+        </div>
+        <div class="ui grid">
+          <div class="two wide column">
+            <p>Second SR</p>
+          </div>
+          <div class="two wide column">
+            <select formControlName="secondSR1" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="secondSR2" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="secondSR3" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="secondSR4" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+        </div>
+        <div class="ui grid">
+          <div class="two wide column">
+            <p>Third SR</p>
+          </div>
+          <div class="two wide column">
+            <select formControlName="thirdSR1" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="thirdSR2" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="thirdSR3" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="thirdSR4" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+        </div>
+        <div class="ui grid">
+          <div class="two wide column">
+            <p>CSM</p>
+          </div>
+          <div class="two wide column">
+            <select formControlName="CSM1" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="CSM2" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="CSM3" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="CSM4" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>SFDF Deal Number</label>
+          <select formControlName="sfdfDealNumber" class="ui search dropdown">
+            <option value="">676</option>
+            <option value="tdy">7889</option>
+          </select>
+        </div>
+      </div>
+
+      <div align="right">
+        <button class="ui right labeled icon button" type="submit">
+          <i class="right arrow icon"></i>
+          Continue
+        </button>
+      </div>
+
+    </div>
+  </form>
+
+</div>
+
+<!-----------------------------------------Order Summary---------------------------------------------------------------->
+<div *ngIf="orderSummaryFormVariable">
+  <p>Order</p>
+  <form [formGroup]="orderSummaryFormGroup">
+    <div class="ui form">
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Order Summary</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="account-name">Account Name</label>
+            <input formControlName="accountName"  type="text" id="account-name">
+          </div>
+          <div class="field">
+            <label for="organization-name">Organization Name</label>
+            <input formControlName="organizationName"  type="text" id="organization-name">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="account-id">Account ID</label>
+            <input formControlName="accountId"  type="text" id="account-id">
+          </div>
+          <div class="field">
+            <label for="organization-type">Organization Type</label>
+            <input formControlName="organizationType"  type="text" id="organization-type">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <p>Billing Address</p>
+            <a>{{data.ordContact[0].address1}}<br>{{data.ordContact[0].address2}}<br>{{data.ordContact[0].city}}<br>{{data.ordContact[0].country}}</a>
+          </div>
+          <div class="field">
+            <label>Payment Term</label>
+            <select formControlName="paymentTerm" class="ui search dropdown">
+              <option value="">hsdijk</option>
+              <option value="bh">kkjxn</option>
+            </select>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="order-status">Order Status</label>
+            <input formControlName="orderStatus"  type="text" id="order-status">
+          </div>
+          <div class="field">
+            <p>Payment Method</p>
+            <a (click)="viewEditPaymentDetailModal()">View</a>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="sell-type">Sell Type</label>
+            <input formControlName="sellType"  type="text" id="sell-type">
+          </div>
+          <div class="field">
+            <label for="pre-order-details">Pre-Order Details</label>
+            <input formControlName="preOrderDetails"  type="text" id="pre-order-details">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="order-type">Order Type</label>
+            <input formControlName="orderType"  type="text" id="order-type">
+          </div>
+          <div class="field">
+            <label for="post-order-details">Post-Order Details</label>
+            <input formControlName="postOrderDetails"  type="text" id="post-order-details">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="creation-date">Creation Date</label>
+            <input formControlName="creationDate"  type="text" id="creation-date">
+          </div>
+          <div class="field">
+            <p>Customer Success Profile</p>
+            <a (click)="viewEditAccountProfile()">View</a>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="acc-currency">Currency</label>
+            <input formControlName="currency"  type="text" id="acc-currency">
+          </div>
+          <div class="field">
+            <label for="exchange-rate-date">Exchange Rate Date</label>
+            <input formControlName="exchangeRateDate" type="text" id="exchange-rate-date">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="exchange-rate">Exchange Rate</label>
+            <input formControlName="exchangeRate" type="text" id="exchange-rate">
+          </div>
+          <div class="field">
+            <label for="cmt-owner">CMT Owner</label>
+            <input formControlName="cmtOwner" type="text" id="cmt-owner">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="acc-mrr">MRR</label>
+            <input formControlName="mrr"  type="text" id="acc-mrr">
+          </div>
+          <div class="field">
+            <label for="created-by">Created By</label>
+            <input formControlName="createdBy" type="text" id="created-by">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="upsell-reason-code">Upsell Reason Code</label>
+            <input formControlName="upsellReasonCode" type="text" id="upsell-reason-code">
+          </div>
+          <div class="field">
+            <label for="sfdf-deal-no">SFDF Deal No.</label>
+            <input formControlName="sfdfDealNo" type="text" id="sfdf-deal-no">
+          </div>
+        </div>
+        <div class="field">
+          <label for="order-comment">Order Comments</label>
+          <input  type="text" id="order-comment">
+        </div>
+      </div>
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Service Details</a>
+        <br>
+        <br>
+        <table class="ui celled table">
+          <tr>
+            <th>Subscription</th>
+            <th>Contract ID</th>
+            <th>Sign Date</th>
+            <th>Service Start</th>
+            <th>Terms</th>
+            <th>Ramping</th>
+            <th>Prepay Term</th>
+            <th>Contract Image</th>
+            <th>PO Numbers</th>
+            <th>Provisioning</th>
+            <th>Aggregated Telephony</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td><a>View</a></td>
+            <td></td>
+            <td>{{data.ordContractTerm.contractSignDate}}</td>
+            <td>{{data.ordContractTerm.expectedStartDate}}</td>
+            <td></td>
+            <td><a>Manage</a></td>
+            <td></td>
+            <td><a (click)="viewImageContractModal()">View</a></td>
+            <td><a (click)="viewManagePoNumber()">Add/Edit</a></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td><a>Add/Edit</a></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="ui raised segment">
+        <a  class="ui red ribbon label">MC Named Hosts Default Sites</a>
+        <br>
+        <table class="ui celled table">
+          <tr>
+            <th>WebEx URL</th>
+            <th>Language</th>
+            <th>Branding Reference</th>
+            <th>Service Type</th>
+            <th>Time Zone</th>
+          </tr>
+          <tr>
+            <td>{{data.ordProvision.webExURL}}</td>
+            <td>{{data.ordProvision.language}}</td>
+            <td>{{data.ordProvision.brandingSiteReference}}</td>
+            <td>{{data.ordProvision.services}}</td>
+            <td>{{data.ordProvision.timeZone}}</td>
+          </tr>
+        </table>
+        <br>
+        <p>Implementation Contact</p>
+        <table class="ui celled table">
+          <tr>
+            <th>Contact Type</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+          <tr>
+            <td>{{data.ordContact[0].contactType}}</td>
+            <td>{{data.ordContact[0].firstName}}</td>
+            <td>{{data.ordContact[0].email}}</td>
+            <td>{{data.ordContact[0].homePhone}}</td>
+          </tr>
+        </table>
+        <br>
+        <p>Service Agents</p>
+        <table class="ui ccelled table">
+          <tr>
+            <th>Name</th>
+            <th>Function</th>
+            <th>Group</th>
+            <th>Hierarchy</th>
+            <th>Reports To</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+      </div>
+
+      <div class="ui raised segment">
+        <a  class="ui red ribbon label">Comp Details</a>
+        <div class="ui grid">
+          <div class="two wide column">
+            <p>Type</p>
+          </div>
+          <div class="two wide column">
+            <p>Name</p>
+          </div>
+          <div class="two wide column">
+            <p>Team</p>
+          </div>
+          <div class="two wide column">
+            <p>Team Lead</p>
+          </div>
+          <div class="two wide column">
+            <p>Split Percentage %</p>
+          </div>
+        </div>
+        <div class="ui grid">
+          <div class="two wide column">
+            <p>Primary SR </p>
+          </div>
+          <div class="two wide column">
+            <select formControlName="primarySR1" [(ngModel)]="data.ordNewOrder.primarySR1" class="ui search dropdown" >
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="primarySR2" [(ngModel)]="data.ordNewOrder.primarySR2" class="ui search dropdown" >
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="primarySR3" [(ngModel)]="data.ordNewOrder.primarySR3" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="primarySR4" [(ngModel)]="data.ordNewOrder.primarySR4" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+        </div>
+        <div class="ui grid">
+          <div class="two wide column">
+            <p>Second SR</p>
+          </div>
+          <div class="two wide column">
+            <select formControlName="secondSR1" [(ngModel)]="data.ordNewOrder.secondSR1" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="secondSR2" [(ngModel)]="data.ordNewOrder.secondSR2" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="secondSR3" [(ngModel)]="data.ordNewOrder.secondSR3" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="secondSR4" [(ngModel)]="data.ordNewOrder.secondSR4" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+        </div>
+        <div class="ui grid">
+          <div class="two wide column">
+            <p>Third SR</p>
+          </div>
+          <div class="two wide column">
+            <select formControlName="thirdSR1" [(ngModel)]="data.ordNewOrder.thirdSR1" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="thirdSR2" [(ngModel)]="data.ordNewOrder.thirdSR2" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="thirdSR3" [(ngModel)]="data.ordNewOrder.thirdSR3" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="thirdSR4" [(ngModel)]="data.ordNewOrder.thirdSR4" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+        </div>
+        <div class="ui grid">
+          <div class="two wide column">
+            <p>CSM</p>
+          </div>
+          <div class="two wide column">
+            <select formControlName="CSM1" [(ngModel)]="data.ordNewOrder.CSM1" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="CSM2" [(ngModel)]="data.ordNewOrder.CSM2" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="CSM3" [(ngModel)]="data.ordNewOrder.CSM3" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="CSM4" [(ngModel)]="data.ordNewOrder.CSM4" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+        </div>
+        <br>
+        <div class="fields">
+          <div class="field">
+            <p>Channel/Overlay Representative Credit</p>
+          </div>
+          <div class="field">
+            <button class="ui button" type="button">View</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Booking Date</label>
+          <input type="text">
+        </div>
+        <div class="field">
+          <label>Expected Comp Date</label>
+          <input type="text">
+        </div>
+
+      </div>
+
+      <div align="right">
+        <button type="button" class="ui button">Add New Service</button>
+        <button type="button" class="ui button">Name Check</button>
+        <button type="button" class="ui button">Accept</button>
+        <button type="button" class="ui button">Reject</button>
+        <button type="button" class="ui button">Return for Correction</button>
+        <button type="button" class="ui button">Save Updates</button>
+      </div>
+
+
+    </div>
+  </form>
+</div>
+
+<!------------------------------------------Contract Image Upload------------------------------------------------------>
+<div id="contractImageModal"  class="ui scrolling modal">
+  <div class="header">Contract Image Upload</div>
+  <form [formGroup]="orderContractImageFormGroup" (ngSubmit)="saveContractImage($event)">
+    <div class="ui form">
+
+      <div class="ui raised segment">
+        <div class="field">
+          <label for="service-configuration">Please select the service configuartion</label>
+          <select formControlName="serviceConfiguration" [(ngModel)]="data.ordContractImage.serviceConfiguration" class="ui search dropdown" id="service-configuration">
+            <option value="">Business</option>
+            <option value="tdy">Personal</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="view-add">Please select a file to View or click Add</label>
+          <input formControlName="files" type="text" [(ngModel)]="data.ordContractImage.files" id="view-add">
+        </div>
+        <div  align="center">
+          <div class="ui buttons">
+            <button class="ui button" (click)="saveImageFile(data.ordContractImage.files)" type="button">Add</button>
+            <button class="ui button" type="button">View</button>
+            <button class="ui button" type="button">Remove</button>
+          </div>
+        </div>
+
+        <br>
+        <div class="field">
+          <label for="ord-name">Enter name(if no name is entered,it will be the same as file name)</label>
+          <input formControlName="imageName" [(ngModel)]="data.ordContractImage.imageName" type="text" id="ord-name">
+        </div>
+        <div class="field">
+          <label for="ord-description">Description</label>
+          <input formControlName="imageDescription" [(ngModel)]="data.ordContractImage.imageDescription" type="text" id="ord-description">
+        </div>
+
+        <div align="right">
+          <button class="ui button" type="submit">Submit</button>
+        </div>
+      </div>
+
+
+     </div>
+  </form>
+</div>
+
+<!------------------------------------------Charge Activation List------------------------------------------------------>
+<div id="chargeActivationModal" class="ui scrolling modal">
+  <div class="header">Charge Activation List</div>
+  <div class="ui form">
+    <div class="ui raised segment">
+      <a class="ui red ribbon label">Charge Activation List</a>
+
+      <div align="left">
+        <button type="button" (click)="viewManagePoNumber()" class="ui button">Manage PO Numbers</button>
+      </div>
+
+      <table class="ui celled table">
+        <tr>
+          <th>Offer Code</th>
+          <th>Charge Activation ID</th>
+          <th>Charge Activation Code</th>
+          <th>Taxable</th>
+          <th>PO Numbers</th>
+        </tr>
+      </table>
+
+    </div>
+
+    <div align="right">
+      <button class="ui positive button" type="submit" value="Save">Save</button>
+    </div>
+
+  </div>
+</div>
+
+<!-------------------------------------------Manage PO Numbers-------------------------------------------------------->
+<div id="managePoNumberModal" class="ui scrolling modal">
+  <div class="header">Manage PO Numbers</div>
+  <div class="ui form">
+    <div class="ui raised segment">
+      <a class="ui red ribbon label">PO Numbers</a>
+      <div align="center">
+        <button type="button" class="ui button">Delete</button>
+        <button type="button" class="ui button" (click)="setNewPoNumber()">New</button>
+      </div>
+
+      <br>
+      <br>
+
+      <table class="ui celled table">
+        <tr>
+          <th><input type="checkbox" value="all"></th>
+          <th>PO Numbers</th>
+          <th>Description</th>
+        </tr>
+        <tr *ngFor="let pdata of data.ordPoNumber">
+          <td><input type="checkbox" value="{{pdata.poNumber}}"></td>
+          <td>{{pdata.poNumber}}</td>
+          <td>{{pdata.description}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <br>
+    <br>
+
+    <div *ngIf="orderManagePoFormVariable">
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">New PO Number</a>
+        <br>
+        <form [formGroup]="orderPoNumberFormGroup" (ngSubmit)="savePoNumber($event)">
+          <div class="field">
+            <label for="po-Number">PO Numbers</label>
+            <input formControlName="poNumber" type="text" id="po-Number">
+          </div>
+          <div class="field">
+            <label for="acc-descriptions">Description</label>
+            <input formControlName="description" type="text" id="acc-descriptions">
+          </div>
+          <div align="right">
+            <div class="ui buttons">
+              <button type="button" class="ui button" (click)="hideManagePoNumberModal()">Cancel</button>
+              <button class="ui positive button" type="submit" value="Save">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
