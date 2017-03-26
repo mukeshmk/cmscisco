@@ -21,7 +21,6 @@ import { ViewaccountDataRowComponent } from './accounts/view-accounts/viewaccoun
 import { AccountNewComponent } from './accounts/account-new/account-new.component';
 import { AccountEditComponent } from './accounts/account-edit/account-edit.component';
 import { ViewAccountsComponent } from './accounts/view-accounts/view-accounts.component';
-
 /*BLis Module*/
 
 import { RealignComponent } from './realign/realign.component';
@@ -46,6 +45,7 @@ import { UsersEditComponent } from './users/users-edit/users-edit.component';
 import { RolesEditComponent } from './roles/roles-edit/roles-edit.component';
 import { LoginComponent } from './login/login.component';
 import { RealignViewComponent } from './realign/realign-view/realign-view.component';
+
 
 
 @NgModule({
@@ -88,6 +88,7 @@ import { RealignViewComponent } from './realign/realign-view/realign-view.compon
     RolesEditComponent,
     LoginComponent,
     RealignViewComponent,
+    ViewAccountsComponent
   ],
   imports: [
     BrowserModule,
