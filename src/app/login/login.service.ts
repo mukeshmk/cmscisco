@@ -7,8 +7,6 @@ export class User {
     ) { }
 }
 
-
-
 export var blisusers = [
   new User('admin1','admin1'),
   new User('admin2','admin2'),
@@ -27,8 +25,6 @@ export class LoginService {
     localStorage.removeItem("user");
     this._router.navigate(['login']);
   }
-
-
 
   checkCredentials(){
     if(localStorage.getItem("user") === null){
