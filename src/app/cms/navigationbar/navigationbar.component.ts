@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class NavigationbarComponent implements OnInit {
 
   id : number;
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this.id = 0;
