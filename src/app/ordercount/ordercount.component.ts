@@ -1,9 +1,9 @@
-
 import { Component, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/Rx';
 import {ordercount} from "./ordercount.interface";
 import {ordercountData} from "./ordercountData.array";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-ordercount',
@@ -12,27 +12,24 @@ import {ordercountData} from "./ordercountData.array";
 })
 export class OrdercountComponent implements OnInit {
 
- // public countJson: any[];
- // public resultCount: any[];
-
-  //generateArray(obj){
-  //  return Object.keys(obj).map( (key) => {return obj[key]});
- // }
   data : ordercount;
+  orderCountFormGroup : FormGroup;
 
-  constructor() {
-  //  console.log("json-server called");
-  //  http.get('http://localhost:3004/users')
-  //    .map(response => response.json())
-  //    .subscribe(result => this.countJson =result);
+  constructor(public _fb : FormBuilder) {
   }
 
   ngOnInit() {
     this.data = ordercountData[0];
+
+    this.orderCountFormGroup = this._fb.group(
+      {
+        newOrders : ['',Validators.required],
+        pendingCorrections : ['',Validators.required],
+        outStanding : ['',Validators.required],
+        accepted : ['',Validators.required],
+        effective : ['',Validators.required],
+        processed : ['',Validators.required],
+      });
   }
 
-
-
-
 }
-
