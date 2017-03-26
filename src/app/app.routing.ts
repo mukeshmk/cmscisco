@@ -8,6 +8,8 @@ import {BlisComponent} from "./blis/blis.component";
 import {blisRoute} from "./blis/blis.routing";
 import {cmsRoute} from "./cms/cms.routing";
 import {CmsComponent} from "./cms/cms.component";
+import {LoginService} from "./login/login.service";
+import loginAuthorization from "./login/login.auth";
 
 
 const appRoutes=[
@@ -21,12 +23,14 @@ const appRoutes=[
     path : 'blis',
     name : 'blis',
     component : BlisComponent,
+    canActivate : [loginAuthorization],
     children : blisRoute
   },
   {
     path : 'cms',
     name : 'cms',
     component : CmsComponent,
+    canActivate : [loginAuthorization],
     children : cmsRoute
   }
 ];

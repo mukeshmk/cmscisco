@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService, User} from "./login.service";
+import loginAuthorization from "./login.auth";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -10,19 +12,24 @@ import {LoginService, User} from "./login.service";
 })
 export class LoginComponent implements OnInit {
   public user = new User('','');
-  public errorMsg = '';
   public portal  = 'blis';
 
-  constructor(private _service: LoginService) {
+  constructor(private loginGuard: loginAuthorization, private _route : Router) {
+
   }
   login() {
     console.log(this.portal);
-    if (!this._service.login(this.user,this.portal)) {
-      this.errorMsg = 'Failed to login';
+    this.loginGuard.sendValue(this.user,this.portal);
+    if(this.portal === 'blis'){
+      this._route.navigate(['/blis']);
+    }
+    if(this.portal === 'cms'){
+      this._route.navigate(['/cms']);
     }
   }
 
   ngOnInit() {
+
   }
 
 }

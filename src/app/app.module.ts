@@ -48,6 +48,7 @@ import { RealignViewComponent } from './blis/realign/realign-view/realign-view.c
 import { BlisComponent } from './blis/blis.component';
 import { CmsComponent } from './cms/cms.component';
 import {NavigationComponent} from "./blis/navigation/navigation.component";
+import loginAuthorization from "./login/login.auth";
 
 
 
@@ -105,7 +106,9 @@ import {NavigationComponent} from "./blis/navigation/navigation.component";
     Ng2PaginationModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+      loginAuthorization
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
