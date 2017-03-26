@@ -6,7 +6,7 @@ import {User, blisusers, cmsusers} from "./login.service";
 export default class loginAuthorization implements CanActivate {
 
     public user = new User('','');
-    public portal = 'blis';
+    public portal = 'cms';
 
     constructor(private _router: Router){
 

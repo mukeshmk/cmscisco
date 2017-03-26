@@ -1,78 +1,69 @@
 <p>Orders Count</p>
 <div class="ui form">
-  <form [formGroup]="orderCountFormGroup">
-    <div class="ui three column grid">
-      <div class="column">
-        <div class="ui segment">
-          <div class="field">
-            <p>Total Status New Orders</p>
-            <div class="ui disabled input">
-              <input formControlName="newOrders" [(ngModel)]="data.newOrders" type="text">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="ui segment">
-          <div class="field">
-            <p>Total Status Pending Correction Orders</p>
-            <div class="ui disabled input">
-              <input formControlName="newOrders" [(ngModel)]="data.pendingCorrections" type="text">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="ui segment">
-          <div class="field">
-            <p>Total Outstanding</p>
-            <div class="ui disabled input">
-              <input formControlName="newOrders" [(ngModel)]="data.outStanding" type="text">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="ui three column grid">
-      <div class="column">
-        <div class="ui segment">
-          <div class="field">
-            <p>Total Status Accepted Orders</p>
-            <div class="ui disabled input">
-              <input formControlName="newOrders" [(ngModel)]="data.accepted" type="text">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="ui segment">
-          <div class="field">
-            <p>Total Status Pending Effective Orders</p>
-            <div class="ui disabled input">
-              <input formControlName="newOrders" [(ngModel)]="data.effective" type="text">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column">
-        <div class="ui segment">
-          <div class="field">
-            <p>Total Processed</p>
-            <div class="ui disabled input">
-              <input formControlName="newOrders" [(ngModel)]="data.processed" type="text">
-            </div>
-          </div>
+  <div class="ui three column grid">
+
+    <div class="column">
+      <div class="ui blue segment">
+        <div class="field">
+          <p>Total Status New Orders</p>
+          <p>{{data.newOrders}}</p>
         </div>
       </div>
     </div>
-  </form>
+    <div class="column">
+      <div class="ui blue segment">
+        <div class="field">
+          <p>Total Status Pending Correction Orders</p>
+          <p>{{data.pendingCorrections}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui blue segment">
+        <div class="field">
+          <p>Total Outstanding</p>
+          <p>{{data.outStanding}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui three column grid">
+    <div class="column">
+      <div class="ui blue segment">
+        <div class="field">
+          <p>Total Status Accepted Orders</p>
+          <p>{{data.accepted}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui blue segment">
+        <div class="field">
+          <p>Total Status Pending Effective Orders</p>
+          <p>{{data.effective}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui blue segment">
+        <div class="field">
+          <p>Total Processed</p>
+          <p>{{data.processed}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
 <br><br>
 
 <div align="center">
-  <div class="ui large button">
+  <div class="ui large button" style="background-color: lightblue">
+
     <a [routerLink]="['/vieworganization']">
       <div class = "ui icon button" data-tooltip="View organization"><i class="huge user icon"></i>
       </div>
@@ -100,9 +91,3 @@
     </a>
   </div>
 </div>
-
-
-
-
-
-

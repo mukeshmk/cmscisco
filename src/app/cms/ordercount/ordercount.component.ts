@@ -3,7 +3,6 @@ import {Http} from '@angular/http';
 import 'rxjs/Rx';
 import {ordercount} from "./ordercount.interface";
 import {ordercountData} from "./ordercountData.array";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-ordercount',
@@ -13,23 +12,13 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class OrdercountComponent implements OnInit {
 
   data : ordercount;
-  orderCountFormGroup : FormGroup;
 
-  constructor(public _fb : FormBuilder) {
+  constructor() {
   }
 
   ngOnInit() {
     this.data = ordercountData[0];
 
-    this.orderCountFormGroup = this._fb.group(
-      {
-        newOrders : ['',Validators.required],
-        pendingCorrections : ['',Validators.required],
-        outStanding : ['',Validators.required],
-        accepted : ['',Validators.required],
-        effective : ['',Validators.required],
-        processed : ['',Validators.required],
-      });
   }
 
 }
