@@ -1,14 +1,9 @@
+app-org-data-row{
+    min-height: 30px;
+}
 
 .selected{
     color: dodgerblue;
 }
 
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
 
-th, td {
-  padding: 5px;
-  text-align: left;
-}

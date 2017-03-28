@@ -1,11 +1,10 @@
-<tbody>
-<tr id="user-row" (click)="clicked">
-  <td class="two wide">{{data.orgID}}</td>
-  <td class="three wide">{{ data.orgName }}</td>
-  <td class="two wide">{{ data.parentOrg }}</td>
-  <td class="one wide">{{ data.upo}}</td>
-  <td class="three wide">{{ data.companyURL }}</td>
-  <td class="two wide">{{ data.lastModified}}</td>
-  <td class="two wide">{{ data.status }}</td>
-</tr>
-</tbody>
+<div id="user-row" class = "ui grid" (click)="clicked">
+  <div class="two wide column">{{data.orgID}}</div>
+  <div class="three wide column">{{ data.orgName }}</div>
+  <div class="two wide column">{{ data.parentOrg }}</div>
+  <div class="one wide column">{{ data.upo}}</div>
+  <div class="three wide column">{{ data.companyURL }}</div>
+  <div class="two wide column">{{ data.lastModified}}</div>
+  <div class="two wide column">{{ data.status }}</div>
+</div>
+

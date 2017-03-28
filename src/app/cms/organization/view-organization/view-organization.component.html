@@ -1,7 +1,7 @@
-<table class="ui celled table">
-  <app-organization-header (fieldSelected)="sortData($event)" ></app-organization-header>
-  <app-org-data-row *ngFor="let org of orgData" [data]="org" (click)="clickRow(org)" [ngClass]="{'selected' : org.orgID == selectedRow.orgID}"></app-org-data-row>
-</table>
+<app-organization-header (fieldSelected)="sortData($event)" ></app-organization-header>
+<app-org-data-row *ngFor="let org of orgData" [data]="org" (click)="clickRow(org)" [ngClass]="{'selected' : org.orgID == selectedRow.orgID }"></app-org-data-row>
+
+
 
 
 <br><br>
@@ -12,5 +12,4 @@
     <div class="or"></div>
     <button class="ui primary button" [routerLink]="['/cms/organization/new']">New</button>
   </div>
-
 </div>

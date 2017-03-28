@@ -5,9 +5,9 @@
 
 <div align="center">
   <div class="ui large buttons">
-    <button class="ui secondary button" [routerLink]="['/roles/edit', lastSelectedRow.id]" [disabled]="lastSelectedRow.id == undefined">Edit</button>
+    <button class="ui secondary button" [routerLink]="['/blis/roles/edit', lastSelectedRow.id]" [disabled]="lastSelectedRow.id == undefined">Edit</button>
     <div class="or"></div>
-    <button class="ui primary button" [routerLink]="['/roles/new']">New</button>
+    <button class="ui primary button" [routerLink]="['/blis/roles/new']">New</button>
     <div class="or"></div>
     <button class="ui negative button" [disabled]="lastSelectedRow.id == undefined" (click)="inActivate()">Delete</button>
   </div>

@@ -5,9 +5,9 @@
 
 <div align="center">
   <div class="ui large buttons">
-    <button class="ui secondary button" [routerLink]="['/users/edit', selectedRow.onlineName]" [disabled]="selectedRow.onlineName == undefined">Edit</button>
+    <button class="ui secondary button" [routerLink]="['/blis/users/edit', selectedRow.onlineName]" [disabled]="selectedRow.onlineName == undefined">Edit</button>
     <div class="or"></div>
-    <button class="ui primary button" [routerLink]="['/users/new']">New</button>
+    <button class="ui primary button" [routerLink]="['/blis/users/new']">New</button>
     <div class="or"></div>
     <button class="ui negative button" [disabled]="selectedRow.onlineName == undefined">Inactivate</button>
     <div class="or"></div>
