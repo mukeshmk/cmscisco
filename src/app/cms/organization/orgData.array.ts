@@ -2,7 +2,7 @@ import {organization} from "./oragnization.interface";
 
 export let orgData:Array<organization> = [
     {
-        orgID : 'mac24',
+        orgID : '1303',
         orgName : 'macmacmac',
         parentOrg : 'stevejobs',
         upo : '123123',
@@ -32,7 +32,7 @@ export let orgData:Array<organization> = [
     },
 
     {
-        orgID : 'mac25',
+        orgID : '1301',
         orgName : 'macmacmac1',
         parentOrg : 'stevejobs',
         upo : '123123',
@@ -62,7 +62,7 @@ export let orgData:Array<organization> = [
     },
 
     {
-        orgID : 'mac21',
+        orgID : '1304',
         orgName : 'macmacmac2',
         parentOrg : 'stevejobs',
         upo : '123123',

@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {account} from "../accounts.interface";
 import {AccountsService} from "../accounts.service";
+import {accAddressData} from "../accounts.array";
 @Component({
   selector: 'app-account-new',
   templateUrl: './account-new.component.html',
@@ -76,5 +77,6 @@ export class AccountNewComponent implements OnInit {
     this.data = this.accountsnewForm.value;
     data.orgID = this.organizationID;
     this.__accountservice.addAccounts(data);
+    console.log(accAddressData);
   }
 }
