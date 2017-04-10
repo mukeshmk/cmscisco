@@ -95,7 +95,7 @@ import loginAuthorization from "./login/login.auth";
     ViewAccountsComponent,
     BlisComponent,
     CmsComponent,
-    NavigationComponent
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
