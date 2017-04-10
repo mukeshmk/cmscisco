@@ -18,13 +18,15 @@
           </div>
         </div>
         <div class="field">
-          <input type="text" [(ngModel)]="user.username" id="username" placeholder="username">
+          <input type="text" [(ngModel)]="user.username" id="username" placeholder="username" required minlength="3" #username = "ngModel">
+         <small class = "small" [hidden] = "username.valid">Login required</small>
         </div>
         <div class="field">
-          <input type="password" [(ngModel)]="user.password" id="password" placeholder="password">
+          <input type="password" [(ngModel)]="user.password" id="password" placeholder="password" required minlength = "3" #password = "ngModel">
+          <small class = "small" [hidden] = "password.valid">Password required</small>
         </div>
         <div class="field">
-          <input type="submit" (click)="login()" value="sign in" class="ui button large fluid green">
+          <button type="submit" (click)="login()" [disabled] = "(!username.valid || !password.valid)" value="sign in" class="ui button large fluid green">Sign in</button>
         </div>
     </div>
   </div>
