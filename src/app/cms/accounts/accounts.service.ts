@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {accountData} from "./accounts.array";
 import {account} from "./accounts.interface";
+import {organization} from "../organization/oragnization.interface";
+import {orgData} from "../organization/orgData.array";
 
 @Injectable()
 export class AccountsService {
@@ -136,5 +138,18 @@ export class AccountsService {
         if(x < 0) return -1;
 
         accountData[x].paymentDetails = data;
+    }
+
+
+    changeAccountStatus(orgID){
+      var str = "Inactive";
+      var x = orgData.findIndex((org) => {
+        return org.orgID == orgID;
+      });
+
+      if(x < 0) return -1;
+
+      orgData[x].status = str ;
+      console.log(orgData[x].status);
     }
 }

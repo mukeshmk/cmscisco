@@ -8,7 +8,7 @@
         <div class = "two fields">
           <div class = "field">
             <label for = "acc-street1">Street1</label>
-            <input formControlName="street1" [(ngModel)]="data.accAddress[0].street1" type = "text" id = "acc-street1">
+            <input formControlName="street1" type = "text" id = "acc-street1">
           </div>
           <div class = "field">
             <label for = "acc-street2">Street2</label>
@@ -483,6 +483,10 @@
       <button type="button" class="mini ui button" (click)="viewCancelledServiceModal()">View</button>
     </div>
   </div>
+</div>
+
+<div align="center">
+  <button type="button" class="ui button" (click)="changeAccountStatus()">Inactivate Account</button>
 </div>
 
 

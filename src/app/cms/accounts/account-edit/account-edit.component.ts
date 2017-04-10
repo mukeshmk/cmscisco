@@ -239,4 +239,8 @@ export class AccountEditComponent implements OnInit {
   setNewPoNumber(){
     this.displayNewPoNumber = true;
   }
+
+  changeAccountStatus(){
+    this.__accountservice.changeAccountStatus(this.organizationID);
+  }
 }
