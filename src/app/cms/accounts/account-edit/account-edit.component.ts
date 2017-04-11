@@ -7,6 +7,7 @@ import {
 } from "../accounts.interface";
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {orgData} from "../../organization/orgData.array";
+import {ordersData} from "../../orders/orders.array";
 
 
 declare var jQuery :any;
@@ -260,6 +261,10 @@ export class AccountEditComponent implements OnInit {
       return false;
   }
   navigateToOrders(){
-    this.router.navigate(['/cms/orders',this.organizationID]);
+    var x = ordersData.findIndex((org) => {
+      return org.orgID == this.organizationID;
+    });
+    var y = ordersData[x].ordID;
+    this.router.navigate(['/cms/orders',y]);
   }
 }
