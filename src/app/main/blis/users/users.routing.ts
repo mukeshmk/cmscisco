@@ -5,7 +5,8 @@ import {UsersEditComponent} from "./users-edit/users-edit.component";
 export let UsersRoutes = [
   {
     path : '',
-    redirectTo : 'view'
+    redirectTo : 'view',
+    pathMatch: 'full'
   },
   {
     path : 'view',

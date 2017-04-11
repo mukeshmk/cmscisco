@@ -4,7 +4,8 @@ import {TeamsEditComponent} from "./teams-edit/teams-edit.component";
 export let TeamsRoutes = [
   {
     path : '',
-    redirectTo : 'view'
+    redirectTo : 'view',
+    pathMatch: 'full'
   },
   {
     path : 'view',

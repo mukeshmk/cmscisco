@@ -4,7 +4,8 @@ import {RolesEditComponent} from "./roles-edit/roles-edit.component";
 export let RolesRoutes = [
   {
     path : '',
-    redirectTo : 'view'
+    redirectTo : 'view',
+    pathMatch: 'full'
   },
   {
     path : 'view',

@@ -13,6 +13,12 @@ userdata: User;
 
   }
 
+  getUserByLoginAndPassword(loginName, password){
+    return UsersData.find((user) => {
+      return user.loginName == loginName && user.password == password;
+    });
+  }
+
   getUserByOnlineName(onlineName){
     return UsersData.find((user) => {
       return user.onlineName == onlineName;

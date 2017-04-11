@@ -2,32 +2,33 @@
   <div class="column six wide form-holder">
     <h2 class="center aligned header form-head">Sign in</h2>
     <div class="ui form">
-
-        <div class="two fields">
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input name = "portal" checked value="cms" [(ngModel)] = "portal" type="radio">
-              <label>CMS</label>
-            </div>
-          </div>
-          <div class="field">
-            <div class="ui radio checkbox">
-              <input name = "portal" value ="blis" [(ngModel)] = "portal" type="radio">
-              <label>BLis</label>
-            </div>
-          </div>
+        <!--<div class="field">-->
+          <!--<input type="text" [(ngModel)]="user.username" id="username" placeholder="username" required minlength="3" #username = "ngModel">-->
+         <!--<small class = "small" [hidden] = "username.valid">Login required</small>-->
+        <!--</div>-->
+        <!--<div class="field">-->
+          <!--<input type="password" [(ngModel)]="user.password" id="password" placeholder="password" required minlength = "3" #password = "ngModel">-->
+          <!--<small class = "small" [hidden] = "password.valid">Password required</small>-->
+        <!--</div>-->
+        <!--<div class="field">-->
+          <!--<button type="submit" (click)="login()" [disabled] = "(!username.valid || !password.valid)" value="sign in" class="ui button large fluid green">Sign in</button>-->
+        <!--</div>-->
+      <form [formGroup]="user" (ngSubmit)="login()">
+        <div class="field">
+          <input type="text" formControlName="loginName">
+          <small class = "small" [hidden] = "user.controls.loginName.dirty && user.controls.loginName.status == 'VALID'"
+          >Login required</small>
         </div>
         <div class="field">
-          <input type="text" [(ngModel)]="user.username" id="username" placeholder="username" required minlength="3" #username = "ngModel">
-         <small class = "small" [hidden] = "username.valid">Login required</small>
+          <input type="password" formControlName="password">
+          <small class = "small" [hidden] = "user.value.password.length > 5">Password required</small>
         </div>
         <div class="field">
-          <input type="password" [(ngModel)]="user.password" id="password" placeholder="password" required minlength = "3" #password = "ngModel">
-          <small class = "small" [hidden] = "password.valid">Password required</small>
+          <button type="submit" (click)="login()" [disabled] = "!user.valid" class="ui button large fluid green">Sign in</button>
         </div>
-        <div class="field">
-          <button type="submit" (click)="login()" [disabled] = "(!username.valid || !password.valid)" value="sign in" class="ui button large fluid green">Sign in</button>
-        </div>
+      </form>
     </div>
   </div>
 </div>
+
+

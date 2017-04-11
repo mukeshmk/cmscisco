@@ -1,37 +1,49 @@
 import { Injectable } from '@angular/core';
 import {Router} from "@angular/router";
-export class User {
-  constructor(
-    public username: string,
-    public password: string
-    ) { }
-}
+import {UsersService} from "../main/blis/users/users.service";
 
-export var blisusers = [
-  new User('admin1','admin1'),
-  new User('admin2','admin2'),
-];
 
-export var cmsusers = [
-  new User('cms1','cms1'),
-  new User('cms2','cms2')
-];
+
+
 
 @Injectable()
 export class LoginService {
 
-  constructor(private _router: Router) { }
+  private loggedIn = false;
+
+  constructor(private _router: Router, private _userService : UsersService) {
+
+    this.loggedIn = !!localStorage.getItem('logged_in');
+
+  }
   logout() {
-    localStorage.removeItem("user");
+    this.loggedIn = false;
+    localStorage.removeItem("logged_in");
+    localStorage.removeItem("userData");
     this._router.navigate(['login']);
   }
 
-  checkCredentials(){
-    if(localStorage.getItem("user") === null){
+  login(loginName : String, password : String){
+    // if(localStorage.getItem("user") === null){
+    //   return false;
+    // }
+    // else {
+    //   return true;
+    // }
+    let userData = this._userService.getUserByLoginAndPassword(loginName,password);
+    if(userData != undefined){
+      this.loggedIn = true;
+      localStorage.setItem('logged_in', "true");
+      localStorage.setItem('userData', JSON.stringify(userData));
+      return true;
+    }else{
       return false;
     }
-    else {
-      return true;
-    }
   }
+
+  isLoggedIn(){
+    return this.loggedIn;
+  }
+
+
 }
