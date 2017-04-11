@@ -1,9 +1,13 @@
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
+#user-row .column{
+  text-align: center;
+  background: inherit;
+  padding : 0px;
 }
 
-th, td {
-  padding: 5px;
-  text-align: left;
+#user-row{
+  background: inherit;
+  margin-top: 20px;
+  margin-bottom : 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
