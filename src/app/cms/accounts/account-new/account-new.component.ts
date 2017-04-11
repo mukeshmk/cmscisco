@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {account} from "../accounts.interface";
 import {AccountsService} from "../accounts.service";
@@ -17,7 +17,7 @@ export class AccountNewComponent implements OnInit {
   public data : account;
 
 
-  constructor(private route : ActivatedRoute, private _fb : FormBuilder,public __accountservice : AccountsService) {
+  constructor(private route : ActivatedRoute, private _fb : FormBuilder,public __accountservice : AccountsService, public router : Router) {
     this.route.params.subscribe((params) => {
       this.organizationID = params['orgID'];
     });
@@ -79,4 +79,5 @@ export class AccountNewComponent implements OnInit {
     this.__accountservice.addAccounts(data);
     console.log(accAddressData);
   }
+
 }

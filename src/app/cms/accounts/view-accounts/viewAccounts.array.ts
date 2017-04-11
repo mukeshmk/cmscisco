@@ -5,7 +5,7 @@ export let viewAccountData:Array<viewAccount> = [
         orgName : 'AppleComputers',
         upoName : 'steveJobs',
         currentOwner : 'varsha',
-        status : 'active'
+        status : 'Pending'
     },
     {
         orgID : 1304,

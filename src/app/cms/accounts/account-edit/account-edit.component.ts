@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AccountsService} from "../accounts.service";
 import {
   account, accountAddress, accountDetails, accountManageSplitCriteria,
   accountManagePoNumbers, accountManageInvoiceDefinition, accountActivityNotes, countryDropDown, stateDropDown
 } from "../accounts.interface";
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
+import {orgData} from "../../organization/orgData.array";
+import {ordersData} from "../../orders/orders.array";
 
 declare var jQuery :any;
 @Component({
@@ -55,7 +57,7 @@ export class AccountEditComponent implements OnInit {
   ];
 
 
-  constructor(private route : ActivatedRoute,public __accountservice : AccountsService,public _fb : FormBuilder) {
+  constructor(private route : ActivatedRoute,public router : Router,public __accountservice : AccountsService,public _fb : FormBuilder) {
     this.route.params.subscribe((params) => {
       this.organizationID = params['orgID'];
     });
@@ -238,5 +240,31 @@ export class AccountEditComponent implements OnInit {
 
   setNewPoNumber(){
     this.displayNewPoNumber = true;
+  }
+
+  changeAccountStatus(){
+    this.__accountservice.changeAccountStatus(this.organizationID);
+  }
+
+
+  findAccountStatus(){
+    var x = orgData.findIndex((org) => {
+      return org.orgID == this.organizationID.toString();
+    });
+    console.log(x);
+
+    if( orgData[x].status.localeCompare("Pending")){
+      console.log(orgData[x].status);
+      return true;
+    }
+    else
+      return false;
+  }
+  navigateToOrders(){
+    var x = ordersData.findIndex((org) => {
+      return org.orgID == this.organizationID;
+    });
+    var y = ordersData[x].ordID;
+    this.router.navigate(['/cms/orders',y]);
   }
 }
