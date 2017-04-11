@@ -8,7 +8,7 @@ export let orgData:Array<organization> = [
         upo : '123123',
         companyURL : 'apple.com',
         lastModified : '17-12-2005',
-        status : 'Cool',
+        status : 'Pending',
         loginName:'dfgh',
         password : 'sdfghj',
         confirmPassword:'sdfghj',

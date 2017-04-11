@@ -487,6 +487,7 @@
 
 <div align="center">
   <button type="button" class="ui button" (click)="changeAccountStatus()">Inactivate Account</button>
+  <button type="button" class="ui button" (click)="navigateToOrders()" [disabled]="findAccountStatus()">Create Order</button>
 </div>
 
 
