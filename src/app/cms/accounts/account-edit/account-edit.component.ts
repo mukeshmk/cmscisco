@@ -95,9 +95,9 @@ export class AccountEditComponent implements OnInit {
               street2 : ['',Validators.compose([Validators.required,Validators.minLength(5)])],
               city : ['',Validators.compose([Validators.required,Validators.minLength(5)])],
               state : ['',Validators.required],
-              zip : ['',Validators.compose([Validators.required,Validators.pattern("+\d")])],
-              phone : ['',Validators.compose([Validators.required,Validators.pattern("+\d")])],
-              fax :  ['',Validators.compose([Validators.required,Validators.pattern("^\d")])],
+              zip : ['',Validators.compose([Validators.required,Validators.pattern("^[0-9]{6}$")])],
+              phone : ['',Validators.compose([Validators.required,Validators.pattern("^[0-9]{10}$")])],
+              fax :  ['',Validators.compose([Validators.required,Validators.pattern("^[0-9]{10}$")])],
           }
       );
 

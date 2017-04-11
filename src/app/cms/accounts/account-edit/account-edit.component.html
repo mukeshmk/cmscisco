@@ -40,20 +40,20 @@
           <div class = "field">
             <label for = "acc-zip">Zip Postal Code</label>
             <input formControlName="zip" [(ngModel)]="data.accAddress[0].zip" type = "text" id = "acc-zip">
-              <small class = "small" *ngIf="accountEditAddressFormGroup.get('zip').hasError('pattern')">Enter only numbers</small>
+              <small class = "small" *ngIf="accountEditAddressFormGroup.get('zip').hasError('pattern')">Enter 6 numbers</small>
           </div>
         </div>
         <div class = "two fields">
           <div class = "field">
             <label for = "acc-phone">Phone</label>
             <input formControlName="phone" [(ngModel)]="data.accAddress[0].phone" type = "text" id = "acc-phone">
-              <small class = "small" *ngIf="accountEditAddressFormGroup.get('phone').hasError('pattern')">Enter only numbers</small>
+              <small class = "small" *ngIf="accountEditAddressFormGroup.get('phone').hasError('pattern')">Enter 10 numbers</small>
 
           </div>
           <div class = "field">
             <label for = "acc-fax">Fax</label>
             <input formControlName="fax" [(ngModel)]="data.accAddress[0].fax" type = "text" id = "acc-fax">
-              <small class = "small" *ngIf="accountEditAddressFormGroup.get('fax').hasError('pattern')">Enter only numbers</small>
+              <small class = "small" *ngIf="accountEditAddressFormGroup.get('fax').hasError('pattern')">Enter 10 numbers</small>
 
           </div>
         </div>
