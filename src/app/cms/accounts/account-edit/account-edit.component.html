@@ -1,24 +1,27 @@
 
 <!---------------------------------------Address Modal-------------------------------------------------->
 <div class = "ui modal scrolling" id="addressModal">
-  <form [formGroup] = "accountEditAddressFormGroup" (ngSubmit)="saveAccountAddress($event)">
+  <form novalidate [formGroup] = "accountEditAddressFormGroup" (ngSubmit)="saveAccountAddress($event)">
     <div class="ui form">
       <div class="ui raised segment">
         <a class = "ui red ribbon label">Edit Address</a>
         <div class = "two fields">
           <div class = "field">
             <label for = "acc-street1">Street1</label>
-            <input formControlName="street1" [(ngModel)]="data.accAddress[0].street1" type = "text" id = "acc-street1">
+            <input formControlName="street1" [(ngModel)]="data.accAddress[0].street1" type = "text" id = "acc-street1" >
           </div>
+          <small class = "small" *ngIf="accountEditAddressFormGroup.get('street1').hasError('minlength')">Minimum length is 5</small>
           <div class = "field">
             <label for = "acc-street2">Street2</label>
-            <input formControlName="street2" [(ngModel)]="data.accAddress[0].street2" type = "text" id = "acc-street2">
+            <input formControlName="street2" [(ngModel)]="data.accAddress[0].street2" type = "text" id = "acc-street2" >
           </div>
+            <small class = "small" *ngIf="accountEditAddressFormGroup.get('street2').hasError('minlength')">Minimum length is 5</small>
         </div>
         <div class = "two fields">
           <div class = "field">
             <label for = "acc-city">City</label>
             <input formControlName="city" [(ngModel)]="data.accAddress[0].city" type = "text" id = "acc-city">
+              <small class = "small" *ngIf="accountEditAddressFormGroup.get('city').hasError('minlength')">Minimum length is 5</small>
           </div>
           <div class = "field">
             <label>State</label>
@@ -30,29 +33,34 @@
         <div class = "two fields">
           <div class = "field">
             <label>Country</label>
-            <select [(ngModel)]="selectedCountry.countryName" formControlName="country" class="ui search dropdown" >
+            <select [(ngModel)]="selectedCountry.countryName" formControlName="country" class="ui search dropdown"  country = "ngModel">
               <option *ngFor="let country  of countries" value="{{country.countryName}}">{{country.countryName}}</option>
             </select>
           </div>
           <div class = "field">
             <label for = "acc-zip">Zip Postal Code</label>
             <input formControlName="zip" [(ngModel)]="data.accAddress[0].zip" type = "text" id = "acc-zip">
+              <small class = "small" *ngIf="accountEditAddressFormGroup.get('zip').hasError('pattern')">Enter only numbers</small>
           </div>
         </div>
         <div class = "two fields">
           <div class = "field">
             <label for = "acc-phone">Phone</label>
             <input formControlName="phone" [(ngModel)]="data.accAddress[0].phone" type = "text" id = "acc-phone">
+              <small class = "small" *ngIf="accountEditAddressFormGroup.get('phone').hasError('pattern')">Enter only numbers</small>
+
           </div>
           <div class = "field">
             <label for = "acc-fax">Fax</label>
             <input formControlName="fax" [(ngModel)]="data.accAddress[0].fax" type = "text" id = "acc-fax">
+              <small class = "small" *ngIf="accountEditAddressFormGroup.get('fax').hasError('pattern')">Enter only numbers</small>
+
           </div>
         </div>
       </div>
 
       <div align = "center">
-        <button type = "submit" class = "ui positive button">Save Updates</button>
+        <button type = "submit" [disabled] = "accountEditAddressFormGroup.invalid" class = "ui positive button">Save Updates</button>
       </div>
 
     </div>

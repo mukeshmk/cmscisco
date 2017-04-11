@@ -7,7 +7,6 @@ import {
 } from "../accounts.interface";
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 
-
 declare var jQuery :any;
 @Component({
   selector: 'app-account-edit',
@@ -90,22 +89,23 @@ export class AccountEditComponent implements OnInit {
       this.accountEditAddressFormGroup = this._fb.group(
           {
               country : ['',Validators.required],
-              street1 : ['',Validators.required],
-              street2 : ['',Validators.required],
-              city : ['',Validators.required],
+              street1 : ['',Validators.compose([Validators.required,Validators.minLength(5)])],
+              street2 : ['',Validators.compose([Validators.required,Validators.minLength(5)])],
+              city : ['',Validators.compose([Validators.required,Validators.minLength(5)])],
               state : ['',Validators.required],
-              zip : ['',Validators.required],
-              phone : ['',Validators.required],
-              fax : ['',Validators.required]
+              zip : ['',Validators.compose([Validators.required,Validators.pattern("+\d")])],
+              phone : ['',Validators.compose([Validators.required,Validators.pattern("+\d")])],
+              fax :  ['',Validators.compose([Validators.required,Validators.pattern("^\d")])],
           }
       );
+
+
 
       this.accountSplitCriteriaFormGroup = this._fb.group(
         {
           splitCriteria: ['', Validators.required],
           splitBillfromAccount: ['', Validators.required],
           description: ['', Validators.required]
-
         }
       );
 
