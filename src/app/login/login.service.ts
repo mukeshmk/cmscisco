@@ -44,6 +44,4 @@ export class LoginService {
   isLoggedIn(){
     return this.loggedIn;
   }
-
-
 }

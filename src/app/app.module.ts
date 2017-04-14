@@ -48,10 +48,11 @@ import { RealignViewComponent } from './main/blis/realign/realign-view/realign-v
 import { BlisComponent } from './main/blis/blis.component';
 import { CmsComponent } from './main/cms/cms.component';
 import {NavigationComponent} from "./main/blis/navigation/navigation.component";
-import loginAuthorization from "./login/login.auth";
 import { MainComponent } from './main/main.component';
 import {LoginService} from "./login/login.service";
 import {UsersService} from "./main/blis/users/users.service";
+import {GuestGuard} from "./login/guest.guard";
+import {LoggedInGuard} from "./login/logged-in.guard";
 
 
 
@@ -111,7 +112,8 @@ import {UsersService} from "./main/blis/users/users.service";
     ReactiveFormsModule
   ],
   providers: [
-      loginAuthorization,
+      GuestGuard,
+      LoggedInGuard,
       LoginService,
       UsersService
   ],
