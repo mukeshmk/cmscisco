@@ -56,6 +56,8 @@ import {LoggedInGuard} from "./login/logged-in.guard";
 import {MainService} from "./main/main.service";
 import { AppForkComponent } from './main/app-fork/app-fork.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {BlisUserGuard} from "./main/blis-user.guard";
+import {CmsUserGuard} from "./main/cms-user.guard";
 
 
 
@@ -119,6 +121,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   providers: [
       GuestGuard,
       LoggedInGuard,
+      BlisUserGuard,
+      CmsUserGuard,
       LoginService,
       UsersService,
       MainService

@@ -16,6 +16,14 @@ import {RolesRoutes} from "./blis/roles/roles.routing";
 import {ProfileComponent} from "./blis/profile/profile.component";
 import {RealignComponent} from "./blis/realign/realign.component";
 import {RealignRoutes} from "./blis/realign/realign.routing";
+import {CmsUserGuard} from "./cms-user.guard";
+import {BlisUserGuard} from "./blis-user.guard";
+
+
+/*
+    All the routes have been secured with guards,
+    and the AppForkComponent takes care of the dashboard route
+ */
 
 
 
@@ -28,57 +36,68 @@ export let MainRoute = [
   {
     path : 'ordercount',
     component : OrdercountComponent,
+    canActivate : [CmsUserGuard],
     pathMatch : "full"
   },
   {
     path : 'dashboard',
-    component : OrdercountComponent
+    component : OrdercountComponent,
+    canActivate : [CmsUserGuard],
   },
   {
     path : 'accounts',
     component : AccountsComponent,
+    canActivate : [CmsUserGuard],
     children : AccountRoutes
   },
   {
     path : 'organization',
     component : OrganizationComponent,
+    canActivate : [CmsUserGuard],
     children : OrganizationRoutes
   },
   {
     path : 'orders/:ordID',
-    component : OrdersComponent
+    component : OrdersComponent,
+    canActivate : [CmsUserGuard]
   },
   {
     path : 'vieworganization',
-    component : ViewOrganizationComponent
+    component : ViewOrganizationComponent,
+    canActivate : [CmsUserGuard]
   },
   // Blis Routes
   {
     name: 'Users',
     path : 'users',
     component : UsersComponent,
+    canActivate : [BlisUserGuard],
     children : UsersRoutes
   },
   {
     name: 'Teams',
     path : 'teams',
     component : TeamsComponent,
+    canActivate : [BlisUserGuard],
     children : TeamsRoutes
   },
   {
     name: 'Roles',
     path : 'roles',
     component : RolesComponent,
+    canActivate : [BlisUserGuard],
     children : RolesRoutes
   },
   {
     name: 'Profile',
     path : 'profile',
+    canActivate : [BlisUserGuard],
     component : ProfileComponent
   },
   {
     name: 'Realign',
     path : 'realign',
+    canActivate : [BlisUserGuard],
     component : RealignComponent,
     children : RealignRoutes
   }
