@@ -4,13 +4,11 @@ import {RouterModule} from '@angular/router';
 
 
 import {LoginComponent} from "./login/login.component";
-import {BlisComponent} from "./main/blis/blis.component";
-import {blisRoute} from "./main/blis/blis.routing";
-import {cmsRoute} from "./main/cms/cms.routing";
-import {CmsComponent} from "./main/cms/cms.component";
 import {MainComponent} from "./main/main.component";
 import {GuestGuard} from "./login/guest.guard";
 import {LoggedInGuard} from "./login/logged-in.guard";
+import {MainRoute} from "./main/main.routing";
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 
 const appRoutes=[
@@ -19,12 +17,16 @@ const appRoutes=[
     name : 'Main',
     canActivate : [GuestGuard],
     component : MainComponent,
-    pathMatch : 'full',
+    children : MainRoute
   },
   {
     path : "login",
     canActivate : [LoggedInGuard],
     component : LoginComponent
+  },
+  {
+    path: "**",
+    component: PageNotFoundComponent
   }
   // {
   //   path : 'blis',
@@ -40,6 +42,7 @@ const appRoutes=[
   //   canActivate : [loginAuthorization],
   //   children : cmsRoute
   // }
+
 ];
 
 export const Routing : ModuleWithProviders = RouterModule.forRoot(appRoutes);

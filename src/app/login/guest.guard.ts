@@ -19,7 +19,7 @@ export class GuestGuard implements CanActivate {
 
     // If the user is not logged in redirect him to "/login",
     // else he is allowed to navigate to this page
-
+    console.log("Guest Guard");
     if(!this._loginService.isLoggedIn()){
       this._router.navigate(["/login"]);
     }else{

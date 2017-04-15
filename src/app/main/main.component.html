@@ -1,3 +1,39 @@
-<p>
-  <button (click)="logout()">logout</button>
-</p>
+<input type="checkbox" id="dashboard-sidebar-toggle">
+
+
+<div id="dashboard-wrapper">
+
+  <div id="dashboard-main">
+    <div id="dashboard-header">
+      <label for="dashboard-sidebar-toggle" id="dashboard-sidebar-icon">≡</label>
+      <div id="dashboard-header-title">
+        anokha
+      </div>
+      <!--<div id="dashboard-header-profile">-->
+        <!--{{ _loginService.getData().firstName + " " + _loginService.getData().lastName }}-->
+      <!--</div>-->
+    </div>
+    <div id="dashboard-main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div id="dashboard-sidebar">
+    <div id="dashboard-sidebar-profile">
+      <div id="user-icon"><i class="fa fa-user-secret" aria-hidden="true"></i>
+      </div>
+      <!--<p id="dashboard-sidebar-profile-name">-->
+        <!--{{ _loginService.getData().firstName + " " + _loginService.getData().lastName }}-->
+      <!--</p>-->
+    </div>
+
+    <div id="dashboard-sidebar-menu">
+      <ul>
+        <li><a routerLink="/dashboard"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+        <li><a routerLink="/dashboard/events"><i class="fa fa-cubes" aria-hidden="true"></i>Events</a></li>
+        <li><a routerLink="/dashboard/workshops"><i class="fa fa-cogs" aria-hidden="true"></i>Workshops</a></li>
+        <li><a routerLink="/dashboard/profile"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+        <li><a (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

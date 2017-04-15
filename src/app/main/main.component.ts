@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from "../login/login.service";
+import {MainService} from "./main.service";
+import {Router} from "@angular/router";
+import {blisRoute} from "./blis/blis.routing";
+import {cmsRoute} from "./cms/cms.routing";
 
 @Component({
   selector: 'app-main',
@@ -9,7 +13,12 @@ import {LoginService} from "../login/login.service";
 })
 export class MainComponent implements OnInit {
 
-  constructor(private _loginService : LoginService) {
+  private privilege;
+
+  constructor(
+    private _mainService : MainService,
+    private _router : Router
+  ) {
 
     /* 1. Inject the service
         2. Call the is logged in function
@@ -17,8 +26,16 @@ export class MainComponent implements OnInit {
         4. else redirect to login
         5. Display respective view and menu
      */
+    let data = this._mainService.getUserData();
+    console.log(data);
+    if(data != undefined) {
+      this.privilege = data.role;
+      console.log(this.privilege);
+    }else{
+      //this._router.navigate(["/404"]);
+    }
 
-
+    //console.log(blisRoute.concat(cmsRoute));
 
   }
 
@@ -26,7 +43,7 @@ export class MainComponent implements OnInit {
   }
 
   logout(){
-    this._loginService.logout();
+    //this._loginService.logout();
   }
 
 }

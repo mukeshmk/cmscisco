@@ -9,15 +9,14 @@ export class CmsUserGuard implements CanActivate {
   constructor(
     private _loginService: LoginService,
     private _router : Router
-  )
+  ){}
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-
       if(this._loginService.isLoggedIn()){
 
       }
-
+      return true;
   }
 }

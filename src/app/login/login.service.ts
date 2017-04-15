@@ -31,6 +31,7 @@ export class LoginService {
     //   return true;
     // }
     let userData = this._userService.getUserByLoginAndPassword(loginName,password);
+    console.log(userData);
     if(userData != undefined){
       this.loggedIn = true;
       localStorage.setItem('logged_in', "true");

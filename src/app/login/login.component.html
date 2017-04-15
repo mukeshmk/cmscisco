@@ -24,7 +24,7 @@
           <small class = "small" [hidden] = "user.value.password.length > 5">Password required</small>
         </div>
         <div class="field">
-          <button type="submit" (click)="login()" [disabled] = "!user.valid" class="ui button large fluid green">Sign in</button>
+          <button type="submit" [disabled] = "!user.valid" class="ui button large fluid green">Sign in</button>
         </div>
       </form>
     </div>

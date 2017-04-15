@@ -53,6 +53,9 @@ import {LoginService} from "./login/login.service";
 import {UsersService} from "./main/blis/users/users.service";
 import {GuestGuard} from "./login/guest.guard";
 import {LoggedInGuard} from "./login/logged-in.guard";
+import {MainService} from "./main/main.service";
+import { AppForkComponent } from './main/app-fork/app-fork.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -101,6 +104,8 @@ import {LoggedInGuard} from "./login/logged-in.guard";
     CmsComponent,
     NavigationComponent,
     MainComponent,
+    AppForkComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -115,7 +120,8 @@ import {LoggedInGuard} from "./login/logged-in.guard";
       GuestGuard,
       LoggedInGuard,
       LoginService,
-      UsersService
+      UsersService,
+      MainService
   ],
   bootstrap: [AppComponent],
 })

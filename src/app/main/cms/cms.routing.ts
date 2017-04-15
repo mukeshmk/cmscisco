@@ -6,7 +6,7 @@ import { OrganizationRoutes} from "./organization/organization.routing";
 import { AccountRoutes } from "./accounts/account.routing";
 import {AccountsComponent} from "./accounts/accounts.component";
 
-export let cmsRoute = [
+export let cmsRoute : [any] = [
     {
         path : '',
         component : OrdercountComponent

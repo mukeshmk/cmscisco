@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-blis',
+  selector: 'blis',
   templateUrl: './blis.component.html',
   styleUrls: ['./blis.component.css']
 })

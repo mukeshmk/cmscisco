@@ -18,6 +18,8 @@ export class DashboardComponent implements OnInit {
     //   this._router.navigate(['login']);
     // }
     // else{}
+
+    alert("dashboard");
   }
 
   logout() {
