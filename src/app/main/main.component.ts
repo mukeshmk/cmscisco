@@ -13,10 +13,12 @@ import {cmsRoute} from "./cms/cms.routing";
 })
 export class MainComponent implements OnInit {
 
-  private privilege;
+  // private privilege;
+  data;
 
   constructor(
     private _mainService : MainService,
+    private _loginService : LoginService,
     private _router : Router
   ) {
 
@@ -26,14 +28,15 @@ export class MainComponent implements OnInit {
         4. else redirect to login
         5. Display respective view and menu
      */
-    let data = this._mainService.getUserData();
-    console.log(data);
-    if(data != undefined) {
-      this.privilege = data.role;
-      console.log(this.privilege);
-    }else{
-      //this._router.navigate(["/404"]);
-    }
+    this.data = this._mainService.getUserData();
+
+    // console.log(data);
+    // if(data != undefined) {
+    //   this.privilege = data.role;
+    //   console.log(this.privilege);
+    // }else{
+    //   //this._router.navigate(["/404"]);
+    // }
 
     //console.log(blisRoute.concat(cmsRoute));
 
@@ -43,7 +46,8 @@ export class MainComponent implements OnInit {
   }
 
   logout(){
-    //this._loginService.logout();
+    this._loginService.logout();
+    this._router.navigate(["/login"]);
   }
 
 }

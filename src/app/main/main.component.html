@@ -1,13 +1,17 @@
-<input type="checkbox" id="dashboard-sidebar-toggle">
+<!--<input type="checkbox" id="dashboard-sidebar-toggle">-->
 
 
 <div id="dashboard-wrapper">
 
   <div id="dashboard-main">
     <div id="dashboard-header">
-      <label for="dashboard-sidebar-toggle" id="dashboard-sidebar-icon">≡</label>
-      <div id="dashboard-header-title">
-        anokha
+      <!--<label for="dashboard-sidebar-toggle" id="dashboard-sidebar-icon">≡</label>-->
+      <app-search></app-search>
+      <div id="header-username">
+        data.onlineName
+      </div>
+      <div id="header-logout">
+        logout
       </div>
       <!--<div id="dashboard-header-profile">-->
         <!--{{ _loginService.getData().firstName + " " + _loginService.getData().lastName }}-->

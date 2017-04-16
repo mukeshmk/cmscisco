@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { AccountsComponent } from './main/cms/accounts/accounts.component';
 import { OrganizationComponent } from './main/cms/organization/organization.component';
 import { OrdersComponent } from './main/cms/orders/orders.component';
-import { SearchComponent } from './search/search.component';
+import { SearchComponent } from './main/search/search.component';
 import { NavigationbarComponent } from './main/cms/navigationbar/navigationbar.component';
 import { OrdercountComponent } from './main/cms/ordercount/ordercount.component';
 import { Routing } from './app.routing';

@@ -20,7 +20,6 @@ export class LoginService {
     this.loggedIn = false;
     localStorage.removeItem("logged_in");
     localStorage.removeItem("userData");
-    this._router.navigate(['login']);
   }
 
   login(loginName : String, password : String){
