@@ -25,6 +25,8 @@ ul {
   background-color: #FFFFFF;
   color: #171717;
   font-size: 16px;
+  margin:0;
+  padding:0;
   border-bottom: 1px solid #ccc;
   /*text-align: center;*/
 }
@@ -163,14 +165,15 @@ ul {
 */
 
 app-search {
-  max-width: 70%;
+  min-width: 70%;
   background: #393D40;
-  display: block;
+  display: inline-block;
   min-height: 100%;
 }
 
 
 #header-username{
+
   display: inline-block;
 }
 
