@@ -1,15 +1,15 @@
 import {User} from "./users.interface";
 export let UsersData:Array<User> = [
   {
-    lastName: 'AMsadf',
-    firstName:'AMsdf',
-    onlineName: 'am',
+    lastName: 'Jaiswal',
+    firstName:'Sourav',
+    onlineName: 'souravjaiswal',
     workPhone :4567,
     homePhone :34567,
     cellPhone :34567,
-    loginName:'dfghf',
-    password : 'sdfghj',
-    confirmPassword:'sdfghj',
+    loginName:'sourav',
+    password : 'password',
+    confirmPassword:'password',
     street1 : 'sdfgh',
     street2 : 'sdfgh',
     city:'sdfgh',

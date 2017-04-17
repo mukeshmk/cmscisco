@@ -1,3 +1,56 @@
-<p>
-  <button (click)="logout()">logout</button>
-</p>
+<!--<input type="checkbox" id="dashboard-sidebar-toggle">-->
+
+
+<div id="dashboard-wrapper">
+
+  <div id="dashboard-main">
+    <div id="dashboard-header">
+      <!--<label for="dashboard-sidebar-toggle" id="dashboard-sidebar-icon">≡</label>-->
+      <app-search></app-search><div id="header-username">{{data.onlineName}}</div><div id="header-logout" (click)="logout()">logout</div>
+
+
+      <!--<div class="ui four column grid">-->
+        <!--<div class="column">ads</div>-->
+        <!--<div class="column">ad</div>-->
+        <!--<div class="column">ads</div>-->
+        <!--<div class="column">ads</div>-->
+      <!--</div>-->
+      <!--<div id="dashboard-header-profile">-->
+        <!--{{ _loginService.getData().firstName + " " + _loginService.getData().lastName }}-->
+      <!--</div>-->
+    </div>
+    <div id="dashboard-main-content" class="ui raised segment">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div id="dashboard-sidebar">
+    <div id="sidebar-logo"> Cisco</div>
+    <div id="dashboard-sidebar-profile">
+      <!--<div id="user-icon"><i class="fa fa-user-secret" aria-hidden="true"></i>-->
+      <!--</div>-->
+      <!--<p id="dashboard-sidebar-profile-name">-->
+        <!--{{ _loginService.getData().firstName + " " + _loginService.getData().lastName }}-->
+      <!--</p>-->
+      <img class="ui small circular image" src="../../assets/user-logo.png" id="sidebar-profile-pic">
+      <p>{{data.firstName + " " + data.lastName}}</p>
+    </div>
+
+
+    <div id="dashboard-sidebar-menu">
+      <ul>
+        <li><a routerLink="/"><i class="home icon"></i>Home</a></li>
+        <li><a routerLink="/users"><i class="user icon"></i>Users</a></li>
+        <li><a routerLink="/roles"><i class="puzzle icon"></i>Roles</a></li>
+        <li><a routerLink="/teams"><i class="users icon"></i>Teams</a></li>
+        <li><a routerLink="/realign"><i class="move icon"></i>Re-Alignment Tool</a></li>
+      </ul>
+
+    </div>
+    <div id="sidebar-submenu">
+      <ul>
+        <li><a routerLink="/profile">PROFILE</a></li>
+        <li><a routerLink="/help">HELP</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

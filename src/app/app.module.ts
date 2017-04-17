@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { AccountsComponent } from './main/cms/accounts/accounts.component';
 import { OrganizationComponent } from './main/cms/organization/organization.component';
 import { OrdersComponent } from './main/cms/orders/orders.component';
-import { SearchComponent } from './search/search.component';
+import { SearchComponent } from './main/search/search.component';
 import { NavigationbarComponent } from './main/cms/navigationbar/navigationbar.component';
 import { OrdercountComponent } from './main/cms/ordercount/ordercount.component';
 import { Routing } from './app.routing';
@@ -48,10 +48,16 @@ import { RealignViewComponent } from './main/blis/realign/realign-view/realign-v
 import { BlisComponent } from './main/blis/blis.component';
 import { CmsComponent } from './main/cms/cms.component';
 import {NavigationComponent} from "./main/blis/navigation/navigation.component";
-import loginAuthorization from "./login/login.auth";
 import { MainComponent } from './main/main.component';
 import {LoginService} from "./login/login.service";
 import {UsersService} from "./main/blis/users/users.service";
+import {GuestGuard} from "./login/guest.guard";
+import {LoggedInGuard} from "./login/logged-in.guard";
+import {MainService} from "./main/main.service";
+import { AppForkComponent } from './main/app-fork/app-fork.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {BlisUserGuard} from "./main/blis-user.guard";
+import {CmsUserGuard} from "./main/cms-user.guard";
 
 
 
@@ -100,6 +106,8 @@ import {UsersService} from "./main/blis/users/users.service";
     CmsComponent,
     NavigationComponent,
     MainComponent,
+    AppForkComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -111,9 +119,13 @@ import {UsersService} from "./main/blis/users/users.service";
     ReactiveFormsModule
   ],
   providers: [
-      loginAuthorization,
+      GuestGuard,
+      LoggedInGuard,
+      BlisUserGuard,
+      CmsUserGuard,
       LoginService,
-      UsersService
+      UsersService,
+      MainService
   ],
   bootstrap: [AppComponent],
 })

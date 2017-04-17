@@ -20,7 +20,6 @@ export class LoginService {
     this.loggedIn = false;
     localStorage.removeItem("logged_in");
     localStorage.removeItem("userData");
-    this._router.navigate(['login']);
   }
 
   login(loginName : String, password : String){
@@ -31,6 +30,7 @@ export class LoginService {
     //   return true;
     // }
     let userData = this._userService.getUserByLoginAndPassword(loginName,password);
+    console.log(userData);
     if(userData != undefined){
       this.loggedIn = true;
       localStorage.setItem('logged_in', "true");
@@ -44,6 +44,4 @@ export class LoginService {
   isLoggedIn(){
     return this.loggedIn;
   }
-
-
 }

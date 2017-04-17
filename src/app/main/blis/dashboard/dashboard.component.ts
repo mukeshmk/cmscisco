@@ -14,10 +14,11 @@ export class DashboardComponent implements OnInit {
     private _service:LoginService,private _router: Router){}
 
   ngOnInit(){
-    if(!this._service.checkCredentials()){
-      this._router.navigate(['login']);
-    }
-    else{}
+    // if(!this._service.checkCredentials()){
+    //   this._router.navigate(['login']);
+    // }
+    // else{}
+    
   }
 
   logout() {

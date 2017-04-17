@@ -10,10 +10,10 @@ import {RolesRoutes} from "./roles/roles.routing";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 
 
-export let blisRoute = [
-    {
-        path: '',
+export let blisRoute : [any] = [
+  {
         name : 'Dashboard',
+        path: '',
         component : DashboardComponent,
         pathMatch : 'full'
     },
