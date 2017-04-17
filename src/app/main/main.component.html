@@ -6,8 +6,15 @@
   <div id="dashboard-main">
     <div id="dashboard-header">
       <!--<label for="dashboard-sidebar-toggle" id="dashboard-sidebar-icon">≡</label>-->
-      <app-search></app-search>
-        <i class="sign out icon"></i>
+      <app-search></app-search><div id="header-username">{{data.onlineName}}</div><div id="header-logout" (click)="logout()">logout</div>
+
+
+      <!--<div class="ui four column grid">-->
+        <!--<div class="column">ads</div>-->
+        <!--<div class="column">ad</div>-->
+        <!--<div class="column">ads</div>-->
+        <!--<div class="column">ads</div>-->
+      <!--</div>-->
       <!--<div id="dashboard-header-profile">-->
         <!--{{ _loginService.getData().firstName + " " + _loginService.getData().lastName }}-->
       <!--</div>-->
@@ -17,20 +24,25 @@
     </div>
   </div>
   <div id="dashboard-sidebar">
+    <div id="sidebar-logo"> Cisco</div>
     <div id="dashboard-sidebar-profile">
-      <div id="user-icon"><i class="fa fa-user-secret" aria-hidden="true"></i>
-      </div>
+      <!--<div id="user-icon"><i class="fa fa-user-secret" aria-hidden="true"></i>-->
+      <!--</div>-->
       <!--<p id="dashboard-sidebar-profile-name">-->
         <!--{{ _loginService.getData().firstName + " " + _loginService.getData().lastName }}-->
       <!--</p>-->
+      <img class="ui small circular image" src="../../assets/user-logo.png" id="sidebar-profile-pic">
+      <p>{{data.firstName + " " + data.lastName}}</p>
     </div>
+
 
     <div id="dashboard-sidebar-menu">
       <ul>
         <li><a routerLink="/dashboard"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
-        <li><a routerLink="/dashboard/events"><i class="fa fa-cubes" aria-hidden="true"></i>Events</a></li>
-        <li><a routerLink="/dashboard/workshops"><i class="fa fa-cogs" aria-hidden="true"></i>Workshops</a></li>
-        <li><a routerLink="/dashboard/profile"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+        <li><a routerLink="/dashboard/events"><i class="fa fa-cubes" aria-hidden="true"></i>Users</a></li>
+        <li><a routerLink="/dashboard/workshops"><i class="fa fa-cogs" aria-hidden="true"></i>Roles</a></li>
+        <li><a routerLink="/dashboard/profile"><i class="fa fa-user" aria-hidden="true"></i>Teams</a></li>
+        <li><a routerLink="/dashboard/profile"><i class="fa fa-user" aria-hidden="true"></i>Re-Alignment Tool</a></li>
         <li><a (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>
       </ul>
     </div>

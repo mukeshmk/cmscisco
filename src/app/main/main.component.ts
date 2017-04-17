@@ -2,14 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {LoginService} from "../login/login.service";
 import {MainService} from "./main.service";
 import {Router} from "@angular/router";
-import {blisRoute} from "./blis/blis.routing";
-import {cmsRoute} from "./cms/cms.routing";
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css'],
-  providers : [LoginService]
+  styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
 
@@ -40,6 +37,7 @@ export class MainComponent implements OnInit {
 
     //console.log(blisRoute.concat(cmsRoute));
 
+    console.log(this._router);
   }
 
   ngOnInit() {
@@ -48,6 +46,7 @@ export class MainComponent implements OnInit {
   logout(){
     this._loginService.logout();
     this._router.navigate(["/login"]);
+    console.log('logout');
   }
 
 }

@@ -1,5 +1,5 @@
 div#nav-search-wrapper {
-  min-width: 100%;
+  max-width: 100%;
   /* background: black; */
   padding-top: 10px;
   min-height: 25px;
@@ -81,3 +81,6 @@ div#nav-search-wrapper {
   border-bottom: 1px #676A6B solid
 }
 
+#nav-username{
+  display: inline;
+}

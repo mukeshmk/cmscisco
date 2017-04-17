@@ -7,3 +7,4 @@
     <p *ngFor="let option of options, let i = index" [ngClass]="{'active' : i == 0, 'toggled' : toggled}" (click)="optionClick(i)" >{{ option }}</p>
   </div>
 </div>
+

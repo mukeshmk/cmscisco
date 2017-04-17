@@ -18,7 +18,7 @@ ul {
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
-  padding-left : 200px;
+  padding-left : 250px;
 }
 #dashboard-main #dashboard-header {
   height: 60px;
@@ -54,13 +54,13 @@ ul {
 }
 
 #dashboard-sidebar {
-  background: #2E3A4D;
+  background: #ffffff;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
   position: fixed;
   top: 0;
   left: 0px;
-  width: 200px;
+  width: 250px;
   height: 100vh;
   z-index: 10;
   -webkit-transition: 0.5s;
@@ -70,15 +70,32 @@ ul {
   transition: 0.5s;
   list-style: none;
 }
-#dashboard-sidebar li {
-  cursor: pointer;
-  margin: 0 0 30px 50px;
-  color: rgba(255, 255, 255, 0.8);
+/*#dashboard-sidebar li {*/
+  /*cursor: pointer;*/
+  /*margin: 0 0 30px 50px;*/
+  /*color: rgba(255, 255, 255, 0.8);*/
+/*}*/
+
+#dashboard-sidebar ul{
+  margin: 0;
+  padding : 0;
 }
-#dashboard-sidebar li a, #dashboard-sidebar li a:hover, #dashboard-sidebar li a:link, #dashboard-sidebar li a:visited {
+/*#dashboard-sidebar li a:hover, #dashboard-sidebar li a:link, #dashboard-sidebar li a:visited {*/
+  /*text-decoration: none;*/
+  /*!*color: rgba(255, 255, 255, 0.8);*!*/
+  /*color : white;*/
+/*}*/
+
+#dashboard-sidebar li a{
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.8);
+  color : black;
 }
+
+#dashboard-sidebar li a:hover{
+  text-decoration: none;
+  color : #eee;
+}
+
 #dashboard-sidebar li:hover {
   color: white;
 }
@@ -86,8 +103,8 @@ ul {
   padding-right: 10px;
 }
 #dashboard-sidebar #dashboard-sidebar-profile {
-  border-bottom: 1px solid #979797;
-  margin-bottom: 30px;
+  /*border-bottom: 1px solid #979797;*/
+  /*margin-bottom: 30px;*/
   text-align: center;
 }
 #dashboard-sidebar #dashboard-sidebar-profile #user-icon {
@@ -173,11 +190,78 @@ app-search {
 
 
 #header-username{
-
   display: inline-block;
+  vertical-align: top;
+  min-height: 59px;
+  background: #1E2327;
+  padding: 0px;
+  width: 15%;
+  color : #dddddd;
+  text-align: center;
+  padding-top: 17px;
 }
 
 
 #header-logout{
   display: inline-block;
+  vertical-align: top;
+  min-height: 59px;
+  background: #1E2327;
+  padding: 0px;
+  width: 15%;
+  color : #dddddd;
+  text-align: center;
+  padding-top: 17px;
+  cursor: pointer;
 }
+
+#sidebar-logo{
+  min-height: 60px;
+  background: #FEBC48;
+}
+
+#dashboard-sidebar-menu ul li{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  min-height: 50px;
+  border-top: 1px solid #e0e2eb;
+  text-align: center;
+  padding-top: 14px;
+  font-size: 14px;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#dashboard-sidebar-menu ul li:hover{
+  background: #1E2327;
+  /*color: #eeeeee;*/
+  min-height: 50px;
+  border-top: 1px solid #e0e2eb;
+  text-align: center;
+  padding-top: 14px;
+  font-size: 14px;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#dashboard-sidebar-menu ul li:hover > a{
+  color: #eee;
+}
+
+#dashboard-sidebar-menu ul a:hover{
+  color: #eeeeee;
+}
+
+#sidebar-profile-pic{
+  margin : auto;
+  padding-bottom : 14px;
+}
+

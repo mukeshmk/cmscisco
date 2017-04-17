@@ -1,8 +1,8 @@
 import {User} from "./users.interface";
 export let UsersData:Array<User> = [
   {
-    lastName: 'AMsadf',
-    firstName:'AMsdf',
+    lastName: 'Jaiswal',
+    firstName:'Sourav',
     onlineName: 'souravjaiswal',
     workPhone :4567,
     homePhone :34567,
