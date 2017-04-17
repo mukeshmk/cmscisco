@@ -63,6 +63,7 @@ ul {
   width: 250px;
   height: 100vh;
   z-index: 10;
+  box-shadow: 1px 0 5px #393D40;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
@@ -218,6 +219,8 @@ app-search {
 #sidebar-logo{
   min-height: 60px;
   background: #FEBC48;
+  text-align: center;
+  padding-top: 13px;
 }
 
 #dashboard-sidebar-menu ul li{
@@ -239,10 +242,10 @@ app-search {
 #dashboard-sidebar-menu ul li:hover{
   background: #1E2327;
   /*color: #eeeeee;*/
-  min-height: 50px;
+  min-height: 60px;
   border-top: 1px solid #e0e2eb;
   text-align: center;
-  padding-top: 14px;
+  padding-top: 19px;
   font-size: 14px;
   text-transform: uppercase;
   -webkit-transition: 0.5s;
@@ -263,5 +266,29 @@ app-search {
 #sidebar-profile-pic{
   margin : auto;
   padding-bottom : 14px;
+}
+
+/*
+  Main area
+*/
+
+#dashboard-main-content{
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+#sidebar-submenu{
+  border-top: 1px solid #e0e2eb;
+  width: 82%;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+#sidebar-submenu ul li{
+  font-size: 12px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-left: 20px;
 }
 

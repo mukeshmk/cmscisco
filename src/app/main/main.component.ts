@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from "../login/login.service";
 import {MainService} from "./main.service";
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-main',
@@ -16,8 +16,12 @@ export class MainComponent implements OnInit {
   constructor(
     private _mainService : MainService,
     private _loginService : LoginService,
-    private _router : Router
+    private _router : Router,
+    private _aRoute : ActivatedRoute
   ) {
+
+    const url = this._aRoute.url.map(segments => {segments.join(''); console.log(segments)});
+    //console.log(url);
 
     /* 1. Inject the service
         2. Call the is logged in function

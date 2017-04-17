@@ -19,7 +19,7 @@
         <!--{{ _loginService.getData().firstName + " " + _loginService.getData().lastName }}-->
       <!--</div>-->
     </div>
-    <div id="dashboard-main-content">
+    <div id="dashboard-main-content" class="ui raised segment">
       <router-outlet></router-outlet>
     </div>
   </div>
@@ -38,12 +38,18 @@
 
     <div id="dashboard-sidebar-menu">
       <ul>
-        <li><a routerLink="/dashboard"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
-        <li><a routerLink="/dashboard/events"><i class="fa fa-cubes" aria-hidden="true"></i>Users</a></li>
-        <li><a routerLink="/dashboard/workshops"><i class="fa fa-cogs" aria-hidden="true"></i>Roles</a></li>
-        <li><a routerLink="/dashboard/profile"><i class="fa fa-user" aria-hidden="true"></i>Teams</a></li>
-        <li><a routerLink="/dashboard/profile"><i class="fa fa-user" aria-hidden="true"></i>Re-Alignment Tool</a></li>
-        <li><a (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"></i>Log out</a></li>
+        <li><a routerLink="/"><i class="home icon"></i>Home</a></li>
+        <li><a routerLink="/users"><i class="user icon"></i>Users</a></li>
+        <li><a routerLink="/roles"><i class="puzzle icon"></i>Roles</a></li>
+        <li><a routerLink="/teams"><i class="users icon"></i>Teams</a></li>
+        <li><a routerLink="/realign"><i class="move icon"></i>Re-Alignment Tool</a></li>
+      </ul>
+
+    </div>
+    <div id="sidebar-submenu">
+      <ul>
+        <li><a routerLink="/profile">PROFILE</a></li>
+        <li><a routerLink="/help">HELP</a></li>
       </ul>
     </div>
   </div>
