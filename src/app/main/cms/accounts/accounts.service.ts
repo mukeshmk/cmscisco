@@ -3,6 +3,7 @@ import {accountData} from "./accounts.array";
 import {account} from "./accounts.interface";
 import {organization} from "../organization/oragnization.interface";
 import {orgData} from "../organization/orgData.array";
+import {viewAccountData} from "./view-accounts/viewAccounts.array";
 
 @Injectable()
 export class AccountsService {
@@ -143,13 +144,13 @@ export class AccountsService {
 
     changeAccountStatus(orgID){
       var str = "Inactive";
-      var x = orgData.findIndex((org) => {
+      var x = viewAccountData.findIndex((org) => {
         return org.orgID == orgID;
       });
 
       if(x < 0) return -1;
 
-      orgData[x].status = str ;
-      console.log(orgData[x].status);
+      viewAccountData[x].status = str ;
+      console.log(viewAccountData[x].status);
     }
 }

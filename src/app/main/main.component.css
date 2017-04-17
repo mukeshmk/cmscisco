@@ -292,3 +292,58 @@ app-search {
   padding-left: 20px;
 }
 
+
+#sidebar-submenu1{
+  border-top: 1px solid #e0e2eb;
+  width: 82%;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+#sidebar-submenu1 ul li{
+  font-size: 12px;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+#dashboard-sidebar-menu1 ul li{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  min-height: 50px;
+  border-top: 1px solid #e0e2eb;
+  text-align: center;
+  padding-top: 14px;
+  font-size: 14px;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#dashboard-sidebar-menu1 ul li:hover{
+  background: #1E2327;
+  /*color: #eeeeee;*/
+  min-height: 60px;
+  border-top: 1px solid #e0e2eb;
+  text-align: center;
+  padding-top: 19px;
+  font-size: 14px;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#dashboard-sidebar-menu1 ul li:hover > a{
+  color: #eee;
+}
+
+#dashboard-sidebar-menu1 ul a:hover{
+  color: #eeeeee;
+}
+

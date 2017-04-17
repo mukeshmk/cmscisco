@@ -35,7 +35,7 @@
       <p>{{data.firstName + " " + data.lastName}}</p>
     </div>
 
-
+    <div *ngIf = "data.role == 'sales'">
     <div id="dashboard-sidebar-menu">
       <ul>
         <li><a routerLink="/"><i class="home icon"></i>Home</a></li>
@@ -52,5 +52,23 @@
         <li><a routerLink="/help">HELP</a></li>
       </ul>
     </div>
+    </div>
+
+    <div *ngIf = "data.role != 'sales'">
+      <div id="dashboard-sidebar-menu1">
+        <ul>
+          <li><a routerLink="/"><i class="home icon"></i>Dashboard</a></li>
+          <li><a routerLink="/organization"><i class="user icon"></i>Organization</a></li>
+          <li><a routerLink="/accounts"><i class="puzzle icon"></i>Accounts</a></li>
+        </ul>
+
+      </div>
+      <div id="sidebar-submenu1">
+        <ul>
+          <li><a routerLink="/help">HELP</a></li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </div>

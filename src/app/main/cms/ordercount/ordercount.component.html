@@ -1,10 +1,9 @@
-<p>Orders Count</p>
 <div class="ui form">
 
   <div class="ui three column grid">
 
     <div class="column">
-      <div class="ui blue segment">
+      <div class="ui orange segment">
         <div class="field">
           <p>Total Status New Orders</p>
           <p>{{data.newOrders}}</p>
@@ -12,7 +11,7 @@
       </div>
     </div>
     <div class="column">
-      <div class="ui blue segment">
+      <div class="ui orange segment">
         <div class="field">
           <p>Total Status Pending Correction Orders</p>
           <p>{{data.pendingCorrections}}</p>
@@ -20,7 +19,7 @@
       </div>
     </div>
     <div class="column">
-      <div class="ui blue segment">
+      <div class="ui orange segment">
         <div class="field">
           <p>Total Outstanding</p>
           <p>{{data.outStanding}}</p>
@@ -31,7 +30,7 @@
 
   <div class="ui three column grid">
     <div class="column">
-      <div class="ui blue segment">
+      <div class="ui orange segment">
         <div class="field">
           <p>Total Status Accepted Orders</p>
           <p>{{data.accepted}}</p>
@@ -39,7 +38,7 @@
       </div>
     </div>
     <div class="column">
-      <div class="ui blue segment">
+      <div class="ui orange segment">
         <div class="field">
           <p>Total Status Pending Effective Orders</p>
           <p>{{data.effective}}</p>
@@ -47,7 +46,7 @@
       </div>
     </div>
     <div class="column">
-      <div class="ui blue segment">
+      <div class="ui orange segment">
         <div class="field">
           <p>Total Processed</p>
           <p>{{data.processed}}</p>
@@ -59,35 +58,3 @@
 
 
 
-<br><br>
-
-<div align="center">
-  <div class="ui large button" style="background-color: lightblue">
-
-    <a [routerLink]="['/vieworganization']">
-      <div class = "ui icon button" data-tooltip="View organization"><i class="huge user icon"></i>
-      </div>
-    </a>
-
-
-    <a [routerLink]="['/organization']">
-      <div class = "ui icon button" data-tooltip="Organization"><i class="huge child icon"></i>
-      </div>
-    </a>
-
-    <a [routerLink]="['/orders']">
-      <div class = "ui icon button" data-tooltip="Orders"><i class="huge users icon"></i>
-      </div>
-    </a>
-
-    <a [routerLink]="['/accounts']">
-      <div class = "ui icon button" data-tooltip="Accounts"><i class="huge archive icon"></i>
-      </div>
-    </a>
-
-    <a [routerLink]="['/CMTAlignment']">
-      <div class = "ui icon button" data-tooltip="CMT Alignment"><i class="huge travel icon"></i>
-      </div>
-    </a>
-  </div>
-</div>
