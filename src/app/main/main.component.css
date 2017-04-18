@@ -263,6 +263,27 @@ app-search {
   color: #eeeeee;
 }
 
+#dashboard-sidebar-menu ul li.page-active{
+   background: #1E2327;
+   /*color: #eeeeee;*/
+   min-height: 60px;
+   border-top: 1px solid #e0e2eb;
+   text-align: center;
+   padding-top: 19px;
+   font-size: 14px;
+   text-transform: uppercase;
+   -webkit-transition: 0.5s;
+   -moz-transition: 0.5s;
+   -ms-transition: 0.5s;
+   -o-transition: 0.5s;
+   transition: 0.5s;
+  color : #eee;
+ }
+
+#dashboard-sidebar li.page-active  a{
+  color : #eee;
+}
+
 #sidebar-profile-pic{
   margin : auto;
   padding-bottom : 14px;
@@ -275,7 +296,7 @@ app-search {
 #dashboard-main-content{
   width: 90%;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 #sidebar-submenu{
@@ -291,6 +312,9 @@ app-search {
   padding-top: 20px;
   padding-left: 20px;
 }
+
+
+
 
 
 #sidebar-submenu1{
@@ -323,6 +347,8 @@ app-search {
   transition: 0.5s;
 }
 
+
+
 #dashboard-sidebar-menu1 ul li:hover{
   background: #1E2327;
   /*color: #eeeeee;*/
@@ -339,6 +365,8 @@ app-search {
   transition: 0.5s;
 }
 
+
+
 #dashboard-sidebar-menu1 ul li:hover > a{
   color: #eee;
 }
@@ -347,3 +375,11 @@ app-search {
   color: #eeeeee;
 }
 
+#dashboard-main-header{
+  padding-left: 5%;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-family: Lato;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
