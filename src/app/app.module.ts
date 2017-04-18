@@ -11,7 +11,7 @@ import { NavigationbarComponent } from './main/cms/navigationbar/navigationbar.c
 import { OrdercountComponent } from './main/cms/ordercount/ordercount.component';
 import { Routing } from './app.routing';
 import { ViewOrganizationComponent } from './main/cms/organization/view-organization/view-organization.component';
-import { NgSemanticModule } from "ng-semantic";
+import { NgSemanticModule } from "ng-semantic/ng-semantic";
 import { Ng2PaginationModule} from 'ng2-pagination';
 import { OrgDataRowComponent } from './main/cms/organization/org-data-row/org-data-row.component';
 import { OrganizationNewComponent } from './main/cms/organization/organization-new/organization-new.component';

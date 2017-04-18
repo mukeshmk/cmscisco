@@ -244,6 +244,7 @@ export class AccountEditComponent implements OnInit {
 
   changeAccountStatus(){
     this.__accountservice.changeAccountStatus(this.organizationID);
+    this.router.navigate(['/accounts']);
   }
 
 
@@ -265,6 +266,6 @@ export class AccountEditComponent implements OnInit {
       return org.orgID == this.organizationID;
     });
     var y = ordersData[x].ordID;
-    this.router.navigate(['/cms/orders',y]);
+    this.router.navigate(['/orders',y]);
   }
 }

@@ -27,6 +27,6 @@ export class ViewAccountsComponent implements OnInit {
     console.log(data);
     this.selectedRow = data;
     console.log(this.selectedRow.orgID);
-    this.router.navigate(['/cms/accounts/edit',this.selectedRow.orgID]);
+    this.router.navigate(['/accounts/edit',this.selectedRow.orgID]);
   }
 }

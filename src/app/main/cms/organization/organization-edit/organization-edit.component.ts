@@ -82,7 +82,7 @@ export class OrganizationEditComponent implements OnInit {
   }
 
   navigateAccounts(){
-    this.router.navigate(['/cms/accounts/new',this.orgID]);
+    this.router.navigate(['/accounts/new',this.orgID]);
   }
 
 }
