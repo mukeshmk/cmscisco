@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {timeout} from "rxjs/operator/timeout";
+import {FormGroup, FormBuilder, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -12,14 +14,21 @@ export class SearchComponent implements OnInit {
 
   options;
   toggled;
+  searchForm : FormGroup;
 
-
-  constructor(){
+  constructor(
+    private _fb : FormBuilder,
+    private _router : Router
+  ){
     this.options = [
       'Organization Name',
       'User Name',
       'Roles'
-    ]
+    ];
+
+    this.searchForm = this._fb.group({
+      searchbox: ["", [Validators.required, Validators.pattern(/^[a-zA-Z0-9]{5,40}$/)]]
+    });
   }
 
   // displayOptions(){
@@ -34,8 +43,9 @@ export class SearchComponent implements OnInit {
     console.log(event);
     if(this.toggled){
       if(event > 0 ){
-        let temp = this.options.pop(event);
-        this.options.unshift(temp);
+
+        let temp = this.options.splice(event, 1);
+        this.options.unshift(temp[0]);
       }
       this.toggled = false;
     }else{
@@ -46,4 +56,10 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
+  submit(event){
+    //console.log(event);
+    if(event.key == 'Enter' && this.searchForm.value.searchbox.length > 0){
+      this._router.navigate(['/search',this.searchForm.value.searchbox, this.options[0]]);
+    }
+  }
 }

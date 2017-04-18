@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from "../login/login.service";
 import {MainService} from "./main.service";
-import {Router, ActivatedRoute} from "@angular/router";
+import {Router, ActivatedRoute, NavigationEnd} from "@angular/router";
 
 @Component({
   selector: 'app-main',
@@ -13,14 +13,21 @@ export class MainComponent implements OnInit {
   // private privilege;
   data;
 
+  route;
+
   constructor(
     private _mainService : MainService,
     private _loginService : LoginService,
     private _router : Router,
-    private _aRoute : ActivatedRoute
+    private _route : ActivatedRoute
   ) {
 
-    const url = this._aRoute.url.map(segments => {segments.join(''); console.log(segments)});
+    this.route = [""];
+    setInterval(()=>{
+      this.route =window.location.href.split('/').splice(3);
+      //console.log(this.route);
+    }, 500);
+
     //console.log(url);
 
     /* 1. Inject the service

@@ -1,7 +1,9 @@
 <div id="nav-search-wrapper">
   <i class="search icon" id="nav-search-icon"></i>
   <div id="nav-search-text-wrapper">
-    <input type="text" id="nav-search-text" >
+    <form [formGroup]='searchForm'>
+      <input type="text" id="nav-search-text" (keypress)="submit($event)" formControlName='searchbox'>
+    </form>
   </div>
   <div id="nav-search-options" >
     <p *ngFor="let option of options, let i = index" [ngClass]="{'active' : i == 0, 'toggled' : toggled}" (click)="optionClick(i)" >{{ option }}</p>

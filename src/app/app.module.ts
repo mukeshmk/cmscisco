@@ -58,6 +58,7 @@ import { AppForkComponent } from './main/app-fork/app-fork.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {BlisUserGuard} from "./main/blis-user.guard";
 import {CmsUserGuard} from "./main/cms-user.guard";
+import { SearchPageComponent } from './main/search-page/search-page.component';
 
 
 
@@ -108,6 +109,7 @@ import {CmsUserGuard} from "./main/cms-user.guard";
     MainComponent,
     AppForkComponent,
     PageNotFoundComponent,
+    SearchPageComponent,
   ],
   imports: [
     BrowserModule,

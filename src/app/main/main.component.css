@@ -280,14 +280,14 @@ app-search {
 
 #sidebar-submenu{
   border-top: 1px solid #e0e2eb;
-  width: 82%;
-  margin-left: 20px;
+  width: 100%;
+  /*margin-left: 20px;*/
   margin-top: 5px;
 }
 
 #sidebar-submenu ul li{
   font-size: 12px;
-  padding-bottom: 10px;
+  padding-bottom: 7px;
   padding-top: 20px;
   padding-left: 20px;
 }
