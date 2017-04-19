@@ -1,14 +1,22 @@
 
+
+
 #team-row .column{
   text-align: center;
+  padding: 1px;
   background: inherit;
-  padding : 0px;
+  /* padding: 1px; */
+  height: 100%;
+  /* padding-top: 20px; */
+  position: relative;
+  /* padding-bottom: 20px; */
+  /* margin-bottom: 10px; */
+  /*!* border: 1px dashed transparent;*/
 }
 
 #team-row{
   background: inherit;
-  margin-top: 20px;
-  margin-bottom : 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  height: 50px;
+  padding-top: 13px;
+  margin-bottom: 10px;
 }

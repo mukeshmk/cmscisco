@@ -7,13 +7,17 @@ export class RolesService {
   constructor() { }
 
   getRoles(){
+    console.log(RolesData);
 
     return RolesData;
 
   }
 
   getRoleByID(id){
+    //console.log(RolesData);
+
     return RolesData.find((role) => {
+      alert(role);
       return role.id == id;
     });
   }

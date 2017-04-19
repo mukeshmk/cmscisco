@@ -15,12 +15,31 @@ export class UsersViewComponent implements OnInit {
   sortField;
   sameSortField;
   selectedRow;
+  paginatedUsers;
+  currentPage;
 
-  constructor(private _usersService : UsersService) { }
+  constructor(private _usersService : UsersService) {
+
+    this.paginatedUsers = [];
+    this.currentPage = 0;
+
+  }
 
   ngOnInit() {
 
     this.usersData = this._usersService.getUsers();
+
+    let tempData = [];
+    for(var i=0;i<this.usersData.length; i++){
+      tempData.push(this.usersData[i]);
+    }
+    for(; tempData.length != 0 ; ){
+      if(tempData.length - 6 >= 0) {
+        this.paginatedUsers.push(tempData.splice(0, 6));
+      }else{
+        this.paginatedUsers.push(tempData.splice(0));
+      }
+    }
     this.sortField = undefined;
     this.sameSortField = 0;
     this.selectedRow = {};
@@ -48,6 +67,10 @@ export class UsersViewComponent implements OnInit {
 
   clickRow(data){
     this.selectedRow = data;
+  }
+
+  changePage(index){
+    this.currentPage = index;
   }
 
 }

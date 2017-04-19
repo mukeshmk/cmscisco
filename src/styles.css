@@ -5,3 +5,15 @@ body{margin:0;
 
   padding:0;
 }
+
+.table-heading .column{
+  height: 60px;
+  background: #1E2327;
+  padding-top: 18px;
+  text-align: center;
+}
+
+.table-content{
+  height: 400px;
+  margin-top: 9px;
+}

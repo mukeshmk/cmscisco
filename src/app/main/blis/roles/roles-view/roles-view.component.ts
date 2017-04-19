@@ -14,12 +14,30 @@ export class RolesViewComponent implements OnInit {
   sortField;
   sameSortField;
   lastSelectedRow;
+  paginatedRoles;
+  currentPage;
+  constructor(private _rolesService : RolesService) {
 
-  constructor(private _rolesService : RolesService) { }
+    this.paginatedRoles = [];
+    this.currentPage = 0;
+
+  }
 
   ngOnInit() {
 
     this.rolesData = this._rolesService.getRoles();
+    let tempData = [];
+    for(var i=0;i<this.rolesData.length; i++){
+      tempData.push(this.rolesData[i]);
+    }
+    for(; tempData.length != 0 ; ){
+      if(tempData.length - 1 >= 0) {
+        this.paginatedRoles.push(tempData.splice(0, 1));
+      }else{
+        this.paginatedRoles.push(tempData.splice(0));
+      }
+    }
+    console.log(this.paginatedRoles);
     this.sortField = undefined;
     this.sameSortField = 0;
     this.lastSelectedRow = {};
@@ -53,6 +71,10 @@ export class RolesViewComponent implements OnInit {
   inActivate(){
     this.lastSelectedRow.status = "Inactive";
     this._rolesService.saveRole(this.lastSelectedRow);
+  }
+
+  changePage(index){
+    this.currentPage = index;
   }
 
 }

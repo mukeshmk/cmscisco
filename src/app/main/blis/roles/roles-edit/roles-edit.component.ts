@@ -23,7 +23,7 @@ export class RolesEditComponent implements OnInit {
 
     this.route.params.subscribe((params) => {
       this.id = params['id'];
-
+      console.log(this.id);
       this.data = this._roleService.getRoleByID(this.id);
       if (this.data == undefined) {
         alert("This role does not exist in our database!");

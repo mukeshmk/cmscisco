@@ -1,7 +1,12 @@
 <app-users-heading (fieldSelected)="sortData($event)" ></app-users-heading>
-<app-users-data-row *ngFor="let user of usersData" [data]="user" (click)="clickRow(user)" [ngClass]="{'selected' : user.onlineName == selectedRow.onlineName}"></app-users-data-row>
-
+<div class="table-content">
+<app-users-data-row *ngFor="let user of paginatedUsers[currentPage]" [data]="user" (click)="clickRow(user)" [ngClass]="{'selected' : user.onlineName == selectedRow.onlineName}"></app-users-data-row>
+</div>
 <br><br>
+
+<ul>
+  <li *ngFor="let x of paginatedUsers, let i = index" (click)="changePage(i)" [ngClass]="{'selected' : i == currentPage}">{{  i+1 }}</li>
+</ul>
 
 <div align="center">
   <div class="ui large buttons">

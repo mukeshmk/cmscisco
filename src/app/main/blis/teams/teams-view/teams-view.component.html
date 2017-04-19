@@ -1,7 +1,11 @@
 <app-teams-heading (fieldSelected)="sortData($event)" ></app-teams-heading>
-<app-teams-data-row *ngFor="let team of teamsData" [data]="team" (click)="clickRow(team)" [ngClass]="{'selected' : team.id == lastSelectedRow.id}"></app-teams-data-row>
-
+<div class="table-content">
+<app-teams-data-row *ngFor="let team of paginatedTeams[currentPage]" [data]="team" (click)="clickRow(team)" [ngClass]="{'selected' : team.id == lastSelectedRow.id}"></app-teams-data-row>
+</div>
 <br><br>
+<ul>
+  <li *ngFor="let x of paginatedTeams, let i = index" (click)="changePage(i)" [ngClass]="{'selected' : i == currentPage}">{{  i+1 }}</li>
+</ul>
 
 <div align="center">
   <div class="ui large buttons">

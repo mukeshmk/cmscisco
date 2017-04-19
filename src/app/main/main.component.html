@@ -19,7 +19,7 @@
         <!--{{ _loginService.getData().firstName + " " + _loginService.getData().lastName }}-->
       <!--</div>-->
     </div>
-    <h1 id="dashboard-main-header">{{route[0] }} <span *ngIf="route[0] != 'search' && route[1] != 'view' && route.length >= 2"> - {{route[1]}}</span></h1>
+    <h1 id="dashboard-main-header">{{route[0] }} <span *ngIf="route[0] != 'search' && route[1] != 'view' && route.length >= 2"> &gt; {{route[1]}}</span></h1>
     <div id="dashboard-main-content" class="ui raised segment">
       <router-outlet></router-outlet>
     </div>
