@@ -1,0 +1,13 @@
+#ord-row .column{
+  text-align: center;
+  background: inherit;
+  padding : 0px;
+}
+
+#ord-row{
+  background: inherit;
+  margin-top: 20px;
+  margin-bottom : 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

@@ -58,6 +58,8 @@ import { AppForkComponent } from './main/app-fork/app-fork.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {BlisUserGuard} from "./main/blis-user.guard";
 import {CmsUserGuard} from "./main/cms-user.guard";
+import { OrdDataRowComponent } from './main/cms/orders/ord-data-row/ord-data-row.component';
+import { ViewOrdersComponent } from './main/cms/orders/view-orders/view-orders.component';
 
 
 
@@ -108,6 +110,8 @@ import {CmsUserGuard} from "./main/cms-user.guard";
     MainComponent,
     AppForkComponent,
     PageNotFoundComponent,
+    OrdDataRowComponent,
+    ViewOrdersComponent,
   ],
   imports: [
     BrowserModule,
