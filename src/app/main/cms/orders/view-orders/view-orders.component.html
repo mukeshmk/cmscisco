@@ -1,10 +1,10 @@
-<div id="ord-row" class = "ui grid" (click)="clicked">
+<div id="ord-head" class = "ui grid" (click)="clicked">
   <div class="one wide column">Incorrect Flag</div>
   <div class="one wide column">Order ID</div>
   <div class="one wide column">Contract Scan</div>
   <div class="one wide column">Ops Needed</div>
   <div class="one wide column">Provisioning</div>
-  <div class="two wide column">Account Name</div>
+  <div class="one wide column">Account Name</div>
   <div class="one wide column">Sales Rep</div>
   <div class="one wide column">Sales Manager</div>
   <div class="one wide column">Account Type</div>
@@ -16,4 +16,7 @@
   <div class="one wide column">Order FormID</div>
   <div class="one wide column">CMT Owner</div>
 </div>
+
+
+<app-ord-data-row *ngFor="let ord of ordersData" [data]="ord" (click)="clickRow(ord)" [ngClass]="{'selected' : ord.orderID == selectedRow.orderID}"></app-ord-data-row>
 

@@ -1,0 +1,13 @@
+#ord-head .column{
+  display: inline-block;
+  background: #FEBC48;
+  text-align: center;
+}
+
+app-ord-data-row{
+  min-height: 30px;
+}
+
+.selected{
+  background: dodgerblue;
+}

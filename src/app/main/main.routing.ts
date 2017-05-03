@@ -18,6 +18,7 @@ import {RealignComponent} from "./blis/realign/realign.component";
 import {RealignRoutes} from "./blis/realign/realign.routing";
 import {CmsUserGuard} from "./cms-user.guard";
 import {BlisUserGuard} from "./blis-user.guard";
+import {ViewOrdersComponent} from "./cms/orders/view-orders/view-orders.component";
 
 
 /*
@@ -57,8 +58,8 @@ export let MainRoute = [
     children : OrganizationRoutes
   },
   {
-    path : 'orders/:ordID',
-    component : OrdersComponent,
+    path : 'orders',
+    component : ViewOrdersComponent,
     canActivate : [CmsUserGuard]
   },
   {
