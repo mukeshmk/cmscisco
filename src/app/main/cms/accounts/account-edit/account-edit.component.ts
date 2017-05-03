@@ -266,6 +266,6 @@ export class AccountEditComponent implements OnInit {
       return org.orgID == this.organizationID;
     });
     var y = ordersData[x].ordID;
-    this.router.navigate(['/orders',y]);
+    this.router.navigate(['/orders/new',y]);
   }
 }
