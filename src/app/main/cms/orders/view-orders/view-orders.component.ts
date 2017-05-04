@@ -24,7 +24,7 @@ export class ViewOrdersComponent implements OnInit {
     console.log(data);
     this.selectedRow = data;
     console.log(this.selectedRow.orderID);
-    //this.router.navigate(['/accounts/edit',this.selectedRow.orgID]);
+    this.router.navigate(['/orders/edit',this.selectedRow.orderID]);
   }
 
 }

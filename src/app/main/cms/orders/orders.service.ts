@@ -1,10 +1,16 @@
 import {Injectable} from "@angular/core";
 import {orders} from "./orders.interface";
 import {ordersData} from "./orders.array";
+import {account} from "../accounts/accounts.interface";
+import {organization} from "../organization/oragnization.interface";
+import {accountData} from "../accounts/accounts.array";
+import {orgData} from "../organization/orgData.array";
 
 @Injectable()
 export class OrdersService{
   public data : orders;
+  public accData : account;
+  public  orgData : organization;
 
   //initializing order data
   getOrdersDataByOrgName(ordID){
@@ -16,6 +22,50 @@ export class OrdersService{
 
     console.log(this.data);
     return this.data;
+
+  }
+
+  //initialising the account data
+  getAccountDataByOrgName(ordID){
+    this.data =  ordersData.find(
+      ord => {
+        return ord.ordID == ordID;
+      }
+    );
+
+    var x= this.data.orgID;
+
+    this.accData = accountData.find(
+      acc => {
+        return acc.orgID == x;
+      }
+    );
+
+    console.log(this.accData);
+    return this.accData;
+
+  }
+
+
+  //initializing the organization data
+  getOrgDataByOrgName(ordID){
+    this.data =  ordersData.find(
+      ord => {
+        return ord.ordID == ordID;
+      }
+    );
+
+    var x= this.data.orgID.toString();
+
+
+    this.orgData = orgData.find(
+      org => {
+        return org.orgID == x;
+      }
+    );
+
+    console.log(this.orgData);
+    return this.orgData;
 
   }
 

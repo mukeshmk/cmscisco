@@ -1,3 +1,564 @@
-<p>
-  orders-edit works!
-</p>
+  <p>Order</p>
+  <form [formGroup]="orderEditFormGroup">
+    <div class="ui form">
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Order Summary</a>
+        <div class="two fields">
+          <div class="field">
+              <label for="account-name">Account Name</label>
+              <input class="ui disabled input" formControlName="accountName" [(ngModel)]="accData.accDetails.accName"  type="text" id="account-name">
+
+          </div>
+          <div class="field">
+            <label for="organization-name">Organization Name</label>
+            <input class="ui disabled input" formControlName="organizationName"  [(ngModel)]="orgData.orgName" type="text" id="organization-name">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="account-id">Account ID</label>
+            <input class="ui disabled input" formControlName="accountId"  type="text" id="account-id">
+          </div>
+          <div class="field">
+            <label for="organization-type">Organization Type</label>
+            <input class="ui disabled input" formControlName="organizationType"  type="text" id="organization-type">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <p>Billing Address</p>
+            <a>{{data.ordContact[0].address1}}<br>{{data.ordContact[0].address2}}<br>{{data.ordContact[0].city}}<br>{{data.ordContact[0].country}}</a>
+          </div>
+          <div class="field">
+            <label>Payment Term</label>
+            <div class="ui disabled input">
+              <select  formControlName="paymentTerm" class="ui search dropdown">
+                <option value="">hsdijk</option>
+                <option value="bh">kkjxn</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="order-status">Order Status</label>
+            <input class="ui disabled input" formControlName="orderStatus"  type="text" id="order-status">
+          </div>
+          <div class="field">
+            <p>Payment Method</p>
+            <a (click)="viewEditPaymentDetailModal()">View</a>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="sell-type">Sell Type</label>
+            <input class="ui disabled input" formControlName="sellType"  type="text" id="sell-type">
+          </div>
+          <div class="field">
+            <label for="pre-order-details">Pre-Order Details</label>
+            <input class="ui disabled input" formControlName="preOrderDetails"  type="text" id="pre-order-details">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="order-type">Order Type</label>
+            <input class="ui disabled input" formControlName="orderType"  type="text" id="order-type">
+          </div>
+          <div class="field">
+            <label for="post-order-details">Post-Order Details</label>
+            <input class="ui disabled input" formControlName="postOrderDetails"  type="text" id="post-order-details">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="creation-date">Creation Date</label>
+            <input class="ui disabled input" formControlName="creationDate" [(ngModel)]="data.ordContractTerm.contractSignDate"  type="text" id="creation-date">
+          </div>
+          <div class="field">
+            <p>Customer Success Profile</p>
+            <a (click)="viewEditAccountProfile()">View</a>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="acc-currency">Currency</label>
+            <input class="ui disabled input" formControlName="currency" [(ngModel)]="accData.accDetails.currency" type="text" id="acc-currency">
+          </div>
+          <div class="field">
+            <label for="exchange-rate-date">Exchange Rate Date</label>
+            <input class="ui disabled input" formControlName="exchangeRateDate" [(ngModel)]="data.ordNewOrder.exchangeRateDate" type="text" id="exchange-rate-date">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="exchange-rate">Exchange Rate</label>
+            <input class="ui disabled input" formControlName="exchangeRate" [(ngModel)]="data.ordNewOrder.exchangeRate" type="text" id="exchange-rate">
+          </div>
+          <div class="field">
+            <label for="cmt-owner">CMT Owner</label>
+            <input class="ui disabled input" formControlName="cmtOwner"  type="text" id="cmt-owner">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="acc-mrr">MRR</label>
+            <input class="ui disabled input" formControlName="mrr"  [(ngModel)]="accData.accDetails.mrr" type="text" id="acc-mrr">
+          </div>
+          <div class="field">
+            <label for="created-by">Created By</label>
+            <input class="ui disabled input" formControlName="createdBy" type="text" id="created-by">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="upsell-reason-code">Upsell Reason Code</label>
+            <input class="ui disabled input" formControlName="upsellReasonCode" type="text" id="upsell-reason-code">
+          </div>
+          <div class="field">
+            <label for="sfdf-deal-no">SFDF Deal No.</label>
+            <input class="ui disabled input" formControlName="sfdfDealNo" [(ngModel)]="data.ordNewOrder.sfdfDealNumber" type="text" id="sfdf-deal-no">
+          </div>
+        </div>
+        <div class="field">
+          <label for="order-comment">Order Comments</label>
+          <input class="ui disabled input" formControlName="comments" type="text" [(ngModel)]="data.ordNewOrder.comments" id="order-comment">
+        </div>
+      </div>
+
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Service Details</a>
+        <br>
+        <br>
+        <table class="ui celled table">
+          <tr>
+            <th>Subscription</th>
+            <th>Contract ID</th>
+            <th>Sign Date</th>
+            <th>Service Start</th>
+            <th>Terms</th>
+            <th>Ramping</th>
+            <th>Prepay Term</th>
+            <th>Contract Image</th>
+            <th>PO Numbers</th>
+            <th>Provisioning</th>
+            <th>Aggregated Telephony</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td><a>View</a></td>
+            <td></td>
+            <td>{{data.ordContractTerm.contractSignDate}}</td>
+            <td>{{data.ordContractTerm.expectedStartDate}}</td>
+            <td></td>
+            <td><a>Manage</a></td>
+            <td></td>
+            <td><a (click)="viewImageContractModal()">View</a></td>
+            <td><a (click)="viewManagePoNumber()">Add/Edit</a></td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td><a>Add/Edit</a></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="ui raised segment">
+        <a  class="ui red ribbon label">MC Named Hosts Default Sites</a>
+        <br>
+        <table class="ui celled table">
+          <tr>
+            <th>WebEx URL</th>
+            <th>Language</th>
+            <th>Branding Reference</th>
+            <th>Service Type</th>
+            <th>Time Zone</th>
+          </tr>
+          <tr>
+            <td>{{data.ordProvision.webExURL}}</td>
+            <td>{{data.ordProvision.language}}</td>
+            <td>{{data.ordProvision.brandingSiteReference}}</td>
+            <td>{{data.ordProvision.services}}</td>
+            <td>{{data.ordProvision.timeZone}}</td>
+          </tr>
+        </table>
+        <br>
+        <p>Implementation Contact</p>
+        <table class="ui celled table">
+          <tr>
+            <th>Contact Type</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+          <tr>
+            <td>{{data.ordContact[0].contactType}}</td>
+            <td>{{data.ordContact[0].firstName}}</td>
+            <td>{{data.ordContact[0].email}}</td>
+            <td>{{data.ordContact[0].homePhone}}</td>
+          </tr>
+        </table>
+        <br>
+        <p>Service Agents</p>
+        <table class="ui celled table">
+          <tr>
+            <th>Name</th>
+            <th>Function</th>
+            <th>Group</th>
+            <th>Hierarchy</th>
+            <th>Reports To</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+      </div>
+
+      <div class="ui raised segment">
+        <a  class="ui red ribbon label">Comp Details</a>
+        <div class="ui grid">
+          <div class="two wide column">
+            <p>Type</p>
+          </div>
+          <div class="two wide column">
+            <p>Name</p>
+          </div>
+          <div class="two wide column">
+            <p>Team</p>
+          </div>
+          <div class="two wide column">
+            <p>Team Lead</p>
+          </div>
+          <div class="two wide column">
+            <p>Split Percentage %</p>
+          </div>
+        </div>
+        <div class="ui grid">
+          <div class="two wide column">
+            <p>Primary SR </p>
+          </div>
+          <div class="two wide column">
+            <select formControlName="primarySR1" [(ngModel)]="data.ordNewOrder.primarySR1" class="ui search dropdown" >
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="primarySR2" [(ngModel)]="data.ordNewOrder.primarySR2" class="ui search dropdown" >
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="primarySR3" [(ngModel)]="data.ordNewOrder.primarySR3" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="primarySR4" [(ngModel)]="data.ordNewOrder.primarySR4" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+        </div>
+        <div class="ui grid">
+          <div class="two wide column">
+            <p>Second SR</p>
+          </div>
+          <div class="two wide column">
+            <select formControlName="secondSR1" [(ngModel)]="data.ordNewOrder.secondSR1" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="secondSR2" [(ngModel)]="data.ordNewOrder.secondSR2" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="secondSR3" [(ngModel)]="data.ordNewOrder.secondSR3" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="secondSR4" [(ngModel)]="data.ordNewOrder.secondSR4" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+        </div>
+        <div class="ui grid">
+          <div class="two wide column">
+            <p>Third SR</p>
+          </div>
+          <div class="two wide column">
+            <select formControlName="thirdSR1" [(ngModel)]="data.ordNewOrder.thirdSR1" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="thirdSR2" [(ngModel)]="data.ordNewOrder.thirdSR2" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="thirdSR3" [(ngModel)]="data.ordNewOrder.thirdSR3" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="thirdSR4" [(ngModel)]="data.ordNewOrder.thirdSR4" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+        </div>
+        <div class="ui grid">
+          <div class="two wide column">
+            <p>CSM</p>
+          </div>
+          <div class="two wide column">
+            <select formControlName="CSM1" [(ngModel)]="data.ordNewOrder.CSM1" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="CSM2" [(ngModel)]="data.ordNewOrder.CSM2" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="CSM3" [(ngModel)]="data.ordNewOrder.CSM3" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+          <div class="two wide column">
+            <select formControlName="CSM4" [(ngModel)]="data.ordNewOrder.CSM4" class="ui search dropdown">
+              <option value="">tyhd</option>
+              <option value="tdy">tdy</option>
+            </select>
+          </div>
+        </div>
+        <br>
+        <div class="fields">
+          <div class="field">
+            <p>Channel/Overlay Representative Credit</p>
+          </div>
+          <div class="field">
+            <button class="ui button" type="button">View</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>Booking Date</label>
+          <input type="text">
+        </div>
+        <div class="field">
+          <label>Expected Comp Date</label>
+          <input type="text">
+        </div>
+
+      </div>
+
+      <div align="right">
+        <button type="button" class="ui button">Add New Service</button>
+        <button type="button" class="ui button">Name Check</button>
+        <button type="button" class="ui button">Accept</button>
+        <button type="button" class="ui button">Reject</button>
+        <button type="button" class="ui button">Return for Correction</button>
+        <button type="button" class="ui button">Save Updates</button>
+      </div>
+
+
+    </div>
+  </form>
+
+
+
+  <!----------------------------------------Edit Payment Detail----------------------------------------------------------->
+  <div id="editPaymentMethod" class="ui scrolling modal">
+    <div class="header">Add Payment Detail</div>
+
+    <form [formGroup]="orderPaymentDetailFormGroup" (ngSubmit)="saveOrderEditPaymentDetail($event)">
+      <div class="ui form">
+
+        <div class="ui raised segment">
+          <a class="ui red label ribbon">Payment Method Details</a>
+          <div class="field">
+            <select formControlName="paymentMethod" class="ui search dropdown">
+              <option value="Credit">Credit Card</option>
+              <option value="debit">Debit Card</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="ui raised segment">
+          <a class="ui red label ribbon">Payment Method Details</a>
+          <div class="three fields">
+            <div class="field">
+              <select formControlName="creditCard" [(ngModel)]="data.ordPaymentDetail.creditCard" class="ui search dropdown">
+                <option value="">VISA</option>
+                <option value="Master">MAster</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="credit-card-number">Credit Card Number</label>
+              <input formControlName="creditCardNumber" [(ngModel)]="data.ordPaymentDetail.creditCardNumber" type="text" id="credit-card-number">
+            </div>
+            <div class="fields">
+              <div class="field">
+                <select formControlName="expirationDateMonth"  [(ngModel)]="data.ordPaymentDetail.expirationDateMonth"class="ui search dropdown">
+                  <option value="">1</option>
+                  <option value="2">2</option>
+                </select>
+              </div>
+              <div class="field">
+                <select formControlName="expirationDateYear" [(ngModel)]="data.ordPaymentDetail.expirationDateYear" class="ui search dropdown">
+                  <option value="">2017</option>
+                  <option value="2016">2016</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="two fields">
+            <div class="field">
+              <label for="name-in-card">Name on the Card</label>
+              <input formControlName="nameInCard"  [(ngModel)]="data.ordPaymentDetail.nameInCard" type="text" id="name-in-card">
+            </div>
+            <div class="field">
+              <label for="card-security-code">Card Security Code(CVV)</label>
+              <input formControlName="cardSecurityCode" [(ngModel)]="data.ordPaymentDetail.cardSecurityCode" type="text" id="card-security-code">
+            </div>
+          </div>
+        </div>
+
+        <div align="right">
+          <div class="ui buttons">
+            <button class="ui negative button" type="button">Delete</button>
+            <button class="ui positive button" type="submit">Submit</button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+
+  </div>
+
+
+  <!------------------------------------------Contract Image Upload------------------------------------------------------>
+  <div id="contractImageModal"  class="ui scrolling modal">
+    <div class="header">Contract Image Upload</div>
+    <form [formGroup]="orderContractImageFormGroup" (ngSubmit)="saveContractImage($event)">
+      <div class="ui form">
+
+        <div class="ui raised segment">
+          <div class="field">
+            <label for="service-configuration">Please select the service configuartion</label>
+            <select formControlName="serviceConfiguration" [(ngModel)]="data.ordContractImage.serviceConfiguration" class="ui search dropdown" id="service-configuration">
+              <option value="">Business</option>
+              <option value="tdy">Personal</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="view-add">Please select a file to View or click Add</label>
+            <input formControlName="files" type="text" [(ngModel)]="data.ordContractImage.files" id="view-add">
+          </div>
+          <div  align="center">
+            <div class="ui buttons">
+              <button class="ui button" (click)="saveImageFile(data.ordContractImage.files)" type="button">Add</button>
+              <button class="ui button" type="button">View</button>
+              <button class="ui button" type="button">Remove</button>
+            </div>
+          </div>
+
+          <br>
+          <div class="field">
+            <label for="ord-name">Enter name(if no name is entered,it will be the same as file name)</label>
+            <input formControlName="imageName" [(ngModel)]="data.ordContractImage.imageName" type="text" id="ord-name">
+          </div>
+          <div class="field">
+            <label for="ord-description">Description</label>
+            <input formControlName="imageDescription" [(ngModel)]="data.ordContractImage.imageDescription" type="text" id="ord-description">
+          </div>
+
+          <div align="right">
+            <button class="ui button" type="submit">Submit</button>
+          </div>
+        </div>
+
+
+      </div>
+    </form>
+  </div>
+
+
+  <!-------------------------------------------Manage PO Numbers-------------------------------------------------------->
+  <div id="managePoNumberModal" class="ui scrolling modal">
+    <div class="header">Manage PO Numbers</div>
+    <div class="ui form">
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">PO Numbers</a>
+        <div align="center">
+          <button type="button" class="ui button">Delete</button>
+          <button type="button" class="ui button" (click)="setNewPoNumber()">New</button>
+        </div>
+
+        <br>
+        <br>
+
+        <table class="ui celled table">
+          <tr>
+            <th><input type="checkbox" value="all"></th>
+            <th>PO Numbers</th>
+            <th>Description</th>
+          </tr>
+          <tr *ngFor="let pdata of data.ordPoNumber">
+            <td><input type="checkbox" value="{{pdata.poNumber}}"></td>
+            <td>{{pdata.poNumber}}</td>
+            <td>{{pdata.description}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <br>
+      <br>
+
+      <div *ngIf="orderManagePoFormVariable">
+        <div class="ui raised segment">
+          <a class="ui red ribbon label">New PO Number</a>
+          <br>
+          <form [formGroup]="orderPoNumberFormGroup" (ngSubmit)="savePoNumber($event)">
+            <div class="field">
+              <label for="po-Number">PO Numbers</label>
+              <input formControlName="poNumber" type="text" id="po-Number">
+            </div>
+            <div class="field">
+              <label for="acc-descriptions">Description</label>
+              <input formControlName="description" type="text" id="acc-descriptions">
+            </div>
+            <div align="right">
+              <div class="ui buttons">
+                <button type="button" class="ui button" (click)="hideManagePoNumberModal()">Cancel</button>
+                <button class="ui positive button" type="submit" value="Save">Save</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
