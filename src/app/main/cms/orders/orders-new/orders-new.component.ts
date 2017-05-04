@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {OrdersService} from "../orders.service";
 import {Validators, FormBuilder, FormGroup} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
-import {orderParameter, orders, orderContractTerm, orderContact, orderProvision, orderAccountProfile,
-  orderNewOrder, orderAgent, orderPaymentDetail, orderContractImage} from "../orders.interface";
+import {
+  orderParameter, orders, orderContractTerm, orderContact, orderProvision, orderAccountProfile,
+  orderNewOrder, orderAgent, orderPaymentDetail, orderContractImage, orderPoNumber
+} from "../orders.interface";
 
 
 declare var jQuery : any;
@@ -20,8 +22,6 @@ export class OrdersNewComponent implements OnInit {
 
   orderID : number;
   data : orders;
-  //contactID :   number;
-  //x : number;
   ordParameterData : orderParameter;
   ordProvisionData : orderProvision;
   ordContractData : orderContractTerm;
@@ -32,6 +32,7 @@ export class OrdersNewComponent implements OnInit {
   ordNewOrderData : orderNewOrder;
   ordContractImageData : orderContractImage;
   ordImageFiles : Array<string>;
+  ordPoNumberData : orderPoNumber;
   orderNewContractFormGroup : FormGroup;
   orderNewOrderCatalogFormGroup : FormGroup;
   orderNewContactFormGroup : FormGroup;
@@ -585,6 +586,14 @@ export class OrdersNewComponent implements OnInit {
   hideManagePoNumberModal(){
     jQuery('#managePoNumberModal').modal('hide');
     this.orderManagePoFormVariable =false;
+  }
+
+  savePoNumber(data){
+    this.ordPoNumberData = this.orderPoNumberFormGroup.value;
+    this._ordersService.addPoNumber(this.ordPoNumberData,this.orderID);
+    console.log(data);
+    console.log(this.ordPoNumberData);
+    this.orderManagePoFormVariable = false;
   }
 
 

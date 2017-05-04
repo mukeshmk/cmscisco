@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
 import {OrdersService} from "../orders.service";
-import {orders, orderPaymentDetail, orderContractImage} from "../orders.interface";
+import {orders, orderPaymentDetail, orderContractImage, orderPoNumber} from "../orders.interface";
 import {account} from "../../accounts/accounts.interface";
 import {organization} from "../../organization/oragnization.interface";
 
@@ -24,6 +24,7 @@ export class OrdersEditComponent implements OnInit {
   ordPaymentDetailData : orderPaymentDetail;
   ordContractImageData : orderContractImage;
   ordImageFiles : Array<string>;
+  ordPoNumberData : orderPoNumber;
   orderEditFormGroup : FormGroup;
   orderPaymentDetailFormGroup : FormGroup;
   orderContractImageFormGroup : FormGroup;
@@ -156,6 +157,14 @@ export class OrdersEditComponent implements OnInit {
   hideManagePoNumberModal(){
     jQuery('#managePoNumberModal').modal('hide');
     this.orderManagePoFormVariable =false;
+  }
+
+  savePoNumber(data){
+    this.ordPoNumberData = this.orderPoNumberFormGroup.value;
+    this._ordersService.addPoNumber(this.ordPoNumberData,this.orderID);
+    console.log(data);
+    console.log(this.ordPoNumberData);
+    this.orderManagePoFormVariable = false;
   }
 
 
