@@ -19,6 +19,7 @@ import {RealignRoutes} from "./blis/realign/realign.routing";
 import {CmsUserGuard} from "./cms-user.guard";
 import {BlisUserGuard} from "./blis-user.guard";
 import {OrderRoutes} from "./cms/orders/orders.routing";
+import {SearchPageComponent} from "./search-page/search-page.component";
 
 
 /*
@@ -102,5 +103,10 @@ export let MainRoute = [
     canActivate : [BlisUserGuard],
     component : RealignComponent,
     children : RealignRoutes
+  },
+  {
+    name : 'Search',
+    path : 'search/:query/:category',
+    component : SearchPageComponent
   }
 ];

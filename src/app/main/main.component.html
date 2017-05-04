@@ -19,6 +19,7 @@
         <!--{{ _loginService.getData().firstName + " " + _loginService.getData().lastName }}-->
       <!--</div>-->
     </div>
+    <h1>{{route[0] }}</h1>
     <div id="dashboard-main-content" class="ui raised segment">
       <router-outlet></router-outlet>
     </div>
@@ -38,7 +39,7 @@
     <div *ngIf = "data.role == 'sales'">
     <div id="dashboard-sidebar-menu">
       <ul>
-        <li><a routerLink="/"><i class="home icon"></i>Home</a></li>
+        <li><a routerLink="/" ><i class="home icon"></i>Home</a></li>
         <li><a routerLink="/users"><i class="user icon"></i>Users</a></li>
         <li><a routerLink="/roles"><i class="puzzle icon"></i>Roles</a></li>
         <li><a routerLink="/teams"><i class="users icon"></i>Teams</a></li>
@@ -50,6 +51,7 @@
       <ul>
         <li><a routerLink="/profile">PROFILE</a></li>
         <li><a routerLink="/help">HELP</a></li>
+        <li><a (click)="logout()">LOGOUT</a></li>
       </ul>
     </div>
     </div>

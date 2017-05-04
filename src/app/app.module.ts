@@ -58,10 +58,13 @@ import { AppForkComponent } from './main/app-fork/app-fork.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {BlisUserGuard} from "./main/blis-user.guard";
 import {CmsUserGuard} from "./main/cms-user.guard";
+
 import { OrdDataRowComponent } from './main/cms/orders/view-orders/ord-data-row/ord-data-row.component';
 import { ViewOrdersComponent } from './main/cms/orders/view-orders/view-orders.component';
 import { OrdersNewComponent } from './main/cms/orders/orders-new/orders-new.component';
 import { OrdersEditComponent } from './main/cms/orders/orders-edit/orders-edit.component';
+
+import { SearchPageComponent } from './main/search-page/search-page.component';
 
 
 
@@ -116,6 +119,7 @@ import { OrdersEditComponent } from './main/cms/orders/orders-edit/orders-edit.c
     ViewOrdersComponent,
     OrdersNewComponent,
     OrdersEditComponent,
+    SearchPageComponent,
   ],
   imports: [
     BrowserModule,
