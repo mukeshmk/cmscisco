@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {viewOrder} from "./viewOrders.interface";
-import {Router} from "@angular/router";
 import {viewOrdersData} from "./viewOrders.array";
 
 @Component({
@@ -13,7 +12,7 @@ export class ViewOrdersComponent implements OnInit {
   ordersData : viewOrder[];
   selectedRow;
 
-  constructor(public router : Router) { }
+  constructor() { }
 
   ngOnInit() {
     this.ordersData = viewOrdersData;
@@ -24,7 +23,7 @@ export class ViewOrdersComponent implements OnInit {
     console.log(data);
     this.selectedRow = data;
     console.log(this.selectedRow.orderID);
-    this.router.navigate(['/orders/edit',this.selectedRow.orderID]);
   }
+
 
 }

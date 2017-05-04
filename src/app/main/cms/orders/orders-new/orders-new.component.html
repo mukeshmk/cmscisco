@@ -1546,12 +1546,12 @@
         </div>
         <div class="two fields">
           <div class="field">
-            <label for="external-training">External Training</label>
-            <input formControlName="externalTraining" type="checkbox" id="external-training">
+              <label for="external-training">External Training</label>
+              <input formControlName="externalTraining" type="checkbox" id="external-training">
           </div>
           <div class="field">
-            <label for="internal-technical-support">Internal Technical Support</label>
-            <input formControlName="internalTechnicalSupport" type="checkbox" id="internal-technical-support">
+              <label for="internal-technical-support">Internal Technical Support</label>
+              <input formControlName="internalTechnicalSupport" type="checkbox" id="internal-technical-support">
           </div>
         </div>
         <div class="two fields">
@@ -2341,7 +2341,7 @@
 
       <div align="right">
         <div class="ui buttons">
-          <button class="ui negative button" type="button">Delete</button>
+          <button class="ui negative button" (click)="deletePaymentDetail()"  type="button">Delete</button>
           <button class="ui positive button" type="submit">Submit</button>
         </div>
       </div>
@@ -2551,7 +2551,7 @@
         <div class="two fields">
           <div class="field">
             <p>Billing Address</p>
-            <a>{{data.ordContact[0].address1}}<br>{{data.ordContact[0].address2}}<br>{{data.ordContact[0].city}}<br>{{data.ordContact[0].country}}</a>
+            <a (click)="viewAddressModal()">{{data.ordContact[0].address1}}<br>{{data.ordContact[0].address2}}<br>{{data.ordContact[0].city}}<br>{{data.ordContact[0].country}}</a>
           </div>
           <div class="field">
             <label>Payment Term</label>
@@ -2896,16 +2896,65 @@
 
       <div align="right">
         <button type="button" class="ui button">Add New Service</button>
-        <button type="button" class="ui button">Name Check</button>
+        <button type="button" (click)="nameCheck()" class="ui button">Name Check</button>
         <button type="button" class="ui button">Accept</button>
         <button type="button" class="ui button">Reject</button>
-        <button type="button" class="ui button">Return for Correction</button>
-        <button type="button" class="ui button">Save Updates</button>
+        <button type="button" (click)="saveCorrections()" class="ui button">Return for Correction</button>
+        <button type="button" (click)="navigateToOrders()" class="ui button">Save Updates</button>
       </div>
 
 
     </div>
   </form>
+</div>
+
+<!---------------------------------------Address Modal-------------------------------------------------->
+<div id="addressModal" class="ui scrolling modal">
+  <div class="header">Edit Address </div>
+
+  <form [formGroup]="orderEditAddressFormGroup" (ngSubmit)="saveOrderAddress($event)">
+    <div class="ui form">
+      <div class="ui raised segment">
+        <a class="ui red ribbon label">Address</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-address1">Address Line 1</label>
+            <input [(ngModel)]="data.ordContact[0].address1" formControlName="address1" type="text" id="ord-address1">
+          </div>
+          <div class="field">
+            <label for="ord-edit-address2">Address Line 2</label>
+            <input [(ngModel)]="data.ordContact[0].address2" formControlName="address2" type="text" id="ord-edit-address2">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-edit-city">City</label>
+            <input [(ngModel)]="data.ordContact[0].city"  formControlName="city" type="text" id="ord-edit-city">
+          </div>
+          <div class="field">
+            <label for="ord-edit-state">State</label>
+            <input [(ngModel)]="data.ordContact[0].state"  formControlName="state" type="text" id="ord-edit-state">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="ord-edit-country">Country</label>
+            <input [(ngModel)]="data.ordContact[0].country"  formControlName="country" type="text" id="ord-edit-country">
+          </div>
+          <div class="field">
+            <label for="ord-edit-zip">Zip</label>
+            <input [(ngModel)]="data.ordContact[0].zip"  formControlName="zip" type="text" id="ord-edit-zip">
+          </div>
+        </div>
+      </div>
+
+      <div align="center">
+        <button class="ui positive button" type="submit">Submit</button>
+      </div>
+
+    </div>
+  </form>
+
 </div>
 
 <!------------------------------------------Contract Image Upload------------------------------------------------------>

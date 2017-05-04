@@ -1,7 +1,6 @@
 <br>
-<app-organization-header (fieldSelected)="sortData($event)" ></app-organization-header>
+<app-organization-header (fieldSelected)="sortData($event)"></app-organization-header>
 <app-org-data-row *ngFor="let org of orgData" [data]="org" (click)="clickRow(org)" [ngClass]="{'selected' : org.orgID == selectedRow.orgID }"></app-org-data-row>
-
 
 
 
