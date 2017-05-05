@@ -12,6 +12,16 @@ export class OrdersService{
   public accData : account;
   public  orgData : organization;
 
+  returnOrderIndex(data,ordID){
+    var x= ordersData.findIndex((ord) => {
+      return(ord.ordID == ordID)
+    });
+
+    if(x < 0) return -1;
+
+    else return x;
+  }
+
   //initializing order data
   getOrdersDataByOrgName(ordID){
     this.data =  ordersData.find(
@@ -72,12 +82,16 @@ export class OrdersService{
   //add Contract New Terms
   addContractNewTerms(data,ordID){
     var x= ordersData.findIndex((ord) => {
-      return(ord.ordID === ordID)
+      return(ord.ordID == ordID)
     });
+
+    console.log(ordID);
+    console.log(x);
 
     if(x < 0) return -1;
 
     ordersData[x].ordContractTerm = data;
+    console.log(ordersData[x].ordContractTerm);
 
     return 1;
   }
@@ -85,7 +99,7 @@ export class OrdersService{
   //add New Provision
   addNewProvision(data,ordID){
     var x= ordersData.findIndex((ord) => {
-      return(ord.ordID === ordID)
+      return(ord.ordID == ordID)
     });
 
     if(x < 0) return -1;
@@ -98,7 +112,7 @@ export class OrdersService{
   //add New Parameter
   addNewParameter(data,ordID){
     var x= ordersData.findIndex((ord) => {
-      return(ord.ordID === ordID)
+      return(ord.ordID == ordID)
     });
 
     if(x < 0) return -1;
@@ -111,7 +125,7 @@ export class OrdersService{
   //add New Contact
   addNewContact(data,ordID){
     var x= ordersData.findIndex((ord) =>{
-      return(ord.ordID === ordID)
+      return(ord.ordID == ordID)
     });
     if (x < 0) return -1;
 
@@ -123,7 +137,7 @@ export class OrdersService{
   //add New Agent
   addNewAgent(data,ordID){
     var x= ordersData.findIndex((ord) =>{
-      return(ord.ordID === ordID)
+      return(ord.ordID == ordID)
     });
     if (x < 0) return -1;
 
@@ -146,7 +160,7 @@ export class OrdersService{
   //add Account Profile
   addNewAccountProfile(data,ordID){
     var x= ordersData.findIndex((ord) =>{
-      return(ord.ordID === ordID)
+      return(ord.ordID == ordID)
     });
     if (x < 0) return -1;
 
@@ -155,9 +169,10 @@ export class OrdersService{
     return 1;
   }
 
+
   editPaymentDetail(data,ordID){
     var x= ordersData.findIndex((ord) =>{
-      return(ord.ordID === ordID)
+      return(ord.ordID == ordID)
     });
     if (x < 0) return -1;
 
@@ -166,10 +181,26 @@ export class OrdersService{
     return 1;
   }
 
+  deletePaymentDetails(data,ordID){
+    var x= ordersData.findIndex((ord) =>{
+      return(ord.ordID == ordID)
+    });
+    if (x < 0) return -1;
+
+    ordersData[x].ordPaymentDetail.creditCardNumber="";
+    ordersData[x].ordPaymentDetail.nameInCard="";
+    ordersData[x].ordPaymentDetail.cardSecurityCode="";
+
+    console.log(ordersData[x].ordPaymentDetail);
+
+
+    return 1;
+  }
+
   //add New Order
   addNewOrder(data,ordID){
     var x= ordersData.findIndex((ord) =>{
-      return(ord.ordID === ordID)
+      return(ord.ordID == ordID)
     });
     if (x < 0) return -1;
 
@@ -178,10 +209,10 @@ export class OrdersService{
     return 1;
   }
 
-  //edit Contract Iamge Modal
+  //edit Contract Image Modal
   addContractImage(data,ordID){
     var x= ordersData.findIndex((ord) =>{
-      return(ord.ordID === ordID)
+      return(ord.ordID == ordID)
     });
     if (x < 0) return -1;
 
@@ -192,12 +223,27 @@ export class OrdersService{
 
   addNewImageFile(data,ordID){
     var x= ordersData.findIndex((ord) =>{
-      return(ord.ordID === ordID)
+      return(ord.ordID == ordID)
     });
     if (x < 0) return -1;
 
     ordersData[x].ordContractImage.files = data;
+    console.log(ordersData[x].ordContractImage);
 
     return 1;
   }
+
+  addPoNumber(data,ordID){
+    var x= ordersData.findIndex((ord) =>{
+      return(ord.ordID == ordID)
+    });
+    if (x < 0) {return -1;}
+
+    ordersData[x].ordPoNumber.push(data);
+    console.log(data);
+    console.log(ordersData[x].ordPoNumber);
+
+    return 1;
+  }
+
 }

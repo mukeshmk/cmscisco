@@ -20,3 +20,7 @@
 
 <app-ord-data-row *ngFor="let ord of ordersData" [data]="ord" (click)="clickRow(ord)" [ngClass]="{'selected' : ord.orderID == selectedRow.orderID}"></app-ord-data-row>
 
+<div align="center">
+  <button class="ui secondary button" [routerLink]="['/orders/edit', selectedRow.orderID]" [disabled]="selectedRow.orderID == undefined">Edit</button>
+</div>
+

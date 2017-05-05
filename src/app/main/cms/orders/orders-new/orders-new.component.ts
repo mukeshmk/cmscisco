@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {OrdersService} from "../orders.service";
 import {Validators, FormBuilder, FormGroup} from "@angular/forms";
-import {ActivatedRoute} from "@angular/router";
-import {orderParameter, orders, orderContractTerm, orderContact, orderProvision, orderAccountProfile,
-  orderNewOrder, orderAgent, orderPaymentDetail, orderContractImage} from "../orders.interface";
+import {ActivatedRoute, Router} from "@angular/router";
+import {
+  orderParameter, orders, orderContractTerm, orderContact, orderProvision, orderAccountProfile,
+  orderNewOrder, orderAgent, orderPaymentDetail, orderContractImage, orderPoNumber
+} from "../orders.interface";
+import {viewOrdersData} from "../view-orders/viewOrders.array";
+import {organization} from "../../organization/oragnization.interface";
 
 
 declare var jQuery : any;
@@ -20,8 +24,7 @@ export class OrdersNewComponent implements OnInit {
 
   orderID : number;
   data : orders;
-  //contactID :   number;
-  //x : number;
+  orgData : organization;
   ordParameterData : orderParameter;
   ordProvisionData : orderProvision;
   ordContractData : orderContractTerm;
@@ -32,6 +35,7 @@ export class OrdersNewComponent implements OnInit {
   ordNewOrderData : orderNewOrder;
   ordContractImageData : orderContractImage;
   ordImageFiles : Array<string>;
+  ordPoNumberData : orderPoNumber;
   orderNewContractFormGroup : FormGroup;
   orderNewOrderCatalogFormGroup : FormGroup;
   orderNewContactFormGroup : FormGroup;
@@ -42,6 +46,7 @@ export class OrdersNewComponent implements OnInit {
   orderEditAccountProfileFormGroup :FormGroup;
   orderNewOrderFormGroup : FormGroup;
   orderSummaryFormGroup : FormGroup;
+  orderEditAddressFormGroup : FormGroup;
   orderPaymentDetailFormGroup : FormGroup;
   orderContractImageFormGroup : FormGroup;
   orderPoNumberFormGroup : FormGroup;
@@ -56,7 +61,7 @@ export class OrdersNewComponent implements OnInit {
   orderManagePoFormVariable : boolean;
 
 
-  constructor(private route : ActivatedRoute,public _fb : FormBuilder, public _ordersService : OrdersService) {
+  constructor(private route : ActivatedRoute,public router : Router,public _fb : FormBuilder, public _ordersService : OrdersService) {
     this.route.params.subscribe((params) => {
       this.orderID = params['ordID'];
     });
@@ -65,6 +70,7 @@ export class OrdersNewComponent implements OnInit {
 
   ngOnInit() {
     this.data=this._ordersService.getOrdersDataByOrgName(this.orderID);
+    this.orgData=this._ordersService.getOrgDataByOrgName(this.orderID);
     console.log(this.data);
     this.orderNewContractFormVariable = true;
     this.orderNewCatalogFormVariable = false;
@@ -425,6 +431,17 @@ export class OrdersNewComponent implements OnInit {
       }
     );
 
+    this.orderEditAddressFormGroup = this._fb.group(
+      {
+        address1 : ['',Validators.required],
+        address2 : ['',Validators.required],
+        city : ['',Validators.required],
+        state : ['',Validators.required],
+        country : ['',Validators.required],
+        zip : ['',Validators.required]
+      }
+    );
+
     this.orderContractImageFormGroup = this._fb.group(
       {
         serviceConfiguration : ['',Validators.required],
@@ -536,6 +553,13 @@ export class OrdersNewComponent implements OnInit {
     jQuery('#editAccountProfile').modal('hide');
   }
 
+  deletePaymentDetail(){
+    this.ordPaymentDetailData = this.orderPaymentDetailFormGroup.value;
+    console.log(this.ordPaymentDetailData);
+    this._ordersService.deletePaymentDetails(this.ordPaymentDetailData, this.orderID);
+    jQuery('#editPaymentMethod').modal('hide');
+  }
+
   saveOrderEditPaymentDetail(data){
     this.ordPaymentDetailData = this.orderPaymentDetailFormGroup.value;
     console.log(this.ordPaymentDetailData);
@@ -553,6 +577,23 @@ export class OrdersNewComponent implements OnInit {
 
   saveOrderSummary(data){
     this.orderSummaryFormVariable = false;
+  }
+
+
+  viewAddressModal(){
+    jQuery('#addressModal').modal('show');
+  }
+
+  saveOrderAddress(data){
+    this.data.ordContact[0].address1= this.orderEditAddressFormGroup.value.address1;
+    this.data.ordContact[0].address2= this.orderEditAddressFormGroup.value.address2;
+    this.data.ordContact[0].city= this.orderEditAddressFormGroup.value.city;
+    this.data.ordContact[0].state= this.orderEditAddressFormGroup.value.stat;
+    this.data.ordContact[0].country= this.orderEditAddressFormGroup.value.country;
+    this.data.ordContact[0].zip= this.orderEditAddressFormGroup.value.zip;
+
+    console.log(this.data.ordContact[0]);
+    jQuery('#addressModal').modal('hide');
   }
 
   viewImageContractModal(){
@@ -587,6 +628,15 @@ export class OrdersNewComponent implements OnInit {
     this.orderManagePoFormVariable =false;
   }
 
+  savePoNumber(data){
+    this.ordPoNumberData = this.orderPoNumberFormGroup.value;
+    this._ordersService.addPoNumber(this.ordPoNumberData,this.orderID);
+    console.log(data);
+    console.log(this.ordPoNumberData);
+    this.orderManagePoFormVariable = false;
+  }
+
+
 
   /* viewOfferAccordion(){
    jQuery('#offerAccordion').accordion({
@@ -596,5 +646,26 @@ export class OrdersNewComponent implements OnInit {
 
    }*/
 
+  nameCheck(){
+    if(this.orgData.orgName.toString().localeCompare(this.orderSummaryFormGroup.value.organizationName).toString()){
+      console.log("done");
+      this.router.navigate(['orders']);
+    }
+    else{
+      alert("Organization Name does not match");
+    }
+  }
+
+  navigateToOrders(){
+    var x = this._ordersService.returnOrderIndex(this.data,this.orderID);
+    viewOrdersData[x].orderStatus = 'End Completed';
+    this.router.navigate(['/orders']);
+  }
+
+  saveCorrections(){
+    var x = this._ordersService.returnOrderIndex(this.data,this.orderID);
+    viewOrdersData[x].orderStatus = 'Pending Corrections';
+    this.router.navigate(['/orders']);
+  }
 
 }
