@@ -1,84 +1,100 @@
 <form [formGroup]="orgNewForm" (ngSubmit)="addOrg($event)">
   <div class="ui form">
-    <div class="column">
+
+    <div class="field">
+      <label for="org-id">Organization ID </label>
+      <input formControlName="orgID" type="text" id="org-id">
+    </div>
+
+    <div formGroupName="orgCompanyInfo">
       <div class="ui raised segment">
-        <a class="ui red ribbon label">Organization Info</a>
+        <a class="ui blue ribbon label">Company Info</a>
         <div class="two fields">
           <div class="field">
-            <label for="org-id">OrgID</label>
-            <input formControlName="orgID" type="text" id="org-id">
+            <label for="org-upo">UPO </label>
+            <input formControlName="upo" type="text" id="org-upo">
           </div>
           <div class="field">
             <label for="org-name">Organization Name</label>
             <input formControlName="orgName" type="text" id="org-name" >
           </div>
         </div>
-        <div class="three fields">
+        <div class="two fields">
           <div class="field">
-            <label for="parent-org">Parent Organization</label>
-            <input formControlName="parentOrg" type="text" id="parent-org">
+            <label for="sfdf-deal-no">SFDF Deal ID</label>
+            <input formControlName="sfdfDealID" type="text" id="sfdf-deal-no">
           </div>
           <div class="field">
-            <label for="upo">UPO</label>
-            <input formControlName="orgUpo" type="text" id="upo">
+            <label>Language</label>
+            <select formControlName="language" class="ui search dropdown">
+              <option value="">Select Language</option>
+              <option value="AF">English British</option>
+              <option value="AX">Mexican</option>
+            </select>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="customer-url">Customer URL</label>
+            <input formControlName="customerURL" type="text" id="customer-url">
           </div>
           <div class="field">
-            <label for="company-url">CompanyURL</label>
-            <input formControlName="companyUrl" type="text" id="company-url">
+            <label>Industry</label>
+            <select formControlName="industry" class="ui search dropdown">
+              <option value="">Select Industry</option>
+              <option value="AF">Business</option>
+              <option value="AX">Personal</option>
+            </select>
           </div>
         </div>
         <div class = "two fields">
           <div class = "field">
-            <label for = "last-modified">Last Modified</label>
-            <input formControlName="lastModified" type = "text" id = "last-modified">
+            <label for = "est-annual-rev-sales">Est. Annual Rev. Sales </label>
+            <input formControlName="estAnnualRevSales" type = "text" id = "est-annual-rev-sales">
           </div>
-
           <div class = "field">
-            <label for = "status">Status</label>
-            <input formControlName="orgStatus" type = "text" id = "status">
+            <label for = "est-number-employees">Est. Number of Employees</label>
+            <input formControlName="estNumberOfEmployees" type = "text" id = "est-number-employees">
           </div>
-
         </div>
+
       </div>
     </div>
 
     <br>
 
-    <div class="column">
+    <div formGroupName="orgAddress">
       <div class="ui raised segment">
         <a class="ui blue ribbon label">Address</a>
         <div class="two fields">
           <div class="field">
-            <label for="street1">Street 1</label>
-            <input formControlName="addressStreet1" type="text" id="street1">
+            <label for="org-street1">Street 1</label>
+            <input formControlName="street1" type="text" id="org-street1">
           </div>
           <div class="field">
-            <label for="street2">Street 2</label>
-            <input formControlName="addressStreet2" type="text" id="street2">
-          </div>
-        </div>
-        <div class="three fields">
-          <div class="field">
-            <label for="city">City</label>
-            <input formControlName="addressCity" type="text" id="city">
-          </div>
-          <div class="field">
-            <label for="state">State/Province</label>
-            <input formControlName="addressState" type="text" id="state">
-          </div>
-          <div class="field">
-            <label for="zip">Postal code/Zip</label>
-            <input formControlName="addressZip" type="text" id="zip">
+            <label for="org-street2">Street 2</label>
+            <input formControlName="street2" type="text" id="org-street2">
           </div>
         </div>
         <div class="two fields">
           <div class="field">
-            <label for="county">County</label>
-            <input formControlName="addressCounty" type="text" id="county">
+            <label for="org-city">City</label>
+            <input formControlName="city" type="text" id="org-city">
           </div>
           <div class="field">
+            <select formControlName="state" class="ui search dropdown">
+              <option value="">Select State</option>
+              <option value="AF">California</option>
+              <option value="AX">Siberia</option>
+              <option value="AL">Albania</option>
+              <option value="DZ">Algeria</option>
+            </select>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
             <label>Country</label>
-            <select formControlName="addressCountry" class="ui search dropdown">
+            <select formControlName="country" class="ui search dropdown">
               <option value="">Select Country</option>
               <option value="AF">Afghanistan</option>
               <option value="AX">Åland Islands</option>
@@ -86,102 +102,168 @@
               <option value="DZ">Algeria</option>
             </select>
           </div>
+          <div class="field">
+            <label for="org-zip">Postal code/Zip</label>
+            <input formControlName="zip" type="text" id="org-zip">
+          </div>
         </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="org-phone">Phone</label>
+            <input formControlName="phone" type="text" id="org-phone">
+          </div>
+          <div class="field">
+            <label for="org-fax">Fax</label>
+            <input formControlName="fax" type="text" id="org-fax">
+          </div>
+        </div>
+
+
       </div>
     </div>
 
     <br>
 
-    <div class="column">
-      <div class="ui segment">
-        <a class="ui teal ribbon label">Account Details</a>
+    <div formGroupName="orgContactBilling">
+      <div class="ui raised segment">
+        <a class="ui blue ribbon label">Contact Billing</a>
         <div class="two fields">
           <div class="field">
-            <label for="email">E-mail</label>
-            <input formControlName="orgEmail" type="text" id="email">
+            <label for="first-name">First Name</label>
+            <input formControlName="firstName" type="text" id="first-name">
           </div>
           <div class="field">
-            <label for="login-name">Login Name</label>
-            <input formControlName="loginName" type="text" id="login-name">
-          </div>
-        </div>
-        <div class="two fields">
-          <div class="field">
-            <label for="password">Password</label>
-            <input formControlName="orgPassword" type="password" id="password">
-          </div>
-          <div class="field">
-            <label for="confirm-password">Confirm Password</label>
-            <input formControlName="confirmPassword" type="password" id="confirm-password">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <br>
-
-    <div class="column">
-      <div class="ui segment">
-        <a class="ui orange ribbon label">Work Profile</a>
-        <div class="two fields">
-          <div class="field">
-            <label for="title">Title</label>
-            <input formControlName="orgTitle" type="text" id="title">
-          </div>
-          <div class="field">
-            <label for="department">Department</label>
-            <input formControlName="orgDepartment" type="text" id="department">
-          </div>
-        </div>
-        <div class="two fields">
-          <div class="field">
-            <label>Group</label>
-            <select formControlName="group" class="ui search dropdown">
-              <option value="">Select group</option>
-              <option value="Sales">Sales</option>
-              <option value="finance">Finance</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="team">Team</label>
-            <input formControlName="orgTeam" type="text" id="team">
+            <label for="last-name">Last Name</label>
+            <input formControlName="lastName" type="text" id="last-name">
           </div>
         </div>
         <div class="three fields">
           <div class="field">
-            <label>Category</label>
-            <select formControlName="category" class="ui search dropdown">
-              <option value="">Select Category</option>
-              <option value="medical-health">Medical-Health</option>
-              <option value="category1">Category1</option>
+            <label for="org-title">Title</label>
+            <input formControlName="title" type="password" id="org-title">
+          </div>
+          <div class="field">
+            <label>Job Function</label>
+            <select formControlName="jobFunction" class="ui search dropdown">
+              <option value=""></option>
+              <option value="AF">ftgh</option>
+              <option value="AX">tyh</option>
             </select>
           </div>
           <div class="field">
-            <label for="role">Role</label>
-            <input formControlName="orgRole" type="text" id="role">
-          </div>
-          <div class="field">
-            <label>Reports To</label>
-            <select formControlName="reportsTo" class="ui search dropdown">
-              <option value="">Select</option>
-              <option value="self">Self</option>
-              <option value="reportsTo1">ReportsTo1</option>
+            <label>Department</label>
+            <select formControlName="department" class="ui search dropdown">
+              <option value=""></option>
+              <option value="AF">tyu</option>
+              <option value="AX">uio</option>
             </select>
           </div>
         </div>
-        <div class="field">
-          <label>Is a Contractor</label>
-          <div class="two fields">
-            <div class="field"> <input type="radio" value="Yes" name="isAContractor" checked="checked">Yes</div>
-            <div class="field"> <input type="radio" value="No" name="isAContractor" checked="checked">No</div>
-            <div class="field">
-              <label for="expDate">Exp. Date</label>
-              <input formControlName="orgExpDate" type="date" id="expDate">
-            </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="org-email">Email</label>
+            <input formControlName="email" type="password" id="org-email">
+          </div>
+          <div class="field">
+            <label for="work-phone">Work Phone</label>
+            <input formControlName="workPhone" type="password" id="work-phone">
           </div>
         </div>
       </div>
     </div>
+
+    <br>
+
+    <div formGroupName="orgContactBusiness">
+      <div class="ui raised segment">
+        <a class="ui blue ribbon label">Contact Business</a>
+        <div class="two fields">
+          <div class="field">
+            <label for="first-name-business">First Name</label>
+            <input formControlName="firstNameBusiness" type="text" id="first-name-business">
+          </div>
+          <div class="field">
+            <label for="last-name-business">Last Name</label>
+            <input formControlName="lastNameBusiness" type="text" id="last-name-business">
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <label for="org-title-business">Title</label>
+            <input formControlName="titleBusiness" type="text" id="org-title-business">
+          </div>
+          <div class="field">
+            <label>Job Function</label>
+            <select formControlName="jobFunctionBusiness" class="ui search dropdown">
+              <option value=""></option>
+              <option value="AF">ftgh</option>
+              <option value="AX">tyh</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Department</label>
+            <select formControlName="departmentBusiness" class="ui search dropdown">
+              <option value=""></option>
+              <option value="AF">tyu</option>
+              <option value="AX">uio</option>
+            </select>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="org-email-business">Email</label>
+            <input formControlName="emailBusiness" type="text" id="org-email-business">
+          </div>
+          <div class="field">
+            <label for="work-phone-business">Work Phone</label>
+            <input formControlName="workPhoneBusiness" type="text" id="work-phone-business">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div formGroupName="orgAgents">
+      <div class="ui raised segment">
+        <a class="ui blue ribbon label">Contact Billing</a> <div class="field">
+        <label>Initial SR</label>
+        <select formControlName="initialSR" class="ui search dropdown">
+          <option value=""></option>
+          <option value="AF">ftgh</option>
+          <option value="AX">tyh</option>
+        </select>
+      </div>
+        <div class="field">
+          <label>Current Owner</label>
+          <select formControlName="currentOwner" class="ui search dropdown">
+            <option value=""></option>
+            <option value="AF">ftgh</option>
+            <option value="AX">tyh</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Sales Engineer</label>
+          <select formControlName="salesEngineer" class="ui search dropdown">
+            <option value=""></option>
+            <option value="AF">ftgh</option>
+            <option value="AX">tyh</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Sales Access</label>
+          <select formControlName="salesAccess" class="ui search dropdown">
+            <option value=""></option>
+            <option value="AF">ftgh</option>
+            <option value="AX">tyh</option>
+          </select>
+        </div>
+      </div>
+
+      </div>
+
+
+
   </div>
 
   <br>
@@ -193,5 +275,4 @@
       <button class="ui positive button" type="submit" value="Save">Save</button>
     </div>
   </div>
-  <br><br>
 </form>

@@ -1,3 +1,6 @@
+
+<p>Organization-{{data.orgID}}</p>
+
 <div align="right">
   <button class="ui button" type="button" (click)="navigateAccounts()">Create Account</button>
 </div>
@@ -5,202 +8,316 @@
   <div class="ui form">
 
 
-    <div class="column">
-      <div class="ui raised segment">
-        <a class="ui red ribbon label">Personal</a>
-        <div class="two fields">
-          <div class="field">
-            <label for="org-id">Organization ID</label>
-            <input formControlName="orgID" [(ngModel)]="data.orgID" type="text" id="org-id">
-          </div>
-          <div class="field">
-            <label for="org-name">Organization Name</label>
-            <input formControlName="orgName" [(ngModel)]="data.orgName" type="text" id="org-name">
-          </div>
-        </div>
-        <div class="three fields">
-          <div class="field">
-            <label for="parent-org">Parent Organization</label>
-            <input formControlName="parentOrg" [(ngModel)]="data.parentOrg" type="text" id="parent-org">
-          </div>
-          <div class="field">
-            <label for="org-upo">UPO</label>
-            <input formControlName="orgUpo" [(ngModel)]="data.upo" type="text" id="org-upo">
-          </div>
-          <div class="field">
-            <label for="company-url">Company Url</label>
-            <input formControlName="companyUrl" [(ngModel)]="data.companyURL" type="text" id="company-url">
-          </div>
-        </div>
-
-        <div class = "two fields">
-          <div class = "field">
-            <label for = "last-modified">Last Modified</label>
-            <input formControlName="lastModified" [(ngModel)]="data.lastModified" type = "text" id = "last-modified">
-          </div>
-
-          <div class = "field">
-            <label for = "status">Status</label>
-            <input formControlName="orgStatus" [(ngModel)] = "data.status" type = "text" id = "status">
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <br>
-
-    <div class="column">
-      <div class="ui raised segment">
-        <a class="ui blue ribbon label">Address</a>
-        <div class="two fields">
-          <div class="field">
-            <label for="street1">Street 1</label>
-            <input formControlName="addressStreet1" [(ngModel)]="data.street1" type="text" id="street1">
-          </div>
-          <div class="field">
-            <label for="street2">Street 2</label>
-            <input formControlName="addressStreet2" [(ngModel)]="data.street2" type="text" id="street2">
-          </div>
-        </div>
-        <div class="three fields">
-          <div class="field">
-            <label for="city">City</label>
-            <input formControlName="addressCity" [(ngModel)]="data.city" type="text" id="city">
-          </div>
-          <div class="field">
-            <label for="state">State/Province</label>
-            <input formControlName="addressState" [(ngModel)]="data.state" type="text" id="state">
-          </div>
-          <div class="field">
-            <label for="zip">Postal code/Zip</label>
-            <input formControlName="addressZip" [(ngModel)]="data.zip" type="text" id="zip">
-          </div>
-        </div>
-        <div class="two fields">
-          <div class="field">
-            <label for="county">County</label>
-            <input formControlName="addressCounty" [(ngModel)]="data.county" type="text" id="county">
-          </div>
-          <div class="field">
-            <label>Country</label>
-            <select formControlName="addressCountry" [(ngModel)]="data.country" class="ui search dropdown">
-              <option value="">Select Country</option>
-              <option value="Afghanistan">Afghanistan</option>
-              <option value="Åland Islands">Åland Islands</option>
-              <option value="Albania">Albania</option>
-              <option value="Algeria">Algeria</option>
-            </select>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <br>
-
-    <div class="column">
-      <div class="ui segment">
-        <a class="ui teal ribbon label">Account Details</a>
-        <div class="two fields">
-          <div class="field">
-            <label for="email">E-mail</label>
-            <input formControlName="orgEmail" [(ngModel)]="data.email" type="text" id="email">
-          </div>
-          <div class="field">
-            <label for="login-name">Login Name</label>
-            <input formControlName="loginName" [(ngModel)]="data.loginName" type="text" id="login-name">
-          </div>
-        </div>
-        <div class="two fields">
-          <div class="field">
-            <label for="password">Password</label>
-            <input formControlName="orgPassword" [(ngModel)]="data.password" type="password" id="password">
-          </div>
-          <div class="field">
-            <label for="confirm-password">Confirm Password</label>
-            <input formControlName="confirmPassword" [(ngModel)]="data.confirmPassword" type="password" id="confirm-password">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <br>
-
-    <div class="column">
-      <div class="ui segment">
-        <a class="ui orange ribbon label">Work Profile</a>
-        <div class="two fields">
-          <div class="field">
-            <label for="title">Title</label>
-            <input formControlName="orgTitle" [(ngModel)]="data.title" type="text" id="title">
-          </div>
-          <div class="field">
-            <label for="department">Department</label>
-            <input formControlName="orgDepartment" [(ngModel)]="data.title" type="text" id="department">
-          </div>
-        </div>
-
-        <br>
-
-        <div class="two fields">
-          <div class="field">
-            <label>Group</label>
-            <select formControlName="group" [(ngModel)]="data.group" class="ui search dropdown">
-              <option value="">Select Group</option>
-              <option value="Sales">Sales</option>
-              <option value="finance">Finance</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="team">Team</label>
-            <input formControlName="orgTeam" [(ngModel)]="data.team" type="text" id="team">
-          </div>
-        </div>
-        <div class="three fields">
-          <div class="field">
-            <label>Category</label>
-            <select formControlName="category" [(ngModel)]="data.category" class="ui search dropdown">
-              <option value="">Select Category</option>
-              <option value="Medical-Health">Medical-Health</option>
-              <option value="Category1">Category1</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="role">Role</label>
-            <input formControlName="orgRole" [(ngModel)]="data.role" type="text" id="role">
-          </div>
-          <div class="field">
-            <label>Reports To</label>
-            <select formControlName="reportsTo" [(ngModel)]="data.reportsTo" class="ui search dropdown">
-              <option value="">Select</option>
-              <option value="Self">Self</option>
-              <option value="ReportsTo1">ReportsTo1</option>
-            </select>
-          </div>
+    <div class="ui raised segment">
+      <a class="ui blue ribbon label">Company Info</a>
+      <div class="three fields">
+        <div class="field">
+          <label for="org-id">Organization ID</label>
+          <input formControlName="orgID" [(ngModel)]="data.orgID" type="text" id="org-id">
         </div>
         <div class="field">
-          <label>Is a Contractor</label>
-          <div class="two fields">
-            <div class="field"> <input type="radio" value="Yes" formControlName="isAContractor" name="isAContractor" [(ngModel)]="data.isAContractor" checked="checked">Yes</div>
-            <div class="field"> <input type="radio" value="No" formControlName="isAContractor" name="isAContractor" [(ngModel)]="data.isAContractor" checked="checked">No</div>
-            <div class="field">
-              <label for="expDate">Exp. Date</label>
-              <input formControlName="orgExpDate" [(ngModel)]="data.expDate" type="date" id="expDate">
-            </div>
-          </div>
+          <label for="org-upo">UPO</label>
+          <input formControlName="upo" [(ngModel)]="data.orgCompanyInfo.upo" type="text" id="org-upo">
+        </div>
+        <div class="field">
+          <label for="org-name">Organization Name</label>
+          <input formControlName="orgName" [(ngModel)]="data.orgCompanyInfo.orgName" type="text" id="org-name" >
         </div>
       </div>
-    </div>
-  </div>
+      <div class="two fields">
+        <div class="field">
+          <label for="sfdf-deal-number">SFDF Deal Number</label>
+          <input formControlName="sfdfDealID" [(ngModel)]="data.orgCompanyInfo.sfdfDealID" type="text" id="sfdf-deal-number">
+        </div>
+        <div class="field">
+          <label for="org-language">Language</label>
+          <input formControlName="language" [(ngModel)]="data.orgCompanyInfo.language" type="text" id="org-language" >
+        </div>
+      </div>
+      <div class="two fields">
+        <div class="field">
+          <label for="customer-url">Customer URL</label>
+          <input formControlName="customerURL" [(ngModel)]="data.orgCompanyInfo.customerURL" type="text" id="customer-url">
+        </div>
+        <div class="field">
+          <label for="org-industry">Industry</label>
+          <input formControlName="industry" [(ngModel)]="data.orgCompanyInfo.industry" type="text" id="org-industry" >
+        </div>
+      </div>
+      <div class="two fields">
+        <div class="field">
+          <label for="est-annual-rev-sales">Est.Annual Rev.Sales</label>
+          <input formControlName="estAnnualRevSales" [(ngModel)]="data.orgCompanyInfo.estAnnualRevSales" type="text" id="est-annual-rev-sales">
+        </div>
+        <div class="field">
+          <label for="est-employees">Est. Number of Employees</label>
+          <input formControlName="estNumberOfEmployees" [(ngModel)]="data.orgCompanyInfo.estNumberOfEmployees" type="text" id="est-employees" >
+        </div>
+      </div>
 
-  <br>
-
-  <div align="center">
-    <div class="ui buttons">
-      <button class="ui button" routerLink = "/vieworganization">Cancel</button>
-      <div class="or"></div>
-      <button class="ui positive button" type="submit" value="Save">Save</button>
+      <div align="right">
+        <button type="submit" class="ui positive button">Save Updates</button>
+      </div>
     </div>
+
+    <div class="ui raised segment">
+      <a class="ui blue ribbon label">Address</a>
+      <div align="right">
+        <button type="button" class="ui positive button" (click)="viewOrgAddressModal()">Add New Address</button>
+      </div>
+      <br>
+
+      <table class="ui celled table">
+        <tr>
+          <th>Address Type</th>
+          <th>Street1</th>
+          <th>Street2</th>
+          <th>Province</th>
+          <th>City</th>
+          <th>Country</th>
+        </tr>
+        <tr *ngFor="let pdata of data.orgAddress">
+          <td>{{pdata.addressTypeMapping}}</td>
+          <td>{{pdata.street1}}</td>
+          <td>{{pdata.street2}}</td>
+          <td></td>
+          <td>{{pdata.city}}</td>
+          <td>{{pdata.country}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class = "ui modal scrolling" id="addressModal">
+      <form [formGroup] = "organizationAddAddressFormGroup" (ngSubmit)="saveOrganizationAddress($event)">
+        <div class="ui form">
+          <div class="ui raised segment">
+            <a class="ui blue ribbon label">Address List</a>
+            <div class = "field">
+              <label for = "address-mapping">Address Type Mapping</label>
+              <input formControlName="addressTypeMapping" type = "text" id = "address-mapping">
+            </div>
+            <div class = "field">
+              <label for = "address-list">Address List</label>
+              <input formControlName="addressList"  type = "text" id = "address-list">
+            </div>
+          </div>
+          <div class="ui raised segment">
+            <a class = "ui blue ribbon label"> Address</a>
+            <div class = "two fields">
+              <div class = "field">
+                <label for = "acc-street1">Street1</label>
+                <input formControlName="street1" type = "text" id = "acc-street1">
+              </div>
+              <div class = "field">
+                <label for = "acc-street2">Street2</label>
+                <input formControlName="street2"  type = "text" id = "acc-street2">
+              </div>
+            </div>
+            <div class = "two fields">
+              <div class = "field">
+                <label for = "acc-city">City</label>
+                <input formControlName="city"  type = "text" id = "acc-city">
+              </div>
+              <div class = "field">
+                <label>State</label>
+                <select  formControlName="state" class="ui search dropdown">
+                  <option value="">California</option>
+                  <option value="">London</option>
+                </select>
+              </div>
+            </div>
+            <div class = "two fields">
+              <div class = "field">
+                <label>Country</label>
+                <select  formControlName="country" class="ui search dropdown" >
+                  <option value="">UK</option>
+                  <option value="us">US</option>
+                </select>
+              </div>
+              <div class = "field">
+                <label for = "acc-zip">Zip Postal Code</label>
+                <input formControlName="zip"  type = "text" id = "acc-zip">
+              </div>
+            </div>
+            <div class = "two fields">
+              <div class = "field">
+                <label for = "acc-phone">Phone</label>
+                <input formControlName="phone" type = "text" id = "acc-phone">
+              </div>
+              <div class = "field">
+                <label for = "acc-fax">Fax</label>
+                <input formControlName="fax" type = "text" id = "acc-fax">
+              </div>
+            </div>
+          </div>
+
+          <div align = "center">
+            <button type = "submit" class = "ui primary button">Save Updates</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+    <div class="ui raised segment">
+      <a class="ui blue ribbon label">Contacts</a>
+      <div align="right">
+        <button type="button" class="ui positive button" (click)="viewOrgContactModal()">Add New Contact</button>
+      </div>
+      <br>
+
+      <table class="ui celled table">
+        <tr>
+          <th>Contact Type</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>WorkPhone</th>
+          <th>Title</th>
+          <th>Dept</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let pdata of data.orgContactBilling">
+          <td>{{pdata.contactType}}</td>
+          <td>{{pdata.firstName}} {{pdata.lastName}}</td>
+          <td>{{pdata.email}}</td>
+          <td>{{pdata.workPhone}}</td>
+          <td>{{pdata.title}}</td>
+          <td>{{pdata.department}}</td>
+          <td><a>Edit</a></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="ui modal scrolling" id="contactModal">
+      <form [formGroup] = "organizationAddContactFormGroup" (ngSubmit)="saveOrganizationContact($event)">
+        <div class="ui form">
+          <div class="ui raised segment">
+            <a class="ui blue ribbon label">Contact-Billing</a>
+            <div class="two fields">
+              <div class="field">
+                <label for="first-name">First Name</label>
+                <input formControlName="firstName" type="text" id="first-name">
+              </div>
+              <div class="field">
+                <label for="last-name">Last Name</label>
+                <input formControlName="lastName" type="text" id="last-name" >
+              </div>
+            </div>
+            <div class="three fields">
+              <div class="field">
+                <label for="org-title">Title</label>
+                <input formControlName="title" type="text" id="org-title">
+              </div>
+              <div class="field">
+                <label>Job Function</label>
+                <select  formControlName="jobFunction" class="ui search dropdown">
+                  <option value="">Engineer</option>
+                  <option value="ap">Sales Rep</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Department</label>
+                <select  formControlName="department" class="ui search dropdown">
+                  <option value="">Sales</option>
+                  <option value="ap">Income</option>
+                </select>
+              </div>
+            </div>
+            <div class="two fields">
+              <div class="field">
+                <label for="work-phone">Work Phone</label>
+                <input formControlName="workPhone" type="text" id="work-phone">
+              </div>
+              <div class="field">
+                <label for="org-email">Email</label>
+                <input formControlName="email" type="text" id="org-email" >
+              </div>
+            </div>
+            <div class="three fields">
+              <div class="field">
+                <label for="home-phone">Home Phone</label>
+                <input formControlName="homePhoneBilling" type="text" id="home-phone">
+              </div>
+              <div class="field">
+                <label for="cell-phone">Cell Phone</label>
+                <input formControlName="cellPhoneBilling" type="text" id="cell-phone" >
+              </div>
+              <div class="field">
+                <label for="org-fax">Fax</label>
+                <input formControlName="faxBilling" type="text" id="org-fax" >
+              </div>
+            </div>
+            <div class="three fields">
+              <div class="field">
+                <label for="reports-to">Reports To</label>
+                <input formControlName="reportsToBilling" type="text" id="reports-to">
+              </div>
+              <div class="field">
+                <label for="marketing-project">Marketing Project</label>
+                <input formControlName="marketingProjectBilling" type="text" id="marketing-project" >
+              </div>
+              <div class="field">
+                <label for="referred-by">Referred By</label>
+                <input formControlName="referredByBilling" type="text" id="referred-by" >
+              </div>
+            </div>
+          </div>
+
+          <div class="ui raised segment">
+            <a class = "ui blue ribbon label">Address</a>
+            <div class = "two fields">
+              <div class = "field">
+                <label for = "org-street1">Street1</label>
+                <input formControlName="street1Billing"  type = "text" id = "org-street1">
+              </div>
+              <div class = "field">
+                <label for = "org-street2">Street2</label>
+                <input formControlName="street2Billing"  type = "text" id = "org-street2">
+              </div>
+            </div>
+            <div class = "two fields">
+              <div class = "field">
+                <label for = "org-city">City</label>
+                <input formControlName="cityBilling"  type = "text" id = "org-city">
+              </div>
+              <div class = "field">
+                <label>State</label>
+                <select  formControlName="stateBilling" class="ui search dropdown">
+                  <option value="">UP</option>
+                  <option value="ap">Andhra Pradesh</option>
+                </select>
+              </div>
+            </div>
+            <div class = "field">
+              <label for = "org-zip">Zip Postal Code</label>
+              <input formControlName="zipBilling" type = "text" id = "org-zip">
+            </div>
+          </div>
+
+          <div class="ui raised segment">
+            <a class="ui blue ribbon label">Contact Notes</a>
+            <div class="field">
+              <label for="org-notes">Notes(less than 256 characters)</label>
+              <input formControlName="notesBilling" type="text" id="org-notes" >
+            </div>
+          </div>
+
+          <div align="right">
+            <button class="ui primary button" type="submit">Save</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+    <div align="center">
+      <div class="ui buttons">
+        <button class="ui button" routerLink = "/cms/vieworganization">Cancel</button>
+        <div class="or"></div>
+        <button class="ui positive button" type="submit" value="Save">Save</button>
+      </div>
+    </div>
+    <br><br>
   </div>
-  <br><br>
 </form>
+
