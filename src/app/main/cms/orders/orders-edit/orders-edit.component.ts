@@ -320,7 +320,7 @@ export class OrdersEditComponent implements OnInit {
   }
 
   nameCheck(){
-    if(this.orgData.orgName.toString().localeCompare(this.orderEditFormGroup.value.organizationName).toString()){
+    if(this.orgData.orgCompanyInfo.orgName.localeCompare(this.orderEditFormGroup.value.organizationName)){
       console.log("done");
       this.router.navigate(['orders']);
     }

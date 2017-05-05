@@ -126,7 +126,7 @@ export let accDetailsData : Array<accountDetails> = [
     currency : 'USD',
     accType  : 'AC',
     link : 'Yes',
-    accStatus : 'Pending-Order',
+    accStatus : 'Pending',
     billDay : '',
     mrr : '',
     activeOn : ''
@@ -594,7 +594,7 @@ export let accountData : Array<account> = [
         manageInvoiceDefinition : accountManageInvoiceDefinitionData[1]
     },
     {
-        orgID : 1304,
+        orgID : 1305,
         accDetails : accDetailsData[2],
 
         accAddress : accAddressData[2],

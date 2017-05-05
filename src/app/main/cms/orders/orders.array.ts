@@ -926,7 +926,7 @@ export let ordersData : Array<orders> = [
   },
   {
     ordID : 1762,
-    orgID : 1304,
+    orgID : 1305,
     ordContractTerm : orderContractTerms[2],
     ordParameter : orderParameterData[2],
     ordCatalog : orderCatalogData[2],

@@ -65,7 +65,9 @@ export class OrdersService{
       }
     );
 
-    var x= this.data.orgID.toString();
+    var x= this.data.orgID;
+
+    console.log(x);
 
 
     this.orgData = orgData.find(

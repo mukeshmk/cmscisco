@@ -250,12 +250,12 @@ export class AccountEditComponent implements OnInit {
 
   findAccountStatus(){
     var x = orgData.findIndex((org) => {
-      return org.orgID == this.organizationID.toString();
+      return org.orgID == this.organizationID;
     });
     console.log(x);
 
-    if( orgData[x].status.localeCompare("Pending")){
-      console.log(orgData[x].status);
+    if( orgData[x].orgCompanyInfo.status.localeCompare("Pending")){
+      console.log(orgData[x].orgCompanyInfo.status);
       return true;
     }
     else

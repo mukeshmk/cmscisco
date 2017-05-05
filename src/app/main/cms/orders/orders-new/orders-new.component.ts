@@ -647,7 +647,7 @@ export class OrdersNewComponent implements OnInit {
    }*/
 
   nameCheck(){
-    if(this.orgData.orgName.toString().localeCompare(this.orderSummaryFormGroup.value.organizationName).toString()){
+    if(this.orgData.orgCompanyInfo.orgName.localeCompare(this.orderSummaryFormGroup.value.organizationName)){
       console.log("done");
       this.router.navigate(['orders']);
     }

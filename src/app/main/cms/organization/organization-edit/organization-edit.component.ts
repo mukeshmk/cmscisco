@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {organizationService} from "../organization.service";
-import {organization} from "../oragnization.interface";
+import {organization, companyInfo, address, contactBilling} from "../oragnization.interface";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder,  Validators, FormControl, FormGroup} from "@angular/forms";
+
+declare var jQuery :any;
 
 @Component({
   selector: 'app-organization-edit',
@@ -15,6 +17,11 @@ export class OrganizationEditComponent implements OnInit {
   data : organization;
   orgID;
   orgEditForm :FormGroup;
+  organizationAddAddressFormGroup : FormGroup;
+  organizationAddContactFormGroup : FormGroup;
+  orgCompanyInfoData : companyInfo;
+  orgAddressData : address;
+  orgContactBillingData : contactBilling;
 
   constructor(private route : ActivatedRoute, private  _orgService : organizationService, public fb: FormBuilder,public router: Router) {
 
@@ -33,56 +40,93 @@ export class OrganizationEditComponent implements OnInit {
 
   ngOnInit() {
 
-    this.orgEditForm = this.fb.group({
-      orgID:["", Validators.required],
-      orgName:["", Validators.required],
-      parentOrg:["", Validators.required],
-      orgDepartment:["", Validators.required],
-      orgUpo:["", Validators.required],
-      companyUrl:["", Validators.required],
-      lastModified:["", Validators.required],
-      orgEmail:["", Validators.required],
-      loginName:["", Validators.required],
-      orgPassword:["", Validators.required],
-      confirmPassword:["", Validators.required],
-      addressStreet1:["", Validators.required],
-      addressStreet2:["", Validators.required],
-      addressCity:["", Validators.required],
-      addressState:["", Validators.required],
-      addressZip:["", Validators.required],
-      addressCounty:["", Validators.required],
-      addressCountry:["", Validators.required],
-      group:["", Validators.required],
-      orgTeam:["", Validators.required],
-      category:["", Validators.required],
-      orgRole:["", Validators.required],
-      reportsTo:["", Validators.required],
-      isAContractor:["", Validators.required],
-      orgExpDate:["", Validators.required],
-      orgStatus : ["",Validators.required],
-      orgTitle : ["",Validators.required]
-    });
+    this.orgEditForm = this.fb.group(
+      {
+        orgID:['', Validators.required],
+        orgName : ['',Validators.required],
+        upo : ['',Validators.required],
+        sfdfDealID : ['',Validators.required],
+        language : ['',Validators.required],
+        customerURL : ['',Validators.required],
+        industry : ['',Validators.required],
+        estAnnualRevSales : ['',Validators.required],
+        estNumberOfEmployees : ['',Validators.required]
+      }
+    );
 
+    this.organizationAddAddressFormGroup = this.fb.group(
+      {
+        addressTypeMapping : ['',Validators.required],
+        addressList : ['',Validators.required],
+        country : ['',Validators.required],
+        street1 : ['',Validators.required],
+        street2: ['',Validators.required],
+        city : ['',Validators.required],
+        state : ['',Validators.required],
+        zip : ['',Validators.required],
+        phone : ['',Validators.required],
+        fax : ['',Validators.required]
+      }
+    );
 
-    this.route.params.subscribe((params) => {
-      this.orgID = params['orgID'];
-      this.data = this._orgService.getOrgByOnlineName(this.orgID);
-      console.log(this.data);
-    });
+    this.organizationAddContactFormGroup = this.fb.group(
+      {
+        contactType : ['',Validators.required],
+        individualName : ['',Validators.required],
+        firstName : ['',Validators.required],
+        lastName : ['',Validators.required],
+        title : ['',Validators.required],
+        jobFunction : ['',Validators.required],
+        department : ['',Validators.required],
+        email : ['',Validators.required],
+        workPhone : ['',Validators.required],
+        homePhoneBilling : ['',Validators.required],
+        cellPhoneBilling : ['',Validators.required],
+        faxBilling : ['',Validators.required],
+        reportsToBilling : ['',Validators.required],
+        marketingProjectBilling : ['',Validators.required],
+        referredByBilling : ['',Validators.required],
+        street1Billing : ['',Validators.required],
+        street2Billing : ['',Validators.required],
+        cityBilling : ['',Validators.required],
+        stateBilling : ['',Validators.required],
+        zipBilling : ['',Validators.required],
+        notesBilling : ['',Validators.required]
+      });
+
   }
 
-  saveOrg(){
-    var status = this._orgService.saveOrg(this.data);
-    if(status == 1){
-      alert("Data Saved!");
-    }else{
-      alert("This user does not exist in our database!");
-    }
-    return false;
+  saveOrg(data){
+    this.orgCompanyInfoData = this.orgEditForm.value;
+    console.log(this.orgCompanyInfoData);
+    this._orgService.addCompanyInfo(this.orgCompanyInfoData,this.orgID);
   }
+
+  viewOrgAddressModal(){
+    jQuery('#addressModal').modal('show');
+  }
+
+  saveOrganizationAddress(data){
+    this.orgAddressData = this.organizationAddAddressFormGroup.value;
+    console.log(this.orgAddressData);
+    this._orgService.addAddress(this.orgAddressData,this.orgID);
+    jQuery('#addressModal').modal('hide');
+  }
+
+  viewOrgContactModal(){
+    jQuery('#contactModal').modal('show');
+  }
+  saveOrganizationContact(data){
+    this.orgContactBillingData = this.organizationAddContactFormGroup.value;
+    console.log(this.orgContactBillingData);
+    this._orgService.addContactBilling(this.orgContactBillingData,this.orgID);
+    jQuery('#contactModal').modal('hide');
+  }
+
 
   navigateAccounts(){
     this.router.navigate(['/accounts/new',this.orgID]);
   }
+
 
 }

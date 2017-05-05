@@ -8,35 +8,17 @@ export let viewAccountData:Array<viewAccount> = [
         status : 'Pending'
     },
     {
-        orgID : 1304,
-        orgName : 'AppleComputer',
-        upoName : 'steveJobs',
-        currentOwner : 'aakash',
-        status : 'active'
-    },
-
-    {
         orgID : 1305,
         orgName : 'AppleComputer',
         upoName : 'steveJobs',
         currentOwner : 'aakash',
         status : 'active'
     },
-
     {
-        orgID : 1306,
-        orgName : 'AppleComputer',
-        upoName : 'steveJobs',
-        currentOwner : 'aakash',
-        status : 'active'
-    },
-
-    {
-        orgID : 1307,
-        orgName : 'AppleComputer',
-        upoName : 'steveJobs',
-        currentOwner : 'aakash',
-        status : 'active'
+      orgID : 1301,
+      orgName : 'AppleComputer',
+      upoName : 'steveJobs',
+      currentOwner : 'aakash',
+      status : 'active'
     }
-
 ]
