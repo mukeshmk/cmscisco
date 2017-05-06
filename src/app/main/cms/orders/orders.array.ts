@@ -1,6 +1,7 @@
 import {
   orders, orderContractTerm, orderContact, orderProvision, orderAccountProfile,
-  orderNewOrder, orderAgent, orderPaymentDetail, orderContractImage, orderPoNumber, orderCatalog, orderParameter
+  orderNewOrder, orderAgent, orderPaymentDetail, orderContractImage, orderPoNumber, orderCatalog, orderParameter,
+  orderOffer, orderOfferCode
 } from "./orders.interface";
 
 export let orderContractTerms : Array<orderContractTerm> = [
@@ -29,13 +30,13 @@ export let orderContractTerms : Array<orderContractTerm> = [
 
 export let orderCatalogData : Array<orderCatalog> = [
   {
-    currentSelectedOffer : 'MP Ports + Overage'
+    currentSelectedOffer : 'mc+overage'
   },
   {
-    currentSelectedOffer : 'MPC'
+    currentSelectedOffer : 'mc+overage'
   },
   {
-    currentSelectedOffer : 'MPC'
+    currentSelectedOffer : 'mc+overage'
   }
 ];
 
@@ -940,3 +941,21 @@ export let ordersData : Array<orders> = [
     ordPoNumber : orderPoNumberData[2]
   }
 ];
+
+export let orderOfferCodeData : Array<orderOfferCode> =[
+  {
+    offer1 : 'mc+overage',
+    offer2 : 'ftgh',
+    offer3 : 'rtygh'
+  },
+  {
+    offer1 : 'asdf',
+    offer2 : 'hjk',
+    offer3 : 'rtygh'
+  }
+];
+
+export let orderOfferData : orderOffer = {
+ businessModels : orderOfferCodeData[0],
+  services : orderOfferCodeData[1]
+};

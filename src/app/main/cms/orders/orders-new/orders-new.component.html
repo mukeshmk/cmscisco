@@ -44,47 +44,42 @@
         <a class="ui red ribbon label">New Order Catalog</a>
         <div class="field">
           <label for="current-selected-offer">Current Selected Offer</label>
-          <input formControlName="currentSelectedOffer"  type="text" id="current-selected-offer">
+          <input disabled  [(ngModel)]="data.ordCatalog.currentSelectedOffer" formControlName="currentSelectedOffer"  type="text" id="current-selected-offer">
         </div>
 
-        <!--<div id="offerAccordion">
-          <div class="ui styled accordion">
-            <div class=" active title" (click)="viewOfferAccordion()">
-              <i class="shopping bag icon"></i>
-              Order Offers
-            </div>
-            <div class="active content">
-                <div class="accordion" id="businessAccordion">
-                  <div class="active title">
-                    <i class="dropdown icon"></i>
-                    Business Models
-                  </div>
-                  <div class="active content">vghnm</div>
-                </div>
-            </div>
-          </div>
-        </div>-->
-        <!-- <div class="ui styles accordion">
-           <sm-accordion>
-             <div class="active title">
-               <i class="dropdown icon"></i>
-               Order Offers
-             </div>
-             <div class="active content">
-                 <sm-accordion-item>
-                   <div class="accordion">
-                   <div class="active title">
-                     <i class="dropdown icon"></i>
-                     Order Offers
-                   </div>
-                   <div class="active content">hfhg
-                   </div>
-                   </div>
-                 </sm-accordion-item>
 
-             </div>
-           </sm-accordion>
-         </div>-->
+        <p>Business Models</p>
+          <div class="ui radio checkbox">
+            <input (click)="changeSelectedOffer(ordOfferData.businessModels.offer1)"  [checked]="true" name="offer" type="radio">
+            <label>{{ordOfferData.businessModels.offer1}}</label>
+          </div>
+        <br>
+          <div class="ui radio checkbox">
+            <input (click)="changeSelectedOffer(ordOfferData.businessModels.offer2)"  name="offer" type="radio">
+            <label>{{ordOfferData.businessModels.offer2}}</label>
+          </div>
+        <br>
+        <div class="ui radio checkbox">
+          <input (click)="changeSelectedOffer(ordOfferData.businessModels.offer3)"  name="offer" type="radio">
+          <label>{{ordOfferData.businessModels.offer3}}</label>
+        </div>
+
+        <p>Services</p>
+        <div class="ui radio checkbox">
+          <input (click)="changeSelectedOffer(ordOfferData.services.offer1)"  name="offer" type="radio">
+          <label>{{ordOfferData.services.offer1}}</label>
+        </div>
+        <br>
+        <div class="ui radio checkbox">
+          <input (click)="changeSelectedOffer(ordOfferData.services.offer2)"  name="offer" type="radio">
+          <label>{{ordOfferData.services.offer2}}</label>
+        </div>
+        <br>
+        <div class="ui radio checkbox">
+          <input (click)="changeSelectedOffer(ordOfferData.services.offer3)"  name="offer" type="radio">
+          <label>{{ordOfferData.services.offer3}}</label>
+        </div>
+
 
 
       </div>
@@ -135,8 +130,8 @@
         </div>
         <div class="field">
           <div class="ui checkbox">
-            <input formControlName="offerCheckBox" [(ngModel)]="data.ordParameter.offerCheckBox"type="checkbox" id="offer">
-            <label for="offer">MC Ports +Overage USD</label>
+            <input formControlName="offerCheckBox" [(ngModel)]="data.ordParameter.offerCheckBox" type="checkbox" id="offer">
+            <label for="offer">{{data.ordCatalog.currentSelectedOffer}}</label>
           </div>
         </div>
 
@@ -2531,21 +2526,21 @@
         <div class="two fields">
           <div class="field">
             <label for="account-name">Account Name</label>
-            <input formControlName="accountName"  type="text" id="account-name">
+            <input disabled formControlName="accountName" [(ngModel)]="accData.accDetails.accName"   type="text" id="account-name">
           </div>
           <div class="field">
             <label for="organization-name">Organization Name</label>
-            <input formControlName="organizationName"  type="text" id="organization-name">
+            <input disabled formControlName="organizationName" [(ngModel)]="orgData.orgCompanyInfo.orgName"  type="text" id="organization-name">
           </div>
         </div>
         <div class="two fields">
           <div class="field">
             <label for="account-id">Account ID</label>
-            <input formControlName="accountId"  type="text" id="account-id">
+            <input disabled formControlName="accountId"  type="text" id="account-id">
           </div>
           <div class="field">
             <label for="organization-type">Organization Type</label>
-            <input formControlName="organizationType"  type="text" id="organization-type">
+            <input disabled formControlName="organizationType"  type="text" id="organization-type">
           </div>
         </div>
         <div class="two fields">
