@@ -5,7 +5,7 @@ import {
   account, accountAddress, accountDetails, accountManageSplitCriteria,
   accountManagePoNumbers, accountManageInvoiceDefinition, accountActivityNotes, countryDropDown, stateDropDown
 } from "../accounts.interface";
-import {FormGroup, FormBuilder, Validators} from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import {orgData} from "../../organization/orgData.array";
 import {ordersData} from "../../orders/orders.array";
 
@@ -37,6 +37,8 @@ export class AccountEditComponent implements OnInit {
   displayNewSplitCriteria : boolean;
   displayNewPoNumber : boolean;
   tableShow :  boolean;
+
+
 
   //to display country dropdown
   selectedCountry : countryDropDown = new countryDropDown('India');
@@ -75,6 +77,7 @@ export class AccountEditComponent implements OnInit {
       this.displayNewPoNumber = false;
       this.tableShow = false;
       console.log(this.data);
+
 
       this.accountDetailsFormGroup = this._fb.group(
           {
@@ -165,6 +168,7 @@ export class AccountEditComponent implements OnInit {
     this.hideManagePoNumberModal();
   }
 
+
   saveInvoiceDefinition(data){
     this.accInvoiceDefinitionData = this.accountInvoiceDefinitionFormGroup.value;
     console.log(this.accInvoiceDefinitionData);
@@ -241,6 +245,8 @@ export class AccountEditComponent implements OnInit {
   setNewPoNumber(){
     this.displayNewPoNumber = true;
   }
+
+
 
   changeAccountStatus(){
     this.__accountservice.changeAccountStatus(this.organizationID);

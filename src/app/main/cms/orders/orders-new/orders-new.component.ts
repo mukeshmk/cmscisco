@@ -4,10 +4,14 @@ import {Validators, FormBuilder, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {
   orderParameter, orders, orderContractTerm, orderContact, orderProvision, orderAccountProfile,
-  orderNewOrder, orderAgent, orderPaymentDetail, orderContractImage, orderPoNumber
+  orderNewOrder, orderAgent, orderPaymentDetail, orderContractImage, orderPoNumber, orderCatalog, orderOfferCode,
+  orderOffer
 } from "../orders.interface";
 import {viewOrdersData} from "../view-orders/viewOrders.array";
 import {organization} from "../../organization/oragnization.interface";
+import {orderOfferCodeData, orderOfferData} from "../orders.array";
+import {disableDebugTools} from "@angular/platform-browser";
+import {account} from "../../accounts/accounts.interface";
 
 
 declare var jQuery : any;
@@ -25,7 +29,10 @@ export class OrdersNewComponent implements OnInit {
   orderID : number;
   data : orders;
   orgData : organization;
+  accData : account;
   ordParameterData : orderParameter;
+  ordCatalogData : orderCatalog;
+  ordOfferData : orderOffer;
   ordProvisionData : orderProvision;
   ordContractData : orderContractTerm;
   ordAccountProfileData : orderAccountProfile;
@@ -71,6 +78,9 @@ export class OrdersNewComponent implements OnInit {
   ngOnInit() {
     this.data=this._ordersService.getOrdersDataByOrgName(this.orderID);
     this.orgData=this._ordersService.getOrgDataByOrgName(this.orderID);
+    this.accData=this._ordersService.getAccountDataByOrgName(this.orderID);
+
+    this.ordOfferData = orderOfferData;
     console.log(this.data);
     this.orderNewContractFormVariable = true;
     this.orderNewCatalogFormVariable = false;
@@ -468,6 +478,10 @@ export class OrdersNewComponent implements OnInit {
     this.orderNewCatalogFormVariable = true;
   }
 
+  changeSelectedOffer(selectedOffer){
+    this.data.ordCatalog.currentSelectedOffer = selectedOffer;
+  }
+
   saveOrderNewCatalogForm(data){
     this.orderNewCatalogFormVariable = false;
     this.orderNewParameterFormVariable = true;
@@ -536,6 +550,7 @@ export class OrdersNewComponent implements OnInit {
 
   viewEditPaymentDetailModal(){
     jQuery('#editPaymentMethod').modal('show');
+
   }
 
   saveOrderAccountProfile(data){

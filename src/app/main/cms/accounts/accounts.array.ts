@@ -1,7 +1,7 @@
 import {
-    account, accountDetails, accountAddress, accountContacts, accountAgents,
-    accountPaymentDetail, accountActivityNotes, accountManagePoNumbers, accountManageSplitCriteria,
-    accountManageInvoiceDefinition
+  account, accountDetails, accountAddress, accountContacts, accountAgents,
+  accountPaymentDetail, accountActivityNotes, accountManagePoNumbers, accountManageSplitCriteria,
+  accountManageInvoiceDefinition
 } from "./accounts.interface";
 
 
@@ -615,4 +615,8 @@ export let accountData : Array<account> = [
     }
 ];
 /*----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
 

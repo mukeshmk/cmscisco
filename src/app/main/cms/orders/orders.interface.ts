@@ -1,3 +1,15 @@
+export interface orderOffer{
+  businessModels : orderOfferCode;
+  services : orderOfferCode;
+}
+
+export interface orderOfferCode{
+  offer1 : string;
+  offer2  : string;
+  offer3 : string;
+}
+
+
 export interface orders{
   ordID : number;
   orgID : number;
