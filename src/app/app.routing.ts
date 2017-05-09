@@ -11,6 +11,7 @@ import {MainRoute} from "./main/main.routing";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 
+
 const appRoutes=[
   {
     path: '',

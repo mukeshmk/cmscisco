@@ -10,6 +10,7 @@ import {RolesRoutes} from "./roles/roles.routing";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 
 
+
 export let blisRoute : [any] = [
   {
         name : 'Dashboard',

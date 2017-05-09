@@ -16,15 +16,16 @@ export class SearchPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
-    console.log(window.location.href.split('/'));
+    /*
+      Gets the parameters from the url and then issues the search
+      currently not implemented, but an Search service will have to created to
+      call the Search API
+     */
     this._route
       .params
       .subscribe(params => {
-        // Récupération des valeurs de l'URL
-        this.query = params['query'];// --> Name must match wanted paramter
+        this.query = params['query'];
         this.category = params['category'];
-        console.log(params);
       });
 
   }

@@ -1,7 +1,38 @@
 app-users-data-row{
   min-height: 30px;
+
+  /*min-height: 30px;*/
+  /* padding: 1px; */
+  position: relative;
+  /* display: block; */
+  border: 1px dashed transparent;
 }
 
 .selected{
-  color : dodgerblue;
+  background: grey;
+  /*min-height: 40px;*/
+  /*display: block;*/
+}
+
+ul{
+  list-style: none;
+  text-align: right;
+  display: block;
+  width: 80%;
+  margin: auto;
+  margin-bottom : 10px;
+}
+
+li{
+  border: 1px solid black;
+  display: inline;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left : 10px;
+  cursor : pointer;
+}
+
+li.selected{
+  background: #1E2327;
+  color : #ddd;
 }

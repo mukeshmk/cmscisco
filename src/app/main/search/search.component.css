@@ -22,7 +22,7 @@ div#nav-search-wrapper {
   border: none;
   min-height: 25px;
   background: #393D40;
-  color : #676A6B;
+  color :#f2f2f3;
   size : 18px;
   min-width: 100%;
 
@@ -59,7 +59,7 @@ div#nav-search-wrapper {
 }
 
 #nav-search-options p.active {
-  color: #676A6B;
+  color: #f2f2f3;
   display: block;
   border-bottom: 1px solid #242629;
   padding-bottom: 5px;

@@ -14,12 +14,31 @@ export class TeamsViewComponent implements OnInit {
   sortField;
   sameSortField;
   lastSelectedRow;
+  paginatedTeams;
+  currentPage;
 
-  constructor(private _teamsService : TeamsService) { }
+  constructor(private _teamsService : TeamsService) {
+
+    this.paginatedTeams = [];
+    this.currentPage = 0;
+
+  }
 
   ngOnInit() {
 
     this.teamsData = this._teamsService.getTeams();
+
+    let tempData = [];
+    for(var i=0;i<this.teamsData.length; i++){
+      tempData.push(this.teamsData[i]);
+    }
+    for(; tempData.length != 0 ; ){
+      if(tempData.length - 1 >= 0) {
+        this.paginatedTeams.push(tempData.splice(0, 1));
+      }else{
+        this.paginatedTeams.push(tempData.splice(0));
+      }
+    }
     this.sortField = undefined;
     this.sameSortField = 0;
     this.lastSelectedRow = {};
@@ -52,6 +71,10 @@ export class TeamsViewComponent implements OnInit {
   inActivate(){
     this.lastSelectedRow.status = "Inactive";
     this._teamsService.saveTeam(this.lastSelectedRow);
+  }
+
+  changePage(index){
+    this.currentPage = index;
   }
 
 }

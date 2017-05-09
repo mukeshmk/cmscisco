@@ -16,8 +16,7 @@ export class LoginComponent implements OnInit {
               private _fb : FormBuilder,
               private _loginService : LoginService
   ) {
-
-    console.log(1);
+    // User Login form
     this.user = this._fb.group({
       loginName: ["", [Validators.required, Validators.pattern(/^[a-zA-Z0-9]{5,40}$/)]],
       password : ["", [Validators.required, Validators.pattern(/^[a-zA-Z0-9]{5,20}$/)]]
@@ -25,14 +24,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // console.log(this.portal);
-    // this.loginGuard.sendValue(this.user,this.portal);
-    // if(this.portal === 'blis'){
-    //   this._route.navigate(['/blis']);
-    // }
-    // if(this.portal === 'cms'){
-    //   this._route.navigate(['/cms']);
-    // }
 
       /****
        *

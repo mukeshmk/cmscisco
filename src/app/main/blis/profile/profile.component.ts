@@ -3,6 +3,8 @@ import {Profile} from "./profile.interface";
 import {ProfileService} from "./profile.service";
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
+import {LoginService} from "../../../login/login.service";
+import {MainService} from "../../main.service";
 
 @Component({
   selector: 'app-profile',
@@ -15,16 +17,20 @@ export class ProfileComponent implements OnInit {
   data: Profile;
   login;
   profileEditForm;
+  selectedTab;
 
-  constructor(private route: ActivatedRoute,private  _profileService: ProfileService,
+  constructor(private route: ActivatedRoute,private  _mainService: MainService,
+              private _profileService : ProfileService,
               public fb: FormBuilder,public router: Router) {
 
-    this.route.params.subscribe((params) => {
-      this.login = params['login'];
-
-    this.data = this._profileService.getProfileByLogin(this.login);
-
-    });
+    // this.route.params.subscribe((params) => {
+    //   this.login = params['login'];
+    //
+    // this.data = this._profileService.getProfileByLogin(this.login);
+    //
+    // });
+    this.selectedTab = 'basic';
+    this.data = this._mainService.getUserData();
   }
 
   ngOnInit(){
@@ -63,6 +69,10 @@ export class ProfileComponent implements OnInit {
       alert("This admin does not exist in our database!");
     }
     return false;
+  }
+
+  changeTab(tabName){
+    this.selectedTab = tabName
   }
 
 }

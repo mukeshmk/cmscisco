@@ -7,19 +7,8 @@
     <div id="dashboard-header">
       <!--<label for="dashboard-sidebar-toggle" id="dashboard-sidebar-icon">≡</label>-->
       <app-search></app-search><div id="header-username">{{data.onlineName}}</div><div id="header-logout" (click)="logout()">logout</div>
-
-
-      <!--<div class="ui four column grid">-->
-        <!--<div class="column">ads</div>-->
-        <!--<div class="column">ad</div>-->
-        <!--<div class="column">ads</div>-->
-        <!--<div class="column">ads</div>-->
-      <!--</div>-->
-      <!--<div id="dashboard-header-profile">-->
-        <!--{{ _loginService.getData().firstName + " " + _loginService.getData().lastName }}-->
-      <!--</div>-->
     </div>
-    <h1>{{route[0] }}</h1>
+    <h1 id="dashboard-main-header">{{route[0] }} <span *ngIf="route[0] != 'search' && route[1] != 'view' && route.length >= 2"> &gt; {{route[1]}}</span></h1>
     <div id="dashboard-main-content" class="ui raised segment">
       <router-outlet></router-outlet>
     </div>
@@ -39,11 +28,11 @@
     <div *ngIf = "data.role == 'sales'">
     <div id="dashboard-sidebar-menu">
       <ul>
-        <li><a routerLink="/" ><i class="home icon"></i>Home</a></li>
-        <li><a routerLink="/users"><i class="user icon"></i>Users</a></li>
-        <li><a routerLink="/roles"><i class="puzzle icon"></i>Roles</a></li>
-        <li><a routerLink="/teams"><i class="users icon"></i>Teams</a></li>
-        <li><a routerLink="/realign"><i class="move icon"></i>Re-Alignment Tool</a></li>
+        <li [ngClass]="{'page-active' : route[0] == ''}"><a routerLink="/" ><i class="home icon"></i>Home</a></li>
+        <li [ngClass]="{'page-active' : route[0] == 'users'}"><a routerLink="/users" ><i class="user icon"></i>Users</a></li>
+        <li [ngClass]="{'page-active' : route[0] == 'roles'}"><a routerLink="/roles" ><i class="puzzle icon"></i>Roles</a></li>
+        <li [ngClass]="{'page-active' : route[0] == 'teams'}"><a routerLink="/teams" ><i class="users icon"></i>Teams</a></li>
+        <li [ngClass]="{'page-active' : route[0] == 'realign'}"><a routerLink="/realign" ><i class="move icon"></i>Re-Alignment Tool</a></li>
       </ul>
 
     </div>

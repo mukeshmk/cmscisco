@@ -17,7 +17,6 @@ export class LoggedInGuard implements CanActivate {
 
     // If the user is logged in redirect him to "/",
     // else he is allowed to navigate to this page
-    alert();
     if(this._loginService.isLoggedIn()){
       this._router.navigate(["/"]);
     }else{

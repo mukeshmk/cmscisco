@@ -35,7 +35,7 @@ export let MainRoute = [
     component : AppForkComponent,
     pathMatch : 'full'
   },
-  {
+  { 
     path : 'ordercount',
     component : OrdercountComponent,
     canActivate : [CmsUserGuard],

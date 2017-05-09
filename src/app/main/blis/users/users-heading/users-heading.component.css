@@ -1,5 +1,7 @@
-#user-head .column{
+.table-heading .column{
   display: inline-block;
-  background: deepskyblue;
+  background: #1E2327;
+  padding-top: 18px;
   text-align: center;
+  color : #dddddd;
 }
