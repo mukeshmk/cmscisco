@@ -25,9 +25,7 @@ export class UsersEditComponent implements OnInit {
       if (this.data == undefined) {
         alert("This role does not exist in our database!");
         this.router.navigate(['/users']);
-
       }
-
     });
   }
 

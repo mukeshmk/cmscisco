@@ -23,18 +23,23 @@ export class LoginService {
   }
 
   login(loginName : String, password : String){
-    // if(localStorage.getItem("user") === null){
-    //   return false;
-    // }
-    // else {
-    //   return true;
-    // }
+    /*
+    For now we are using a static file which contains the dummy user data
+    User service provides the data from the file,
+    later we can plug the API calls instead of the file
+     */
+
     let userData = this._userService.getUserByLoginAndPassword(loginName,password);
-    console.log(userData);
+    /*
+    If there is a user found add the following items to localstorage
+    Currently we use something like 'logged_in' to signify logged in,
+    but I will suggest that when plugging the API use JWT(JSONWebTokens)
+    because thats the standard for Single Page Applications
+     */
     if(userData != undefined){
       this.loggedIn = true;
       localStorage.setItem('logged_in', "true");
-      localStorage.setItem('userData', JSON.stringify(userData));
+      loca  lStorage.setItem('userData', JSON.stringify(userData));
       return true;
     }else{
       return false;

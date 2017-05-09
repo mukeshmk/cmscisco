@@ -16,19 +16,16 @@ export class AppForkComponent implements OnInit {
     private _router : Router
   ) {
 
-    /* 1. Inject the service
-     2. Call the is logged in function
-     3. if logged in, check whats his permission and set it
-     4. else redirect to login
-     5. Display respective view and menu
+    /*
+    Get the user data, set the privilege to the role
+    according to the role, show either BLiS or CMS
      */
     let data = this._mainService.getUserData();
-    console.log(data);
     if(data != undefined) {
       this.privilege = data.role;
       console.log(this.privilege);
     }else{
-      //this._router.navigate(["/404"]);
+      this._router.navigate(["/404"]);
     }
 
     //console.log(blisRoute.concat(cmsRoute));

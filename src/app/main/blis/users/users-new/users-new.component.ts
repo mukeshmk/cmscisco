@@ -49,7 +49,6 @@ export class UsersNewComponent implements OnInit {
   addUser(data){
     this.data=data;
     this._userService.addUser(this.userNewForm.value);
-    alert("New User added!");
   }
 
 }

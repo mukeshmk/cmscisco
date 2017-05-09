@@ -1,29 +1,20 @@
 <div>
-  <div id="profile" style="float:left;">
-    <div id="propic">
-      <img src="https://thetab.com/blogs.dir/48/files/2014/02/fb-profile.gif" alt="Profile Picture" style="width:215px;height:190px;">
+  <div class="top-menu">
+  <ul >
+    <li (click)="changeTab('basic')" [ngClass]="{'active-tab' : 'basic' == selectedTab}">Basic Details</li>
+    <li (click)="changeTab('contact')" [ngClass]="{'active-tab' : 'contact' == selectedTab}">Contact</li>
+    <li (click)="changeTab('work')" [ngClass]="{'active-tab' : 'work' == selectedTab}">Work</li>
+    <li (click)="changeTab('settings')" [ngClass]="{'active-tab' : 'settings' == selectedTab}">Settings</li>
+  </ul>
     </div>
-    <div id="sidemenu">
-      <sm-menu class="ui secondary vertical pointing menu">
-            <a sm-item id="item1" (click)="i1.show()">Basic Details</a>
-
-            <a sm-item id="item2" (click)="i2.show()">Contact</a>
-
-            <a sm-item id="item3" (click)="i3.show()">Work</a>
-
-            <a sm-item id="item4" (click)="i4.show()">Setting</a>
-      </sm-menu>
-    </div>
-  </div>
 
 <form [formGroup]="profileEditForm" (ngSubmit)="saveProfile($event)">
   <div id = "menubox">
-    <div id="menudesc" >
+    <div id="profileForm" >
       <div class="ui form">
-        <div class='col-sm-12' #i1>
+        <div class='col-sm-12' [ngClass]="{'active' : 'basic' == selectedTab}">
           <div class="column">
-            <div class="ui raised segment">
-              <a class="ui red ribbon label">Basic Details</a>
+            <div class="ui  segment">
                 <div class="field">
                   <label for="profile-firstName">First Name</label>
                   <input formControlName="firstName" [(ngModel)]=" data.firstName" id="profile-firstName">
@@ -34,17 +25,17 @@
                 </div>
                 <div class="field">
                   <label>Gender</label>
-                  <div class="field"> <input type="radio" value="Male" formControlName="gender" name="isAContractor" [(ngModel)]="data.gender" checked="checked">Male</div>
-                  <div class="field"> <input type="radio" value="Female" formControlName="gender" name="isAContractor" [(ngModel)]="data.gender" checked="checked">Female</div>
-                  <div class="field"> <input type="radio" value="Others" formControlName="gender" name="isAContractor" [(ngModel)]="data.gender" checked="checked">Others</div>
+                  <div class="field"> <input type="radio" value="Male" formControlName="gender" name="gender" [(ngModel)]="data.gender" checked="checked">Male</div>
+                  <div class="field"> <input type="radio" value="Female" formControlName="gender" name="gender" [(ngModel)]="data.gender" checked="checked">Female</div>
+                  <div class="field"> <input type="radio" value="Others" formControlName="gender" name="gender" [(ngModel)]="data.gender" checked="checked">Others</div>
                 </div>
             </div>
           </div>
         </div>
-        <div class='col-sm-12' #i2>
+        <div class='col-sm-12' [ngClass]="{'active' : 'contact' == selectedTab}">
           <div class="column">
-            <div class="ui raiser segment">
-              <a class="ui teal ribbon label">Phone Number</a>
+            <div class="ui  segment">
+              <!--<h3>Phone Number</h3>-->
               <div class="three fields">
                 <div class="field">
                   <label for="work">Work</label>
@@ -62,8 +53,8 @@
             </div>
           </div>
           <div class="column">
-            <div class="ui raiser segment">
-              <a class="ui red ribbon label">E-Mail</a>
+            <div class="ui  segment">
+              <!--<h3>Email</h3>-->
               <div class="field">
                 <label for="email">E-Mail</label>
                 <input formControlName="email" [(ngModel)]=" data.email" id="email">
@@ -71,8 +62,8 @@
             </div>
           </div>
           <div class="column">
-            <div class="ui raised segment">
-              <a class="ui teal ribbon label">Address</a>
+            <div class="ui  segment">
+              <h4>Address</h4>
               <div class="field">
                 <label for="street1">Street 1</label>
                 <input formControlName="street1" [(ngModel)]=" data.street1" id="street1">
@@ -104,10 +95,10 @@
             </div>
           </div>
         </div>
-        <div class='col-sm-12' #i3>
+        <div class='col-sm-12' [ngClass]="{'active' : 'work' == selectedTab}">
           <div class="column">
-            <div class="ui raised segment">
-              <a class="ui teal ribbon label">Work</a>
+            <div class="ui  segment">
+              <!--<h3>Work</h3>-->
               <div class="field">
                 <label for="group">Group</label>
                 <input formControlName="group" [(ngModel)]=" data.group" id="group">
@@ -127,10 +118,10 @@
             </div>
           </div>
         </div>
-        <div class='col-sm-12' #i4>
+        <div class='col-sm-12' [ngClass]="{'active' : 'settings' == selectedTab}">
           <div class="column">
             <div class="ui raiser segment">
-              <a class="ui red ribbon label">Settings</a>
+              <!--<h3>Settings</h3>-->
               <div class="field">
                 <label for="login">Login Name</label>
                 <input formControlName="login" [(ngModel)]=" data.login" id="login">
@@ -151,7 +142,7 @@
   </div>
   <div style="margin-top:30px;" align="right">
   <div class="ui buttons">
-    <button class="ui positive button"type="submit" value="Save">Update</button>
+    <button class="ui positive button" type="submit" value="Save">Update</button>
   </div>
   </div>
 </form>

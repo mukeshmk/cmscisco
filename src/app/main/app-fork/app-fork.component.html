@@ -1,3 +1,8 @@
+<!--
+Change Sales here to what roles are allowed to use
+BLiS portal(app-dashboard)
+-->
+
 
 <app-dashboard *ngIf="privilege == 'sales'"></app-dashboard>
 <app-ordercount *ngIf="privilege != 'sales'"></app-ordercount>

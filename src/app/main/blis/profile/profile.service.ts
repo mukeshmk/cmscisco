@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {ProfileData} from "./profile";
+import {UsersData} from "../users/users";
+
 
 @Injectable()
 export class ProfileService {
@@ -14,15 +16,16 @@ export class ProfileService {
 
   saveProfile(data){
     // console.log(data);
-    var x = ProfileData.findIndex((profile) => {
-      return profile.login == data.login;
-    });
-    if(x < 0){
-      return -1;
-    }
-    ProfileData[x] = data;
+    // var x = UsersData.findIndex((profile) => {
+    //   return profile.login == data.login;
+    // });
+    // if(x < 0){
+    //   return -1;
+    // }
+    // UsersData[x] = data;
+    // localStorage.setItem('userData', JSON.stringify(data));
+
+
     return 1;
   }
-
-
 }

@@ -6,15 +6,40 @@
   margin-top: 5px;
   font-size: large;
 }
-#menubox{
-  margin-left: 70px;
-}
-#menudesc{
-  margin-left: 170px;
-  border: 1px solid gray;
-  height: 300px;
-  padding: 1em;
-  overflow-y: scroll;
+/*#menubox{*/
+  /*margin-left: 70px;*/
+/*}*/
+/*#menudesc{*/
+  /*margin-left: 170px;*/
+  /*border: 1px solid gray;*/
+  /*height: 300px;*/
+  /*padding: 1em;*/
+  /*overflow-y: scroll;*/
+/*}*/
+
+.top-menu ul{
+  list-style: none;
+  margin-bottom: 20px;
+  padding: 0;
 }
 
+.top-menu ul li{
+  display: inline;
+  padding : 10px;
+  border: 1px solid;
+  border-radius: 10px;
+}
 
+.top-menu ul li.active-tab{
+
+  color : white;
+  background: #1E2327;
+}
+
+#profileForm .col-sm-12{
+  display: none;
+}
+
+#profileForm .col-sm-12.active{
+  display: block;
+}
