@@ -39,7 +39,7 @@ export class LoginService {
     if(userData != undefined){
       this.loggedIn = true;
       localStorage.setItem('logged_in', "true");
-      loca  lStorage.setItem('userData', JSON.stringify(userData));
+      localStorage.setItem('userData', JSON.stringify(userData));
       return true;
     }else{
       return false;
